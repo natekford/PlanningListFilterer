@@ -1,0 +1,215 @@
+﻿@page "/anilistplanning"
+@inject HttpClient Http
+@using BlazorTest.Models
+@using System.Net.Mime
+@using System.Text
+@using System.Text.Json
+@using System.Text.Json.Serialization
+
+<PageTitle>Planning List Sorter</PageTitle>
+
+<h1>Planning List Sorter</h1>
+
+<input type="text" @bind-value=username />
+<button class="btn btn-primary" @onclick=GetEntries>Get Entries</button>
+
+@if (entries == null)
+{
+	<p><em>Please enter a username to get entries for...</em></p>
+}
+else if (!entries.Any())
+{
+	<p><em>No entries were found for @username.</em></p>
+}
+else
+{
+	<table class="table">
+		<thead>
+			<tr>
+				<th>
+					<span class="sort-link" onclick="@(() => SortEntries(e => e.Id))">
+						Id
+					</span>
+				</th>
+				<th>
+					<span class="sort-link" onclick="@(() => SortEntries(e => e.Title.UserPreferred))">
+						Name
+					</span>
+				</th>
+				<th>
+					<span class="sort-link" onclick="@(() => SortEntries(e => e.Format))">
+						Format
+					</span>
+				</th>
+				<th>
+					<span class="sort-link" onclick="@(() => SortEntries(e => e.HighestAvailableEpisode))">
+						Episode Count
+					</span>
+				</th>
+				<th>
+					<span class="sort-link" onclick="@(() => SortEntries(e => e.TotalDuration))">
+						Duration
+					</span>
+				</th>
+				<th>
+					<span class="sort-link" onclick="@(() => SortEntries(e => e.AverageScore))">
+						Average Score
+					</span>
+				</th>
+				<th>
+					<span class="sort-link" onclick="@(() => SortEntries(e => e.Popularity))">
+						Popularity
+					</span>
+				</th>
+				<th>
+					<span class="sort-link" onclick="@(() => SortEntries(e => e.StartDate!.Year))">
+						Start Year
+					</span>
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var entry in entries)
+			{
+				<tr>
+					<td>
+						<a href="@entry.Url" target="_blank">@entry.Id</a>
+					</td>
+					<td>@entry.Title.UserPreferred</td>
+					<td>@entry.Format</td>
+					<td>@entry.HighestAvailableEpisode</td>
+					<td>@entry.TotalDuration</td>
+					<td>@entry.AverageScore</td>
+					<td>@entry.Popularity</td>
+					<td>@(entry.StartDate?.Year ?? 0)</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+}
+
+@code {
+	private string? username;
+	private List<Media>? entries;
+	private LastSortedBy lastSortedBy;
+	private JsonSerializerOptions options = CreateJsonOptions();
+
+	private static JsonSerializerOptions CreateJsonOptions()
+	{
+		var options = new JsonSerializerOptions();
+		options.Converters.Add(new JsonStringEnumConverter());
+		return options;
+	}
+
+	private async Task GetEntries()
+	{
+#if true
+		var response = await GetAnilistResponse(username!).ConfigureAwait(false);
+#else
+	var response = (await Http.GetFromJsonAsync<AnilistResponse>(
+	requestUri: "sample-data/anilistresponse2.json",
+	options: options
+	).ConfigureAwait(false))!;
+#endif
+
+		entries = response.Data.MediaListCollection.Lists
+			.SelectMany(l => l.Entries.Select(e => e.Media))
+			.Where(x => x is not null)
+			.OrderBy(x => x.Id)
+			.ToList();
+
+		// By default, sorted ascending by id
+		// keySelector here won't be the same instance as the passed in argument
+		// so no point in giving it any value other than null
+		lastSortedBy = new(null, IsAscending: true);
+	}
+
+	private async Task<AnilistResponse> GetAnilistResponse(string username)
+	{
+		const string URL = "https://graphql.anilist.co";
+
+		var body = JsonSerializer.Serialize(new
+		{
+			query = GetGraphQLQuery(),
+			variables = new
+			{
+				username = username,
+			}
+		});
+		var content = new StringContent(
+			content: body,
+			encoding: Encoding.UTF8,
+			mediaType: MediaTypeNames.Application.Json
+		);
+
+		var request = new HttpRequestMessage(
+			method: HttpMethod.Post,
+			requestUri: URL
+		);
+		request.Content = content;
+		request.Headers.Add("Accept", MediaTypeNames.Application.Json);
+
+		using var response = await Http.SendAsync(request).ConfigureAwait(false);
+		using var stream = await response.Content.ReadAsStreamAsync().ConfigureAwait(false);
+
+		return (await JsonSerializer.DeserializeAsync<AnilistResponse>(
+			utf8Json: stream,
+			options: options
+		).ConfigureAwait(false))!;
+	}
+
+	private string GetGraphQLQuery()
+	{
+		return $@"
+		query ($username: String) {{
+			MediaListCollection(userName: $username, type: ANIME, status: PLANNING) {{
+				lists {{
+					name
+					isCustomList
+					isCompletedList: isSplitCompletedList
+					entries {{
+						...mediaListEntry
+					}}
+				}}
+			}}
+		}}
+
+		fragment mediaListEntry on MediaList {{
+			media {{
+				id
+				title {{
+					userPreferred
+				}}
+				format
+				episodes
+				nextAiringEpisode {{
+					episode
+				}}
+				duration
+				averageScore
+				popularity
+				startDate {{
+					year
+				}}
+			}}
+		}}
+		";
+	}
+
+	private void SortEntries<TKey>(Func<Media, TKey> keySelector)
+	{
+		if (!lastSortedBy.IsAscending
+			|| !object.ReferenceEquals(lastSortedBy.KeySelector, keySelector))
+		{
+			entries = entries!.OrderBy(keySelector).ToList();
+			lastSortedBy = new(keySelector, IsAscending: true);
+		}
+		else
+		{
+			entries = entries!.OrderByDescending(keySelector).ToList();
+			lastSortedBy = new(keySelector, IsAscending: false);
+		}
+	}
+
+	private record struct LastSortedBy(object? KeySelector, bool IsAscending);
+}

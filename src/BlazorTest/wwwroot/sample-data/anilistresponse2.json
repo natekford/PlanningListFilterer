@@ -1,0 +1,8936 @@
+﻿{
+	"data": {
+		"MediaListCollection": {
+			"lists": [
+				{
+					"name": "Planning",
+					"isCustomList": false,
+					"isCompletedList": false,
+					"entries": [
+						{
+							"media": {
+								"id": 48,
+								"title": {
+									"userPreferred": ".hack//SIGN"
+								},
+								"format": "TV",
+								"episodes": 26,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 65,
+								"popularity": 22570,
+								"startDate": {
+									"year": 2002
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 21366,
+								"title": {
+									"userPreferred": "3-gatsu no Lion"
+								},
+								"format": "TV",
+								"episodes": 22,
+								"nextAiringEpisode": null,
+								"duration": 25,
+								"averageScore": 83,
+								"popularity": 143782,
+								"startDate": {
+									"year": 2016
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 11111,
+								"title": {
+									"userPreferred": "Another"
+								},
+								"format": "TV",
+								"episodes": 12,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 70,
+								"popularity": 249799,
+								"startDate": {
+									"year": 2012
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 477,
+								"title": {
+									"userPreferred": "ARIA The ANIMATION"
+								},
+								"format": "TV",
+								"episodes": 13,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 75,
+								"popularity": 35777,
+								"startDate": {
+									"year": 2005
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 2402,
+								"title": {
+									"userPreferred": "Ashita no Joe"
+								},
+								"format": "TV",
+								"episodes": 79,
+								"nextAiringEpisode": null,
+								"duration": 25,
+								"averageScore": 80,
+								"popularity": 20895,
+								"startDate": {
+									"year": 1970
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 66,
+								"title": {
+									"userPreferred": "Azumanga Daiou THE ANIMATION"
+								},
+								"format": "TV",
+								"episodes": 26,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 77,
+								"popularity": 48598,
+								"startDate": {
+									"year": 2002
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 6347,
+								"title": {
+									"userPreferred": "Baka to Test to Shoukanjuu"
+								},
+								"format": "TV",
+								"episodes": 13,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 71,
+								"popularity": 82217,
+								"startDate": {
+									"year": 2010
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 20722,
+								"title": {
+									"userPreferred": "Barakamon"
+								},
+								"format": "TV",
+								"episodes": 12,
+								"nextAiringEpisode": null,
+								"duration": 22,
+								"averageScore": 82,
+								"popularity": 102521,
+								"startDate": {
+									"year": 2014
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 9513,
+								"title": {
+									"userPreferred": "Beelzebub"
+								},
+								"format": "TV",
+								"episodes": 60,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 75,
+								"popularity": 69857,
+								"startDate": {
+									"year": 2011
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 1520,
+								"title": {
+									"userPreferred": "Black Jack"
+								},
+								"format": "OVA",
+								"episodes": 10,
+								"nextAiringEpisode": null,
+								"duration": 50,
+								"averageScore": 75,
+								"popularity": 7706,
+								"startDate": {
+									"year": 1993
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 58,
+								"title": {
+									"userPreferred": "BLUE GENDER"
+								},
+								"format": "TV",
+								"episodes": 26,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 65,
+								"popularity": 9876,
+								"startDate": {
+									"year": 1999
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 1050,
+								"title": {
+									"userPreferred": "Bobobo-bo Bo-bobo"
+								},
+								"format": "TV",
+								"episodes": 76,
+								"nextAiringEpisode": null,
+								"duration": 25,
+								"averageScore": 71,
+								"popularity": 13493,
+								"startDate": {
+									"year": 2003
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 21234,
+								"title": {
+									"userPreferred": "Boku dake ga Inai Machi"
+								},
+								"format": "TV",
+								"episodes": 12,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 81,
+								"popularity": 379500,
+								"startDate": {
+									"year": 2016
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 21459,
+								"title": {
+									"userPreferred": "Boku no Hero Academia"
+								},
+								"format": "TV",
+								"episodes": 13,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 77,
+								"popularity": 554572,
+								"startDate": {
+									"year": 2016
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 20529,
+								"title": {
+									"userPreferred": "Bokura wa Minna Kawaisou"
+								},
+								"format": "TV",
+								"episodes": 12,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 74,
+								"popularity": 55102,
+								"startDate": {
+									"year": 2014
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 20997,
+								"title": {
+									"userPreferred": "Charlotte"
+								},
+								"format": "TV",
+								"episodes": 13,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 75,
+								"popularity": 262105,
+								"startDate": {
+									"year": 2015
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 2167,
+								"title": {
+									"userPreferred": "CLANNAD"
+								},
+								"format": "TV",
+								"episodes": 23,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 76,
+								"popularity": 191420,
+								"startDate": {
+									"year": 2007
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 1818,
+								"title": {
+									"userPreferred": "CLAYMORE"
+								},
+								"format": "TV",
+								"episodes": 26,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 73,
+								"popularity": 72162,
+								"startDate": {
+									"year": 2007
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 2025,
+								"title": {
+									"userPreferred": "DARKER THAN BLACK: Kuro no Keiyakusha"
+								},
+								"format": "TV",
+								"episodes": 25,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 77,
+								"popularity": 111661,
+								"startDate": {
+									"year": 2007
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 20931,
+								"title": {
+									"userPreferred": "Death Parade"
+								},
+								"format": "TV",
+								"episodes": 12,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 80,
+								"popularity": 300187,
+								"startDate": {
+									"year": 2015
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 9379,
+								"title": {
+									"userPreferred": "Denpa Onna to Seishun Otoko"
+								},
+								"format": "TV",
+								"episodes": 12,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 68,
+								"popularity": 48878,
+								"startDate": {
+									"year": 2011
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 235,
+								"title": {
+									"userPreferred": "Meitantei Conan"
+								},
+								"format": "TV",
+								"episodes": null,
+								"nextAiringEpisode": {
+									"episode": 1062
+								},
+								"duration": 25,
+								"averageScore": 81,
+								"popularity": 47399,
+								"startDate": {
+									"year": 1996
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 223,
+								"title": {
+									"userPreferred": "Dragon Ball"
+								},
+								"format": "TV",
+								"episodes": 153,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 77,
+								"popularity": 132442,
+								"startDate": {
+									"year": 1986
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 21123,
+								"title": {
+									"userPreferred": "DRIFTERS"
+								},
+								"format": "TV",
+								"episodes": 12,
+								"nextAiringEpisode": null,
+								"duration": 25,
+								"averageScore": 75,
+								"popularity": 81489,
+								"startDate": {
+									"year": 2016
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 4789,
+								"title": {
+									"userPreferred": "ef: A Tale of Melodies."
+								},
+								"format": "TV",
+								"episodes": 12,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 77,
+								"popularity": 22259,
+								"startDate": {
+									"year": 2008
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 10087,
+								"title": {
+									"userPreferred": "Fate/Zero"
+								},
+								"format": "TV",
+								"episodes": 13,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 81,
+								"popularity": 226059,
+								"startDate": {
+									"year": 2011
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 227,
+								"title": {
+									"userPreferred": "FLCL"
+								},
+								"format": "OVA",
+								"episodes": 6,
+								"nextAiringEpisode": null,
+								"duration": 25,
+								"averageScore": 78,
+								"popularity": 124890,
+								"startDate": {
+									"year": 2000
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 71,
+								"title": {
+									"userPreferred": "Full Metal Panic!"
+								},
+								"format": "TV",
+								"episodes": 24,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 72,
+								"popularity": 59443,
+								"startDate": {
+									"year": 2002
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 20754,
+								"title": {
+									"userPreferred": "Gakkou Gurashi!"
+								},
+								"format": "TV",
+								"episodes": 12,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 74,
+								"popularity": 85065,
+								"startDate": {
+									"year": 2015
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 20773,
+								"title": {
+									"userPreferred": "GANGSTA."
+								},
+								"format": "TV",
+								"episodes": 12,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 71,
+								"popularity": 87858,
+								"startDate": {
+									"year": 2015
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 239,
+								"title": {
+									"userPreferred": "Gankutsuou"
+								},
+								"format": "TV",
+								"episodes": 24,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 79,
+								"popularity": 39443,
+								"startDate": {
+									"year": 2004
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 18229,
+								"title": {
+									"userPreferred": "Gatchaman Crowds"
+								},
+								"format": "TV",
+								"episodes": 12,
+								"nextAiringEpisode": null,
+								"duration": 25,
+								"averageScore": 70,
+								"popularity": 35431,
+								"startDate": {
+									"year": 2013
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 1571,
+								"title": {
+									"userPreferred": "Ghost Hunt"
+								},
+								"format": "TV",
+								"episodes": 25,
+								"nextAiringEpisode": null,
+								"duration": 25,
+								"averageScore": 73,
+								"popularity": 26476,
+								"startDate": {
+									"year": 2006
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 820,
+								"title": {
+									"userPreferred": "Ginga Eiyuu Densetsu"
+								},
+								"format": "OVA",
+								"episodes": 110,
+								"nextAiringEpisode": null,
+								"duration": 26,
+								"averageScore": 88,
+								"popularity": 52173,
+								"startDate": {
+									"year": 1988
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 589,
+								"title": {
+									"userPreferred": "Ginga: Nagareboshi Gin"
+								},
+								"format": "TV",
+								"episodes": 21,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 72,
+								"popularity": 4177,
+								"startDate": {
+									"year": 1986
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 268,
+								"title": {
+									"userPreferred": "GOLDEN BOY: Sasurai no Obenkyou Yarou"
+								},
+								"format": "OVA",
+								"episodes": 6,
+								"nextAiringEpisode": null,
+								"duration": 29,
+								"averageScore": 77,
+								"popularity": 58249,
+								"startDate": {
+									"year": 1995
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 245,
+								"title": {
+									"userPreferred": "GTO"
+								},
+								"format": "TV",
+								"episodes": 43,
+								"nextAiringEpisode": null,
+								"duration": 25,
+								"averageScore": 84,
+								"popularity": 99272,
+								"startDate": {
+									"year": 1999
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 267,
+								"title": {
+									"userPreferred": "Gungrave"
+								},
+								"format": "TV",
+								"episodes": 26,
+								"nextAiringEpisode": null,
+								"duration": 25,
+								"averageScore": 73,
+								"popularity": 23088,
+								"startDate": {
+									"year": 2003
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 1824,
+								"title": {
+									"userPreferred": "Hadashi no Gen"
+								},
+								"format": "MOVIE",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 83,
+								"averageScore": 73,
+								"popularity": 9629,
+								"startDate": {
+									"year": 1983
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 387,
+								"title": {
+									"userPreferred": "Haibane Renmei"
+								},
+								"format": "TV",
+								"episodes": 13,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 79,
+								"popularity": 53292,
+								"startDate": {
+									"year": 2002
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 263,
+								"title": {
+									"userPreferred": "Hajime no Ippo: THE FIGHTING!"
+								},
+								"format": "TV",
+								"episodes": 75,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 86,
+								"popularity": 71500,
+								"startDate": {
+									"year": 2000
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 379,
+								"title": {
+									"userPreferred": "Heppoko Jikken Animation Excel Saga"
+								},
+								"format": "TV",
+								"episodes": 26,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 70,
+								"popularity": 14606,
+								"startDate": {
+									"year": 1999
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 5630,
+								"title": {
+									"userPreferred": "Higashi no Eden"
+								},
+								"format": "TV",
+								"episodes": 11,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 74,
+								"popularity": 76046,
+								"startDate": {
+									"year": 2009
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 934,
+								"title": {
+									"userPreferred": "Higurashi no Naku Koro ni"
+								},
+								"format": "TV",
+								"episodes": 26,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 75,
+								"popularity": 116504,
+								"startDate": {
+									"year": 2006
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 967,
+								"title": {
+									"userPreferred": "Hokuto no Ken"
+								},
+								"format": "TV",
+								"episodes": 109,
+								"nextAiringEpisode": null,
+								"duration": 25,
+								"averageScore": 75,
+								"popularity": 20572,
+								"startDate": {
+									"year": 1984
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 578,
+								"title": {
+									"userPreferred": "Hotaru no Haka"
+								},
+								"format": "MOVIE",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 88,
+								"averageScore": 82,
+								"popularity": 114343,
+								"startDate": {
+									"year": 1988
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 98707,
+								"title": {
+									"userPreferred": "Houseki no Kuni"
+								},
+								"format": "TV",
+								"episodes": 12,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 83,
+								"popularity": 98351,
+								"startDate": {
+									"year": 2017
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 136,
+								"title": {
+									"userPreferred": "HUNTER×HUNTER"
+								},
+								"format": "TV",
+								"episodes": 62,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 82,
+								"popularity": 75104,
+								"startDate": {
+									"year": 1999
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 11061,
+								"title": {
+									"userPreferred": "HUNTER×HUNTER (2011)"
+								},
+								"format": "TV",
+								"episodes": 148,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 89,
+								"popularity": 515202,
+								"startDate": {
+									"year": 2011
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 97922,
+								"title": {
+									"userPreferred": "Inuyashiki"
+								},
+								"format": "TV",
+								"episodes": 11,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 74,
+								"popularity": 113710,
+								"startDate": {
+									"year": 2017
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 570,
+								"title": {
+									"userPreferred": "JIN-ROH"
+								},
+								"format": "MOVIE",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 102,
+								"averageScore": 76,
+								"popularity": 30945,
+								"startDate": {
+									"year": 2000
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 10357,
+								"title": {
+									"userPreferred": "Jinrui wa Suitai Shimashita"
+								},
+								"format": "TV",
+								"episodes": 12,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 76,
+								"popularity": 41098,
+								"startDate": {
+									"year": 2012
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 21033,
+								"title": {
+									"userPreferred": "Jitsu wa Watashi wa"
+								},
+								"format": "TV",
+								"episodes": 13,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 65,
+								"popularity": 42331,
+								"startDate": {
+									"year": 2015
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 12679,
+								"title": {
+									"userPreferred": "Joshiraku"
+								},
+								"format": "TV",
+								"episodes": 13,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 73,
+								"popularity": 40518,
+								"startDate": {
+									"year": 2012
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 153,
+								"title": {
+									"userPreferred": "Juuni Kokuki"
+								},
+								"format": "TV",
+								"episodes": 45,
+								"nextAiringEpisode": null,
+								"duration": 25,
+								"averageScore": 76,
+								"popularity": 22261,
+								"startDate": {
+									"year": 2002
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 14467,
+								"title": {
+									"userPreferred": "K"
+								},
+								"format": "TV",
+								"episodes": 13,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 71,
+								"popularity": 117356,
+								"startDate": {
+									"year": 2012
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 7054,
+								"title": {
+									"userPreferred": "Kaichou wa Maid-sama!"
+								},
+								"format": "TV",
+								"episodes": 26,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 78,
+								"popularity": 185961,
+								"startDate": {
+									"year": 2010
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 8525,
+								"title": {
+									"userPreferred": "Kami nomi zo Shiru Sekai"
+								},
+								"format": "TV",
+								"episodes": 12,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 74,
+								"popularity": 90264,
+								"startDate": {
+									"year": 2010
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 3958,
+								"title": {
+									"userPreferred": "Kannagi"
+								},
+								"format": "TV",
+								"episodes": 13,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 69,
+								"popularity": 25171,
+								"startDate": {
+									"year": 2008
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 6594,
+								"title": {
+									"userPreferred": "Katanagatari"
+								},
+								"format": "TV",
+								"episodes": 12,
+								"nextAiringEpisode": null,
+								"duration": 50,
+								"averageScore": 82,
+								"popularity": 92033,
+								"startDate": {
+									"year": 2010
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 20727,
+								"title": {
+									"userPreferred": "Kekkai Sensen"
+								},
+								"format": "TV",
+								"episodes": 12,
+								"nextAiringEpisode": null,
+								"duration": 25,
+								"averageScore": 74,
+								"popularity": 144537,
+								"startDate": {
+									"year": 2015
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 5420,
+								"title": {
+									"userPreferred": "Kemono no Souja Erin"
+								},
+								"format": "TV",
+								"episodes": 50,
+								"nextAiringEpisode": null,
+								"duration": 25,
+								"averageScore": 80,
+								"popularity": 16182,
+								"startDate": {
+									"year": 2009
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 1454,
+								"title": {
+									"userPreferred": "Kemonozume"
+								},
+								"format": "TV",
+								"episodes": 13,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 69,
+								"popularity": 13557,
+								"startDate": {
+									"year": 2006
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 21519,
+								"title": {
+									"userPreferred": "Kimi no Na wa."
+								},
+								"format": "MOVIE",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 107,
+								"averageScore": 86,
+								"popularity": 417659,
+								"startDate": {
+									"year": 2016
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 21421,
+								"title": {
+									"userPreferred": "Kiznaiver"
+								},
+								"format": "TV",
+								"episodes": 12,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 71,
+								"popularity": 133249,
+								"startDate": {
+									"year": 2016
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 20954,
+								"title": {
+									"userPreferred": "Koe no Katachi"
+								},
+								"format": "MOVIE",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 130,
+								"averageScore": 88,
+								"popularity": 408603,
+								"startDate": {
+									"year": 2016
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 250,
+								"title": {
+									"userPreferred": "Konjiki no Gash Bell!!"
+								},
+								"format": "TV",
+								"episodes": 150,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 72,
+								"popularity": 17831,
+								"startDate": {
+									"year": 2003
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 97,
+								"title": {
+									"userPreferred": "Last Exile"
+								},
+								"format": "TV",
+								"episodes": 26,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 74,
+								"popularity": 22010,
+								"startDate": {
+									"year": 2003
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 14349,
+								"title": {
+									"userPreferred": "Little Witch Academia"
+								},
+								"format": "MOVIE",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 26,
+								"averageScore": 76,
+								"popularity": 71855,
+								"startDate": {
+									"year": 2013
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 16353,
+								"title": {
+									"userPreferred": "Love Lab"
+								},
+								"format": "TV",
+								"episodes": 13,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 71,
+								"popularity": 38287,
+								"startDate": {
+									"year": 2013
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 1887,
+								"title": {
+									"userPreferred": "Lucky☆Star"
+								},
+								"format": "TV",
+								"episodes": 24,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 74,
+								"popularity": 91469,
+								"startDate": {
+									"year": 2007
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 1088,
+								"title": {
+									"userPreferred": "Choujikuu Yousai Macross"
+								},
+								"format": "TV",
+								"episodes": 36,
+								"nextAiringEpisode": null,
+								"duration": 26,
+								"averageScore": 75,
+								"popularity": 19212,
+								"startDate": {
+									"year": 1982
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 97986,
+								"title": {
+									"userPreferred": "Made in Abyss"
+								},
+								"format": "TV",
+								"episodes": 13,
+								"nextAiringEpisode": null,
+								"duration": 25,
+								"averageScore": 85,
+								"popularity": 236692,
+								"startDate": {
+									"year": 2017
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 98436,
+								"title": {
+									"userPreferred": "Mahoutsukai no Yome"
+								},
+								"format": "TV",
+								"episodes": 24,
+								"nextAiringEpisode": null,
+								"duration": 25,
+								"averageScore": 78,
+								"popularity": 142444,
+								"startDate": {
+									"year": 2017
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 10721,
+								"title": {
+									"userPreferred": "Mawaru Penguindrum"
+								},
+								"format": "TV",
+								"episodes": 24,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 79,
+								"popularity": 58195,
+								"startDate": {
+									"year": 2011
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 20483,
+								"title": {
+									"userPreferred": "Mikakunin de Shinkoukei"
+								},
+								"format": "TV",
+								"episodes": 12,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 72,
+								"popularity": 69849,
+								"startDate": {
+									"year": 2014
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 2963,
+								"title": {
+									"userPreferred": "Minami-ke"
+								},
+								"format": "TV",
+								"episodes": 13,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 73,
+								"popularity": 25067,
+								"startDate": {
+									"year": 2007
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 10620,
+								"title": {
+									"userPreferred": "Mirai Nikki"
+								},
+								"format": "TV",
+								"episodes": 26,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 69,
+								"popularity": 285035,
+								"startDate": {
+									"year": 2011
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 302,
+								"title": {
+									"userPreferred": "Mirai Shounen Conan"
+								},
+								"format": "TV",
+								"episodes": 26,
+								"nextAiringEpisode": null,
+								"duration": 29,
+								"averageScore": 76,
+								"popularity": 9457,
+								"startDate": {
+									"year": 1978
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 3342,
+								"title": {
+									"userPreferred": "Mnemosyne: Mnemosyne no Musume-tachi"
+								},
+								"format": "TV",
+								"episodes": 6,
+								"nextAiringEpisode": null,
+								"duration": 45,
+								"averageScore": 67,
+								"popularity": 23241,
+								"startDate": {
+									"year": 2008
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 16910,
+								"title": {
+									"userPreferred": "Namiuchigiwa no Muromi-san"
+								},
+								"format": "TV_SHORT",
+								"episodes": 13,
+								"nextAiringEpisode": null,
+								"duration": 13,
+								"averageScore": 66,
+								"popularity": 8120,
+								"startDate": {
+									"year": 2013
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 20789,
+								"title": {
+									"userPreferred": "Nanatsu no Taizai"
+								},
+								"format": "TV",
+								"episodes": 24,
+								"nextAiringEpisode": null,
+								"duration": 25,
+								"averageScore": 74,
+								"popularity": 341529,
+								"startDate": {
+									"year": 2014
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 4081,
+								"title": {
+									"userPreferred": "Natsume Yuujinchou"
+								},
+								"format": "TV",
+								"episodes": 13,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 80,
+								"popularity": 79721,
+								"startDate": {
+									"year": 2008
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 12467,
+								"title": {
+									"userPreferred": "Nazo no Kanojo X"
+								},
+								"format": "TV",
+								"episodes": 13,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 69,
+								"popularity": 47342,
+								"startDate": {
+									"year": 2012
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 21410,
+								"title": {
+									"userPreferred": "Nejimaki Seirei Senki: Tenkyou no Alderamin"
+								},
+								"format": "TV",
+								"episodes": 13,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 73,
+								"popularity": 48297,
+								"startDate": {
+									"year": 2016
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 30,
+								"title": {
+									"userPreferred": "Shin Seiki Evangelion"
+								},
+								"format": "TV",
+								"episodes": 26,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 83,
+								"popularity": 281625,
+								"startDate": {
+									"year": 1995
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 1210,
+								"title": {
+									"userPreferred": "NHK ni Youkoso!"
+								},
+								"format": "TV",
+								"episodes": 24,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 82,
+								"popularity": 112971,
+								"startDate": {
+									"year": 2006
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 10165,
+								"title": {
+									"userPreferred": "Nichijou"
+								},
+								"format": "TV",
+								"episodes": 26,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 82,
+								"popularity": 146370,
+								"startDate": {
+									"year": 2011
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 18897,
+								"title": {
+									"userPreferred": "Nisekoi"
+								},
+								"format": "TV",
+								"episodes": 20,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 73,
+								"popularity": 176463,
+								"startDate": {
+									"year": 2014
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 584,
+								"title": {
+									"userPreferred": "Noein: Mou Hitori no Kimi e"
+								},
+								"format": "TV",
+								"episodes": 24,
+								"nextAiringEpisode": null,
+								"duration": 25,
+								"averageScore": 70,
+								"popularity": 15772,
+								"startDate": {
+									"year": 2005
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 2966,
+								"title": {
+									"userPreferred": "Ookami to Koushinryou"
+								},
+								"format": "TV",
+								"episodes": 13,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 80,
+								"popularity": 117417,
+								"startDate": {
+									"year": 2008
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 21647,
+								"title": {
+									"userPreferred": "orange"
+								},
+								"format": "TV",
+								"episodes": 13,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 74,
+								"popularity": 152776,
+								"startDate": {
+									"year": 2016
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 21472,
+								"title": {
+									"userPreferred": "Oshiete! Galko-chan"
+								},
+								"format": "TV_SHORT",
+								"episodes": 12,
+								"nextAiringEpisode": null,
+								"duration": 8,
+								"averageScore": 68,
+								"popularity": 33663,
+								"startDate": {
+									"year": 2016
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 5682,
+								"title": {
+									"userPreferred": "Phantom: Requiem for the Phantom"
+								},
+								"format": "TV",
+								"episodes": 26,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 75,
+								"popularity": 40552,
+								"startDate": {
+									"year": 2009
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 329,
+								"title": {
+									"userPreferred": "Planetes"
+								},
+								"format": "TV",
+								"episodes": 26,
+								"nextAiringEpisode": null,
+								"duration": 25,
+								"averageScore": 80,
+								"popularity": 39597,
+								"startDate": {
+									"year": 2003
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 20872,
+								"title": {
+									"userPreferred": "Plastic Memories"
+								},
+								"format": "TV",
+								"episodes": 13,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 77,
+								"popularity": 163295,
+								"startDate": {
+									"year": 2015
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 98505,
+								"title": {
+									"userPreferred": "Princess Principal"
+								},
+								"format": "TV",
+								"episodes": 12,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 75,
+								"popularity": 47724,
+								"startDate": {
+									"year": 2017
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 1538,
+								"title": {
+									"userPreferred": "Pumpkin Scissors"
+								},
+								"format": "TV",
+								"episodes": 24,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 67,
+								"popularity": 5170,
+								"startDate": {
+									"year": 2006
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 20964,
+								"title": {
+									"userPreferred": "Punch Line"
+								},
+								"format": "TV",
+								"episodes": 12,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 66,
+								"popularity": 42504,
+								"startDate": {
+									"year": 2015
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 165,
+								"title": {
+									"userPreferred": "RahXephon"
+								},
+								"format": "TV",
+								"episodes": 26,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 70,
+								"popularity": 18368,
+								"startDate": {
+									"year": 2002
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 97980,
+								"title": {
+									"userPreferred": "Re:CREATORS"
+								},
+								"format": "TV",
+								"episodes": 22,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 73,
+								"popularity": 84873,
+								"startDate": {
+									"year": 2017
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 21049,
+								"title": {
+									"userPreferred": "ReLIFE"
+								},
+								"format": "ONA",
+								"episodes": 13,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 78,
+								"popularity": 155717,
+								"startDate": {
+									"year": 2016
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 64,
+								"title": {
+									"userPreferred": "Rozen Maiden"
+								},
+								"format": "TV",
+								"episodes": 12,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 70,
+								"popularity": 24592,
+								"startDate": {
+									"year": 2004
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 45,
+								"title": {
+									"userPreferred": "Rurouni Kenshin: Meiji Kenkaku Romantan"
+								},
+								"format": "TV",
+								"episodes": 94,
+								"nextAiringEpisode": null,
+								"duration": 25,
+								"averageScore": 79,
+								"popularity": 58684,
+								"startDate": {
+									"year": 1996
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 20556,
+								"title": {
+									"userPreferred": "Ryuugajou Nanana no Maizoukin"
+								},
+								"format": "TV",
+								"episodes": 11,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 68,
+								"popularity": 40545,
+								"startDate": {
+									"year": 2014
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 20657,
+								"title": {
+									"userPreferred": "Saenai Heroine no Sodatekata"
+								},
+								"format": "TV",
+								"episodes": 13,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 73,
+								"popularity": 114427,
+								"startDate": {
+									"year": 2015
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 205,
+								"title": {
+									"userPreferred": "Samurai Champloo"
+								},
+								"format": "TV",
+								"episodes": 26,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 84,
+								"popularity": 167597,
+								"startDate": {
+									"year": 2004
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 19365,
+								"title": {
+									"userPreferred": "Samurai Flamenco"
+								},
+								"format": "TV",
+								"episodes": 22,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 67,
+								"popularity": 25248,
+								"startDate": {
+									"year": 2013
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 8675,
+								"title": {
+									"userPreferred": "Seitokai Yakuindomo"
+								},
+								"format": "TV",
+								"episodes": 13,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 73,
+								"popularity": 74179,
+								"startDate": {
+									"year": 2010
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 11751,
+								"title": {
+									"userPreferred": "Senki Zesshou Symphogear"
+								},
+								"format": "TV",
+								"episodes": 13,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 68,
+								"popularity": 31305,
+								"startDate": {
+									"year": 2012
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 6973,
+								"title": {
+									"userPreferred": "Senkou no Night Raid"
+								},
+								"format": "TV",
+								"episodes": 13,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 63,
+								"popularity": 6614,
+								"startDate": {
+									"year": 2010
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 154,
+								"title": {
+									"userPreferred": "Shaman King"
+								},
+								"format": "TV",
+								"episodes": 64,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 73,
+								"popularity": 40145,
+								"startDate": {
+									"year": 2001
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 20665,
+								"title": {
+									"userPreferred": "Shigatsu wa Kimi no Uso"
+								},
+								"format": "TV",
+								"episodes": 22,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 84,
+								"popularity": 382384,
+								"startDate": {
+									"year": 2014
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 7724,
+								"title": {
+									"userPreferred": "Shiki"
+								},
+								"format": "TV",
+								"episodes": 22,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 75,
+								"popularity": 82842,
+								"startDate": {
+									"year": 2010
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 20910,
+								"title": {
+									"userPreferred": "Shimoneta to Iu Gainen ga Sonzai Shinai Taikutsu na Sekai"
+								},
+								"format": "TV",
+								"episodes": 12,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 70,
+								"popularity": 126942,
+								"startDate": {
+									"year": 2015
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 8557,
+								"title": {
+									"userPreferred": "Shinryaku! Ika Musume"
+								},
+								"format": "TV",
+								"episodes": 12,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 72,
+								"popularity": 34437,
+								"startDate": {
+									"year": 2010
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 20812,
+								"title": {
+									"userPreferred": "SHIROBAKO"
+								},
+								"format": "TV",
+								"episodes": 24,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 82,
+								"popularity": 79730,
+								"startDate": {
+									"year": 2014
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 440,
+								"title": {
+									"userPreferred": "Shoujo Kakumei Utena"
+								},
+								"format": "TV",
+								"episodes": 39,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 81,
+								"popularity": 46021,
+								"startDate": {
+									"year": 1997
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 21860,
+								"title": {
+									"userPreferred": "Shuumatsu Nani Shitemasu ka? Isogashii desu ka? Sukutte Moratte Ii desu ka?"
+								},
+								"format": "TV",
+								"episodes": 12,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 75,
+								"popularity": 70536,
+								"startDate": {
+									"year": 2017
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 534,
+								"title": {
+									"userPreferred": "Slayers"
+								},
+								"format": "TV",
+								"episodes": 26,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 73,
+								"popularity": 18803,
+								"startDate": {
+									"year": 1995
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 182,
+								"title": {
+									"userPreferred": "Tenkuu no Escaflowne"
+								},
+								"format": "TV",
+								"episodes": 26,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 72,
+								"popularity": 22555,
+								"startDate": {
+									"year": 1996
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 22,
+								"title": {
+									"userPreferred": "Tennis no Ouji-sama"
+								},
+								"format": "TV",
+								"episodes": 178,
+								"nextAiringEpisode": null,
+								"duration": 22,
+								"averageScore": 74,
+								"popularity": 23388,
+								"startDate": {
+									"year": 2001
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 2500,
+								"title": {
+									"userPreferred": "The Cockpit"
+								},
+								"format": "OVA",
+								"episodes": 3,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 68,
+								"popularity": 2951,
+								"startDate": {
+									"year": 1993
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 9941,
+								"title": {
+									"userPreferred": "TIGER & BUNNY"
+								},
+								"format": "TV",
+								"episodes": 25,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 76,
+								"popularity": 33835,
+								"startDate": {
+									"year": 2011
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 6213,
+								"title": {
+									"userPreferred": "Toaru Kagaku no Railgun"
+								},
+								"format": "TV",
+								"episodes": 24,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 75,
+								"popularity": 102821,
+								"startDate": {
+									"year": 2009
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 949,
+								"title": {
+									"userPreferred": "Top wo Nerae! GunBuster"
+								},
+								"format": "OVA",
+								"episodes": 6,
+								"nextAiringEpisode": null,
+								"duration": 28,
+								"averageScore": 77,
+								"popularity": 28914,
+								"startDate": {
+									"year": 1988
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 658,
+								"title": {
+									"userPreferred": "Touhai Densetsu Akagi: Yami ni Maiorita Tensai"
+								},
+								"format": "TV",
+								"episodes": 26,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 77,
+								"popularity": 19423,
+								"startDate": {
+									"year": 2005
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 6,
+								"title": {
+									"userPreferred": "TRIGUN"
+								},
+								"format": "TV",
+								"episodes": 26,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 79,
+								"popularity": 94598,
+								"startDate": {
+									"year": 1998
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 1000,
+								"title": {
+									"userPreferred": "Uchuu Kaizoku Captain Harlock"
+								},
+								"format": "TV",
+								"episodes": 42,
+								"nextAiringEpisode": null,
+								"duration": 25,
+								"averageScore": 71,
+								"popularity": 7188,
+								"startDate": {
+									"year": 1978
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 98514,
+								"title": {
+									"userPreferred": "Uma Musume: Pretty Derby"
+								},
+								"format": "TV",
+								"episodes": 13,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 71,
+								"popularity": 31151,
+								"startDate": {
+									"year": 2018
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 21038,
+								"title": {
+									"userPreferred": "Ushio to Tora (TV)"
+								},
+								"format": "TV",
+								"episodes": 26,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 72,
+								"popularity": 33134,
+								"startDate": {
+									"year": 2015
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 21827,
+								"title": {
+									"userPreferred": "Violet Evergarden"
+								},
+								"format": "TV",
+								"episodes": 13,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 85,
+								"popularity": 331121,
+								"startDate": {
+									"year": 2018
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 6956,
+								"title": {
+									"userPreferred": "Working!!"
+								},
+								"format": "TV",
+								"episodes": 13,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 74,
+								"popularity": 65815,
+								"startDate": {
+									"year": 2010
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 20966,
+								"title": {
+									"userPreferred": "Yamada-kun to 7-nin no Majo"
+								},
+								"format": "TV",
+								"episodes": 12,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 73,
+								"popularity": 120724,
+								"startDate": {
+									"year": 2015
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 7785,
+								"title": {
+									"userPreferred": "Yojouhan Shinwa Taikei"
+								},
+								"format": "TV",
+								"episodes": 11,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 85,
+								"popularity": 95908,
+								"startDate": {
+									"year": 2010
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 20827,
+								"title": {
+									"userPreferred": "Yuri Kuma Arashi"
+								},
+								"format": "TV",
+								"episodes": 12,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 67,
+								"popularity": 23442,
+								"startDate": {
+									"year": 2015
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 20800,
+								"title": {
+									"userPreferred": "Yuuki Yuuna wa Yuusha de Aru"
+								},
+								"format": "TV",
+								"episodes": 12,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 72,
+								"popularity": 33990,
+								"startDate": {
+									"year": 2014
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 1195,
+								"title": {
+									"userPreferred": "Zero no Tsukaima"
+								},
+								"format": "TV",
+								"episodes": 13,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 68,
+								"popularity": 98720,
+								"startDate": {
+									"year": 2006
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 101351,
+								"title": {
+									"userPreferred": "Happy Sugar Life"
+								},
+								"format": "TV",
+								"episodes": 12,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 65,
+								"popularity": 65804,
+								"startDate": {
+									"year": 2018
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 1604,
+								"title": {
+									"userPreferred": "Katekyou Hitman REBORN!"
+								},
+								"format": "TV",
+								"episodes": 203,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 76,
+								"popularity": 65354,
+								"startDate": {
+									"year": 2006
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 103871,
+								"title": {
+									"userPreferred": "Zombie Land Saga"
+								},
+								"format": "TV",
+								"episodes": 12,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 74,
+								"popularity": 103519,
+								"startDate": {
+									"year": 2018
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 721,
+								"title": {
+									"userPreferred": "Princess Tutu"
+								},
+								"format": "TV",
+								"episodes": 38,
+								"nextAiringEpisode": null,
+								"duration": 16,
+								"averageScore": 81,
+								"popularity": 28825,
+								"startDate": {
+									"year": 2002
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 10798,
+								"title": {
+									"userPreferred": "UN-GO"
+								},
+								"format": "TV",
+								"episodes": 11,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 70,
+								"popularity": 23689,
+								"startDate": {
+									"year": 2011
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 16524,
+								"title": {
+									"userPreferred": "Suisei no Gargantia"
+								},
+								"format": "TV",
+								"episodes": 13,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 72,
+								"popularity": 49518,
+								"startDate": {
+									"year": 2013
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 101249,
+								"title": {
+									"userPreferred": "Penguin Highway"
+								},
+								"format": "MOVIE",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 118,
+								"averageScore": 74,
+								"popularity": 23061,
+								"startDate": {
+									"year": 2018
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 18497,
+								"title": {
+									"userPreferred": "Yozakura Quartet: Hana no Uta"
+								},
+								"format": "TV",
+								"episodes": 13,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 73,
+								"popularity": 24851,
+								"startDate": {
+									"year": 2013
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 14833,
+								"title": {
+									"userPreferred": "Maoyuu Maou Yuusha"
+								},
+								"format": "TV",
+								"episodes": 12,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 70,
+								"popularity": 68973,
+								"startDate": {
+									"year": 2013
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 12431,
+								"title": {
+									"userPreferred": "Uchuu Kyoudai"
+								},
+								"format": "TV",
+								"episodes": 99,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 83,
+								"popularity": 33675,
+								"startDate": {
+									"year": 2012
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 108268,
+								"title": {
+									"userPreferred": "Honzuki no Gekokujou: Shisho ni Naru Tame ni wa Shudan wo Erandeiraremasen"
+								},
+								"format": "TV",
+								"episodes": 14,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 78,
+								"popularity": 56199,
+								"startDate": {
+									"year": 2019
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 21329,
+								"title": {
+									"userPreferred": "Sekkou Boys"
+								},
+								"format": "TV_SHORT",
+								"episodes": 12,
+								"nextAiringEpisode": null,
+								"duration": 8,
+								"averageScore": 59,
+								"popularity": 11606,
+								"startDate": {
+									"year": 2016
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 106479,
+								"title": {
+									"userPreferred": "Itai no wa Iya nano de Bougyoryoku ni Kyokufuri Shitai to Omoimasu."
+								},
+								"format": "TV",
+								"episodes": 12,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 74,
+								"popularity": 97702,
+								"startDate": {
+									"year": 2020
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 3167,
+								"title": {
+									"userPreferred": "Eve no Jikan: Are you enjoying the time of EVE?"
+								},
+								"format": "ONA",
+								"episodes": 6,
+								"nextAiringEpisode": null,
+								"duration": 19,
+								"averageScore": 78,
+								"popularity": 27598,
+								"startDate": {
+									"year": 2008
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 514,
+								"title": {
+									"userPreferred": "Cossette no Shouzou"
+								},
+								"format": "OVA",
+								"episodes": 3,
+								"nextAiringEpisode": null,
+								"duration": 36,
+								"averageScore": 64,
+								"popularity": 12048,
+								"startDate": {
+									"year": 2004
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 849,
+								"title": {
+									"userPreferred": "Suzumiya Haruhi no Yuuutsu"
+								},
+								"format": "TV",
+								"episodes": 14,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 76,
+								"popularity": 130984,
+								"startDate": {
+									"year": 2006
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 6211,
+								"title": {
+									"userPreferred": "Tokyo Magnitude 8.0"
+								},
+								"format": "TV",
+								"episodes": 11,
+								"nextAiringEpisode": null,
+								"duration": 22,
+								"averageScore": 77,
+								"popularity": 52672,
+								"startDate": {
+									"year": 2009
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 100388,
+								"title": {
+									"userPreferred": "BANANA FISH"
+								},
+								"format": "TV",
+								"episodes": 24,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 84,
+								"popularity": 206593,
+								"startDate": {
+									"year": 2018
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 114,
+								"title": {
+									"userPreferred": "Sakigake!! Cromartie Koukou"
+								},
+								"format": "TV_SHORT",
+								"episodes": 26,
+								"nextAiringEpisode": null,
+								"duration": 12,
+								"averageScore": 75,
+								"popularity": 23344,
+								"startDate": {
+									"year": 2003
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 2012,
+								"title": {
+									"userPreferred": "Jigoku Sensei Nube"
+								},
+								"format": "TV",
+								"episodes": 49,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 69,
+								"popularity": 3405,
+								"startDate": {
+									"year": 1996
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 3616,
+								"title": {
+									"userPreferred": "Kamen no Maid Guy"
+								},
+								"format": "TV",
+								"episodes": 12,
+								"nextAiringEpisode": null,
+								"duration": 25,
+								"averageScore": 63,
+								"popularity": 4914,
+								"startDate": {
+									"year": 2008
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 101972,
+								"title": {
+									"userPreferred": "Modao Zushi"
+								},
+								"format": "ONA",
+								"episodes": 15,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 82,
+								"popularity": 42269,
+								"startDate": {
+									"year": 2018
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 17909,
+								"title": {
+									"userPreferred": "Uchouten Kazoku"
+								},
+								"format": "TV",
+								"episodes": 13,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 77,
+								"popularity": 35558,
+								"startDate": {
+									"year": 2013
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 2593,
+								"title": {
+									"userPreferred": "Kara no Kyoukai: Fukan Fuukei"
+								},
+								"format": "MOVIE",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 50,
+								"averageScore": 73,
+								"popularity": 74482,
+								"startDate": {
+									"year": 2007
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 2104,
+								"title": {
+									"userPreferred": "Seto no Hanayome"
+								},
+								"format": "TV",
+								"episodes": 26,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 73,
+								"popularity": 41516,
+								"startDate": {
+									"year": 2007
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 7588,
+								"title": {
+									"userPreferred": "Saraiya Goyou"
+								},
+								"format": "TV",
+								"episodes": 12,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 75,
+								"popularity": 17819,
+								"startDate": {
+									"year": 2010
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 1351,
+								"title": {
+									"userPreferred": "Angel Cop"
+								},
+								"format": "OVA",
+								"episodes": 6,
+								"nextAiringEpisode": null,
+								"duration": 30,
+								"averageScore": 52,
+								"popularity": 4038,
+								"startDate": {
+									"year": 1989
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 3448,
+								"title": {
+									"userPreferred": "Mad★Bull 34"
+								},
+								"format": "OVA",
+								"episodes": 4,
+								"nextAiringEpisode": null,
+								"duration": 45,
+								"averageScore": 57,
+								"popularity": 2408,
+								"startDate": {
+									"year": 1990
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 101348,
+								"title": {
+									"userPreferred": "Vinland Saga"
+								},
+								"format": "TV",
+								"episodes": 24,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 87,
+								"popularity": 262435,
+								"startDate": {
+									"year": 2019
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 3220,
+								"title": {
+									"userPreferred": "Kanashimi no Belladonna"
+								},
+								"format": "MOVIE",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 89,
+								"averageScore": 70,
+								"popularity": 12302,
+								"startDate": {
+									"year": 1973
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 2618,
+								"title": {
+									"userPreferred": "Takarajima"
+								},
+								"format": "TV",
+								"episodes": 26,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 74,
+								"popularity": 4654,
+								"startDate": {
+									"year": 1978
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 861,
+								"title": {
+									"userPreferred": "xxxHOLiC"
+								},
+								"format": "TV",
+								"episodes": 24,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 76,
+								"popularity": 42115,
+								"startDate": {
+									"year": 2006
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 20521,
+								"title": {
+									"userPreferred": "Hamatora THE ANIMATION"
+								},
+								"format": "TV",
+								"episodes": 12,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 68,
+								"popularity": 46634,
+								"startDate": {
+									"year": 2014
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 7900,
+								"title": {
+									"userPreferred": "Super Kid"
+								},
+								"format": "MOVIE",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 101,
+								"averageScore": 23,
+								"popularity": 436,
+								"startDate": {
+									"year": 1994
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 1293,
+								"title": {
+									"userPreferred": "Urusei Yatsura"
+								},
+								"format": "TV",
+								"episodes": 195,
+								"nextAiringEpisode": null,
+								"duration": 25,
+								"averageScore": 72,
+								"popularity": 18001,
+								"startDate": {
+									"year": 1981
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 10216,
+								"title": {
+									"userPreferred": "Yondemasu yo, Azazel-san. (TV)"
+								},
+								"format": "TV_SHORT",
+								"episodes": 13,
+								"nextAiringEpisode": null,
+								"duration": 12,
+								"averageScore": 72,
+								"popularity": 10709,
+								"startDate": {
+									"year": 2011
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 101261,
+								"title": {
+									"userPreferred": "Sarazanmai"
+								},
+								"format": "TV",
+								"episodes": 11,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 73,
+								"popularity": 37521,
+								"startDate": {
+									"year": 2019
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 67,
+								"title": {
+									"userPreferred": "Basilisk: Kouga Ninpouchou"
+								},
+								"format": "TV",
+								"episodes": 24,
+								"nextAiringEpisode": null,
+								"duration": 25,
+								"averageScore": 71,
+								"popularity": 20315,
+								"startDate": {
+									"year": 2005
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 2216,
+								"title": {
+									"userPreferred": "Shigurui"
+								},
+								"format": "TV",
+								"episodes": 12,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 68,
+								"popularity": 17596,
+								"startDate": {
+									"year": 2007
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 7193,
+								"title": {
+									"userPreferred": "Aoi Bungaku Series"
+								},
+								"format": "TV",
+								"episodes": 12,
+								"nextAiringEpisode": null,
+								"duration": 22,
+								"averageScore": 73,
+								"popularity": 34530,
+								"startDate": {
+									"year": 2009
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 1453,
+								"title": {
+									"userPreferred": "Maison Ikkoku"
+								},
+								"format": "TV",
+								"episodes": 96,
+								"nextAiringEpisode": null,
+								"duration": 25,
+								"averageScore": 77,
+								"popularity": 15134,
+								"startDate": {
+									"year": 1986
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 168,
+								"title": {
+									"userPreferred": "Scryed"
+								},
+								"format": "TV",
+								"episodes": 26,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 69,
+								"popularity": 10093,
+								"startDate": {
+									"year": 2001
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 2246,
+								"title": {
+									"userPreferred": "Mononoke"
+								},
+								"format": "TV",
+								"episodes": 12,
+								"nextAiringEpisode": null,
+								"duration": 22,
+								"averageScore": 82,
+								"popularity": 55265,
+								"startDate": {
+									"year": 2007
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 7592,
+								"title": {
+									"userPreferred": "Nurarihyon no Mago"
+								},
+								"format": "TV",
+								"episodes": 24,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 73,
+								"popularity": 33601,
+								"startDate": {
+									"year": 2010
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 135,
+								"title": {
+									"userPreferred": "Hikaru no Go"
+								},
+								"format": "TV",
+								"episodes": 75,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 78,
+								"popularity": 17612,
+								"startDate": {
+									"year": 2001
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 108617,
+								"title": {
+									"userPreferred": "Somali to Mori no Kamisama"
+								},
+								"format": "TV",
+								"episodes": 12,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 76,
+								"popularity": 64875,
+								"startDate": {
+									"year": 2020
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 4177,
+								"title": {
+									"userPreferred": "Bounen no Xamdou"
+								},
+								"format": "ONA",
+								"episodes": 26,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 73,
+								"popularity": 19710,
+								"startDate": {
+									"year": 2008
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 322,
+								"title": {
+									"userPreferred": "Paradise Kiss"
+								},
+								"format": "TV",
+								"episodes": 12,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 77,
+								"popularity": 33394,
+								"startDate": {
+									"year": 2005
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 60,
+								"title": {
+									"userPreferred": "Chrno Crusade"
+								},
+								"format": "TV",
+								"episodes": 24,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 71,
+								"popularity": 22210,
+								"startDate": {
+									"year": 2003
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 5941,
+								"title": {
+									"userPreferred": "Cross Game"
+								},
+								"format": "TV",
+								"episodes": 50,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 81,
+								"popularity": 20589,
+								"startDate": {
+									"year": 2009
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 2559,
+								"title": {
+									"userPreferred": "Romeo no Aoi Sora"
+								},
+								"format": "TV",
+								"episodes": 33,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 79,
+								"popularity": 8930,
+								"startDate": {
+									"year": 1995
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 586,
+								"title": {
+									"userPreferred": "Ayakashi: Japanese Classic Horror"
+								},
+								"format": "TV",
+								"episodes": 11,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 68,
+								"popularity": 11061,
+								"startDate": {
+									"year": 2006
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 228,
+								"title": {
+									"userPreferred": "Jigoku Shoujo"
+								},
+								"format": "TV",
+								"episodes": 26,
+								"nextAiringEpisode": null,
+								"duration": 25,
+								"averageScore": 71,
+								"popularity": 50390,
+								"startDate": {
+									"year": 2005
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 2985,
+								"title": {
+									"userPreferred": "Majin Tantei Nougami Neuro"
+								},
+								"format": "TV",
+								"episodes": 25,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 70,
+								"popularity": 8217,
+								"startDate": {
+									"year": 2007
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 1288,
+								"title": {
+									"userPreferred": "Kidou Keisatsu Patlabor"
+								},
+								"format": "OVA",
+								"episodes": 7,
+								"nextAiringEpisode": null,
+								"duration": 30,
+								"averageScore": 70,
+								"popularity": 10346,
+								"startDate": {
+									"year": 1988
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 7674,
+								"title": {
+									"userPreferred": "Bakuman."
+								},
+								"format": "TV",
+								"episodes": 25,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 79,
+								"popularity": 83742,
+								"startDate": {
+									"year": 2010
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 237,
+								"title": {
+									"userPreferred": "Koukyoushihen Eureka Seven"
+								},
+								"format": "TV",
+								"episodes": 50,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 77,
+								"popularity": 58547,
+								"startDate": {
+									"year": 2005
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 5593,
+								"title": {
+									"userPreferred": "Dogs: Bullets & Carnage"
+								},
+								"format": "OVA",
+								"episodes": 4,
+								"nextAiringEpisode": null,
+								"duration": 15,
+								"averageScore": 67,
+								"popularity": 6417,
+								"startDate": {
+									"year": 2009
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 1661,
+								"title": {
+									"userPreferred": "Cutey Honey"
+								},
+								"format": "TV",
+								"episodes": 25,
+								"nextAiringEpisode": null,
+								"duration": 25,
+								"averageScore": 58,
+								"popularity": 4250,
+								"startDate": {
+									"year": 1973
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 12477,
+								"title": {
+									"userPreferred": "Sakasama no Patema"
+								},
+								"format": "MOVIE",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 99,
+								"averageScore": 77,
+								"popularity": 52053,
+								"startDate": {
+									"year": 2013
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 129,
+								"title": {
+									"userPreferred": "Gensou Maden Saiyuuki"
+								},
+								"format": "TV",
+								"episodes": 50,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 69,
+								"popularity": 6949,
+								"startDate": {
+									"year": 2000
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 2775,
+								"title": {
+									"userPreferred": "Genocyber"
+								},
+								"format": "OVA",
+								"episodes": 5,
+								"nextAiringEpisode": null,
+								"duration": 29,
+								"averageScore": 51,
+								"popularity": 6284,
+								"startDate": {
+									"year": 1994
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 20981,
+								"title": {
+									"userPreferred": "Bakemono no Ko"
+								},
+								"format": "MOVIE",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 118,
+								"averageScore": 80,
+								"popularity": 72547,
+								"startDate": {
+									"year": 2015
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 1760,
+								"title": {
+									"userPreferred": "Golgo 13"
+								},
+								"format": "MOVIE",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 90,
+								"averageScore": 65,
+								"popularity": 4062,
+								"startDate": {
+									"year": 1983
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 19775,
+								"title": {
+									"userPreferred": "Sidonia no Kishi"
+								},
+								"format": "TV",
+								"episodes": 12,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 73,
+								"popularity": 33460,
+								"startDate": {
+									"year": 2014
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 3001,
+								"title": {
+									"userPreferred": "Moyashimon"
+								},
+								"format": "TV",
+								"episodes": 11,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 72,
+								"popularity": 11325,
+								"startDate": {
+									"year": 2007
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 2017,
+								"title": {
+									"userPreferred": "Ningyo no Kizu"
+								},
+								"format": "OVA",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 45,
+								"averageScore": 60,
+								"popularity": 1687,
+								"startDate": {
+									"year": 1993
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 1577,
+								"title": {
+									"userPreferred": "Taiho Shichauzo"
+								},
+								"format": "OVA",
+								"episodes": 4,
+								"nextAiringEpisode": null,
+								"duration": 30,
+								"averageScore": 72,
+								"popularity": 6306,
+								"startDate": {
+									"year": 1994
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 3889,
+								"title": {
+									"userPreferred": "Junk Boy"
+								},
+								"format": "OVA",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 45,
+								"averageScore": 51,
+								"popularity": 1906,
+								"startDate": {
+									"year": 1987
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 5251,
+								"title": {
+									"userPreferred": "Angel Densetsu"
+								},
+								"format": "OVA",
+								"episodes": 2,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 71,
+								"popularity": 6764,
+								"startDate": {
+									"year": 1996
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 539,
+								"title": {
+									"userPreferred": "Tenchi Muyou! Ryououki Dai 1-ki"
+								},
+								"format": "OVA",
+								"episodes": 6,
+								"nextAiringEpisode": null,
+								"duration": 29,
+								"averageScore": 72,
+								"popularity": 7034,
+								"startDate": {
+									"year": 1992
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 856,
+								"title": {
+									"userPreferred": "Utawarerumono"
+								},
+								"format": "TV",
+								"episodes": 26,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 73,
+								"popularity": 22918,
+								"startDate": {
+									"year": 2006
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 98425,
+								"title": {
+									"userPreferred": "Ani ni Tsukeru Kusuri wa Nai!"
+								},
+								"format": "ONA",
+								"episodes": 12,
+								"nextAiringEpisode": null,
+								"duration": 4,
+								"averageScore": 72,
+								"popularity": 20491,
+								"startDate": {
+									"year": 2017
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 218,
+								"title": {
+									"userPreferred": "Kidou Senkan Nadesico"
+								},
+								"format": "TV",
+								"episodes": 26,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 72,
+								"popularity": 9933,
+								"startDate": {
+									"year": 1996
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 110350,
+								"title": {
+									"userPreferred": "ID: INVADED"
+								},
+								"format": "TV",
+								"episodes": 13,
+								"nextAiringEpisode": null,
+								"duration": 25,
+								"averageScore": 77,
+								"popularity": 76603,
+								"startDate": {
+									"year": 2020
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 1462,
+								"title": {
+									"userPreferred": "MEMORIES"
+								},
+								"format": "MOVIE",
+								"episodes": 3,
+								"nextAiringEpisode": null,
+								"duration": 37,
+								"averageScore": 75,
+								"popularity": 24390,
+								"startDate": {
+									"year": 1995
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 411,
+								"title": {
+									"userPreferred": "Gun x Sword"
+								},
+								"format": "TV",
+								"episodes": 26,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 69,
+								"popularity": 9229,
+								"startDate": {
+									"year": 2005
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 3907,
+								"title": {
+									"userPreferred": "Ginga Sengoku Gunyuuden Rai"
+								},
+								"format": "TV",
+								"episodes": 52,
+								"nextAiringEpisode": null,
+								"duration": 20,
+								"averageScore": 71,
+								"popularity": 2373,
+								"startDate": {
+									"year": 1994
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 9996,
+								"title": {
+									"userPreferred": "Heugemono"
+								},
+								"format": "TV",
+								"episodes": 39,
+								"nextAiringEpisode": null,
+								"duration": 25,
+								"averageScore": 76,
+								"popularity": 7279,
+								"startDate": {
+									"year": 2011
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 28,
+								"title": {
+									"userPreferred": "Yakitate!! Japan"
+								},
+								"format": "TV",
+								"episodes": 69,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 75,
+								"popularity": 13314,
+								"startDate": {
+									"year": 2004
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 2321,
+								"title": {
+									"userPreferred": "Giant Robo THE ANIMATION: Chikyuu ga Seishi Suru Hi"
+								},
+								"format": "OVA",
+								"episodes": 7,
+								"nextAiringEpisode": null,
+								"duration": 49,
+								"averageScore": 75,
+								"popularity": 6906,
+								"startDate": {
+									"year": 1992
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 2076,
+								"title": {
+									"userPreferred": "Kindaichi Shounen no Jikenbo (TV)"
+								},
+								"format": "TV",
+								"episodes": 148,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 73,
+								"popularity": 4835,
+								"startDate": {
+									"year": 1997
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 582,
+								"title": {
+									"userPreferred": "Sexy Commando Gaiden: Sugoiyo!! Masaru-san"
+								},
+								"format": "TV_SHORT",
+								"episodes": 48,
+								"nextAiringEpisode": null,
+								"duration": 8,
+								"averageScore": 68,
+								"popularity": 2399,
+								"startDate": {
+									"year": 1998
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 20717,
+								"title": {
+									"userPreferred": "Nobunaga Concerto"
+								},
+								"format": "TV",
+								"episodes": 10,
+								"nextAiringEpisode": null,
+								"duration": 22,
+								"averageScore": 71,
+								"popularity": 10322,
+								"startDate": {
+									"year": 2014
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 2582,
+								"title": {
+									"userPreferred": "Soukou Kihei Votoms"
+								},
+								"format": "TV",
+								"episodes": 52,
+								"nextAiringEpisode": null,
+								"duration": 25,
+								"averageScore": 74,
+								"popularity": 6238,
+								"startDate": {
+									"year": 1983
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 5226,
+								"title": {
+									"userPreferred": "Souten Kouro"
+								},
+								"format": "TV",
+								"episodes": 26,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 65,
+								"popularity": 2893,
+								"startDate": {
+									"year": 2009
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 3077,
+								"title": {
+									"userPreferred": "Warau Salesman"
+								},
+								"format": "TV_SHORT",
+								"episodes": 104,
+								"nextAiringEpisode": null,
+								"duration": 10,
+								"averageScore": 60,
+								"popularity": 1577,
+								"startDate": {
+									"year": 1989
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 6229,
+								"title": {
+									"userPreferred": "Konpeki no Kantai"
+								},
+								"format": "OVA",
+								"episodes": 32,
+								"nextAiringEpisode": null,
+								"duration": 40,
+								"averageScore": 52,
+								"popularity": 704,
+								"startDate": {
+									"year": 1993
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 210,
+								"title": {
+									"userPreferred": "Ranma 1/2"
+								},
+								"format": "TV",
+								"episodes": 18,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 74,
+								"popularity": 32307,
+								"startDate": {
+									"year": 1989
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 116673,
+								"title": {
+									"userPreferred": "BURN THE WITCH"
+								},
+								"format": "ONA",
+								"episodes": 3,
+								"nextAiringEpisode": null,
+								"duration": 21,
+								"averageScore": 70,
+								"popularity": 59959,
+								"startDate": {
+									"year": 2020
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 2780,
+								"title": {
+									"userPreferred": "Kyoufu no Bio Ningen Saishuu Kyoushi"
+								},
+								"format": "OVA",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 56,
+								"averageScore": 49,
+								"popularity": 1000,
+								"startDate": {
+									"year": 1988
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 10161,
+								"title": {
+									"userPreferred": "NO.6"
+								},
+								"format": "TV",
+								"episodes": 11,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 73,
+								"popularity": 73835,
+								"startDate": {
+									"year": 2011
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 2516,
+								"title": {
+									"userPreferred": "Uchuu no Senshi"
+								},
+								"format": "OVA",
+								"episodes": 6,
+								"nextAiringEpisode": null,
+								"duration": 25,
+								"averageScore": 56,
+								"popularity": 1429,
+								"startDate": {
+									"year": 1988
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 107663,
+								"title": {
+									"userPreferred": "Kanata no Astra"
+								},
+								"format": "TV",
+								"episodes": 12,
+								"nextAiringEpisode": null,
+								"duration": 28,
+								"averageScore": 78,
+								"popularity": 64910,
+								"startDate": {
+									"year": 2019
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 24,
+								"title": {
+									"userPreferred": "School Rumble"
+								},
+								"format": "TV",
+								"episodes": 26,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 75,
+								"popularity": 39962,
+								"startDate": {
+									"year": 2004
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 1690,
+								"title": {
+									"userPreferred": "Bokurano"
+								},
+								"format": "TV",
+								"episodes": 24,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 72,
+								"popularity": 31754,
+								"startDate": {
+									"year": 2007
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 3913,
+								"title": {
+									"userPreferred": "Onikirimaru"
+								},
+								"format": "OVA",
+								"episodes": 4,
+								"nextAiringEpisode": null,
+								"duration": 29,
+								"averageScore": 52,
+								"popularity": 605,
+								"startDate": {
+									"year": 1994
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 16802,
+								"title": {
+									"userPreferred": "Golden Batman"
+								},
+								"format": "MOVIE",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 70,
+								"averageScore": 34,
+								"popularity": 325,
+								"startDate": {
+									"year": 1979
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 240,
+								"title": {
+									"userPreferred": "Genshiken"
+								},
+								"format": "TV",
+								"episodes": 12,
+								"nextAiringEpisode": null,
+								"duration": 25,
+								"averageScore": 73,
+								"popularity": 26387,
+								"startDate": {
+									"year": 2004
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 3306,
+								"title": {
+									"userPreferred": "Aoki Honoo"
+								},
+								"format": "OVA",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 49,
+								"averageScore": 37,
+								"popularity": 1066,
+								"startDate": {
+									"year": 1989
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 16778,
+								"title": {
+									"userPreferred": "Gold Pencil And Alien Boy"
+								},
+								"format": "MOVIE",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 90,
+								"averageScore": null,
+								"popularity": 133,
+								"startDate": {
+									"year": 1983
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 16780,
+								"title": {
+									"userPreferred": "One Million Year Dinosaur Dddli"
+								},
+								"format": "MOVIE",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 75,
+								"averageScore": null,
+								"popularity": 89,
+								"startDate": {
+									"year": 1981
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 4481,
+								"title": {
+									"userPreferred": "Saiyuuki"
+								},
+								"format": "MOVIE",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 88,
+								"averageScore": 53,
+								"popularity": 939,
+								"startDate": {
+									"year": 1960
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 100356,
+								"title": {
+									"userPreferred": "MUTAFUKAZ"
+								},
+								"format": "MOVIE",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 90,
+								"averageScore": 68,
+								"popularity": 5805,
+								"startDate": {
+									"year": 2017
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 1287,
+								"title": {
+									"userPreferred": "Odin: Koushi Hansen Starlight"
+								},
+								"format": "MOVIE",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 139,
+								"averageScore": 42,
+								"popularity": 760,
+								"startDate": {
+									"year": 1985
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 1606,
+								"title": {
+									"userPreferred": "Kekkaishi"
+								},
+								"format": "TV",
+								"episodes": 52,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 71,
+								"popularity": 12448,
+								"startDate": {
+									"year": 2006
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 2400,
+								"title": {
+									"userPreferred": "Ghost Sweeper Mikami"
+								},
+								"format": "TV",
+								"episodes": 45,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 66,
+								"popularity": 2423,
+								"startDate": {
+									"year": 1993
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 1087,
+								"title": {
+									"userPreferred": "Kimagure Orange☆Road"
+								},
+								"format": "TV",
+								"episodes": 48,
+								"nextAiringEpisode": null,
+								"duration": 25,
+								"averageScore": 70,
+								"popularity": 10145,
+								"startDate": {
+									"year": 1987
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 345,
+								"title": {
+									"userPreferred": "Eikoku Koi Monogatari Emma"
+								},
+								"format": "TV",
+								"episodes": 12,
+								"nextAiringEpisode": null,
+								"duration": 25,
+								"averageScore": 73,
+								"popularity": 9289,
+								"startDate": {
+									"year": 2005
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 1153,
+								"title": {
+									"userPreferred": "Crying Freeman"
+								},
+								"format": "OVA",
+								"episodes": 6,
+								"nextAiringEpisode": null,
+								"duration": 52,
+								"averageScore": 56,
+								"popularity": 2086,
+								"startDate": {
+									"year": 1988
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 238,
+								"title": {
+									"userPreferred": "Rekka no Honoo"
+								},
+								"format": "TV",
+								"episodes": 42,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 68,
+								"popularity": 7966,
+								"startDate": {
+									"year": 1997
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 3787,
+								"title": {
+									"userPreferred": "The Supergal"
+								},
+								"format": "OVA",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 48,
+								"averageScore": 55,
+								"popularity": 1249,
+								"startDate": {
+									"year": 1986
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 432,
+								"title": {
+									"userPreferred": "I Я I A ZЁIЯAM THE ANIMATION"
+								},
+								"format": "OVA",
+								"episodes": 6,
+								"nextAiringEpisode": null,
+								"duration": 27,
+								"averageScore": 65,
+								"popularity": 4689,
+								"startDate": {
+									"year": 1994
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 5597,
+								"title": {
+									"userPreferred": "Natsu no Arashi!"
+								},
+								"format": "TV",
+								"episodes": 13,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 68,
+								"popularity": 8822,
+								"startDate": {
+									"year": 2009
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 4581,
+								"title": {
+									"userPreferred": "Shikabane Hime: Aka"
+								},
+								"format": "TV",
+								"episodes": 13,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 67,
+								"popularity": 16869,
+								"startDate": {
+									"year": 2008
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 3086,
+								"title": {
+									"userPreferred": "Strait Jacket"
+								},
+								"format": "OVA",
+								"episodes": 3,
+								"nextAiringEpisode": null,
+								"duration": 26,
+								"averageScore": 62,
+								"popularity": 3211,
+								"startDate": {
+									"year": 2007
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 1261,
+								"title": {
+									"userPreferred": "Cat Ninden Teyandee"
+								},
+								"format": "TV",
+								"episodes": 54,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 62,
+								"popularity": 2059,
+								"startDate": {
+									"year": 1990
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 2169,
+								"title": {
+									"userPreferred": "Ice"
+								},
+								"format": "OVA",
+								"episodes": 3,
+								"nextAiringEpisode": null,
+								"duration": 37,
+								"averageScore": 43,
+								"popularity": 1382,
+								"startDate": {
+									"year": 2007
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 1352,
+								"title": {
+									"userPreferred": "Cyber City OEDO 808"
+								},
+								"format": "OVA",
+								"episodes": 3,
+								"nextAiringEpisode": null,
+								"duration": 43,
+								"averageScore": 68,
+								"popularity": 5836,
+								"startDate": {
+									"year": 1990
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 719,
+								"title": {
+									"userPreferred": "Ai no Kusabi"
+								},
+								"format": "OVA",
+								"episodes": 2,
+								"nextAiringEpisode": null,
+								"duration": 54,
+								"averageScore": 61,
+								"popularity": 4050,
+								"startDate": {
+									"year": 1992
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 455,
+								"title": {
+									"userPreferred": "Fantastic Children"
+								},
+								"format": "TV",
+								"episodes": 26,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 71,
+								"popularity": 6261,
+								"startDate": {
+									"year": 2004
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 1483,
+								"title": {
+									"userPreferred": "MASTER Keaton"
+								},
+								"format": "TV",
+								"episodes": 24,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 72,
+								"popularity": 5859,
+								"startDate": {
+									"year": 1998
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 890,
+								"title": {
+									"userPreferred": "Yuusha-Ou GaoGaiGar"
+								},
+								"format": "TV",
+								"episodes": 49,
+								"nextAiringEpisode": null,
+								"duration": 25,
+								"averageScore": 74,
+								"popularity": 5117,
+								"startDate": {
+									"year": 1997
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 107871,
+								"title": {
+									"userPreferred": "Princess Connect! Re:Dive"
+								},
+								"format": "TV",
+								"episodes": 13,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 70,
+								"popularity": 59189,
+								"startDate": {
+									"year": 2020
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 208,
+								"title": {
+									"userPreferred": "R.O.D -READ OR DIE-"
+								},
+								"format": "OVA",
+								"episodes": 3,
+								"nextAiringEpisode": null,
+								"duration": 33,
+								"averageScore": 72,
+								"popularity": 10332,
+								"startDate": {
+									"year": 2001
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 3332,
+								"title": {
+									"userPreferred": "Stop!! Hibari-kun!"
+								},
+								"format": "TV",
+								"episodes": 35,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 65,
+								"popularity": 2834,
+								"startDate": {
+									"year": 1983
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 11079,
+								"title": {
+									"userPreferred": "Kill Me Baby"
+								},
+								"format": "TV",
+								"episodes": 13,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 65,
+								"popularity": 21690,
+								"startDate": {
+									"year": 2012
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 424,
+								"title": {
+									"userPreferred": "Dirty Pair"
+								},
+								"format": "TV",
+								"episodes": 24,
+								"nextAiringEpisode": null,
+								"duration": 25,
+								"averageScore": 69,
+								"popularity": 7780,
+								"startDate": {
+									"year": 1985
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 253,
+								"title": {
+									"userPreferred": "Jungle wa Itsumo Hare nochi Guu"
+								},
+								"format": "TV",
+								"episodes": 26,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 71,
+								"popularity": 4740,
+								"startDate": {
+									"year": 2001
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 103,
+								"title": {
+									"userPreferred": "Akazukin Chacha"
+								},
+								"format": "TV",
+								"episodes": 74,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 66,
+								"popularity": 2454,
+								"startDate": {
+									"year": 1994
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 937,
+								"title": {
+									"userPreferred": "Appleseed"
+								},
+								"format": "OVA",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 68,
+								"averageScore": 58,
+								"popularity": 4723,
+								"startDate": {
+									"year": 1988
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 114888,
+								"title": {
+									"userPreferred": "Fugou Keiji: Balance:UNLIMITED"
+								},
+								"format": "TV",
+								"episodes": 11,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 75,
+								"popularity": 113986,
+								"startDate": {
+									"year": 2020
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 10294,
+								"title": {
+									"userPreferred": "Towa no Quon 1: Utakata no Kaben"
+								},
+								"format": "MOVIE",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 48,
+								"averageScore": 68,
+								"popularity": 13774,
+								"startDate": {
+									"year": 2011
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 8101,
+								"title": {
+									"userPreferred": "Hen Zemi"
+								},
+								"format": "OVA",
+								"episodes": 2,
+								"nextAiringEpisode": null,
+								"duration": 27,
+								"averageScore": 61,
+								"popularity": 5452,
+								"startDate": {
+									"year": 2010
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 242,
+								"title": {
+									"userPreferred": "Gokusen"
+								},
+								"format": "TV",
+								"episodes": 13,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 70,
+								"popularity": 6468,
+								"startDate": {
+									"year": 2004
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 20919,
+								"title": {
+									"userPreferred": "Gyakusatsu Kikan"
+								},
+								"format": "MOVIE",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 114,
+								"averageScore": 68,
+								"popularity": 9681,
+								"startDate": {
+									"year": 2017
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 2004,
+								"title": {
+									"userPreferred": "Hanada Shounen-shi"
+								},
+								"format": "TV",
+								"episodes": 25,
+								"nextAiringEpisode": null,
+								"duration": 25,
+								"averageScore": 72,
+								"popularity": 3135,
+								"startDate": {
+									"year": 2002
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 1034,
+								"title": {
+									"userPreferred": "Ouritsu Uchuugun: Honneamise no Tsubasa"
+								},
+								"format": "MOVIE",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 121,
+								"averageScore": 72,
+								"popularity": 9502,
+								"startDate": {
+									"year": 1987
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 2770,
+								"title": {
+									"userPreferred": "SF Shin Seiki Lensman"
+								},
+								"format": "MOVIE",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 107,
+								"averageScore": 51,
+								"popularity": 797,
+								"startDate": {
+									"year": 1984
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 5907,
+								"title": {
+									"userPreferred": "Mujigen Hunter Fandora"
+								},
+								"format": "OVA",
+								"episodes": 3,
+								"nextAiringEpisode": null,
+								"duration": 40,
+								"averageScore": 48,
+								"popularity": 841,
+								"startDate": {
+									"year": 1985
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 2311,
+								"title": {
+									"userPreferred": "Shounen Kenya"
+								},
+								"format": "MOVIE",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 109,
+								"averageScore": 42,
+								"popularity": 734,
+								"startDate": {
+									"year": 1984
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 1650,
+								"title": {
+									"userPreferred": "Uchuu Senkan Yamato"
+								},
+								"format": "TV",
+								"episodes": 26,
+								"nextAiringEpisode": null,
+								"duration": 25,
+								"averageScore": 70,
+								"popularity": 6011,
+								"startDate": {
+									"year": 1974
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 4639,
+								"title": {
+									"userPreferred": "Gosenzo-sama Banbanzai!"
+								},
+								"format": "OVA",
+								"episodes": 6,
+								"nextAiringEpisode": null,
+								"duration": 30,
+								"averageScore": 70,
+								"popularity": 3328,
+								"startDate": {
+									"year": 1989
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 2881,
+								"title": {
+									"userPreferred": "Chinmoku no Kantai"
+								},
+								"format": "OVA",
+								"episodes": 3,
+								"nextAiringEpisode": null,
+								"duration": 30,
+								"averageScore": 55,
+								"popularity": 623,
+								"startDate": {
+									"year": 1995
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 2094,
+								"title": {
+									"userPreferred": "Relic Armor LEGACIAM"
+								},
+								"format": "OVA",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 49,
+								"averageScore": 47,
+								"popularity": 705,
+								"startDate": {
+									"year": 1987
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 1940,
+								"title": {
+									"userPreferred": "Outlanders"
+								},
+								"format": "OVA",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 51,
+								"averageScore": 52,
+								"popularity": 1958,
+								"startDate": {
+									"year": 1986
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 2291,
+								"title": {
+									"userPreferred": "Tatakae!! Iczer-1"
+								},
+								"format": "OVA",
+								"episodes": 3,
+								"nextAiringEpisode": null,
+								"duration": 30,
+								"averageScore": 55,
+								"popularity": 2379,
+								"startDate": {
+									"year": 1985
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 12321,
+								"title": {
+									"userPreferred": "Thermae Romae"
+								},
+								"format": "TV",
+								"episodes": 3,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 66,
+								"popularity": 5551,
+								"startDate": {
+									"year": 2012
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 2078,
+								"title": {
+									"userPreferred": "Landlock"
+								},
+								"format": "OVA",
+								"episodes": 2,
+								"nextAiringEpisode": null,
+								"duration": 45,
+								"averageScore": 45,
+								"popularity": 595,
+								"startDate": {
+									"year": 1996
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 116566,
+								"title": {
+									"userPreferred": "Akudama Drive"
+								},
+								"format": "TV",
+								"episodes": 12,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 75,
+								"popularity": 98232,
+								"startDate": {
+									"year": 2020
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 1819,
+								"title": {
+									"userPreferred": "Daimajuu Gekitou Hagane no Oni"
+								},
+								"format": "OVA",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 56,
+								"averageScore": 47,
+								"popularity": 776,
+								"startDate": {
+									"year": 1987
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 125426,
+								"title": {
+									"userPreferred": "Gokushufudou"
+								},
+								"format": "ONA",
+								"episodes": 5,
+								"nextAiringEpisode": null,
+								"duration": 17,
+								"averageScore": 71,
+								"popularity": 90111,
+								"startDate": {
+									"year": 2021
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 114124,
+								"title": {
+									"userPreferred": "Yuukoku no Moriarty"
+								},
+								"format": "TV",
+								"episodes": 11,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 81,
+								"popularity": 87347,
+								"startDate": {
+									"year": 2020
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 128893,
+								"title": {
+									"userPreferred": "Jigokuraku"
+								},
+								"format": "TV",
+								"episodes": null,
+								"nextAiringEpisode": null,
+								"duration": null,
+								"averageScore": null,
+								"popularity": 22969,
+								"startDate": {
+									"year": null
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 16201,
+								"title": {
+									"userPreferred": "Aku no Hana"
+								},
+								"format": "TV",
+								"episodes": 13,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 67,
+								"popularity": 36856,
+								"startDate": {
+									"year": 2013
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 300,
+								"title": {
+									"userPreferred": "3x3 Eyes"
+								},
+								"format": "OVA",
+								"episodes": 4,
+								"nextAiringEpisode": null,
+								"duration": 30,
+								"averageScore": 61,
+								"popularity": 3968,
+								"startDate": {
+									"year": 1991
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 201,
+								"title": {
+									"userPreferred": "Denei Shoujo VIDEO GIRL AI"
+								},
+								"format": "OVA",
+								"episodes": 6,
+								"nextAiringEpisode": null,
+								"duration": 29,
+								"averageScore": 68,
+								"popularity": 5589,
+								"startDate": {
+									"year": 1992
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 21238,
+								"title": {
+									"userPreferred": "Anne Happy♪"
+								},
+								"format": "TV",
+								"episodes": 12,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 66,
+								"popularity": 16175,
+								"startDate": {
+									"year": 2016
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 123,
+								"title": {
+									"userPreferred": "Fushigi Yuugi"
+								},
+								"format": "TV",
+								"episodes": 52,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 71,
+								"popularity": 12882,
+								"startDate": {
+									"year": 1995
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 9499,
+								"title": {
+									"userPreferred": "Dokushin Apartment Dokudamisou"
+								},
+								"format": "OVA",
+								"episodes": 3,
+								"nextAiringEpisode": null,
+								"duration": 55,
+								"averageScore": 42,
+								"popularity": 449,
+								"startDate": {
+									"year": 1989
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 2697,
+								"title": {
+									"userPreferred": "Hi-Speed Jecy"
+								},
+								"format": "OVA",
+								"episodes": 12,
+								"nextAiringEpisode": null,
+								"duration": 30,
+								"averageScore": 47,
+								"popularity": 462,
+								"startDate": {
+									"year": 1989
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 407,
+								"title": {
+									"userPreferred": "Tantei Gakuen Q"
+								},
+								"format": "TV",
+								"episodes": 45,
+								"nextAiringEpisode": null,
+								"duration": 25,
+								"averageScore": 72,
+								"popularity": 4792,
+								"startDate": {
+									"year": 2003
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 21665,
+								"title": {
+									"userPreferred": "B: The Beginning"
+								},
+								"format": "ONA",
+								"episodes": 12,
+								"nextAiringEpisode": null,
+								"duration": 26,
+								"averageScore": 70,
+								"popularity": 70577,
+								"startDate": {
+									"year": 2018
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 1299,
+								"title": {
+									"userPreferred": "FLAG"
+								},
+								"format": "ONA",
+								"episodes": 13,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 67,
+								"popularity": 4867,
+								"startDate": {
+									"year": 2006
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 9000,
+								"title": {
+									"userPreferred": "Toaru Hikuushi e no Tsuioku"
+								},
+								"format": "MOVIE",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 99,
+								"averageScore": 73,
+								"popularity": 12768,
+								"startDate": {
+									"year": 2011
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 12445,
+								"title": {
+									"userPreferred": "Tasogare Otome x Amnesia"
+								},
+								"format": "TV",
+								"episodes": 12,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 74,
+								"popularity": 58161,
+								"startDate": {
+									"year": 2012
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 486,
+								"title": {
+									"userPreferred": "Kino no Tabi: the Beautiful World"
+								},
+								"format": "TV",
+								"episodes": 13,
+								"nextAiringEpisode": null,
+								"duration": 25,
+								"averageScore": 81,
+								"popularity": 55007,
+								"startDate": {
+									"year": 2003
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 101705,
+								"title": {
+									"userPreferred": "Chikyuugai Shounen Shoujo"
+								},
+								"format": "ONA",
+								"episodes": 6,
+								"nextAiringEpisode": null,
+								"duration": 32,
+								"averageScore": 68,
+								"popularity": 11335,
+								"startDate": {
+									"year": 2022
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 6504,
+								"title": {
+									"userPreferred": "Despera"
+								},
+								"format": "TV",
+								"episodes": null,
+								"nextAiringEpisode": null,
+								"duration": null,
+								"averageScore": null,
+								"popularity": 1536,
+								"startDate": {
+									"year": null
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 6809,
+								"title": {
+									"userPreferred": "Toshi Densetsu Monogatari Hikiko"
+								},
+								"format": "OVA",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 40,
+								"averageScore": 51,
+								"popularity": 908,
+								"startDate": {
+									"year": 2008
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 795,
+								"title": {
+									"userPreferred": "Onii-sama e..."
+								},
+								"format": "TV",
+								"episodes": 39,
+								"nextAiringEpisode": null,
+								"duration": 25,
+								"averageScore": 77,
+								"popularity": 12008,
+								"startDate": {
+									"year": 1991
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 98143,
+								"title": {
+									"userPreferred": "Thunderbolt Fantasy: Touriken Yuuki"
+								},
+								"format": "TV",
+								"episodes": 13,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 79,
+								"popularity": 3473,
+								"startDate": {
+									"year": 2016
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 709,
+								"title": {
+									"userPreferred": "Mujin Wakusei Survive"
+								},
+								"format": "TV",
+								"episodes": 52,
+								"nextAiringEpisode": null,
+								"duration": 25,
+								"averageScore": 73,
+								"popularity": 5814,
+								"startDate": {
+									"year": 2003
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 114441,
+								"title": {
+									"userPreferred": "Ane Naru Mono"
+								},
+								"format": "OVA",
+								"episodes": null,
+								"nextAiringEpisode": null,
+								"duration": null,
+								"averageScore": null,
+								"popularity": 4694,
+								"startDate": {
+									"year": null
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 272,
+								"title": {
+									"userPreferred": "Noir"
+								},
+								"format": "TV",
+								"episodes": 26,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 68,
+								"popularity": 15668,
+								"startDate": {
+									"year": 2001
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 5530,
+								"title": {
+									"userPreferred": "Pandora Hearts"
+								},
+								"format": "TV",
+								"episodes": 25,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 71,
+								"popularity": 50153,
+								"startDate": {
+									"year": 2009
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 120815,
+								"title": {
+									"userPreferred": "World End Economica"
+								},
+								"format": "TV",
+								"episodes": null,
+								"nextAiringEpisode": null,
+								"duration": null,
+								"averageScore": null,
+								"popularity": 1304,
+								"startDate": {
+									"year": null
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 129201,
+								"title": {
+									"userPreferred": "Summer Time Render"
+								},
+								"format": "TV",
+								"episodes": 25,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 83,
+								"popularity": 76977,
+								"startDate": {
+									"year": 2022
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 25,
+								"title": {
+									"userPreferred": "Sunabouzu"
+								},
+								"format": "TV",
+								"episodes": 24,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 68,
+								"popularity": 17875,
+								"startDate": {
+									"year": 2004
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 21643,
+								"title": {
+									"userPreferred": "Fukigen na Mononokean"
+								},
+								"format": "TV",
+								"episodes": 13,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 71,
+								"popularity": 20319,
+								"startDate": {
+									"year": 2016
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 1827,
+								"title": {
+									"userPreferred": "Seirei no Moribito"
+								},
+								"format": "TV",
+								"episodes": 26,
+								"nextAiringEpisode": null,
+								"duration": 25,
+								"averageScore": 79,
+								"popularity": 29219,
+								"startDate": {
+									"year": 2007
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 105334,
+								"title": {
+									"userPreferred": "Fruits Basket: 1st Season"
+								},
+								"format": "TV",
+								"episodes": 25,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 82,
+								"popularity": 185809,
+								"startDate": {
+									"year": 2019
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 126403,
+								"title": {
+									"userPreferred": "Shiguang Dailiren"
+								},
+								"format": "ONA",
+								"episodes": 11,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 87,
+								"popularity": 61731,
+								"startDate": {
+									"year": 2021
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 2026,
+								"title": {
+									"userPreferred": "Hayate no Gotoku!"
+								},
+								"format": "TV",
+								"episodes": 52,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 72,
+								"popularity": 28653,
+								"startDate": {
+									"year": 2007
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 400,
+								"title": {
+									"userPreferred": "Seihou Bukyou Outlaw Star"
+								},
+								"format": "TV",
+								"episodes": 24,
+								"nextAiringEpisode": null,
+								"duration": 25,
+								"averageScore": 74,
+								"popularity": 21678,
+								"startDate": {
+									"year": 1998
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 3363,
+								"title": {
+									"userPreferred": "RD Sennou Chousashitsu"
+								},
+								"format": "TV",
+								"episodes": 26,
+								"nextAiringEpisode": null,
+								"duration": 22,
+								"averageScore": 64,
+								"popularity": 4385,
+								"startDate": {
+									"year": 2008
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 99088,
+								"title": {
+									"userPreferred": "PLUTO"
+								},
+								"format": "TV",
+								"episodes": 8,
+								"nextAiringEpisode": null,
+								"duration": null,
+								"averageScore": null,
+								"popularity": 5029,
+								"startDate": {
+									"year": null
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 15,
+								"title": {
+									"userPreferred": "Eyeshield 21"
+								},
+								"format": "TV",
+								"episodes": 145,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 75,
+								"popularity": 22520,
+								"startDate": {
+									"year": 2005
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 1559,
+								"title": {
+									"userPreferred": "Shijou Saikyou no Deshi Kenichi"
+								},
+								"format": "TV",
+								"episodes": 50,
+								"nextAiringEpisode": null,
+								"duration": 25,
+								"averageScore": 77,
+								"popularity": 32685,
+								"startDate": {
+									"year": 2006
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 101573,
+								"title": {
+									"userPreferred": "Yagate Kimi ni Naru"
+								},
+								"format": "TV",
+								"episodes": 13,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 78,
+								"popularity": 85220,
+								"startDate": {
+									"year": 2018
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 167,
+								"title": {
+									"userPreferred": "Scrapped Princess"
+								},
+								"format": "TV",
+								"episodes": 24,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 70,
+								"popularity": 12117,
+								"startDate": {
+									"year": 2003
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 4484,
+								"title": {
+									"userPreferred": "Umi no Yami, Tsuki no Kage"
+								},
+								"format": "OVA",
+								"episodes": 3,
+								"nextAiringEpisode": null,
+								"duration": 30,
+								"averageScore": 48,
+								"popularity": 669,
+								"startDate": {
+									"year": 1989
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 2030,
+								"title": {
+									"userPreferred": "El Cazador"
+								},
+								"format": "TV",
+								"episodes": 26,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 67,
+								"popularity": 8465,
+								"startDate": {
+									"year": 2007
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 5112,
+								"title": {
+									"userPreferred": "Akikan!"
+								},
+								"format": "TV",
+								"episodes": 12,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 55,
+								"popularity": 14393,
+								"startDate": {
+									"year": 2009
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 20815,
+								"title": {
+									"userPreferred": "Rolling☆Girls"
+								},
+								"format": "TV",
+								"episodes": 12,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 63,
+								"popularity": 20125,
+								"startDate": {
+									"year": 2015
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 877,
+								"title": {
+									"userPreferred": "NANA"
+								},
+								"format": "TV",
+								"episodes": 47,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 84,
+								"popularity": 105612,
+								"startDate": {
+									"year": 2006
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 290,
+								"title": {
+									"userPreferred": "Seikai no Monshou"
+								},
+								"format": "TV",
+								"episodes": 13,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 72,
+								"popularity": 9867,
+								"startDate": {
+									"year": 1999
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 2158,
+								"title": {
+									"userPreferred": "Terra e... (TV)"
+								},
+								"format": "TV",
+								"episodes": 24,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 75,
+								"popularity": 10097,
+								"startDate": {
+									"year": 2007
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 13441,
+								"title": {
+									"userPreferred": "Shiawasette Naani"
+								},
+								"format": "OVA",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 15,
+								"averageScore": 44,
+								"popularity": 574,
+								"startDate": {
+									"year": 1991
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 18689,
+								"title": {
+									"userPreferred": "Diamond no Ace"
+								},
+								"format": "TV",
+								"episodes": 75,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 79,
+								"popularity": 43782,
+								"startDate": {
+									"year": 2013
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 221,
+								"title": {
+									"userPreferred": "Mezzo Forte"
+								},
+								"format": "OVA",
+								"episodes": 2,
+								"nextAiringEpisode": null,
+								"duration": 31,
+								"averageScore": 62,
+								"popularity": 5002,
+								"startDate": {
+									"year": 2000
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 2679,
+								"title": {
+									"userPreferred": "Teki wa Kaizoku: Neko-tachi no Kyouen"
+								},
+								"format": "OVA",
+								"episodes": 6,
+								"nextAiringEpisode": null,
+								"duration": 30,
+								"averageScore": 48,
+								"popularity": 531,
+								"startDate": {
+									"year": 1990
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 128705,
+								"title": {
+									"userPreferred": "Blue Period"
+								},
+								"format": "ONA",
+								"episodes": 12,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 77,
+								"popularity": 86569,
+								"startDate": {
+									"year": 2021
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 103302,
+								"title": {
+									"userPreferred": "Kono Oto Tomare!"
+								},
+								"format": "TV",
+								"episodes": 13,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 77,
+								"popularity": 58760,
+								"startDate": {
+									"year": 2019
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 99483,
+								"title": {
+									"userPreferred": "Hakata Tonkotsu Ramens"
+								},
+								"format": "TV",
+								"episodes": 12,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 71,
+								"popularity": 30227,
+								"startDate": {
+									"year": 2018
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 21703,
+								"title": {
+									"userPreferred": "Fune wo Amu"
+								},
+								"format": "TV",
+								"episodes": 11,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 74,
+								"popularity": 25831,
+								"startDate": {
+									"year": 2016
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 12531,
+								"title": {
+									"userPreferred": "Sakamichi no Apollon"
+								},
+								"format": "TV",
+								"episodes": 12,
+								"nextAiringEpisode": null,
+								"duration": 22,
+								"averageScore": 80,
+								"popularity": 65497,
+								"startDate": {
+									"year": 2012
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 170,
+								"title": {
+									"userPreferred": "SLAM DUNK"
+								},
+								"format": "TV",
+								"episodes": 101,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 82,
+								"popularity": 40724,
+								"startDate": {
+									"year": 1993
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 13349,
+								"title": {
+									"userPreferred": "Chouyaku Hyakuninisshu: Uta Koi."
+								},
+								"format": "TV",
+								"episodes": 13,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 69,
+								"popularity": 5221,
+								"startDate": {
+									"year": 2012
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 117343,
+								"title": {
+									"userPreferred": "Munou na Nana"
+								},
+								"format": "TV",
+								"episodes": 13,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 71,
+								"popularity": 70503,
+								"startDate": {
+									"year": 2020
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 114340,
+								"title": {
+									"userPreferred": "Kuma Kuma Kuma Bear"
+								},
+								"format": "TV",
+								"episodes": 12,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 70,
+								"popularity": 31319,
+								"startDate": {
+									"year": 2020
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 1328,
+								"title": {
+									"userPreferred": "1-Pound no Fukuin"
+								},
+								"format": "OVA",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 50,
+								"averageScore": 59,
+								"popularity": 1490,
+								"startDate": {
+									"year": 1988
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 16,
+								"title": {
+									"userPreferred": "Hachimitsu to Clover"
+								},
+								"format": "TV",
+								"episodes": 24,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 76,
+								"popularity": 39941,
+								"startDate": {
+									"year": 2005
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 14713,
+								"title": {
+									"userPreferred": "Kamisama Hajimemashita"
+								},
+								"format": "TV",
+								"episodes": 13,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 79,
+								"popularity": 95770,
+								"startDate": {
+									"year": 2012
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 5984,
+								"title": {
+									"userPreferred": "Ristorante Paradiso"
+								},
+								"format": "TV",
+								"episodes": 11,
+								"nextAiringEpisode": null,
+								"duration": 22,
+								"averageScore": 69,
+								"popularity": 7929,
+								"startDate": {
+									"year": 2009
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 8129,
+								"title": {
+									"userPreferred": "Kuragehime"
+								},
+								"format": "TV",
+								"episodes": 11,
+								"nextAiringEpisode": null,
+								"duration": 22,
+								"averageScore": 78,
+								"popularity": 38200,
+								"startDate": {
+									"year": 2010
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 18139,
+								"title": {
+									"userPreferred": "Tonari no Seki-kun"
+								},
+								"format": "TV_SHORT",
+								"episodes": 21,
+								"nextAiringEpisode": null,
+								"duration": 8,
+								"averageScore": 73,
+								"popularity": 38402,
+								"startDate": {
+									"year": 2014
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 1972,
+								"title": {
+									"userPreferred": "Meitantei Holmes"
+								},
+								"format": "TV",
+								"episodes": 26,
+								"nextAiringEpisode": null,
+								"duration": 25,
+								"averageScore": 68,
+								"popularity": 2757,
+								"startDate": {
+									"year": 1984
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 1617,
+								"title": {
+									"userPreferred": "Massugu ni Ikou"
+								},
+								"format": "TV",
+								"episodes": 4,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 55,
+								"popularity": 815,
+								"startDate": {
+									"year": 2003
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 202,
+								"title": {
+									"userPreferred": "Wolf's Rain"
+								},
+								"format": "TV",
+								"episodes": 26,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 74,
+								"popularity": 37681,
+								"startDate": {
+									"year": 2003
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 130706,
+								"title": {
+									"userPreferred": "Akuma-kun (ONA)"
+								},
+								"format": "ONA",
+								"episodes": null,
+								"nextAiringEpisode": null,
+								"duration": null,
+								"averageScore": null,
+								"popularity": 501,
+								"startDate": {
+									"year": 2023
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 1065,
+								"title": {
+									"userPreferred": "Touch"
+								},
+								"format": "TV",
+								"episodes": 101,
+								"nextAiringEpisode": null,
+								"duration": 25,
+								"averageScore": 77,
+								"popularity": 7596,
+								"startDate": {
+									"year": 1985
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 8142,
+								"title": {
+									"userPreferred": "Colorful"
+								},
+								"format": "MOVIE",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 127,
+								"averageScore": 75,
+								"popularity": 37145,
+								"startDate": {
+									"year": 2010
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 326,
+								"title": {
+									"userPreferred": "Petshop of Horrors"
+								},
+								"format": "TV",
+								"episodes": 4,
+								"nextAiringEpisode": null,
+								"duration": 22,
+								"averageScore": 66,
+								"popularity": 9621,
+								"startDate": {
+									"year": 1999
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 12883,
+								"title": {
+									"userPreferred": "Tsuritama"
+								},
+								"format": "TV",
+								"episodes": 12,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 73,
+								"popularity": 29070,
+								"startDate": {
+									"year": 2012
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 5177,
+								"title": {
+									"userPreferred": "Denpa Teki na Kanojo"
+								},
+								"format": "OVA",
+								"episodes": 2,
+								"nextAiringEpisode": null,
+								"duration": 42,
+								"averageScore": 70,
+								"popularity": 25794,
+								"startDate": {
+									"year": 2009
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 2461,
+								"title": {
+									"userPreferred": "Metal Skin Panic MADOX-01"
+								},
+								"format": "OVA",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 42,
+								"averageScore": 55,
+								"popularity": 1717,
+								"startDate": {
+									"year": 1987
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 200,
+								"title": {
+									"userPreferred": "Tenshi na Konamaiki"
+								},
+								"format": "TV",
+								"episodes": 50,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 68,
+								"popularity": 3779,
+								"startDate": {
+									"year": 2002
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 2418,
+								"title": {
+									"userPreferred": "Stranger: Mukou Hadan"
+								},
+								"format": "MOVIE",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 103,
+								"averageScore": 79,
+								"popularity": 51250,
+								"startDate": {
+									"year": 2007
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 29,
+								"title": {
+									"userPreferred": "Zipang"
+								},
+								"format": "TV",
+								"episodes": 26,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 71,
+								"popularity": 3891,
+								"startDate": {
+									"year": 2004
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 101524,
+								"title": {
+									"userPreferred": "Hoshi no Yuuenchi"
+								},
+								"format": "OVA",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 18,
+								"averageScore": 37,
+								"popularity": 164,
+								"startDate": {
+									"year": 1989
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 120646,
+								"title": {
+									"userPreferred": "Senpai ga Uzai Kouhai no Hanashi"
+								},
+								"format": "TV",
+								"episodes": 12,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 76,
+								"popularity": 60920,
+								"startDate": {
+									"year": 2021
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 522,
+								"title": {
+									"userPreferred": "Metropolis"
+								},
+								"format": "MOVIE",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 109,
+								"averageScore": 73,
+								"popularity": 19746,
+								"startDate": {
+									"year": 2001
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 1048,
+								"title": {
+									"userPreferred": "The SoulTaker: Tamashiigari"
+								},
+								"format": "TV",
+								"episodes": 13,
+								"nextAiringEpisode": null,
+								"duration": 25,
+								"averageScore": 57,
+								"popularity": 4688,
+								"startDate": {
+									"year": 2001
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 389,
+								"title": {
+									"userPreferred": "Karas"
+								},
+								"format": "OVA",
+								"episodes": 6,
+								"nextAiringEpisode": null,
+								"duration": 30,
+								"averageScore": 68,
+								"popularity": 7777,
+								"startDate": {
+									"year": 2005
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 593,
+								"title": {
+									"userPreferred": "Mugen no Ryvius"
+								},
+								"format": "TV",
+								"episodes": 26,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 71,
+								"popularity": 8376,
+								"startDate": {
+									"year": 1999
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 126070,
+								"title": {
+									"userPreferred": "Gorillaman"
+								},
+								"format": "OVA",
+								"episodes": 2,
+								"nextAiringEpisode": null,
+								"duration": 50,
+								"averageScore": 49,
+								"popularity": 213,
+								"startDate": {
+									"year": 1992
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 2103,
+								"title": {
+									"userPreferred": "TO-Y"
+								},
+								"format": "OVA",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 55,
+								"averageScore": 52,
+								"popularity": 1162,
+								"startDate": {
+									"year": 1987
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 97625,
+								"title": {
+									"userPreferred": "Tsugumomo"
+								},
+								"format": "TV",
+								"episodes": 12,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 67,
+								"popularity": 35100,
+								"startDate": {
+									"year": 2017
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 5920,
+								"title": {
+									"userPreferred": "Xanadu Dragonslayer Densetsu"
+								},
+								"format": "OVA",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 50,
+								"averageScore": 48,
+								"popularity": 469,
+								"startDate": {
+									"year": 1988
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 101381,
+								"title": {
+									"userPreferred": "Dakaretai Otoko 1-i ni Odosarete Imasu."
+								},
+								"format": "TV",
+								"episodes": 13,
+								"nextAiringEpisode": null,
+								"duration": 25,
+								"averageScore": 71,
+								"popularity": 29275,
+								"startDate": {
+									"year": 2018
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 146233,
+								"title": {
+									"userPreferred": "Futoku no Guild"
+								},
+								"format": "TV",
+								"episodes": 12,
+								"nextAiringEpisode": {
+									"episode": 6
+								},
+								"duration": 24,
+								"averageScore": 57,
+								"popularity": 10627,
+								"startDate": {
+									"year": 2022
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 33,
+								"title": {
+									"userPreferred": "Kenpuu Denki Berserk"
+								},
+								"format": "TV",
+								"episodes": 25,
+								"nextAiringEpisode": null,
+								"duration": 25,
+								"averageScore": 83,
+								"popularity": 86405,
+								"startDate": {
+									"year": 1997
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 2073,
+								"title": {
+									"userPreferred": "Hengentai Mayakou Karura Mau! Sendai Kokeshi Enka"
+								},
+								"format": "OVA",
+								"episodes": 6,
+								"nextAiringEpisode": null,
+								"duration": 30,
+								"averageScore": null,
+								"popularity": 262,
+								"startDate": {
+									"year": 1990
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 10466,
+								"title": {
+									"userPreferred": "Phantom Yuusha Densetsu"
+								},
+								"format": "OVA",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 50,
+								"averageScore": 40,
+								"popularity": 229,
+								"startDate": {
+									"year": 1991
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 146346,
+								"title": {
+									"userPreferred": "Inu ni Nattara Suki na Hito ni Hirowareta."
+								},
+								"format": "TV",
+								"episodes": null,
+								"nextAiringEpisode": {
+									"episode": 1
+								},
+								"duration": null,
+								"averageScore": null,
+								"popularity": 4750,
+								"startDate": {
+									"year": 2023
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 6366,
+								"title": {
+									"userPreferred": "Karuizawa Syndrome"
+								},
+								"format": "OVA",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 76,
+								"averageScore": 48,
+								"popularity": 338,
+								"startDate": {
+									"year": 1986
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 6096,
+								"title": {
+									"userPreferred": "Bad Boys"
+								},
+								"format": "OVA",
+								"episodes": 5,
+								"nextAiringEpisode": null,
+								"duration": 30,
+								"averageScore": 54,
+								"popularity": 711,
+								"startDate": {
+									"year": 1993
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 15961,
+								"title": {
+									"userPreferred": "Shakotan★Boogie"
+								},
+								"format": "OVA",
+								"episodes": 4,
+								"nextAiringEpisode": null,
+								"duration": 55,
+								"averageScore": 49,
+								"popularity": 386,
+								"startDate": {
+									"year": 1991
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 1822,
+								"title": {
+									"userPreferred": "THE Hakkenden"
+								},
+								"format": "OVA",
+								"episodes": 6,
+								"nextAiringEpisode": null,
+								"duration": 30,
+								"averageScore": 58,
+								"popularity": 1979,
+								"startDate": {
+									"year": 1990
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 2839,
+								"title": {
+									"userPreferred": "ARIEL VISUAL SCEBAI: Saidai no Kiki"
+								},
+								"format": "OVA",
+								"episodes": 2,
+								"nextAiringEpisode": null,
+								"duration": 28,
+								"averageScore": 45,
+								"popularity": 592,
+								"startDate": {
+									"year": 1989
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 4854,
+								"title": {
+									"userPreferred": "Fuuma no Kojirou: Yasha-hen"
+								},
+								"format": "OVA",
+								"episodes": 6,
+								"nextAiringEpisode": null,
+								"duration": 30,
+								"averageScore": 53,
+								"popularity": 717,
+								"startDate": {
+									"year": 1989
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 3595,
+								"title": {
+									"userPreferred": "Kujakuou"
+								},
+								"format": "OVA",
+								"episodes": 3,
+								"nextAiringEpisode": null,
+								"duration": 55,
+								"averageScore": 50,
+								"popularity": 594,
+								"startDate": {
+									"year": 1988
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 2048,
+								"title": {
+									"userPreferred": "Kikou Ryouhei Mellowlink"
+								},
+								"format": "OVA",
+								"episodes": 12,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 68,
+								"popularity": 3037,
+								"startDate": {
+									"year": 1988
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 2835,
+								"title": {
+									"userPreferred": "Patalliro!"
+								},
+								"format": "TV",
+								"episodes": 49,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 62,
+								"popularity": 1973,
+								"startDate": {
+									"year": 1982
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 108430,
+								"title": {
+									"userPreferred": "Given"
+								},
+								"format": "TV",
+								"episodes": 11,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 83,
+								"popularity": 142157,
+								"startDate": {
+									"year": 2019
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 5927,
+								"title": {
+									"userPreferred": "Hoshi Neko Fullhouse"
+								},
+								"format": "OVA",
+								"episodes": 4,
+								"nextAiringEpisode": null,
+								"duration": 31,
+								"averageScore": 47,
+								"popularity": 513,
+								"startDate": {
+									"year": 1989
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 10355,
+								"title": {
+									"userPreferred": "Twinkle Heart: Gingakei made Todokanai"
+								},
+								"format": "OVA",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 44,
+								"averageScore": 44,
+								"popularity": 516,
+								"startDate": {
+									"year": 1986
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 1244,
+								"title": {
+									"userPreferred": "Ankoku Shindenshou Takegami"
+								},
+								"format": "OVA",
+								"episodes": 3,
+								"nextAiringEpisode": null,
+								"duration": 43,
+								"averageScore": 45,
+								"popularity": 536,
+								"startDate": {
+									"year": 1990
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 2422,
+								"title": {
+									"userPreferred": "Kenritsu Chikyuu Boueigun"
+								},
+								"format": "OVA",
+								"episodes": 3,
+								"nextAiringEpisode": null,
+								"duration": 15,
+								"averageScore": 56,
+								"popularity": 1018,
+								"startDate": {
+									"year": 1986
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 146609,
+								"title": {
+									"userPreferred": "Dead Dead Demon's Dededededestruction"
+								},
+								"format": null,
+								"episodes": null,
+								"nextAiringEpisode": null,
+								"duration": null,
+								"averageScore": null,
+								"popularity": 5509,
+								"startDate": {
+									"year": null
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 134732,
+								"title": {
+									"userPreferred": "Aoashi"
+								},
+								"format": "TV",
+								"episodes": 24,
+								"nextAiringEpisode": null,
+								"duration": 25,
+								"averageScore": 82,
+								"popularity": 38547,
+								"startDate": {
+									"year": 2022
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 1027,
+								"title": {
+									"userPreferred": "Psychic Force"
+								},
+								"format": "OVA",
+								"episodes": 2,
+								"nextAiringEpisode": null,
+								"duration": 30,
+								"averageScore": 46,
+								"popularity": 502,
+								"startDate": {
+									"year": 1998
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 147864,
+								"title": {
+									"userPreferred": "Onii-chan wa Oshimai!"
+								},
+								"format": "TV",
+								"episodes": null,
+								"nextAiringEpisode": null,
+								"duration": null,
+								"averageScore": null,
+								"popularity": 4802,
+								"startDate": {
+									"year": 2023
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 145140,
+								"title": {
+									"userPreferred": "Helck"
+								},
+								"format": "TV",
+								"episodes": null,
+								"nextAiringEpisode": null,
+								"duration": null,
+								"averageScore": null,
+								"popularity": 1788,
+								"startDate": {
+									"year": null
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 1596,
+								"title": {
+									"userPreferred": "Arcade Gamer Fubuki"
+								},
+								"format": "OVA",
+								"episodes": 4,
+								"nextAiringEpisode": null,
+								"duration": 29,
+								"averageScore": 47,
+								"popularity": 1810,
+								"startDate": {
+									"year": 2002
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 2753,
+								"title": {
+									"userPreferred": "Ushiro no Shoumen Daare"
+								},
+								"format": "MOVIE",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 90,
+								"averageScore": 67,
+								"popularity": 2511,
+								"startDate": {
+									"year": 1991
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 8100,
+								"title": {
+									"userPreferred": "Mardock Scramble: The First Compression"
+								},
+								"format": "MOVIE",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 70,
+								"averageScore": 71,
+								"popularity": 12340,
+								"startDate": {
+									"year": 2010
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 1491,
+								"title": {
+									"userPreferred": "Ginga Tetsudou 999"
+								},
+								"format": "TV",
+								"episodes": 113,
+								"nextAiringEpisode": null,
+								"duration": 25,
+								"averageScore": 73,
+								"popularity": 8858,
+								"startDate": {
+									"year": 1978
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 114606,
+								"title": {
+									"userPreferred": "Amrita no Kyouen"
+								},
+								"format": "MOVIE",
+								"episodes": 1,
+								"nextAiringEpisode": {
+									"episode": 1
+								},
+								"duration": null,
+								"averageScore": null,
+								"popularity": 791,
+								"startDate": {
+									"year": 2023
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 2762,
+								"title": {
+									"userPreferred": "Igano Kabamaru"
+								},
+								"format": "TV",
+								"episodes": 24,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 67,
+								"popularity": 1714,
+								"startDate": {
+									"year": 1983
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 3252,
+								"title": {
+									"userPreferred": "Super Express Mazinger 7"
+								},
+								"format": "MOVIE",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 90,
+								"averageScore": 37,
+								"popularity": 216,
+								"startDate": {
+									"year": 1983
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 16620,
+								"title": {
+									"userPreferred": "Robot King"
+								},
+								"format": "MOVIE",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 65,
+								"averageScore": 36,
+								"popularity": 135,
+								"startDate": {
+									"year": 1980
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 130050,
+								"title": {
+									"userPreferred": "Summer Ghost"
+								},
+								"format": "MOVIE",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 40,
+								"averageScore": 77,
+								"popularity": 18303,
+								"startDate": {
+									"year": 2021
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 691,
+								"title": {
+									"userPreferred": "YAWARA! a fashionable judo girl!"
+								},
+								"format": "TV",
+								"episodes": 124,
+								"nextAiringEpisode": null,
+								"duration": 25,
+								"averageScore": 68,
+								"popularity": 4892,
+								"startDate": {
+									"year": 1989
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 9931,
+								"title": {
+									"userPreferred": "Happy Birthday, Inochi Kagayaku Toki"
+								},
+								"format": "MOVIE",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 79,
+								"averageScore": 63,
+								"popularity": 1118,
+								"startDate": {
+									"year": 1999
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 3087,
+								"title": {
+									"userPreferred": "Cencoroll"
+								},
+								"format": "MOVIE",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 27,
+								"averageScore": 68,
+								"popularity": 20820,
+								"startDate": {
+									"year": 2009
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 150672,
+								"title": {
+									"userPreferred": "[Oshi no Ko]"
+								},
+								"format": "TV",
+								"episodes": null,
+								"nextAiringEpisode": null,
+								"duration": null,
+								"averageScore": null,
+								"popularity": 15341,
+								"startDate": {
+									"year": 2023
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 132171,
+								"title": {
+									"userPreferred": "Dance Dance Danseur"
+								},
+								"format": "TV",
+								"episodes": 11,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 77,
+								"popularity": 18054,
+								"startDate": {
+									"year": 2022
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 132010,
+								"title": {
+									"userPreferred": "Koi wa Sekai Seifuku no Ato de"
+								},
+								"format": "TV",
+								"episodes": 12,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 74,
+								"popularity": 38907,
+								"startDate": {
+									"year": 2022
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 1852,
+								"title": {
+									"userPreferred": "Hidamari Sketch"
+								},
+								"format": "TV",
+								"episodes": 12,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 73,
+								"popularity": 18391,
+								"startDate": {
+									"year": 2007
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 629,
+								"title": {
+									"userPreferred": "Mahou Tsukai Tai!"
+								},
+								"format": "OVA",
+								"episodes": 6,
+								"nextAiringEpisode": null,
+								"duration": 28,
+								"averageScore": 65,
+								"popularity": 2457,
+								"startDate": {
+									"year": 1996
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 2726,
+								"title": {
+									"userPreferred": "Sukeban Deka"
+								},
+								"format": "OVA",
+								"episodes": 2,
+								"nextAiringEpisode": null,
+								"duration": 47,
+								"averageScore": 59,
+								"popularity": 2015,
+								"startDate": {
+									"year": 1991
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 2698,
+								"title": {
+									"userPreferred": "Sanctuary"
+								},
+								"format": "OVA",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 67,
+								"averageScore": 56,
+								"popularity": 1503,
+								"startDate": {
+									"year": 1996
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 4252,
+								"title": {
+									"userPreferred": "EXPLORER-WOMAN RAY"
+								},
+								"format": "OVA",
+								"episodes": 2,
+								"nextAiringEpisode": null,
+								"duration": 30,
+								"averageScore": 45,
+								"popularity": 508,
+								"startDate": {
+									"year": 1989
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 47,
+								"title": {
+									"userPreferred": "AKIRA"
+								},
+								"format": "MOVIE",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 125,
+								"averageScore": 79,
+								"popularity": 131773,
+								"startDate": {
+									"year": 1988
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 7877,
+								"title": {
+									"userPreferred": "Momoko, Kaeru no Uta ga Kikoeru yo"
+								},
+								"format": "MOVIE",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 79,
+								"averageScore": 68,
+								"popularity": 1331,
+								"startDate": {
+									"year": 2003
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 437,
+								"title": {
+									"userPreferred": "PERFECT BLUE"
+								},
+								"format": "MOVIE",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 82,
+								"averageScore": 85,
+								"popularity": 126693,
+								"startDate": {
+									"year": 1998
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 2341,
+								"title": {
+									"userPreferred": "Choujin Densetsu Urotsukidouji"
+								},
+								"format": "OVA",
+								"episodes": 3,
+								"nextAiringEpisode": null,
+								"duration": 48,
+								"averageScore": 54,
+								"popularity": 2256,
+								"startDate": {
+									"year": 1987
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 3751,
+								"title": {
+									"userPreferred": "Sekai Meisaku Douwa: Mori wa Ikiteiru"
+								},
+								"format": "MOVIE",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 65,
+								"averageScore": 55,
+								"popularity": 525,
+								"startDate": {
+									"year": 1980
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 4943,
+								"title": {
+									"userPreferred": "Yousei Florence"
+								},
+								"format": "MOVIE",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 91,
+								"averageScore": 56,
+								"popularity": 611,
+								"startDate": {
+									"year": 1985
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 1130,
+								"title": {
+									"userPreferred": "Windaria"
+								},
+								"format": "MOVIE",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 100,
+								"averageScore": 59,
+								"popularity": 1993,
+								"startDate": {
+									"year": 1986
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 2621,
+								"title": {
+									"userPreferred": "Natsu e no Tobira"
+								},
+								"format": "MOVIE",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 59,
+								"averageScore": 54,
+								"popularity": 1828,
+								"startDate": {
+									"year": 1981
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 1032,
+								"title": {
+									"userPreferred": "Kumo no You ni Kaze no You ni"
+								},
+								"format": "MOVIE",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 80,
+								"averageScore": 61,
+								"popularity": 1878,
+								"startDate": {
+									"year": 1990
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 944,
+								"title": {
+									"userPreferred": "The Third: Aoi Hitomi no Shoujo"
+								},
+								"format": "TV",
+								"episodes": 24,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 67,
+								"popularity": 2787,
+								"startDate": {
+									"year": 2006
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 1025,
+								"title": {
+									"userPreferred": "Kachou Ouji"
+								},
+								"format": "TV",
+								"episodes": 13,
+								"nextAiringEpisode": null,
+								"duration": 25,
+								"averageScore": 64,
+								"popularity": 5903,
+								"startDate": {
+									"year": 1999
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 2562,
+								"title": {
+									"userPreferred": "Shion no Ou"
+								},
+								"format": "TV",
+								"episodes": 22,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 70,
+								"popularity": 4827,
+								"startDate": {
+									"year": 2007
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 785,
+								"title": {
+									"userPreferred": "Otaku no Video"
+								},
+								"format": "OVA",
+								"episodes": 2,
+								"nextAiringEpisode": null,
+								"duration": 48,
+								"averageScore": 69,
+								"popularity": 7801,
+								"startDate": {
+									"year": 1991
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 1384,
+								"title": {
+									"userPreferred": "Vampire Miyu"
+								},
+								"format": "OVA",
+								"episodes": 4,
+								"nextAiringEpisode": null,
+								"duration": 30,
+								"averageScore": 63,
+								"popularity": 3492,
+								"startDate": {
+									"year": 1988
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 153288,
+								"title": {
+									"userPreferred": "Kaijuu 8-gou"
+								},
+								"format": null,
+								"episodes": null,
+								"nextAiringEpisode": null,
+								"duration": null,
+								"averageScore": null,
+								"popularity": 7146,
+								"startDate": {
+									"year": null
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 153360,
+								"title": {
+									"userPreferred": "Jidou Hanbaiki ni Umarekawatta Ore wa Meikyuu wo Samayou"
+								},
+								"format": "TV",
+								"episodes": null,
+								"nextAiringEpisode": null,
+								"duration": null,
+								"averageScore": null,
+								"popularity": 1340,
+								"startDate": {
+									"year": null
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 153567,
+								"title": {
+									"userPreferred": "Harem Camp!"
+								},
+								"format": "ONA",
+								"episodes": 8,
+								"nextAiringEpisode": null,
+								"duration": null,
+								"averageScore": 56,
+								"popularity": 1195,
+								"startDate": {
+									"year": 2022
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 20461,
+								"title": {
+									"userPreferred": "Le Chevalier D'Eon"
+								},
+								"format": "TV",
+								"episodes": 24,
+								"nextAiringEpisode": null,
+								"duration": 25,
+								"averageScore": 65,
+								"popularity": 7833,
+								"startDate": {
+									"year": 2006
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 10463,
+								"title": {
+									"userPreferred": "Exper Zenon"
+								},
+								"format": "OVA",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 60,
+								"averageScore": 47,
+								"popularity": 548,
+								"startDate": {
+									"year": 1991
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 676,
+								"title": {
+									"userPreferred": "Refrain Blue"
+								},
+								"format": "OVA",
+								"episodes": 3,
+								"nextAiringEpisode": null,
+								"duration": 30,
+								"averageScore": 48,
+								"popularity": 566,
+								"startDate": {
+									"year": 2000
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 9356,
+								"title": {
+									"userPreferred": "Cool Cool Bye"
+								},
+								"format": "OVA",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 30,
+								"averageScore": 42,
+								"popularity": 537,
+								"startDate": {
+									"year": 1986
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 110,
+								"title": {
+									"userPreferred": "Chuuka Ichiban!"
+								},
+								"format": "TV",
+								"episodes": 52,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 69,
+								"popularity": 2750,
+								"startDate": {
+									"year": 1997
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 2029,
+								"title": {
+									"userPreferred": "Sirius no Densetsu"
+								},
+								"format": "MOVIE",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 108,
+								"averageScore": 61,
+								"popularity": 1515,
+								"startDate": {
+									"year": 1981
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 4452,
+								"title": {
+									"userPreferred": "Hoshikuzu Paradise"
+								},
+								"format": "OVA",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 40,
+								"averageScore": 47,
+								"popularity": 396,
+								"startDate": {
+									"year": 1991
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 4042,
+								"title": {
+									"userPreferred": "Hanappe Bazooka"
+								},
+								"format": "OVA",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 43,
+								"averageScore": 46,
+								"popularity": 878,
+								"startDate": {
+									"year": 1992
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 3186,
+								"title": {
+									"userPreferred": "Sekai Meisaku Douwa: Hakuchou no Mizuumi"
+								},
+								"format": "MOVIE",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 75,
+								"averageScore": 60,
+								"popularity": 896,
+								"startDate": {
+									"year": 1981
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 2365,
+								"title": {
+									"userPreferred": "GRANDEEK: Gaiden"
+								},
+								"format": "OVA",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 45,
+								"averageScore": 47,
+								"popularity": 486,
+								"startDate": {
+									"year": 2000
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 1051,
+								"title": {
+									"userPreferred": "Ao no 6-gou"
+								},
+								"format": "OVA",
+								"episodes": 4,
+								"nextAiringEpisode": null,
+								"duration": 32,
+								"averageScore": 65,
+								"popularity": 8600,
+								"startDate": {
+									"year": 1998
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 153518,
+								"title": {
+									"userPreferred": "Dungeon Meshi"
+								},
+								"format": "TV",
+								"episodes": null,
+								"nextAiringEpisode": null,
+								"duration": null,
+								"averageScore": null,
+								"popularity": 4164,
+								"startDate": {
+									"year": null
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 773,
+								"title": {
+									"userPreferred": "Tenamonya Voyagers"
+								},
+								"format": "OVA",
+								"episodes": 4,
+								"nextAiringEpisode": null,
+								"duration": 30,
+								"averageScore": 61,
+								"popularity": 1559,
+								"startDate": {
+									"year": 1999
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 485,
+								"title": {
+									"userPreferred": "Damekko Doubutsu"
+								},
+								"format": "TV_SHORT",
+								"episodes": 26,
+								"nextAiringEpisode": null,
+								"duration": 5,
+								"averageScore": 62,
+								"popularity": 1362,
+								"startDate": {
+									"year": 2005
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 9213,
+								"title": {
+									"userPreferred": "Kowarekake no Orgel"
+								},
+								"format": "OVA",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 30,
+								"averageScore": 68,
+								"popularity": 6295,
+								"startDate": {
+									"year": 2009
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 3859,
+								"title": {
+									"userPreferred": "Himitsu: Top Secret - The Revelation"
+								},
+								"format": "TV",
+								"episodes": 26,
+								"nextAiringEpisode": null,
+								"duration": 22,
+								"averageScore": 66,
+								"popularity": 3023,
+								"startDate": {
+									"year": 2008
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 681,
+								"title": {
+									"userPreferred": "Tenbatsu Angel Rabbie☆"
+								},
+								"format": "OVA",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 30,
+								"averageScore": 42,
+								"popularity": 623,
+								"startDate": {
+									"year": 2004
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 8496,
+								"title": {
+									"userPreferred": "Neko Neko Fantasia"
+								},
+								"format": "OVA",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 30,
+								"averageScore": 50,
+								"popularity": 459,
+								"startDate": {
+									"year": 1991
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 2053,
+								"title": {
+									"userPreferred": "Capricorn"
+								},
+								"format": "OVA",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 47,
+								"averageScore": 46,
+								"popularity": 737,
+								"startDate": {
+									"year": 1991
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 9691,
+								"title": {
+									"userPreferred": "Kyomu Senshi Miroku"
+								},
+								"format": "OVA",
+								"episodes": 6,
+								"nextAiringEpisode": null,
+								"duration": 25,
+								"averageScore": 48,
+								"popularity": 395,
+								"startDate": {
+									"year": 1989
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 2081,
+								"title": {
+									"userPreferred": "Makeruna! Makendo"
+								},
+								"format": "OVA",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 30,
+								"averageScore": 48,
+								"popularity": 509,
+								"startDate": {
+									"year": 1995
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 2099,
+								"title": {
+									"userPreferred": "Silent Mobius: THE MOTION PICTURE"
+								},
+								"format": "MOVIE",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 54,
+								"averageScore": 56,
+								"popularity": 974,
+								"startDate": {
+									"year": 1991
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 108054,
+								"title": {
+									"userPreferred": "Fukuyama Gekijou: Natsu no Himitsu"
+								},
+								"format": "OVA",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 55,
+								"averageScore": 48,
+								"popularity": 224,
+								"startDate": {
+									"year": 1990
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 7610,
+								"title": {
+									"userPreferred": "Anju to Zushioumaru"
+								},
+								"format": "MOVIE",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 83,
+								"averageScore": 53,
+								"popularity": 740,
+								"startDate": {
+									"year": 1961
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 1169,
+								"title": {
+									"userPreferred": "Green Legend Ran"
+								},
+								"format": "OVA",
+								"episodes": 3,
+								"nextAiringEpisode": null,
+								"duration": 45,
+								"averageScore": 57,
+								"popularity": 1300,
+								"startDate": {
+									"year": 1992
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 125869,
+								"title": {
+									"userPreferred": "Hikari no Ou"
+								},
+								"format": "TV",
+								"episodes": null,
+								"nextAiringEpisode": null,
+								"duration": null,
+								"averageScore": null,
+								"popularity": 1438,
+								"startDate": {
+									"year": 2023
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 151189,
+								"title": {
+									"userPreferred": "My Home Hero"
+								},
+								"format": "TV",
+								"episodes": null,
+								"nextAiringEpisode": null,
+								"duration": null,
+								"averageScore": null,
+								"popularity": 2723,
+								"startDate": {
+									"year": 2023
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 957,
+								"title": {
+									"userPreferred": "Saiunkoku Monogatari"
+								},
+								"format": "TV",
+								"episodes": 39,
+								"nextAiringEpisode": null,
+								"duration": 25,
+								"averageScore": 74,
+								"popularity": 10318,
+								"startDate": {
+									"year": 2006
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 114121,
+								"title": {
+									"userPreferred": "Xian Wang De Richang Shenghuo"
+								},
+								"format": "ONA",
+								"episodes": 15,
+								"nextAiringEpisode": null,
+								"duration": 18,
+								"averageScore": 74,
+								"popularity": 61851,
+								"startDate": {
+									"year": 2020
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 9990,
+								"title": {
+									"userPreferred": "Midori-ko"
+								},
+								"format": "MOVIE",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 55,
+								"averageScore": 57,
+								"popularity": 1303,
+								"startDate": {
+									"year": 2010
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 134131,
+								"title": {
+									"userPreferred": "Mahou Shoujo Magical Destroyers"
+								},
+								"format": "TV",
+								"episodes": null,
+								"nextAiringEpisode": null,
+								"duration": null,
+								"averageScore": null,
+								"popularity": 1508,
+								"startDate": {
+									"year": 2023
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 155389,
+								"title": {
+									"userPreferred": "SHY"
+								},
+								"format": "TV",
+								"episodes": null,
+								"nextAiringEpisode": null,
+								"duration": null,
+								"averageScore": null,
+								"popularity": 1901,
+								"startDate": {
+									"year": null
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 3389,
+								"title": {
+									"userPreferred": "BUS GAMER"
+								},
+								"format": "TV",
+								"episodes": 3,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 56,
+								"popularity": 3227,
+								"startDate": {
+									"year": 2008
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 137621,
+								"title": {
+									"userPreferred": "Hanabi-chan wa Okure-gachi"
+								},
+								"format": "TV_SHORT",
+								"episodes": 12,
+								"nextAiringEpisode": null,
+								"duration": 5,
+								"averageScore": 58,
+								"popularity": 1326,
+								"startDate": {
+									"year": 2022
+								}
+							}
+						}
+					]
+				},
+				{
+					"name": "Sequels",
+					"isCustomList": true,
+					"isCompletedList": false,
+					"entries": [
+						{
+							"media": {
+								"id": 6811,
+								"title": {
+									"userPreferred": "Inuyasha: Kanketsu-hen"
+								},
+								"format": "TV",
+								"episodes": 26,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 80,
+								"popularity": 34079,
+								"startDate": {
+									"year": 2009
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 20474,
+								"title": {
+									"userPreferred": "JoJo no Kimyou na Bouken: Stardust Crusaders"
+								},
+								"format": "TV",
+								"episodes": 24,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 79,
+								"popularity": 208076,
+								"startDate": {
+									"year": 2014
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 20958,
+								"title": {
+									"userPreferred": "Shingeki no Kyojin 2"
+								},
+								"format": "TV",
+								"episodes": 12,
+								"nextAiringEpisode": null,
+								"duration": 25,
+								"averageScore": 84,
+								"popularity": 446793,
+								"startDate": {
+									"year": 2017
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 113359,
+								"title": {
+									"userPreferred": "NOMAD: Megalo Box 2"
+								},
+								"format": "TV",
+								"episodes": 13,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 81,
+								"popularity": 37969,
+								"startDate": {
+									"year": 2021
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 98438,
+								"title": {
+									"userPreferred": "Hoozuki no Reitetsu 2"
+								},
+								"format": "TV",
+								"episodes": 13,
+								"nextAiringEpisode": null,
+								"duration": 23,
+								"averageScore": 77,
+								"popularity": 7853,
+								"startDate": {
+									"year": 2017
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 117074,
+								"title": {
+									"userPreferred": "Isekai Quartet: Another World"
+								},
+								"format": "MOVIE",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": null,
+								"averageScore": 66,
+								"popularity": 16252,
+								"startDate": {
+									"year": 2022
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 108489,
+								"title": {
+									"userPreferred": "Yahari Ore no Seishun Love Come wa Machigatteiru. Kan"
+								},
+								"format": "TV",
+								"episodes": 12,
+								"nextAiringEpisode": null,
+								"duration": 24,
+								"averageScore": 82,
+								"popularity": 132063,
+								"startDate": {
+									"year": 2020
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 126830,
+								"title": {
+									"userPreferred": "Code Geass: Dakkan no Z"
+								},
+								"format": null,
+								"episodes": null,
+								"nextAiringEpisode": null,
+								"duration": null,
+								"averageScore": null,
+								"popularity": 8595,
+								"startDate": {
+									"year": null
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 111314,
+								"title": {
+									"userPreferred": "Uzumaki"
+								},
+								"format": null,
+								"episodes": 4,
+								"nextAiringEpisode": null,
+								"duration": null,
+								"averageScore": null,
+								"popularity": 23286,
+								"startDate": {
+									"year": null
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 131518,
+								"title": {
+									"userPreferred": "Dr. STONE: NEW WORLD"
+								},
+								"format": "TV",
+								"episodes": null,
+								"nextAiringEpisode": null,
+								"duration": null,
+								"averageScore": null,
+								"popularity": 47626,
+								"startDate": {
+									"year": 2023
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 131573,
+								"title": {
+									"userPreferred": "Jujutsu Kaisen 0"
+								},
+								"format": "MOVIE",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 105,
+								"averageScore": 86,
+								"popularity": 152727,
+								"startDate": {
+									"year": 2021
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 133007,
+								"title": {
+									"userPreferred": "Mahou Shoujo Madoka☆Magica: Walpurgis no Kaiten"
+								},
+								"format": "MOVIE",
+								"episodes": null,
+								"nextAiringEpisode": null,
+								"duration": null,
+								"averageScore": null,
+								"popularity": 15605,
+								"startDate": {
+									"year": null
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 136804,
+								"title": {
+									"userPreferred": "Kono Subarashii Sekai ni Shukufuku wo! 3"
+								},
+								"format": "TV",
+								"episodes": null,
+								"nextAiringEpisode": null,
+								"duration": null,
+								"averageScore": null,
+								"popularity": 31563,
+								"startDate": {
+									"year": null
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 139498,
+								"title": {
+									"userPreferred": "Tensei Shitara Slime Datta Ken: Guren no Kizuna-hen"
+								},
+								"format": "MOVIE",
+								"episodes": 1,
+								"nextAiringEpisode": {
+									"episode": 1
+								},
+								"duration": 108,
+								"averageScore": null,
+								"popularity": 39507,
+								"startDate": {
+									"year": 2022
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 139518,
+								"title": {
+									"userPreferred": "Tsuki ga Michibiku Isekai Douchuu 2"
+								},
+								"format": "TV",
+								"episodes": null,
+								"nextAiringEpisode": null,
+								"duration": null,
+								"averageScore": null,
+								"popularity": 13812,
+								"startDate": {
+									"year": null
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 20732,
+								"title": {
+									"userPreferred": "Hoozuki no Reitetsu OVA"
+								},
+								"format": "OVA",
+								"episodes": 4,
+								"nextAiringEpisode": null,
+								"duration": 26,
+								"averageScore": 74,
+								"popularity": 3204,
+								"startDate": {
+									"year": 2015
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 141249,
+								"title": {
+									"userPreferred": "Bungou Stray Dogs 4th Season"
+								},
+								"format": "TV",
+								"episodes": null,
+								"nextAiringEpisode": null,
+								"duration": null,
+								"averageScore": null,
+								"popularity": 26299,
+								"startDate": {
+									"year": 2023
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 117756,
+								"title": {
+									"userPreferred": "Koukaku Kidoutai: SAC_2045 Season 2"
+								},
+								"format": "ONA",
+								"episodes": 12,
+								"nextAiringEpisode": null,
+								"duration": 25,
+								"averageScore": 67,
+								"popularity": 2597,
+								"startDate": {
+									"year": 2022
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 142914,
+								"title": {
+									"userPreferred": "Kyuuketsuki Sugu Shinu 2"
+								},
+								"format": "TV",
+								"episodes": null,
+								"nextAiringEpisode": null,
+								"duration": null,
+								"averageScore": null,
+								"popularity": 3088,
+								"startDate": {
+									"year": 2023
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 109603,
+								"title": {
+									"userPreferred": "Yami Shibai 7"
+								},
+								"format": "TV_SHORT",
+								"episodes": 13,
+								"nextAiringEpisode": null,
+								"duration": 5,
+								"averageScore": 54,
+								"popularity": 3858,
+								"startDate": {
+									"year": 2019
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 151606,
+								"title": {
+									"userPreferred": "BIRDIE WING: Golf Girls' Story Season 2"
+								},
+								"format": "TV",
+								"episodes": null,
+								"nextAiringEpisode": null,
+								"duration": null,
+								"averageScore": null,
+								"popularity": 2887,
+								"startDate": {
+									"year": 2023
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 20514,
+								"title": {
+									"userPreferred": "PSYCHO-PASS Movie"
+								},
+								"format": "MOVIE",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 113,
+								"averageScore": 75,
+								"popularity": 45560,
+								"startDate": {
+									"year": 2015
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 151799,
+								"title": {
+									"userPreferred": "Panty & Stocking with Garterbelt Season 2"
+								},
+								"format": null,
+								"episodes": null,
+								"nextAiringEpisode": null,
+								"duration": null,
+								"averageScore": null,
+								"popularity": 7093,
+								"startDate": {
+									"year": null
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 145064,
+								"title": {
+									"userPreferred": "Jujutsu Kaisen 2nd Season"
+								},
+								"format": "TV",
+								"episodes": null,
+								"nextAiringEpisode": null,
+								"duration": null,
+								"averageScore": null,
+								"popularity": 42989,
+								"startDate": {
+									"year": 2023
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 1296,
+								"title": {
+									"userPreferred": "Project A-Ko 2: Daitokuji Zaibatsu no Inbou"
+								},
+								"format": "OVA",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 48,
+								"averageScore": 58,
+								"popularity": 1394,
+								"startDate": {
+									"year": 1987
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 153406,
+								"title": {
+									"userPreferred": "Kami no Tou: Tower of God 2nd SEASON"
+								},
+								"format": "TV",
+								"episodes": null,
+								"nextAiringEpisode": null,
+								"duration": null,
+								"averageScore": null,
+								"popularity": 9127,
+								"startDate": {
+									"year": null
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 153452,
+								"title": {
+									"userPreferred": "Ousama Ranking: Yuuki no Takarabako"
+								},
+								"format": "TV",
+								"episodes": null,
+								"nextAiringEpisode": null,
+								"duration": null,
+								"averageScore": null,
+								"popularity": 4453,
+								"startDate": {
+									"year": 2023
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 154392,
+								"title": {
+									"userPreferred": "Versailles no Bara Movie"
+								},
+								"format": "MOVIE",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": null,
+								"averageScore": null,
+								"popularity": 1013,
+								"startDate": {
+									"year": null
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 154692,
+								"title": {
+									"userPreferred": "Kanojo mo Kanojo 2nd Season"
+								},
+								"format": "TV",
+								"episodes": null,
+								"nextAiringEpisode": null,
+								"duration": null,
+								"averageScore": null,
+								"popularity": 5938,
+								"startDate": {
+									"year": null
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 154768,
+								"title": {
+									"userPreferred": "Sono Bisque Doll wa Koi wo Suru (Zoku-hen)"
+								},
+								"format": null,
+								"episodes": null,
+								"nextAiringEpisode": null,
+								"duration": null,
+								"averageScore": null,
+								"popularity": 8888,
+								"startDate": {
+									"year": null
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 154924,
+								"title": {
+									"userPreferred": "Lupin III VS Cat's Eye"
+								},
+								"format": "ONA",
+								"episodes": null,
+								"nextAiringEpisode": null,
+								"duration": null,
+								"averageScore": null,
+								"popularity": 611,
+								"startDate": {
+									"year": 2023
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 155211,
+								"title": {
+									"userPreferred": "Dungeon ni Deai wo Motomeru no wa Machigatteiru Darou ka IV: Fuka Shou Yakusai-hen"
+								},
+								"format": "TV",
+								"episodes": null,
+								"nextAiringEpisode": {
+									"episode": 1
+								},
+								"duration": null,
+								"averageScore": null,
+								"popularity": 11296,
+								"startDate": {
+									"year": 2023
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 155227,
+								"title": {
+									"userPreferred": "Kingdom 5th Season"
+								},
+								"format": "TV",
+								"episodes": null,
+								"nextAiringEpisode": null,
+								"duration": null,
+								"averageScore": null,
+								"popularity": 1171,
+								"startDate": {
+									"year": 2024
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 150653,
+								"title": {
+									"userPreferred": "Itou Junji: Maniac"
+								},
+								"format": "ONA",
+								"episodes": null,
+								"nextAiringEpisode": {
+									"episode": 1
+								},
+								"duration": null,
+								"averageScore": null,
+								"popularity": 1603,
+								"startDate": {
+									"year": 2023
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 155925,
+								"title": {
+									"userPreferred": "LUPIN ZERO"
+								},
+								"format": "ONA",
+								"episodes": 6,
+								"nextAiringEpisode": {
+									"episode": 1
+								},
+								"duration": 30,
+								"averageScore": null,
+								"popularity": 972,
+								"startDate": {
+									"year": 2022
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 146065,
+								"title": {
+									"userPreferred": "Mushoku Tensei II: Isekai Ittara Honki Dasu"
+								},
+								"format": "TV",
+								"episodes": null,
+								"nextAiringEpisode": null,
+								"duration": null,
+								"averageScore": null,
+								"popularity": 25141,
+								"startDate": {
+									"year": 2023
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 153658,
+								"title": {
+									"userPreferred": "Haikyuu!! FINAL"
+								},
+								"format": "MOVIE",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": null,
+								"averageScore": null,
+								"popularity": 8785,
+								"startDate": {
+									"year": null
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 147189,
+								"title": {
+									"userPreferred": "City Hunter Movie (Provisonal Title)"
+								},
+								"format": "MOVIE",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": null,
+								"averageScore": null,
+								"popularity": 632,
+								"startDate": {
+									"year": null
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 21203,
+								"title": {
+									"userPreferred": "City Hunter: Ryo no Propose"
+								},
+								"format": "OVA",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 10,
+								"averageScore": 55,
+								"popularity": 641,
+								"startDate": {
+									"year": 2016
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 1471,
+								"title": {
+									"userPreferred": "City Hunter 2"
+								},
+								"format": "TV",
+								"episodes": 63,
+								"nextAiringEpisode": null,
+								"duration": 25,
+								"averageScore": 77,
+								"popularity": 4600,
+								"startDate": {
+									"year": 1988
+								}
+							}
+						}
+					]
+				},
+				{
+					"name": "Unsubbed",
+					"isCustomList": true,
+					"isCompletedList": false,
+					"entries": [
+						{
+							"media": {
+								"id": 6419,
+								"title": {
+									"userPreferred": "Cinderella Express"
+								},
+								"format": "OVA",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 47,
+								"averageScore": 43,
+								"popularity": 363,
+								"startDate": {
+									"year": 1989
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 10353,
+								"title": {
+									"userPreferred": "Okama Hakusho"
+								},
+								"format": "OVA",
+								"episodes": 3,
+								"nextAiringEpisode": null,
+								"duration": 45,
+								"averageScore": null,
+								"popularity": 207,
+								"startDate": {
+									"year": 1991
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 714,
+								"title": {
+									"userPreferred": "High School! Kimengumi"
+								},
+								"format": "TV",
+								"episodes": 86,
+								"nextAiringEpisode": null,
+								"duration": 25,
+								"averageScore": 60,
+								"popularity": 887,
+								"startDate": {
+									"year": 1985
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 9495,
+								"title": {
+									"userPreferred": "Inochi no Chikyuu: Dioxin no Natsu"
+								},
+								"format": "MOVIE",
+								"episodes": 1,
+								"nextAiringEpisode": null,
+								"duration": 83,
+								"averageScore": 52,
+								"popularity": 342,
+								"startDate": {
+									"year": 2001
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 8182,
+								"title": {
+									"userPreferred": "Bouken Shounen Shadar"
+								},
+								"format": "TV_SHORT",
+								"episodes": 156,
+								"nextAiringEpisode": null,
+								"duration": 10,
+								"averageScore": null,
+								"popularity": 177,
+								"startDate": {
+									"year": 1967
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 16021,
+								"title": {
+									"userPreferred": "Miracle Psychicer Seizan"
+								},
+								"format": "OVA",
+								"episodes": 5,
+								"nextAiringEpisode": null,
+								"duration": 30,
+								"averageScore": null,
+								"popularity": 103,
+								"startDate": {
+									"year": 1991
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 103376,
+								"title": {
+									"userPreferred": "Heart Cocktail"
+								},
+								"format": "TV_SHORT",
+								"episodes": 77,
+								"nextAiringEpisode": null,
+								"duration": 3,
+								"averageScore": null,
+								"popularity": 464,
+								"startDate": {
+									"year": 1986
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 21228,
+								"title": {
+									"userPreferred": "Itoshi no Muco"
+								},
+								"format": "TV_SHORT",
+								"episodes": 25,
+								"nextAiringEpisode": null,
+								"duration": 13,
+								"averageScore": 56,
+								"popularity": 1414,
+								"startDate": {
+									"year": 2015
+								}
+							}
+						},
+						{
+							"media": {
+								"id": 130962,
+								"title": {
+									"userPreferred": "Chickip Dancers"
+								},
+								"format": "TV_SHORT",
+								"episodes": 26,
+								"nextAiringEpisode": null,
+								"duration": 5,
+								"averageScore": null,
+								"popularity": 193,
+								"startDate": {
+									"year": 2021
+								}
+							}
+						}
+					]
+				}
+			]
+		}
+	}
+}
