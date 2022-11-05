@@ -23,7 +23,7 @@ else if (!entries.Any())
 }
 else
 {
-	<table class="table">
+	<table class="table table-striped table-bordered">
 		<thead>
 			<tr>
 				<th>
@@ -76,10 +76,10 @@ else
 						<a href="@entry.Url" target="_blank">@entry.Id</a>
 					</td>
 					<td>@entry.Title.UserPreferred</td>
-					<td>@entry.Format</td>
-					<td>@entry.HighestAvailableEpisode</td>
-					<td>@entry.TotalDuration</td>
-					<td>@entry.AverageScore</td>
+					<td>@(entry.Format?.ToString() ?? "Unknown")</td>
+					<td>@(entry.HighestAvailableEpisode ?? 0)</td>
+					<td>@(entry.TotalDuration ?? 0) minutes</td>
+					<td>@(entry.AverageScore ?? 0)%</td>
 					<td>@entry.Popularity</td>
 					<td>@(entry.StartDate?.Year ?? 0)</td>
 				</tr>
