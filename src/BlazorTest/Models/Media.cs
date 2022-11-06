@@ -25,29 +25,50 @@ public sealed record Media(
 
 public static class MediaUtils
 {
+	public const string NO_VALUE = "N/A";
+
 	public static string DisplayDuration(this Media media)
 	{
-		var duration = media.GetTotalDuration() ?? 0;
+		var duration = media.GetTotalDuration();
+		if (!duration.HasValue)
+		{
+			return NO_VALUE;
+		}
 		return $"{duration} minute{(duration == 1 ? "" : "s")}";
 	}
 
 	public static string DisplayEpisodeCount(this Media media)
 	{
-		var count = media.GetHighestEpisode() ?? 0;
+		var count = media.GetHighestEpisode();
+		if (!count.HasValue)
+		{
+			return NO_VALUE;
+		}
 		return $"{count} episode{(count == 1 ? "" : "s")}";
 	}
 
 	public static string DisplayFormat(this Media media)
-		=> media.Format?.ToString() ?? "Unknown";
+		=> media.Format?.ToString() ?? NO_VALUE;
 
 	public static string DisplayScore(this Media media)
 	{
-		var score = media.AverageScore ?? 0;
+		var score = media.AverageScore;
+		if (!score.HasValue)
+		{
+			return NO_VALUE;
+		}
 		return $"{score}%";
 	}
 
 	public static string DisplayYear(this Media media)
-		=> (media.StartDate?.Year ?? 0).ToString();
+	{
+		var year = media.StartDate?.Year;
+		if (!year.HasValue)
+		{
+			return NO_VALUE;
+		}
+		return year.Value.ToString();
+	}
 
 	public static int? GetHighestEpisode(this Media media)
 		=> media.Episodes ?? media.NextAiringEpisode?.Episode;
