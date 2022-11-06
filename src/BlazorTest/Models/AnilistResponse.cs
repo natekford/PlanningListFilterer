@@ -21,28 +21,27 @@ public sealed record AnilistResponse(
 				isCustomList
 				isCompletedList: isSplitCompletedList
 				entries {
-					...mediaListEntry
+					media {
+						id
+						title {
+							userPreferred
+						}
+						status
+						format
+						episodes
+						duration
+						averageScore
+						popularity
+						startDate {
+							year
+						}
+						genres
+						tags {
+							name
+							rank
+						}
+					}
 				}
-			}
-		}
-	}
-
-	fragment mediaListEntry on MediaList {
-		media {
-			id
-			title {
-				userPreferred
-			}
-			format
-			episodes
-			nextAiringEpisode {
-				episode
-			}
-			duration
-			averageScore
-			popularity
-			startDate {
-				year
 			}
 		}
 	}

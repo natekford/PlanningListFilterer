@@ -7,8 +7,10 @@ public sealed record Media(
 	int Id,
 	[property: JsonPropertyName("title")]
 	Title Title,
+	[property: JsonPropertyName("status")]
+	MediaStatus? Status,
 	[property: JsonPropertyName("format")]
-	Format? Format,
+	MediaFormat? Format,
 	[property: JsonPropertyName("episodes")]
 	int? Episodes,
 	[property: JsonPropertyName("nextAiringEpisode")]
@@ -20,8 +22,18 @@ public sealed record Media(
 	[property: JsonPropertyName("popularity")]
 	int Popularity,
 	[property: JsonPropertyName("startDate")]
-	StartDate? StartDate
-);
+	StartDate? StartDate,
+	[property: JsonPropertyName("genres")]
+	IReadOnlyList<string> Genres,
+	[property: JsonPropertyName("tags")]
+	IReadOnlyList<MediaTag> Tags
+)
+{
+	[JsonIgnore]
+	public bool IsGenresExpanded { get; set; }
+	[JsonIgnore]
+	public bool IsTagsExpanded { get; set; }
+}
 
 public static class MediaUtils
 {
@@ -50,6 +62,20 @@ public static class MediaUtils
 	public static string DisplayFormat(this Media media)
 		=> media.Format?.ToString() ?? NO_VALUE;
 
+	public static string DisplayGenres(this Media media, bool expanded)
+	{
+		if (media.Genres.Count == 0)
+		{
+			return NO_VALUE;
+		}
+
+		if (expanded)
+		{
+			return string.Join(Environment.NewLine, media.Genres);
+		}
+		return DisplayUnexpanded(media.Genres, x => x);
+	}
+
 	public static string DisplayScore(this Media media)
 	{
 		var score = media.AverageScore;
@@ -58,6 +84,24 @@ public static class MediaUtils
 			return NO_VALUE;
 		}
 		return $"{score}%";
+	}
+
+	public static string DisplayTag(this MediaTag tag)
+		=> $"{tag.Name} ({tag.Rank}%)";
+
+	public static string DisplayTags(this Media media, bool expanded)
+	{
+		if (media.Tags.Count == 0)
+		{
+			return NO_VALUE;
+		}
+
+		if (expanded)
+		{
+			var selected = media.Tags.Select(x => x.DisplayTag());
+			return string.Join(Environment.NewLine, selected);
+		}
+		return DisplayUnexpanded(media.Tags, DisplayTag);
 	}
 
 	public static string DisplayYear(this Media media)
@@ -78,4 +122,23 @@ public static class MediaUtils
 
 	public static string GetUrl(this Media media)
 		=> $"https://anilist.co/anime/{media.Id}/";
+
+	public static void ToggleGenresExpanded(this Media media)
+		=> media.IsGenresExpanded = !media.IsGenresExpanded;
+
+	public static void ToggleTagsExpanded(this Media media)
+		=> media.IsTagsExpanded = !media.IsTagsExpanded;
+
+	private static string DisplayUnexpanded<T>(
+		IReadOnlyList<T> list,
+		Func<T, string> selector)
+	{
+		var item = list[0];
+		var display = selector(item);
+		if (list.Count == 1)
+		{
+			return display;
+		}
+		return $"{display} + {list.Count - 1} more";
+	}
 }

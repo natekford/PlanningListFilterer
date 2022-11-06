@@ -61,22 +61,30 @@ else
 						Start Year
 					</span>
 				</th>
+				<th>Genres</th>
+				<th>Tags</th>
 			</tr>
 		</thead>
 		<tbody>
 			@foreach (var entry in entries)
 			{
-				<tr>
+				<tr class="text-nowrap">
 					<td>
 						<a href="@entry.GetUrl()" target="_blank">@entry.Id</a>
 					</td>
-					<td>@entry.Title.UserPreferred</td>
+					<td class="text-wrap">@entry.Title.UserPreferred</td>
 					<td>@entry.DisplayFormat()</td>
 					<td>@entry.DisplayEpisodeCount()</td>
 					<td>@entry.DisplayDuration()</td>
 					<td>@entry.DisplayScore()</td>
 					<td>@entry.Popularity</td>
 					<td>@entry.DisplayYear()</td>
+					<td class="text-pre" @onclick="@(() => entry.ToggleGenresExpanded())">
+						@entry.DisplayGenres(entry.IsGenresExpanded)
+					</td>
+					<td class="text-pre" @onclick="@(() => entry.ToggleTagsExpanded())">
+						@entry.DisplayTags(entry.IsTagsExpanded)
+					</td>
 				</tr>
 			}
 		</tbody>
@@ -91,19 +99,21 @@ else
 	private async Task GetEntries()
 	{
 #if false
-		var response = await AnilistResponse.GetAnilistResponseAsync(Http, username!).ConfigureAwait(false);
+	var response = await AnilistResponse.GetAnilistResponseAsync(Http, username!).ConfigureAwait(false);
 #else
 		var response = (await Http.GetFromJsonAsync<AnilistResponse>(
-			requestUri: "sample-data/anilistresponse2.json",
+			requestUri: "sample-data/anilistresponse3.json",
 			options: AnilistResponse.JsonOptions
 		).ConfigureAwait(false))!;
 #endif
 
 		entries = response.Data.MediaListCollection.Lists
 			.SelectMany(l => l.Entries.Select(e => e.Media))
-			.Where(x => x is not null)
+			.Where(x => x?.Status == MediaStatus.FINISHED)
 			.OrderBy(x => x.Id)
 			.ToList();
+
+		Console.WriteLine(entries.Single(x => x.Id == 48));
 
 		// By default, sorted ascending by id
 		// keySelector here won't be the same instance as the passed in argument

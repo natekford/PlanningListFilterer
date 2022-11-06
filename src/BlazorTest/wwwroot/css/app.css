@@ -22,6 +22,7 @@ a, .btn-link {
 	cursor: pointer;
 	color: blue;
 	text-decoration: underline;
+	white-space: nowrap;
 }
 
 .content {
@@ -68,3 +69,7 @@ a, .btn-link {
 	.blazor-error-boundary::after {
 		content: "An error has occurred."
 	}
+
+.text-pre {
+	white-space: pre;
+}

@@ -1,6 +1,6 @@
 ﻿namespace BlazorTest.Models;
 
-public enum Format
+public enum MediaFormat
 {
 	TV,
 	TV_SHORT,
