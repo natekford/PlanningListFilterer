@@ -1,17 +1,12 @@
 ﻿@page "/anilistplanning"
 @inject HttpClient Http
-@using BlazorTest.Models
-@using System.Net.Mime
-@using System.Text
-@using System.Text.Json
-@using System.Text.Json.Serialization
 
 <PageTitle>Planning List Sorter</PageTitle>
 
 <h1>Planning List Sorter</h1>
 
-<input type="text" @bind-value=username />
-<button class="btn btn-primary" @onclick=GetEntries>Get Entries</button>
+<input type="text" @bind-value="@username" />
+<button class="btn btn-primary" @onclick="@GetEntries">Get Entries</button>
 
 @if (entries == null)
 {
@@ -42,12 +37,12 @@ else
 					</span>
 				</th>
 				<th>
-					<span class="sort-link" onclick="@(() => SortEntries(e => e.HighestAvailableEpisode))">
+					<span class="sort-link" onclick="@(() => SortEntries(e => e.GetHighestEpisode()))">
 						Episode Count
 					</span>
 				</th>
 				<th>
-					<span class="sort-link" onclick="@(() => SortEntries(e => e.TotalDuration))">
+					<span class="sort-link" onclick="@(() => SortEntries(e => e.GetTotalDuration()))">
 						Duration
 					</span>
 				</th>
@@ -73,15 +68,15 @@ else
 			{
 				<tr>
 					<td>
-						<a href="@entry.Url" target="_blank">@entry.Id</a>
+						<a href="@entry.GetUrl()" target="_blank">@entry.Id</a>
 					</td>
 					<td>@entry.Title.UserPreferred</td>
-					<td>@(entry.Format?.ToString() ?? "Unknown")</td>
-					<td>@(entry.HighestAvailableEpisode ?? 0)</td>
-					<td>@(entry.TotalDuration ?? 0) minutes</td>
-					<td>@(entry.AverageScore ?? 0)%</td>
+					<td>@entry.DisplayFormat()</td>
+					<td>@entry.DisplayEpisodeCount()</td>
+					<td>@entry.DisplayDuration()</td>
+					<td>@entry.DisplayScore()</td>
 					<td>@entry.Popularity</td>
-					<td>@(entry.StartDate?.Year ?? 0)</td>
+					<td>@entry.DisplayYear()</td>
 				</tr>
 			}
 		</tbody>
@@ -96,7 +91,7 @@ else
 	private async Task GetEntries()
 	{
 #if false
-	var response = await AnilistResponse.GetAnilistResponseAsync(Http, username!).ConfigureAwait(false);
+		var response = await AnilistResponse.GetAnilistResponseAsync(Http, username!).ConfigureAwait(false);
 #else
 		var response = (await Http.GetFromJsonAsync<AnilistResponse>(
 			requestUri: "sample-data/anilistresponse2.json",
