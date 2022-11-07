@@ -6,7 +6,7 @@
 <h1>Planning List Sorter</h1>
 
 <input type="text" @bind-value="@username" />
-<button class="btn btn-primary" @onclick="@GetEntries">Get Entries</button>
+<button class="btn btn-primary btn-sm" @onclick="@GetEntries">Get Entries</button>
 
 @if (entries == null)
 {
@@ -79,10 +79,28 @@ else
 					<td>@entry.DisplayScore()</td>
 					<td>@entry.Popularity</td>
 					<td>@entry.DisplayYear()</td>
-					<td class="text-pre" @onclick="@(() => entry.ToggleGenresExpanded())">
+					@* button added before the text otherwise the button gets positioned *@
+					@* to be at the bottom right of the text *@
+					@* float-end aligns it to the right correctly, but makes the vertical *@
+					@* alignment a bit off centered (it's not a huge issue) *@
+					<td class="text-pre">
+						@if (entry.Genres.Count > 1)
+						{
+							<button class="btn btn-secondary btn-xs float-end ms-4"
+									@onclick="@(() => entry.ToggleGenresExpanded())">
+								@entry.Genres.DisplayExpanderButton(entry.IsGenresExpanded)
+							</button>
+						}
 						@entry.DisplayGenres(entry.IsGenresExpanded)
 					</td>
-					<td class="text-pre" @onclick="@(() => entry.ToggleTagsExpanded())">
+					<td class="text-pre">
+						@if (entry.Tags.Count > 1)
+						{
+							<button class="btn btn-secondary btn-xs float-end ms-4"
+									@onclick="@(() => entry.ToggleTagsExpanded())">
+								@entry.Tags.DisplayExpanderButton(entry.IsTagsExpanded)
+							</button>
+						}
 						@entry.DisplayTags(entry.IsTagsExpanded)
 					</td>
 				</tr>
@@ -99,7 +117,7 @@ else
 	private async Task GetEntries()
 	{
 #if false
-	var response = await AnilistResponse.GetAnilistResponseAsync(Http, username!).ConfigureAwait(false);
+		var response = await AnilistResponse.GetAnilistResponseAsync(Http, username!).ConfigureAwait(false);
 #else
 		var response = (await Http.GetFromJsonAsync<AnilistResponse>(
 			requestUri: "sample-data/anilistresponse3.json",
@@ -112,8 +130,6 @@ else
 			.Where(x => x?.Status == MediaStatus.FINISHED)
 			.OrderBy(x => x.Id)
 			.ToList();
-
-		Console.WriteLine(entries.Single(x => x.Id == 48));
 
 		// By default, sorted ascending by id
 		// keySelector here won't be the same instance as the passed in argument

@@ -59,6 +59,17 @@ public static class MediaUtils
 		return $"{count} episode{(count == 1 ? "" : "s")}";
 	}
 
+	public static string DisplayExpanderButton<T>(
+		this IReadOnlyList<T> list,
+		bool expanded)
+	{
+		if (expanded)
+		{
+			return "🗙";
+		}
+		return $"+{list.Count - 1}";
+	}
+
 	public static string DisplayFormat(this Media media)
 		=> media.Format?.ToString() ?? NO_VALUE;
 
@@ -73,7 +84,7 @@ public static class MediaUtils
 		{
 			return string.Join(Environment.NewLine, media.Genres);
 		}
-		return DisplayUnexpanded(media.Genres, x => x);
+		return media.Genres[0];
 	}
 
 	public static string DisplayScore(this Media media)
@@ -87,7 +98,14 @@ public static class MediaUtils
 	}
 
 	public static string DisplayTag(this MediaTag tag)
-		=> $"{tag.Name} ({tag.Rank}%)";
+	{
+		var name = tag.Name;
+		if (name is "Cute Girls Doing Cute Things")
+		{
+			name = "CGDCT";
+		}
+		return $"{name} ({tag.Rank}%)";
+	}
 
 	public static string DisplayTags(this Media media, bool expanded)
 	{
@@ -101,7 +119,7 @@ public static class MediaUtils
 			var selected = media.Tags.Select(x => x.DisplayTag());
 			return string.Join(Environment.NewLine, selected);
 		}
-		return DisplayUnexpanded(media.Tags, DisplayTag);
+		return media.Tags[0].DisplayTag();
 	}
 
 	public static string DisplayYear(this Media media)
@@ -128,17 +146,4 @@ public static class MediaUtils
 
 	public static void ToggleTagsExpanded(this Media media)
 		=> media.IsTagsExpanded = !media.IsTagsExpanded;
-
-	private static string DisplayUnexpanded<T>(
-		IReadOnlyList<T> list,
-		Func<T, string> selector)
-	{
-		var item = list[0];
-		var display = selector(item);
-		if (list.Count == 1)
-		{
-			return display;
-		}
-		return $"{display} + {list.Count - 1} more";
-	}
 }
