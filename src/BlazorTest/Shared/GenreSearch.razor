@@ -33,17 +33,17 @@
 	public IEnumerable<string> AvailableItems { get; set; } = Enumerable.Empty<string>();
 	public string Id => ItemType?.ToLower() + "Select";
 	[Parameter]
+	public EventCallback<string> ItemAdded { get; set; }
+	[Parameter]
 	public EventCallback<string> ItemRemoved { get; set; }
 	[Parameter]
 	public IEnumerable<string> Items { get; set; } = Enumerable.Empty<string>();
-	[Parameter]
-	public EventCallback<ChangeEventArgs> ItemSelected { get; set; }
 	[Parameter]
 	public string? ItemType { get; set; }
 
 	private async Task OnItemSelected(ChangeEventArgs e)
 	{
-		await ItemSelected.InvokeAsync(e).ConfigureAwait(false);
+		await ItemAdded.InvokeAsync(e.Value?.ToString()!).ConfigureAwait(false);
 		await JS.InvokeVoidAsync(JSMethods.ResetSelectedIndex, Id).ConfigureAwait(false);
 	}
 

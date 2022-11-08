@@ -33,16 +33,16 @@
 				</div>
 				<GenreSearch
 					AvailableItems="@search.AvailableGenres"
-					ItemRemoved="@search.GenreRemoved"
+					ItemAdded="@search.AddGenre"
+					ItemRemoved="@search.RemoveGenre"
 					Items="@search.Genres"
-					ItemSelected="@search.GenreSelected"
 					ItemType="Genre"
 				/>
 				<GenreSearch
 					AvailableItems="@search.AvailableTags"
-					ItemRemoved="@search.TagRemoved"
+					ItemAdded="@search.AddTag"
+					ItemRemoved="@search.RemoveTag"
 					Items="@search.Tags"
-					ItemSelected="@search.TagSelected"
 					ItemType="Tag"
 				/>
 			</div>

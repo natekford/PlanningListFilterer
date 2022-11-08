@@ -22,34 +22,53 @@ public sealed class SearchViewModel
 		UpdateVisibility();
 	}
 
-	public void GenreRemoved(string genre)
+	public void AddGenre(string genre)
+	{
+		Genres.Add(genre);
+		UpdateVisibility();
+	}
+
+	public void AddTag(string tag)
+	{
+		Tags.Add(tag);
+		UpdateVisibility();
+	}
+
+	public void RemoveGenre(string genre)
 	{
 		Genres.Remove(genre);
 		UpdateVisibility();
 	}
 
-	public void GenreSelected(ChangeEventArgs e)
-	{
-		Genres.Add(e.Value?.ToString()!);
-		UpdateVisibility();
-	}
-
-	public void TagRemoved(string tag)
+	public void RemoveTag(string tag)
 	{
 		Tags.Remove(tag);
-		UpdateVisibility();
-	}
-
-	public void TagSelected(ChangeEventArgs e)
-	{
-		Tags.Add(e.Value?.ToString()!);
 		UpdateVisibility();
 	}
 
 	public void ToggleModal()
 		=> IsModalActive = !IsModalActive;
 
-	public void UpdateVisibility()
+	private bool GetUpdatedVisibility(Media media)
+	{
+		foreach (var genre in Genres)
+		{
+			if (!media.Genres.Contains(genre))
+			{
+				return false;
+			}
+		}
+		foreach (var tag in Tags)
+		{
+			if (!media.Tags.Any(x => x.Name == tag))
+			{
+				return false;
+			}
+		}
+		return true;
+	}
+
+	private void UpdateVisibility()
 	{
 		var availableGenres = new HashSet<string>();
 		var availableTags = new HashSet<string>();
@@ -80,24 +99,5 @@ public sealed class SearchViewModel
 
 		AvailableGenres = availableGenres.OrderBy(x => x).ToImmutableArray();
 		AvailableTags = availableTags.OrderBy(x => x).ToImmutableArray();
-	}
-
-	private bool GetUpdatedVisibility(Media media)
-	{
-		foreach (var genre in Genres)
-		{
-			if (!media.Genres.Contains(genre))
-			{
-				return false;
-			}
-		}
-		foreach (var tag in Tags)
-		{
-			if (!media.Tags.Any(x => x.Name == tag))
-			{
-				return false;
-			}
-		}
-		return true;
 	}
 }
