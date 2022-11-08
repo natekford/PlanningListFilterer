@@ -2,7 +2,7 @@
 
 <div class="row">
 	<div class="col-md-4">
-		<h5 class="modal-title">Genres</h5>
+		<h5 class="modal-title">@(ItemTypePlural ?? ItemType + "s")</h5>
 		<select class="w-100" id="@Id" @onchange="@OnItemSelected">
 			<option class="d-none" selected disabled hidden value="">
 				Select @ItemType
@@ -14,7 +14,7 @@
 		</select>
 	</div>
 
-	<div class="col-md-8 row mt-1 mb-1">
+	<ul class="row col-md-8 my-1">
 		@foreach (var item in Items)
 		{
 			<button class="btn btn-primary btn-xs rounded-pill col-md-6"
@@ -25,7 +25,7 @@
 				</span>
 			</button>
 		}
-	</div>
+	</ul>
 </div>
 
 @code {
@@ -40,6 +40,8 @@
 	public IEnumerable<string> Items { get; set; } = Enumerable.Empty<string>();
 	[Parameter]
 	public string? ItemType { get; set; }
+	[Parameter]
+	public string? ItemTypePlural { get; set; }
 
 	private async Task OnItemSelected(ChangeEventArgs e)
 	{

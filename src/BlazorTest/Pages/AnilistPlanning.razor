@@ -177,7 +177,8 @@ else
 			.OrderBy(x => x.Id)
 			.ToList();
 
-		search = new(entries);
+		search = await SearchViewModel.CreateAsync(entries).ConfigureAwait(false);
+
 		// By default, sorted ascending by id
 		// keySelector here won't be the same instance as the passed in argument
 		// so no point in giving it any value other than null

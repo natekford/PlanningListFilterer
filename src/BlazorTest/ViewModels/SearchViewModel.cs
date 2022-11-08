@@ -1,53 +1,93 @@
 ﻿using BlazorTest.Models;
 
-using Microsoft.AspNetCore.Components;
-
 using System.Collections.Immutable;
 
 namespace BlazorTest.ViewModels;
 
 public sealed class SearchViewModel
 {
-	private readonly IEnumerable<Media> _Entries;
+	private readonly IEnumerable<Media> _Media;
 
-	public ImmutableArray<string> AvailableGenres { get; private set; }
-	public ImmutableArray<string> AvailableTags { get; private set; }
+	public ImmutableArray<string> AvailableGenres { get; private set; } = ImmutableArray<string>.Empty;
+	public ImmutableArray<string> AvailableTags { get; private set; } = ImmutableArray<string>.Empty;
 	public HashSet<string> Genres { get; set; } = new();
 	public bool IsModalActive { get; private set; }
 	public HashSet<string> Tags { get; set; } = new();
 
-	public SearchViewModel(IEnumerable<Media> entries)
+	public SearchViewModel(IEnumerable<Media> media)
 	{
-		_Entries = entries;
-		UpdateVisibility();
+		_Media = media;
 	}
 
-	public void AddGenre(string genre)
+	public static async Task<SearchViewModel> CreateAsync(IEnumerable<Media> media)
+	{
+		var vm = new SearchViewModel(media);
+		await vm.UpdateVisibilityAsync().ConfigureAwait(false);
+		return vm;
+	}
+
+	public Task AddGenre(string genre)
 	{
 		Genres.Add(genre);
-		UpdateVisibility();
+		return UpdateVisibilityAsync();
 	}
 
-	public void AddTag(string tag)
+	public Task AddTag(string tag)
 	{
 		Tags.Add(tag);
-		UpdateVisibility();
+		return UpdateVisibilityAsync();
 	}
 
-	public void RemoveGenre(string genre)
+	public Task RemoveGenre(string genre)
 	{
 		Genres.Remove(genre);
-		UpdateVisibility();
+		return UpdateVisibilityAsync();
 	}
 
-	public void RemoveTag(string tag)
+	public Task RemoveTag(string tag)
 	{
 		Tags.Remove(tag);
-		UpdateVisibility();
+		return UpdateVisibilityAsync();
 	}
 
 	public void ToggleModal()
 		=> IsModalActive = !IsModalActive;
+
+	public async Task UpdateVisibilityAsync()
+	{
+		var availableGenres = new HashSet<string>();
+		var availableTags = new HashSet<string>();
+
+		foreach (var media in _Media)
+		{
+			media.IsEntryVisible = GetUpdatedVisibility(media);
+			if (!media.IsEntryVisible)
+			{
+				continue;
+			}
+
+			foreach (var genre in media.Genres)
+			{
+				if (!Genres.Contains(genre))
+				{
+					availableGenres.Add(genre);
+				}
+			}
+			foreach (var tag in media.Tags)
+			{
+				if (!Tags.Contains(tag.Name))
+				{
+					availableTags.Add(tag.Name);
+				}
+			}
+
+			// await so the UI is more responsive
+			await Task.Yield();
+		}
+
+		AvailableGenres = availableGenres.OrderBy(x => x).ToImmutableArray();
+		AvailableTags = availableTags.OrderBy(x => x).ToImmutableArray();
+	}
 
 	private bool GetUpdatedVisibility(Media media)
 	{
@@ -66,38 +106,5 @@ public sealed class SearchViewModel
 			}
 		}
 		return true;
-	}
-
-	private void UpdateVisibility()
-	{
-		var availableGenres = new HashSet<string>();
-		var availableTags = new HashSet<string>();
-
-		foreach (var item in _Entries)
-		{
-			item.IsEntryVisible = GetUpdatedVisibility(item);
-			if (!item.IsEntryVisible)
-			{
-				continue;
-			}
-
-			foreach (var genre in item.Genres)
-			{
-				if (!Genres.Contains(genre))
-				{
-					availableGenres.Add(genre);
-				}
-			}
-			foreach (var tag in item.Tags)
-			{
-				if (!Tags.Contains(tag.Name))
-				{
-					availableTags.Add(tag.Name);
-				}
-			}
-		}
-
-		AvailableGenres = availableGenres.OrderBy(x => x).ToImmutableArray();
-		AvailableTags = availableTags.OrderBy(x => x).ToImmutableArray();
 	}
 }
