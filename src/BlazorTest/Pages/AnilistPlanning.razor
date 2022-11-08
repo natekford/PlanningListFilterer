@@ -19,7 +19,7 @@
 	<div class="modal d-block" id="@IDs.SearchModal" role="dialog" @onclick="@search.ToggleModal">
 		@* onclick:stopPropagation so the @onclick to close the menu doesn't trigger *@
 		@* when clicking any of the elements inside the modal *@
-		<div class="modal-dialog" role="document" @onclick:stopPropagation="true">
+		<div class="modal-dialog modal-lg" role="document" @onclick:stopPropagation="true">
 			<div class="modal-content container">
 				<div class="row">
 					<div class="col-sm" style="background:red">
@@ -33,10 +33,9 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-5">
-						<h5 class="modal-title" for="genres">Genres</h5>
-						<select class="w-75" name="genres" id="@IDs.GenresSelect"
-							@onchange="@GenreSelected">
+					<div class="col-md-4">
+						<h5 class="modal-title">Genres</h5>
+						<select class="w-100" id="@IDs.GenresSelect" @onchange="@GenreSelected">
 							<option class="d-none" selected disabled hidden value="">
 								Select Genre
 							</option>
@@ -47,18 +46,23 @@
 						</select>
 					</div>
 
-					<div class="col-md-7 row">
+					<div class="col-md-8 row mt-1 mb-1">
 						@foreach (var genre in search.Genres)
 						{
-							<div class="col-md-6 bg-primary">@genre</div>
+							<button class="btn btn-primary btn-xs rounded-pill col-md-6"
+									@onclick="@(() => search.GenreRemoved(genre))">
+								@genre
+								<span class="float-end">
+									🗙
+								</span>
+							</button>
 						}
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-5">
-						<h5 class="modal-title" for="tags">Tags</h5>
-						<select class="w-75" name="tags" id="@IDs.TagsSelect"
-							@onchange="@TagSelected">
+					<div class="col-md-4">
+						<h5 class="modal-title">Tags</h5>
+						<select class="w-100" id="@IDs.TagsSelect" @onchange="@TagSelected">
 							<option class="d-none" selected disabled hidden value="">
 								Select Tag
 							</option>
@@ -69,10 +73,16 @@
 						</select>
 					</div>
 
-					<div class="col-md-7 row">
+					<div class="col-md-8 row mt-1 mb-1">
 						@foreach (var tag in search.Tags)
 						{
-							<div class="col-md-6 bg-secondary">@tag</div>
+							<button class="btn btn-primary btn-xs rounded-pill col-md-6"
+									@onclick="@(() => search.TagRemoved(tag))">
+								@tag
+								<span class="float-end">
+									🗙
+								</span>
+							</button>
 						}
 					</div>
 				</div>

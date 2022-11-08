@@ -22,9 +22,21 @@ public sealed class SearchViewModel
 		UpdateAvailableSearchOptions();
 	}
 
+	public void GenreRemoved(string genre)
+	{
+		Genres.Remove(genre);
+		UpdateVisibility();
+	}
+
 	public void GenreSelected(ChangeEventArgs e)
 	{
 		Genres.Add(e.Value?.ToString()!);
+		UpdateVisibility();
+	}
+
+	public void TagRemoved(string tag)
+	{
+		Tags.Remove(tag);
 		UpdateVisibility();
 	}
 
