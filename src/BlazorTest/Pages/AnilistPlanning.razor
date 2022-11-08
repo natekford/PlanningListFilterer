@@ -9,13 +9,15 @@
 <button class="btn btn-primary btn-sm" @onclick="@GetEntries">
 	Get Entries
 </button>
-<button class="btn btn-primary btn-sm float-end" @onclick="@ToggleSearchMenu">
+<button class="btn btn-primary btn-sm float-end" @onclick="@search.ToggleModal">
 	Search
 </button>
 
-@if (search.IsVisible)
+@if (search.IsModalActive)
 {
-	<div class="modal d-block" id="searchModal" role="dialog" @onclick="@ToggleSearchMenu">
+	<div class="modal d-block" id="searchModal" role="dialog" @onclick="@search.ToggleModal">
+		@* onclick:stopPropagation so the @onclick to close the menu doesn't trigger *@
+		@* when clicking any of the elements inside the modal *@
 		<div class="modal-dialog" role="document" @onclick:stopPropagation="true">
 			<div class="modal-content">
 				<div>
@@ -29,27 +31,31 @@
 						<h5>third</h5>
 					</div>
 				</div>
-				<div class="bg-primary">
-					<h5 class="modal-title">Genres</h5>
-					<input type="text" list="genres" />
-
-					<datalist id="genres">
+				<div class="m-2 bg-primary">
+					<h5 class="modal-title" for="genres">Genres</h5>
+					<select class="w-25" name="genres" id="genres"
+							@onchange="@GenreSelected">
+						<option class="d-none" selected disabled hidden value="">
+							Select Genre
+						</option>
 						@foreach (var genre in search.AvailableGenres)
 						{
-							<option value="@genre" />
+							<option value="@genre">@genre</option>
 						}
-					</datalist>
+					</select>
 				</div>
-				<div class="bg-secondary">
-					<h5 class="modal-title">Tags</h5>
-					<input type="text" list="tags" />
-
-					<datalist id="tags">
+				<div class="m-2 bg-secondary">
+					<h5 class="modal-title" for="tags">Tags</h5>
+					<select class="w-25" name="tags" id="tags"
+							@onchange="@TagSelected">
+						<option class="d-none" selected disabled hidden value="">
+							Select Tag
+						</option>
 						@foreach (var tag in search.AvailableTags)
 						{
-							<option value="@tag" />
+							<option value="@tag">@tag</option>
 						}
-					</datalist>
+					</select>
 				</div>
 			</div>
 		</div>
@@ -184,32 +190,24 @@ else
 			.OrderBy(x => x.Id)
 			.ToList();
 
-		var availableGenres = new HashSet<string>();
-		var availableTags = new HashSet<string>();
-		foreach (var entry in entries)
-		{
-			foreach (var genre in entry.Genres)
-			{
-				availableGenres.Add(genre);
-			}
-			foreach (var tag in entry.Tags)
-			{
-				availableTags.Add(tag.Name);
-			}
-		}
-		search = new(
-			availableGenres: availableGenres,
-			availableTags: availableTags
-		);
-
+		search = new(entries);
 		// By default, sorted ascending by id
 		// keySelector here won't be the same instance as the passed in argument
 		// so no point in giving it any value other than null
 		lastSortedBy = new(null, IsAscending: true);
 	}
 
-	private void ToggleSearchMenu()
-		=> search.IsVisible = !search.IsVisible;
+	private void GenreSelected(ChangeEventArgs e)
+	{
+		search.Genres.Add(e.Value?.ToString()!);
+		search.UpdateVisibility(entries);
+	}
+
+	private void TagSelected(ChangeEventArgs e)
+	{
+		search.Tags.Add(e.Value?.ToString()!);
+		search.UpdateVisibility(entries);
+	}
 
 	private void SortEntries<TKey>(Func<Media, TKey> keySelector)
 	{
@@ -231,22 +229,73 @@ else
 
 	private sealed class Search
 	{
-		public bool IsVisible { get; set; }
+		public ImmutableArray<string> AvailableGenres { get; private set; }
+		public ImmutableArray<string> AvailableTags { get; private set; }
+		public bool IsModalActive { get; private set; }
 		public HashSet<string> Genres { get; set; } = new();
 		public HashSet<string> Tags { get; set; } = new();
-		public ImmutableArray<string> AvailableGenres { get; set; }
-		public ImmutableArray<string> AvailableTags { get; set; }
 
-		public Search() : this(Enumerable.Empty<string>(), Enumerable.Empty<string>())
+		public Search() : this(Enumerable.Empty<Media>())
 		{
 		}
 
-		public Search(
-			IEnumerable<string> availableGenres, 
-			IEnumerable<string> availableTags)
+		public Search(IEnumerable<Media> entries)
 		{
+			UpdateAvailableSearchOptions(entries);
+		}
+
+		public bool GetUpdatedVisibility(Media media)
+		{
+			foreach (var genre in Genres)
+			{
+				if (!media.Genres.Contains(genre))
+				{
+					return false;
+				}
+			}
+			foreach (var tag in Tags)
+			{
+				if (!media.Tags.Any(x => x.Name == tag))
+				{
+					return false;
+				}
+			}
+			return true;
+		}
+
+		public void ToggleModal()
+			=> IsModalActive = !IsModalActive;
+
+		public void UpdateAvailableSearchOptions(IEnumerable<Media> entries)
+		{
+			var availableGenres = new HashSet<string>();
+			var availableTags = new HashSet<string>();
+			foreach (var entry in entries)
+			{
+				if (!entry.IsEntryVisible)
+				{
+					continue;
+				}
+
+				foreach (var genre in entry.Genres)
+				{
+					availableGenres.Add(genre);
+				}
+				foreach (var tag in entry.Tags)
+				{
+					availableTags.Add(tag.Name);
+				}
+			}
 			AvailableGenres = availableGenres.OrderBy(x => x).ToImmutableArray();
 			AvailableTags = availableTags.OrderBy(x => x).ToImmutableArray();
+		}
+
+		public void UpdateVisibility(IEnumerable<Media> media)
+		{
+			foreach (var item in media)
+			{
+				item.IsEntryVisible = GetUpdatedVisibility(item);
+			}
 		}
 	}
 }
