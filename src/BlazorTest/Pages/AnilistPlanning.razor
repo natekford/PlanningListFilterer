@@ -1,6 +1,5 @@
 ﻿@page "/anilistplanning"
 @inject HttpClient Http
-@inject IJSRuntime JS
 
 <PageTitle>Planning List Sorter</PageTitle>
 
@@ -32,60 +31,20 @@
 						<h5>third</h5>
 					</div>
 				</div>
-				<div class="row">
-					<div class="col-md-4">
-						<h5 class="modal-title">Genres</h5>
-						<select class="w-100" id="@IDs.GenresSelect" @onchange="@GenreSelected">
-							<option class="d-none" selected disabled hidden value="">
-								Select Genre
-							</option>
-							@foreach (var genre in search.AvailableGenres)
-							{
-								<option value="@genre">@genre</option>
-							}
-						</select>
-					</div>
-
-					<div class="col-md-8 row mt-1 mb-1">
-						@foreach (var genre in search.Genres)
-						{
-							<button class="btn btn-primary btn-xs rounded-pill col-md-6"
-									@onclick="@(() => search.GenreRemoved(genre))">
-								@genre
-								<span class="float-end">
-									🗙
-								</span>
-							</button>
-						}
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-4">
-						<h5 class="modal-title">Tags</h5>
-						<select class="w-100" id="@IDs.TagsSelect" @onchange="@TagSelected">
-							<option class="d-none" selected disabled hidden value="">
-								Select Tag
-							</option>
-							@foreach (var tag in search.AvailableTags)
-							{
-								<option value="@tag">@tag</option>
-							}
-						</select>
-					</div>
-
-					<div class="col-md-8 row mt-1 mb-1">
-						@foreach (var tag in search.Tags)
-						{
-							<button class="btn btn-primary btn-xs rounded-pill col-md-6"
-									@onclick="@(() => search.TagRemoved(tag))">
-								@tag
-								<span class="float-end">
-									🗙
-								</span>
-							</button>
-						}
-					</div>
-				</div>
+				<GenreSearch
+					AvailableItems="@search.AvailableGenres"
+					ItemRemoved="@search.GenreRemoved"
+					Items="@search.Genres"
+					ItemSelected="@search.GenreSelected"
+					ItemType="Genre"
+				/>
+				<GenreSearch
+					AvailableItems="@search.AvailableTags"
+					ItemRemoved="@search.TagRemoved"
+					Items="@search.Tags"
+					ItemSelected="@search.TagSelected"
+					ItemType="Tag"
+				/>
 			</div>
 		</div>
 	</div>
@@ -224,21 +183,6 @@ else
 		// keySelector here won't be the same instance as the passed in argument
 		// so no point in giving it any value other than null
 		lastSortedBy = new(null, IsAscending: true);
-	}
-
-	private Task GenreSelected(ChangeEventArgs e)
-		=> ItemSelected(IDs.GenresSelect, e, search.GenreSelected);
-
-	private Task TagSelected(ChangeEventArgs e)
-		=> ItemSelected(IDs.TagsSelect, e, search.TagSelected);
-
-	private async Task ItemSelected(
-		string id,
-		ChangeEventArgs e,
-		Action<ChangeEventArgs> func)
-	{
-		func(e);
-		await JS.InvokeVoidAsync(JSMethods.ResetSelectedIndex, id).ConfigureAwait(false);
 	}
 
 	private void SortEntries<TKey>(Func<Media, TKey> keySelector)
