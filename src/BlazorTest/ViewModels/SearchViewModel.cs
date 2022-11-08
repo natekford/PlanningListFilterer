@@ -19,7 +19,7 @@ public sealed class SearchViewModel
 	public SearchViewModel(IEnumerable<Media> entries)
 	{
 		_Entries = entries;
-		UpdateAvailableSearchOptions();
+		UpdateVisibility();
 	}
 
 	public void GenreRemoved(string genre)
@@ -51,11 +51,35 @@ public sealed class SearchViewModel
 
 	public void UpdateVisibility()
 	{
+		var availableGenres = new HashSet<string>();
+		var availableTags = new HashSet<string>();
+
 		foreach (var item in _Entries)
 		{
 			item.IsEntryVisible = GetUpdatedVisibility(item);
+			if (!item.IsEntryVisible)
+			{
+				continue;
+			}
+
+			foreach (var genre in item.Genres)
+			{
+				if (!Genres.Contains(genre))
+				{
+					availableGenres.Add(genre);
+				}
+			}
+			foreach (var tag in item.Tags)
+			{
+				if (!Tags.Contains(tag.Name))
+				{
+					availableTags.Add(tag.Name);
+				}
+			}
 		}
-		UpdateAvailableSearchOptions();
+
+		AvailableGenres = availableGenres.OrderBy(x => x).ToImmutableArray();
+		AvailableTags = availableTags.OrderBy(x => x).ToImmutableArray();
 	}
 
 	private bool GetUpdatedVisibility(Media media)
@@ -75,35 +99,5 @@ public sealed class SearchViewModel
 			}
 		}
 		return true;
-	}
-
-	private void UpdateAvailableSearchOptions()
-	{
-		var availableGenres = new HashSet<string>();
-		var availableTags = new HashSet<string>();
-		foreach (var entry in _Entries)
-		{
-			if (!entry.IsEntryVisible)
-			{
-				continue;
-			}
-
-			foreach (var genre in entry.Genres)
-			{
-				if (!Genres.Contains(genre))
-				{
-					availableGenres.Add(genre);
-				}
-			}
-			foreach (var tag in entry.Tags)
-			{
-				if (!Tags.Contains(tag.Name))
-				{
-					availableTags.Add(tag.Name);
-				}
-			}
-		}
-		AvailableGenres = availableGenres.OrderBy(x => x).ToImmutableArray();
-		AvailableTags = availableTags.OrderBy(x => x).ToImmutableArray();
 	}
 }

@@ -108,11 +108,10 @@ else
 			</tr>
 		</thead>
 		<tbody>
-			@foreach (var entry in entries)
-			{
-				if (!entry.IsEntryVisible)
+			<Virtualize Items="@entries" Context="entry">
+				@if (!entry.IsEntryVisible)
 				{
-					continue;
+					return;
 				}
 				<tr class="text-nowrap">
 					<td>
@@ -133,7 +132,7 @@ else
 						@if (entry.Genres.Count > 1)
 						{
 							<button class="btn btn-secondary btn-xs float-end ms-4"
-									@onclick="@(() => entry.ToggleGenresExpanded())">
+							@onclick="@(() => entry.ToggleGenresExpanded())">
 								@entry.Genres.DisplayExpanderButton(entry.IsGenresExpanded)
 							</button>
 						}
@@ -143,14 +142,14 @@ else
 						@if (entry.Tags.Count > 1)
 						{
 							<button class="btn btn-secondary btn-xs float-end ms-4"
-									@onclick="@(() => entry.ToggleTagsExpanded())">
+							@onclick="@(() => entry.ToggleTagsExpanded())">
 								@entry.Tags.DisplayExpanderButton(entry.IsTagsExpanded)
 							</button>
 						}
 						@entry.DisplayTags(entry.IsTagsExpanded)
 					</td>
 				</tr>
-			}
+			</Virtualize>
 		</tbody>
 	</table>
 }
