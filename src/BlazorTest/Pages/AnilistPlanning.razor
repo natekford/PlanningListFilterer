@@ -6,7 +6,55 @@
 <h1>Planning List Sorter</h1>
 
 <input type="text" @bind-value="@username" />
-<button class="btn btn-primary btn-sm" @onclick="@GetEntries">Get Entries</button>
+<button class="btn btn-primary btn-sm" @onclick="@GetEntries">
+	Get Entries
+</button>
+<button class="btn btn-primary btn-sm float-end" @onclick="@ToggleSearchMenu">
+	Search
+</button>
+
+@if (search.IsVisible)
+{
+	<div class="modal d-block" id="searchModal" role="dialog" @onclick="@ToggleSearchMenu">
+		<div class="modal-dialog" role="document" @onclick:stopPropagation="true">
+			<div class="modal-content">
+				<div>
+					<div class="w-25 float-start" style="background:red">
+						<h5>first</h5>
+					</div>
+					<div class="w-25 float-start" style="background:green">
+						<h5>second</h5>
+					</div>
+					<div class="w-25 float-start" style="background:blue">
+						<h5>third</h5>
+					</div>
+				</div>
+				<div class="bg-primary">
+					<h5 class="modal-title">Genres</h5>
+					<input type="text" list="genres" />
+
+					<datalist id="genres">
+						@foreach (var genre in search.AvailableGenres)
+						{
+							<option value="@genre" />
+						}
+					</datalist>
+				</div>
+				<div class="bg-secondary">
+					<h5 class="modal-title">Tags</h5>
+					<input type="text" list="tags" />
+
+					<datalist id="tags">
+						@foreach (var tag in search.AvailableTags)
+						{
+							<option value="@tag" />
+						}
+					</datalist>
+				</div>
+			</div>
+		</div>
+	</div>
+}
 
 @if (entries == null)
 {
@@ -68,6 +116,10 @@ else
 		<tbody>
 			@foreach (var entry in entries)
 			{
+				if (!entry.IsEntryVisible)
+				{
+					continue;
+				}
 				<tr class="text-nowrap">
 					<td>
 						<a href="@entry.GetUrl()" target="_blank">@entry.Id</a>
@@ -110,6 +162,7 @@ else
 }
 
 @code {
+	private Search search = new();
 	private string? username;
 	private List<Media>? entries;
 	private LastSortedBy lastSortedBy;
@@ -117,7 +170,7 @@ else
 	private async Task GetEntries()
 	{
 #if false
-		var response = await AnilistResponse.GetAnilistResponseAsync(Http, username!).ConfigureAwait(false);
+	var response = await AnilistResponse.GetAnilistResponseAsync(Http, username!).ConfigureAwait(false);
 #else
 		var response = (await Http.GetFromJsonAsync<AnilistResponse>(
 			requestUri: "sample-data/anilistresponse3.json",
@@ -131,11 +184,32 @@ else
 			.OrderBy(x => x.Id)
 			.ToList();
 
+		var availableGenres = new HashSet<string>();
+		var availableTags = new HashSet<string>();
+		foreach (var entry in entries)
+		{
+			foreach (var genre in entry.Genres)
+			{
+				availableGenres.Add(genre);
+			}
+			foreach (var tag in entry.Tags)
+			{
+				availableTags.Add(tag.Name);
+			}
+		}
+		search = new(
+			availableGenres: availableGenres,
+			availableTags: availableTags
+		);
+
 		// By default, sorted ascending by id
 		// keySelector here won't be the same instance as the passed in argument
 		// so no point in giving it any value other than null
 		lastSortedBy = new(null, IsAscending: true);
 	}
+
+	private void ToggleSearchMenu()
+		=> search.IsVisible = !search.IsVisible;
 
 	private void SortEntries<TKey>(Func<Media, TKey> keySelector)
 	{
@@ -154,4 +228,25 @@ else
 	}
 
 	private record struct LastSortedBy(object? KeySelector, bool IsAscending);
+
+	private sealed class Search
+	{
+		public bool IsVisible { get; set; }
+		public HashSet<string> Genres { get; set; } = new();
+		public HashSet<string> Tags { get; set; } = new();
+		public ImmutableArray<string> AvailableGenres { get; set; }
+		public ImmutableArray<string> AvailableTags { get; set; }
+
+		public Search() : this(Enumerable.Empty<string>(), Enumerable.Empty<string>())
+		{
+		}
+
+		public Search(
+			IEnumerable<string> availableGenres, 
+			IEnumerable<string> availableTags)
+		{
+			AvailableGenres = availableGenres.OrderBy(x => x).ToImmutableArray();
+			AvailableTags = availableTags.OrderBy(x => x).ToImmutableArray();
+		}
+	}
 }

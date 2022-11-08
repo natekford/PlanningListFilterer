@@ -33,6 +33,8 @@ public sealed record Media(
 	public bool IsGenresExpanded { get; set; }
 	[JsonIgnore]
 	public bool IsTagsExpanded { get; set; }
+	[JsonIgnore]
+	public bool IsEntryVisible { get; set; } = true;
 }
 
 public static class MediaUtils
