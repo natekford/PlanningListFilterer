@@ -8,15 +8,30 @@ public sealed class SearchViewModel
 {
 	private readonly IEnumerable<Media> _Media;
 
-	public ImmutableArray<string> AvailableGenres { get; private set; } = ImmutableArray<string>.Empty;
-	public ImmutableArray<string> AvailableTags { get; private set; } = ImmutableArray<string>.Empty;
-	public HashSet<string> Genres { get; set; } = new();
+	public ImmutableArray<string> AllowedGenres { get; private set; } = ImmutableArray<string>.Empty;
+	public int AllowedMaximum { get; }
+	public int AllowedMinimum { get; }
+	public ImmutableArray<string> AllowedTags { get; private set; } = ImmutableArray<string>.Empty;
+	public ImmutableHashSet<string> Genres { get; set; } = ImmutableHashSet<string>.Empty;
 	public bool IsModalActive { get; private set; }
-	public HashSet<string> Tags { get; set; } = new();
+	public int? MaximumYear { get; private set; }
+	public int? MinimumYear { get; private set; }
+	public ImmutableHashSet<string> Tags { get; set; } = ImmutableHashSet<string>.Empty;
 
 	public SearchViewModel(IEnumerable<Media> media)
 	{
 		_Media = media;
+
+		var minimum = int.MaxValue;
+		var maximum = int.MinValue;
+		foreach (var m in media)
+		{
+			var year = m.GetReleaseYear();
+			minimum = Math.Min(minimum, year);
+			maximum = Math.Max(maximum, year);
+		}
+		AllowedMinimum = minimum;
+		AllowedMaximum = maximum;
 	}
 
 	public static async Task<SearchViewModel> CreateAsync(IEnumerable<Media> media)
@@ -28,25 +43,37 @@ public sealed class SearchViewModel
 
 	public Task AddGenre(string genre)
 	{
-		Genres.Add(genre);
+		Genres = Genres.Add(genre);
 		return UpdateVisibilityAsync();
 	}
 
 	public Task AddTag(string tag)
 	{
-		Tags.Add(tag);
+		Tags = Tags.Add(tag);
 		return UpdateVisibilityAsync();
 	}
 
 	public Task RemoveGenre(string genre)
 	{
-		Genres.Remove(genre);
+		Genres = Genres.Remove(genre);
 		return UpdateVisibilityAsync();
 	}
 
 	public Task RemoveTag(string tag)
 	{
-		Tags.Remove(tag);
+		Tags = Tags.Remove(tag);
+		return UpdateVisibilityAsync();
+	}
+
+	public Task SetMaximumYear(int? maximum)
+	{
+		MaximumYear = maximum;
+		return UpdateVisibilityAsync();
+	}
+
+	public Task SetMinimumYear(int? minimum)
+	{
+		MinimumYear = minimum;
 		return UpdateVisibilityAsync();
 	}
 
@@ -55,8 +82,8 @@ public sealed class SearchViewModel
 
 	public async Task UpdateVisibilityAsync()
 	{
-		var availableGenres = new HashSet<string>();
-		var availableTags = new HashSet<string>();
+		var genres = new HashSet<string>();
+		var tags = new HashSet<string>();
 
 		foreach (var media in _Media)
 		{
@@ -70,14 +97,14 @@ public sealed class SearchViewModel
 			{
 				if (!Genres.Contains(genre))
 				{
-					availableGenres.Add(genre);
+					genres.Add(genre);
 				}
 			}
 			foreach (var tag in media.Tags)
 			{
 				if (!Tags.Contains(tag.Name))
 				{
-					availableTags.Add(tag.Name);
+					tags.Add(tag.Name);
 				}
 			}
 
@@ -85,12 +112,21 @@ public sealed class SearchViewModel
 			await Task.Yield();
 		}
 
-		AvailableGenres = availableGenres.OrderBy(x => x).ToImmutableArray();
-		AvailableTags = availableTags.OrderBy(x => x).ToImmutableArray();
+		AllowedGenres = genres.OrderBy(x => x).ToImmutableArray();
+		AllowedTags = tags.OrderBy(x => x).ToImmutableArray();
 	}
 
 	private bool GetUpdatedVisibility(Media media)
 	{
+		var year = media.GetReleaseYear();
+		if (MinimumYear.HasValue && year < MinimumYear)
+		{
+			return false;
+		}
+		if (MaximumYear.HasValue && year > MaximumYear)
+		{
+			return false;
+		}
 		foreach (var genre in Genres)
 		{
 			if (!media.Genres.Contains(genre))

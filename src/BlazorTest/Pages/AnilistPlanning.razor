@@ -32,19 +32,29 @@
 					</div>
 				</div>
 				<GenreSearch
-					AvailableItems="@search.AvailableGenres"
+					AvailableItems="@search.AllowedGenres"
 					ItemAdded="@search.AddGenre"
 					ItemRemoved="@search.RemoveGenre"
 					Items="@search.Genres"
 					ItemType="Genre"
 				/>
 				<GenreSearch
-					AvailableItems="@search.AvailableTags"
+					AvailableItems="@search.AllowedTags"
 					ItemAdded="@search.AddTag"
 					ItemRemoved="@search.RemoveTag"
 					Items="@search.Tags"
 					ItemType="Tag"
 				/>
+				<div class="row">
+					<div class="col-sm">
+						<h5>Minimum Year: @search.MinimumYear</h5>
+						<input type="range"
+							min="@search.AllowedMinimum"
+							max="@search.AllowedMaximum"
+							step="1"
+							@onchange="@MinimumYearChanged"/>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -183,6 +193,12 @@ else
 		// keySelector here won't be the same instance as the passed in argument
 		// so no point in giving it any value other than null
 		lastSortedBy = new(null, IsAscending: true);
+	}
+
+	private async Task MinimumYearChanged(ChangeEventArgs e)
+	{
+		var year = int.Parse(e.Value!.ToString()!);
+		await search.SetMinimumYear(year).ConfigureAwait(false);
 	}
 
 	private void SortEntries<TKey>(Func<Media, TKey> keySelector)
