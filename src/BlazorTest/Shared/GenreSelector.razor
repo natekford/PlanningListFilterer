@@ -7,7 +7,7 @@
 			<option class="d-none" selected disabled hidden value="">
 				Select @ItemType
 			</option>
-			@foreach (var item in AvailableItems)
+			@foreach (var item in AllowedItems)
 			{
 				<option value="@item">@item</option>
 			}
@@ -18,7 +18,7 @@
 		@foreach (var item in Items)
 		{
 			<button class="btn btn-primary btn-xs rounded-pill col-md-6"
-				@onclick="@(() => OnItemRemoved(item))">
+					@onclick="@(() => OnItemRemoved(item))">
 				@item
 				<span class="float-end">
 					🗙
@@ -30,7 +30,7 @@
 
 @code {
 	[Parameter]
-	public IEnumerable<string> AvailableItems { get; set; } = Enumerable.Empty<string>();
+	public IEnumerable<string> AllowedItems { get; set; } = Enumerable.Empty<string>();
 	public string Id => ItemType?.ToLower() + "Select";
 	[Parameter]
 	public EventCallback<string> ItemAdded { get; set; }
