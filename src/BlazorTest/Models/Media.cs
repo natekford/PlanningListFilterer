@@ -137,9 +137,6 @@ public static class MediaUtils
 	public static int? GetHighestEpisode(this Media media)
 		=> media.Episodes ?? media.NextAiringEpisode?.Episode;
 
-	public static int GetReleaseYear(this Media media)
-		=> media.StartDate!.Year!.Value;
-
 	public static int? GetTotalDuration(this Media media)
 		=> media.GetHighestEpisode() * media.Duration;
 

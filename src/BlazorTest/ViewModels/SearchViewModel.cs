@@ -12,7 +12,9 @@ public sealed class SearchViewModel
 	public ImmutableArray<string> AllowedTags { get; private set; } = ImmutableArray<string>.Empty;
 	public ImmutableHashSet<string> Genres { get; set; } = ImmutableHashSet<string>.Empty;
 	public bool IsModalActive { get; private set; }
+	public int? MaximumDuration { get; private set; }
 	public int? MaximumYear { get; private set; }
+	public int? MinimumDuration { get; private set; }
 	public int? MinimumYear { get; private set; }
 	public ImmutableHashSet<string> Tags { get; set; } = ImmutableHashSet<string>.Empty;
 
@@ -52,15 +54,27 @@ public sealed class SearchViewModel
 		return UpdateVisibilityAsync();
 	}
 
-	public Task SetMaximumYear(int? maximum)
+	public Task SetMaximumDuration(int? max)
 	{
-		MaximumYear = maximum;
+		MaximumDuration = max;
 		return UpdateVisibilityAsync();
 	}
 
-	public Task SetMinimumYear(int? minimum)
+	public Task SetMaximumYear(int? max)
 	{
-		MinimumYear = minimum;
+		MaximumYear = max;
+		return UpdateVisibilityAsync();
+	}
+
+	public Task SetMinimumDuration(int? min)
+	{
+		MinimumDuration = min;
+		return UpdateVisibilityAsync();
+	}
+
+	public Task SetMinimumYear(int? min)
+	{
+		MinimumYear = min;
 		return UpdateVisibilityAsync();
 	}
 
@@ -105,12 +119,13 @@ public sealed class SearchViewModel
 
 	private bool GetUpdatedVisibility(Media media)
 	{
-		var year = media.GetReleaseYear();
-		if (MinimumYear.HasValue && year < MinimumYear)
+		if (media.StartDate?.Year is int year
+			&& (year < MinimumYear || year > MaximumYear))
 		{
 			return false;
 		}
-		if (MaximumYear.HasValue && year > MaximumYear)
+		if (media.GetTotalDuration() is int duration
+			&& (duration < MinimumDuration || duration > MaximumDuration))
 		{
 			return false;
 		}

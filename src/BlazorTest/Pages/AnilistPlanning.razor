@@ -46,18 +46,32 @@
 					ItemType="Tag"
 				/>
 				<div class="row">
-					<YearSelector
-						ItemType="Minimum"
-						MaximumYear="@search.MaximumYear"
-						Year="@search.MinimumYear"
-						YearChanged="@search.SetMinimumYear"
-					/>
-					<YearSelector
-						ItemType="Maximum"
-						MinimumYear="@search.MinimumYear"
-						Year="@search.MaximumYear"
-						YearChanged="@search.SetMaximumYear"
-					/>
+					<div class="col-sm">
+						<MudNumericField Label="Minimum Duration" Min="0"
+							Max="@search.MaximumDuration" Value="@search.MinimumDuration"
+							ValueChanged="@((int? value) => search.SetMinimumDuration(value))"
+						/>
+					</div>
+					<div class="col-sm">
+						<MudNumericField Label="Maximum Duration" Max="int.MaxValue"
+							Min="@search.MinimumDuration" Value="@search.MaximumDuration"
+							ValueChanged="@((int? value) => search.SetMaximumDuration(value))"
+						/>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm">
+						<YearSelector ItemType="Minimum"
+							MaximumYear="@search.MaximumYear" Year="@search.MinimumYear"
+							YearChanged="@search.SetMinimumYear"
+						/>
+					</div>
+					<div class="col-sm">
+						<YearSelector ItemType="Maximum"
+							MinimumYear="@search.MinimumYear" Year="@search.MaximumYear"
+							YearChanged="@search.SetMaximumYear"
+						/>
+					</div>
 				</div>
 			</div>
 		</div>

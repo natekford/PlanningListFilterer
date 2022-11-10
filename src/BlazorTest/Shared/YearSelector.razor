@@ -1,11 +1,8 @@
-﻿<div class="col-sm">
-	<h5>@ItemType Year</h5>
-	<MudDatePicker OpenTo="OpenTo.Year" Editable="true" FixMonth="1" FixDay="1"
-				   Label="@(ItemType + " Year Picker")" DateFormat="yyyy"
-				   MinDate="@min" MaxDate="@max" Date="@date"
-				   DateChanged="@OnDateChanged"
-	/>
-</div>
+﻿<MudDatePicker OpenTo="OpenTo.Year" Editable="true" FixMonth="1" FixDay="1"
+	Label="@(ItemType + " Year")" DateFormat="yyyy"
+	MinDate="@min" MaxDate="@max" Date="@value"
+	DateChanged="@OnDateChanged"
+/>
 
 @code {
 	private static DateTime DefaultMax = DateTime.UtcNow;
@@ -13,7 +10,7 @@
 
 	private DateTime max = DefaultMax;
 	private DateTime min = DefaultMin;
-	private DateTime? date;
+	private DateTime? value;
 
 	[Parameter]
 	public string? ItemType { get; set; }
@@ -32,20 +29,21 @@
 	[Parameter]
 	public int? Year
 	{
-		get => date?.Year;
-		set => date = ToDateTime(value);
+		get => value?.Year;
+		set => this.value = ToDateTime(value);
 	}
 	[Parameter]
 	public EventCallback<int?> YearChanged { get; set; }
 
 	private Task OnDateChanged(DateTime? date)
 	{
+		// Don't bind directly to @bind-Value so we can prevent illegal values from being set
 		if (date?.Year is int year && (year > MaximumYear || year < MinimumYear))
 		{
 			return Task.CompletedTask;
 		}
 
-		this.date = date;
+		this.value = date;
 		return YearChanged.InvokeAsync(date?.Year);
 	}
 
