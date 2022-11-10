@@ -10,7 +10,6 @@ public sealed class SearchViewModel
 
 	public ImmutableArray<string> AllowedGenres { get; private set; } = ImmutableArray<string>.Empty;
 	public ImmutableArray<string> AllowedTags { get; private set; } = ImmutableArray<string>.Empty;
-	public ImmutableArray<int> AllowedYears { get; private set; } = ImmutableArray<int>.Empty;
 	public ImmutableHashSet<string> Genres { get; set; } = ImmutableHashSet<string>.Empty;
 	public bool IsModalActive { get; private set; }
 	public int? MaximumYear { get; private set; }
@@ -72,7 +71,6 @@ public sealed class SearchViewModel
 	{
 		var genres = new HashSet<string>();
 		var tags = new HashSet<string>();
-		var years = new HashSet<int>();
 
 		foreach (var media in _Media)
 		{
@@ -82,7 +80,6 @@ public sealed class SearchViewModel
 				continue;
 			}
 
-			years.Add(media.GetReleaseYear());
 			foreach (var genre in media.Genres)
 			{
 				if (!Genres.Contains(genre))
@@ -104,7 +101,6 @@ public sealed class SearchViewModel
 
 		AllowedGenres = genres.OrderBy(x => x).ToImmutableArray();
 		AllowedTags = tags.OrderBy(x => x).ToImmutableArray();
-		AllowedYears = years.OrderBy(x => x).ToImmutableArray();
 	}
 
 	private bool GetUpdatedVisibility(Media media)

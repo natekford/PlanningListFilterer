@@ -47,14 +47,16 @@
 				/>
 				<div class="row">
 					<YearSelector
-						InitialValue="@search.MinimumYear"
 						ItemType="Minimum"
-						ValueChanged="@search.SetMinimumYear"
+						MaximumYear="@search.MaximumYear"
+						Year="@search.MinimumYear"
+						YearChanged="@search.SetMinimumYear"
 					/>
 					<YearSelector
-						InitialValue="@search.MaximumYear"
 						ItemType="Maximum"
-						ValueChanged="@search.SetMaximumYear"
+						MinimumYear="@search.MinimumYear"
+						Year="@search.MaximumYear"
+						YearChanged="@search.SetMaximumYear"
 					/>
 				</div>
 			</div>

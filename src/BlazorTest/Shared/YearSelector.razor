@@ -1,25 +1,46 @@
 ﻿<div class="col-sm">
 	<h5>@ItemType Year</h5>
-	<input type="number" placeholder="@ItemType Year" 
-		@bind-value="@InitialValue" @oninput="@OnInput" />
+	<MudDatePicker OpenTo="OpenTo.Year" FixMonth="1" FixDay="1"
+				   Label="@(ItemType + " Year Picker")" DateFormat="yyyy"
+				   MinDate="@min" MaxDate="@max" @bind-Date="@year"
+				   PickerClosed="@OnPickerClosed"
+	/>
 </div>
 
 @code {
-	[Parameter]
-	public int? InitialValue { get; set; }
+	private static DateTime DefaultMax = DateTime.UtcNow;
+	private static DateTime DefaultMin = new(year: 1900, month: 1, day: 1);
+
+	private DateTime? max = DefaultMax;
+	private DateTime? min = DefaultMin;
+	private DateTime? year;
+
 	[Parameter]
 	public string? ItemType { get; set; }
-	public string ListId => ItemType?.ToLower() + "YearList";
 	[Parameter]
-	public EventCallback<int?> ValueChanged { get; set; }
-
-	private async Task OnInput(ChangeEventArgs e)
+	public int? MaximumYear
 	{
-		var year = default(int?);
-		if (int.TryParse(e.Value?.ToString(), out var num))
-		{
-			year = num;
-		}
-		await ValueChanged.InvokeAsync(year).ConfigureAwait(false);
+		get => max?.Year;
+		set => max = ToDateTime(value) ?? DefaultMax;
 	}
+	[Parameter]
+	public int? MinimumYear
+	{
+		get => min?.Year;
+		set => min = ToDateTime(value) ?? DefaultMin;
+	}
+	[Parameter]
+	public int? Year
+	{
+		get => year?.Year;
+		set => year = ToDateTime(value);
+	}
+	[Parameter]
+	public EventCallback<int?> YearChanged { get; set; }
+
+	private Task OnPickerClosed()
+		=> YearChanged.InvokeAsync(Year);
+
+	private static DateTime? ToDateTime(int? num)
+		=> num is int year ? new(year: year, month: 1, day: 1) : null;
 }
