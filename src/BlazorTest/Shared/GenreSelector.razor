@@ -3,7 +3,7 @@
 <div class="row">
 	<div class="col-md-4">
 		<h5 class="modal-title">@(ItemTypePlural ?? ItemType + "s")</h5>
-		<select class="w-100" id="@Id" @onchange="@OnItemSelected">
+		<select class="w-100" id="@Id" @onchange="@OnItemAdded">
 			<option class="d-none" selected disabled hidden value="">
 				Select @ItemType
 			</option>
@@ -43,7 +43,7 @@
 	[Parameter]
 	public string? ItemTypePlural { get; set; }
 
-	private async Task OnItemSelected(ChangeEventArgs e)
+	private async Task OnItemAdded(ChangeEventArgs e)
 	{
 		await ItemAdded.InvokeAsync(e.Value?.ToString()!).ConfigureAwait(false);
 		await JS.InvokeVoidAsync(JSMethods.ResetSelectedIndex, Id).ConfigureAwait(false);

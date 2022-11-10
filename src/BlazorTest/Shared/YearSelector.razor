@@ -1,9 +1,9 @@
 ﻿<div class="col-sm">
 	<h5>@ItemType Year</h5>
-	<MudDatePicker OpenTo="OpenTo.Year" FixMonth="1" FixDay="1"
+	<MudDatePicker OpenTo="OpenTo.Year" Editable="true" FixMonth="1" FixDay="1"
 				   Label="@(ItemType + " Year Picker")" DateFormat="yyyy"
-				   MinDate="@min" MaxDate="@max" @bind-Date="@year"
-				   PickerClosed="@OnPickerClosed"
+				   MinDate="@min" MaxDate="@max" Date="@date"
+				   DateChanged="@OnDateChanged"
 	/>
 </div>
 
@@ -11,35 +11,43 @@
 	private static DateTime DefaultMax = DateTime.UtcNow;
 	private static DateTime DefaultMin = new(year: 1900, month: 1, day: 1);
 
-	private DateTime? max = DefaultMax;
-	private DateTime? min = DefaultMin;
-	private DateTime? year;
+	private DateTime max = DefaultMax;
+	private DateTime min = DefaultMin;
+	private DateTime? date;
 
 	[Parameter]
 	public string? ItemType { get; set; }
 	[Parameter]
 	public int? MaximumYear
 	{
-		get => max?.Year;
+		get => max.Year;
 		set => max = ToDateTime(value) ?? DefaultMax;
 	}
 	[Parameter]
 	public int? MinimumYear
 	{
-		get => min?.Year;
+		get => min.Year;
 		set => min = ToDateTime(value) ?? DefaultMin;
 	}
 	[Parameter]
 	public int? Year
 	{
-		get => year?.Year;
-		set => year = ToDateTime(value);
+		get => date?.Year;
+		set => date = ToDateTime(value);
 	}
 	[Parameter]
 	public EventCallback<int?> YearChanged { get; set; }
 
-	private Task OnPickerClosed()
-		=> YearChanged.InvokeAsync(Year);
+	private Task OnDateChanged(DateTime? date)
+	{
+		if (date?.Year is int year && (year > MaximumYear || year < MinimumYear))
+		{
+			return Task.CompletedTask;
+		}
+
+		this.date = date;
+		return YearChanged.InvokeAsync(date?.Year);
+	}
 
 	private static DateTime? ToDateTime(int? num)
 		=> num is int year ? new(year: year, month: 1, day: 1) : null;
