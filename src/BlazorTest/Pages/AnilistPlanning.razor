@@ -54,22 +54,22 @@
 					</div>
 					<div class="col-sm">
 						<MudNumericField Label="Maximum Duration" Max="int.MaxValue"
-							Min="@search.MinimumDuration" Value="@search.MaximumDuration"
+							Min="@(search.MinimumDuration ?? 0)" Value="@search.MaximumDuration"
 							ValueChanged="@((int? value) => search.SetMaximumDuration(value))"
 						/>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-sm">
-						<YearSelector ItemType="Minimum"
-							MaximumYear="@search.MaximumYear" Year="@search.MinimumYear"
-							YearChanged="@search.SetMinimumYear"
+						<MudNumericField Label="Minimum Year" Min="0"
+							Max="@search.MaximumYear" Value="@search.MinimumYear"
+							ValueChanged="@((int? value) => search.SetMinimumYear(value))"
 						/>
 					</div>
 					<div class="col-sm">
-						<YearSelector ItemType="Maximum"
-							MinimumYear="@search.MinimumYear" Year="@search.MaximumYear"
-							YearChanged="@search.SetMaximumYear"
+						<MudNumericField Label="Maximum Year" Max="int.MaxValue"
+							Min="@(search.MinimumYear ?? 0)" Value="@search.MaximumYear"
+							ValueChanged="@((int? value) => search.SetMaximumYear(value))"
 						/>
 					</div>
 				</div>
