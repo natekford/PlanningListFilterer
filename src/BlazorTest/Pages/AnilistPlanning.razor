@@ -3,213 +3,178 @@
 
 <PageTitle>Planning List Sorter</PageTitle>
 
-<h1>Planning List Sorter</h1>
+<MudText Typo="Typo.h4">Planning List Sorter</MudText>
 
-<input type="text" @bind-value="@username" />
-<button class="btn btn-primary btn-sm" @onclick="@LoadEntries">
-	Load Entries
-</button>
+<div class="row p-3">
+	<MudTextField Class="col-11" Placeholder="Enter a username to get entries from..." 
+		@bind-Value="@Username" 
+	/>
+	<MudButton Class="col-1" Color="Color.Primary" OnClick="@LoadEntries">
+		Load Entries
+	</MudButton>
+</div>
 
-@if (search.IsModalActive)
+@if (Search.IsModalActive)
 {
-	<div class="modal d-block" id="@IDs.SearchModal" role="dialog" @onclick="@search.ToggleModal">
+	<div class="modal d-block" id="@IDs.SearchModal" role="dialog" @onclick="@Search.ToggleModal">
 		@* onclick:stopPropagation so the @onclick to close the menu doesn't trigger *@
 		@* when clicking any of the elements inside the modal *@
-		<div class="modal-dialog modal-lg" role="document" @onclick:stopPropagation="true">
-			<div class="modal-content container overflow-hidden">
+		<div class="modal-dialog modal-lg" role="document" @onclick:stopPropagation>
+			<div class="modal-content container search-modal">
 				<MudSelect Label="Genre Select" Variant="Variant.Outlined"
 					MultiSelection="true" Clearable="true"
-					T="string" SelectedValues="@search.Genres"
-					SelectedValuesChanged="@search.SetGenres">
-					<Virtualize Items="@search.AllowedGenres" Context="genre">
+					T="string" SelectedValues="@Search.Genres"
+					SelectedValuesChanged="@Search.SetGenres">
+					<Virtualize Items="@Search.AllowedGenres" Context="genre">
 						<MudSelectItem Value="@genre">@genre</MudSelectItem>
 					</Virtualize>
 				</MudSelect>
 				<MudSelect Label="Tag Select" Variant="Variant.Outlined"
 					MultiSelection="true" Clearable="true"
-					T="string" SelectedValues="@search.Tags"
-					SelectedValuesChanged="@search.SetTags">
-					<Virtualize Items="@search.AllowedTags" Context="tag">
+					T="string" SelectedValues="@Search.Tags"
+					SelectedValuesChanged="@Search.SetTags">
+					<Virtualize Items="@Search.AllowedTags" Context="tag">
 						<MudSelectItem Value="@tag">@tag</MudSelectItem>
 					</Virtualize>
 				</MudSelect>
 				<MudSelect Label="Format Select" Variant="Variant.Outlined"
 					MultiSelection="true" Clearable="true"
-					T="MediaFormat" SelectedValues="@search.Formats"
-					SelectedValuesChanged="@search.SetFormats">
-					<Virtualize Items="@search.AllowedFormats" Context="format">
+					T="MediaFormat" SelectedValues="@Search.Formats"
+					SelectedValuesChanged="@Search.SetFormats">
+					<Virtualize Items="@Search.AllowedFormats" Context="format">
 						<MudSelectItem Value="@format">@format</MudSelectItem>
 					</Virtualize>
 				</MudSelect>
 				<div class="row">
 					<div class="col-sm">
 						<MudNumericField Label="Minimum Duration" Variant="Variant.Outlined"
-							Min="0" Max="@search.MaximumDuration"
-							T="int?" Value="@search.MinimumDuration"
-							ValueChanged="@search.SetMinimumDuration"
+							Min="0" Max="@Search.MaximumDuration"
+							T="int?" Value="@Search.MinimumDuration"
+							ValueChanged="@Search.SetMinimumDuration"
 						/>
 					</div>
 					<div class="col-sm">
 						<MudNumericField Label="Maximum Duration" Variant="Variant.Outlined"
-							Min="@(search.MinimumDuration ?? 0)" Max="int.MaxValue"
-							T="int?" Value="@search.MaximumDuration"
-							ValueChanged="@search.SetMaximumDuration"
+							Min="@(Search.MinimumDuration ?? 0)" Max="int.MaxValue"
+							T="int?" Value="@Search.MaximumDuration"
+							ValueChanged="@Search.SetMaximumDuration"
 						/>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-sm">
 						<MudNumericField Label="Minimum Year" Variant="Variant.Outlined"
-							Min="0" Max="@search.MaximumYear"
-							T="int?" Value="@search.MinimumYear"
-							ValueChanged="@search.SetMinimumYear"
+							Min="0" Max="@Search.MaximumYear"
+							T="int?" Value="@Search.MinimumYear"
+							ValueChanged="@Search.SetMinimumYear"
 						/>
 					</div>
 					<div class="col-sm">
 						<MudNumericField Label="Maximum Year" Variant="Variant.Outlined"
-							Min="@(search.MinimumYear ?? 0)" Max="int.MaxValue"
-							T="int?" Value="@search.MaximumYear"
-							ValueChanged="@search.SetMaximumYear"
+							Min="@(Search.MinimumYear ?? 0)" Max="int.MaxValue"
+							T="int?" Value="@Search.MaximumYear"
+							ValueChanged="@Search.SetMaximumYear"
 						/>
 					</div>
 				</div>
 				<div>
-					<button class="btn btn-secondary btn-sm my-2 float-end"
-						@onclick="@search.Clear">
+					<MudButton Class="float-end" Color="Color.Secondary" Size="Size.Small"
+						OnClick="@Search.Clear">
 						Clear
-					</button>
+					</MudButton>
 				</div>
 			</div>
 		</div>
 	</div>
 }
 
-@if (entries == null)
-{
-	<p><em>Please enter a username to get entries for...</em></p>
-}
-else if (!entries.Any())
-{
-	<p><em>No entries were found for @username.</em></p>
-}
-else
-{
-	<MudTable Hover="true" Bordered="true" Striped="true" FixedHeader="true" FixedFooter="true"
-		Context="entry" Items="@entries" Filter="@FilterFunc">
-		<ToolBarContent>
-			<MudText Typo="Typo.h6">Planning To Watch</MudText>
-			<MudSpacer />
-			<MudButton OnClick="@search.ToggleModal">
-				Search
-			</MudButton>
-		</ToolBarContent>
-		<HeaderContent>
-			<MudTh>
-				<MudTableSortLabel SortBy="@((Media m) => m.Id)">
-					Id
-				</MudTableSortLabel>
-			</MudTh>
-			<MudTh>
-				<MudTableSortLabel SortBy="@((Media m) => m.Title.UserPreferred)">
-					Name
-				</MudTableSortLabel>
-			</MudTh>
-			<MudTh>
-				<MudTableSortLabel SortBy="@((Media m) => m.Format)">
-					Format
-				</MudTableSortLabel>
-			</MudTh>
-			<MudTh>
-				<MudTableSortLabel SortBy="@((Media m) => m.GetHighestEpisode())" Class="text-nowrap">
-					Episode Count
-				</MudTableSortLabel>
-			</MudTh>
-			<MudTh>
-				<MudTableSortLabel SortBy="@((Media m) => m.GetTotalDuration())">
-					Duration
-				</MudTableSortLabel>
-			</MudTh>
-			<MudTh>
-				<MudTableSortLabel SortBy="@((Media m) => m.AverageScore)" Class="text-nowrap">
-					Average Score
-				</MudTableSortLabel>
-			</MudTh>
-			<MudTh>
-				<MudTableSortLabel SortBy="@((Media m) => m.Popularity)">
-					Popularity
-				</MudTableSortLabel>
-			</MudTh>
-			<MudTh>
-				<MudTableSortLabel SortBy="@((Media m) => m.StartDate!.Year)" Class="text-nowrap">
-					Start Year
-				</MudTableSortLabel>
-			</MudTh>
-			<MudTh>Genres</MudTh>
-			<MudTh>Tags</MudTh>
-		</HeaderContent>
-		<RowTemplate>
-			<MudTd>
-				<MudNavLink Href="@entry.GetUrl()" Target="_blank">
-					@entry.Id
-				</MudNavLink>
-			</MudTd>
-			<MudTd>@entry.Title.UserPreferred</MudTd>
-			<MudTd>@entry.DisplayFormat()</MudTd>
-			<MudTd>@entry.DisplayEpisodeCount()</MudTd>
-			<MudTd>@entry.DisplayDuration()</MudTd>
-			<MudTd>@entry.DisplayScore()</MudTd>
-			<MudTd>@entry.Popularity</MudTd>
-			<MudTd>@entry.DisplayYear()</MudTd>
-			<MudTd>
-				<MudExpansionPanel Text="@entry.DisplayGenres(expanded: false)"
-					Disabled="@(entry.Genres.Count <= 1)">
-					<pre>
-						@entry.DisplayGenres(expanded: true)
-					</pre>
-				</MudExpansionPanel>
-			</MudTd>
-			<MudTd>
-				<MudExpansionPanel Text="@entry.DisplayTags(expanded: false)"
-					Disabled="@(entry.Tags.Count <= 1)">
-					<pre>
-						@entry.DisplayTags(expanded: true)
-					</pre>
-				</MudExpansionPanel>
-			</MudTd>
-		</RowTemplate>
-		<PagerContent>
-			<MudTablePager />
-		</PagerContent>
-	</MudTable>
-}
-
-@code {
-	private List<Media>? entries;
-	private SearchViewModel search = new(Enumerable.Empty<Media>());
-	private string? username;
-
-	private async Task LoadEntries()
-	{
-#if false
-		var response = await AnilistResponse.GetAnilistResponseAsync(Http, username!).ConfigureAwait(false);
-#else
-		var response = (await Http.GetFromJsonAsync<AnilistResponse>(
-			requestUri: "sample-data/anilistresponse5.json",
-			options: AnilistResponse.JsonOptions
-		).ConfigureAwait(false))!;
-#endif
-
-		entries = response.Data.MediaListCollection.Lists
-			.SelectMany(l => l.Entries.Select(e => e.Media))
-			.Where(x => x?.Status == MediaStatus.FINISHED)
-			.OrderBy(x => x.Id)
-			.ToList();
-
-		search = await SearchViewModel.CreateAsync(entries).ConfigureAwait(false);
-	}
-
-	private bool FilterFunc(Media media)
-	{
-		return media.IsEntryVisible;
-	}
-}
+<MudTable Dense="true" Hover="true" Bordered="true" Striped="true"
+	FixedHeader="true" FixedFooter="true" Height="700px"
+	Items="@Entries" Context="entry" Filter="@(x => x.IsEntryVisible)">
+	<ToolBarContent>
+		<MudText Typo="Typo.h6">Planning To Watch</MudText>
+		<MudSpacer />
+		<MudButton Color="Color.Primary" OnClick="@Search.ToggleModal">
+			Search
+		</MudButton>
+	</ToolBarContent>
+	<HeaderContent>
+		<MudTh>
+			<MudTableSortLabel SortBy="@((Media m) => m.Id)">
+				Id
+			</MudTableSortLabel>
+		</MudTh>
+		<MudTh>
+			<MudTableSortLabel SortBy="@((Media m) => m.Title.UserPreferred)">
+				Name
+			</MudTableSortLabel>
+		</MudTh>
+		<MudTh>
+			<MudTableSortLabel SortBy="@((Media m) => m.Format)">
+				Format
+			</MudTableSortLabel>
+		</MudTh>
+		<MudTh>
+			<MudTableSortLabel SortBy="@((Media m) => m.GetHighestEpisode())" Class="text-nowrap">
+				Episode Count
+			</MudTableSortLabel>
+		</MudTh>
+		<MudTh>
+			<MudTableSortLabel SortBy="@((Media m) => m.GetTotalDuration())">
+				Duration
+			</MudTableSortLabel>
+		</MudTh>
+		<MudTh>
+			<MudTableSortLabel SortBy="@((Media m) => m.AverageScore)" Class="text-nowrap">
+				Average Score
+			</MudTableSortLabel>
+		</MudTh>
+		<MudTh>
+			<MudTableSortLabel SortBy="@((Media m) => m.Popularity)">
+				Popularity
+			</MudTableSortLabel>
+		</MudTh>
+		<MudTh>
+			<MudTableSortLabel SortBy="@((Media m) => m.StartDate!.Year)" Class="text-nowrap">
+				Start Year
+			</MudTableSortLabel>
+		</MudTh>
+		<MudTh>Genres</MudTh>
+		<MudTh>Tags</MudTh>
+	</HeaderContent>
+	<RowTemplate>
+		<MudTd>
+			<MudNavLink Href="@entry.GetUrl()" Target="_blank">
+				@entry.Id
+			</MudNavLink>
+		</MudTd>
+		<MudTd>@entry.Title.UserPreferred</MudTd>
+		<MudTd>@entry.DisplayFormat()</MudTd>
+		<MudTd Class="text-nowrap">@entry.DisplayEpisodeCount()</MudTd>
+		<MudTd Class="text-nowrap">@entry.DisplayDuration()</MudTd>
+		<MudTd>@entry.DisplayScore()</MudTd>
+		<MudTd>@entry.Popularity</MudTd>
+		<MudTd>@entry.DisplayYear()</MudTd>
+		<MudTd>
+			<MudExpansionPanel Class="bg-transparent"
+				Text="@entry.DisplayGenres(expanded: false)"
+				HideIcon="@(entry.Genres.Count <= 1)" Disabled="@(entry.Genres.Count <= 1)">
+				<MudText Class="text-pre">
+					@entry.DisplayGenres(expanded: true)
+				</MudText>
+			</MudExpansionPanel>
+		</MudTd>
+		<MudTd>
+			<MudExpansionPanel Class="bg-transparent" 
+				Text="@entry.DisplayTags(expanded: false)"
+				HideIcon="@(entry.Tags.Count <= 1)" Disabled="@(entry.Tags.Count <= 1)">
+				<MudText Class="text-pre">
+					@entry.DisplayTags(expanded: true)
+				</MudText>
+			</MudExpansionPanel>
+		</MudTd>
+	</RowTemplate>
+	<PagerContent>
+		<MudTablePager />
+	</PagerContent>
+</MudTable>

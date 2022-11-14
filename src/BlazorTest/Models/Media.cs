@@ -61,19 +61,7 @@ public static class MediaUtils
 		=> media.Format?.ToString() ?? NO_VALUE;
 
 	public static string DisplayGenres(this Media media, bool expanded)
-	{
-		if (media.Genres.Count == 0)
-		{
-			return NO_VALUE;
-		}
-
-		if (expanded)
-		{
-			var genres = media.Genres.Skip(1);
-			return string.Join(Environment.NewLine, genres);
-		}
-		return media.Genres[0];
-	}
+		=> DisplayExpandable(media.Genres, expanded);
 
 	public static string DisplayScore(this Media media)
 	{
@@ -97,17 +85,8 @@ public static class MediaUtils
 
 	public static string DisplayTags(this Media media, bool expanded)
 	{
-		if (media.Tags.Count == 0)
-		{
-			return NO_VALUE;
-		}
-
-		if (expanded)
-		{
-			var tags = media.Tags.Skip(1).Select(x => x.DisplayTag());
-			return string.Join(Environment.NewLine, tags);
-		}
-		return media.Tags[0].DisplayTag();
+		var tags = media.Tags.Select(x => x.DisplayTag());
+		return DisplayExpandable(tags, expanded);
 	}
 
 	public static string DisplayYear(this Media media)
@@ -128,4 +107,18 @@ public static class MediaUtils
 
 	public static string GetUrl(this Media media)
 		=> $"https://anilist.co/anime/{media.Id}/";
+
+	private static string DisplayExpandable(this IEnumerable<string> items, bool expanded)
+	{
+		if (!items.Any())
+		{
+			return NO_VALUE;
+		}
+
+		if (expanded)
+		{
+			return string.Join(Environment.NewLine, items.Skip(1));
+		}
+		return items.First();
+	}
 }
