@@ -18,7 +18,7 @@
 								"episodes": 26,
 								"duration": 24,
 								"averageScore": 65,
-								"popularity": 22573,
+								"popularity": 22624,
 								"startDate": {
 									"year": 2002
 								},
@@ -99,7 +99,7 @@
 								"episodes": 22,
 								"duration": 25,
 								"averageScore": 83,
-								"popularity": 143833,
+								"popularity": 144165,
 								"startDate": {
 									"year": 2016
 								},
@@ -114,7 +114,7 @@
 									},
 									{
 										"name": "Rehabilitation",
-										"rank": 92
+										"rank": 93
 									},
 									{
 										"name": "Shogi",
@@ -122,7 +122,7 @@
 									},
 									{
 										"name": "Seinen",
-										"rank": 84
+										"rank": 83
 									},
 									{
 										"name": "Family Life",
@@ -137,11 +137,11 @@
 										"rank": 74
 									},
 									{
-										"name": "Philosophy",
-										"rank": 70
+										"name": "Tragedy",
+										"rank": 73
 									},
 									{
-										"name": "Tragedy",
+										"name": "Philosophy",
 										"rank": 70
 									},
 									{
@@ -206,7 +206,7 @@
 								"episodes": 12,
 								"duration": 24,
 								"averageScore": 70,
-								"popularity": 249864,
+								"popularity": 250535,
 								"startDate": {
 									"year": 2012
 								},
@@ -271,6 +271,10 @@
 										"rank": 48
 									},
 									{
+										"name": "American Football",
+										"rank": 48
+									},
+									{
 										"name": "Bullying",
 										"rank": 45
 									},
@@ -279,8 +283,8 @@
 										"rank": 40
 									},
 									{
-										"name": "American Football",
-										"rank": 35
+										"name": "Urban Fantasy",
+										"rank": 20
 									}
 								]
 							}
@@ -296,7 +300,7 @@
 								"episodes": 13,
 								"duration": 24,
 								"averageScore": 75,
-								"popularity": 35793,
+								"popularity": 35878,
 								"startDate": {
 									"year": 2005
 								},
@@ -392,7 +396,7 @@
 								"episodes": 79,
 								"duration": 25,
 								"averageScore": 80,
-								"popularity": 20908,
+								"popularity": 21000,
 								"startDate": {
 									"year": 1970
 								},
@@ -501,7 +505,7 @@
 								"episodes": 26,
 								"duration": 24,
 								"averageScore": 77,
-								"popularity": 48627,
+								"popularity": 48809,
 								"startDate": {
 									"year": 2002
 								},
@@ -539,15 +543,15 @@
 										"rank": 76
 									},
 									{
+										"name": "Tomboy",
+										"rank": 68
+									},
+									{
 										"name": "Primarily Teen Cast",
 										"rank": 68
 									},
 									{
 										"name": "Female Protagonist",
-										"rank": 66
-									},
-									{
-										"name": "Tomboy",
 										"rank": 66
 									},
 									{
@@ -572,7 +576,7 @@
 								"episodes": 13,
 								"duration": 24,
 								"averageScore": 71,
-								"popularity": 82244,
+								"popularity": 82417,
 								"startDate": {
 									"year": 2010
 								},
@@ -659,7 +663,7 @@
 								"episodes": 12,
 								"duration": 22,
 								"averageScore": 82,
-								"popularity": 102556,
+								"popularity": 102767,
 								"startDate": {
 									"year": 2014
 								},
@@ -734,7 +738,7 @@
 								"episodes": 60,
 								"duration": 24,
 								"averageScore": 75,
-								"popularity": 69879,
+								"popularity": 70119,
 								"startDate": {
 									"year": 2011
 								},
@@ -798,7 +802,7 @@
 								"episodes": 10,
 								"duration": 50,
 								"averageScore": 75,
-								"popularity": 7709,
+								"popularity": 7746,
 								"startDate": {
 									"year": 1993
 								},
@@ -872,7 +876,7 @@
 								"episodes": 26,
 								"duration": 23,
 								"averageScore": 65,
-								"popularity": 9883,
+								"popularity": 9919,
 								"startDate": {
 									"year": 1999
 								},
@@ -920,7 +924,7 @@
 								"episodes": 76,
 								"duration": 25,
 								"averageScore": 71,
-								"popularity": 13501,
+								"popularity": 13537,
 								"startDate": {
 									"year": 2003
 								},
@@ -980,7 +984,7 @@
 								"episodes": 12,
 								"duration": 23,
 								"averageScore": 81,
-								"popularity": 379634,
+								"popularity": 380705,
 								"startDate": {
 									"year": 2016
 								},
@@ -1082,7 +1086,7 @@
 								"episodes": 13,
 								"duration": 24,
 								"averageScore": 77,
-								"popularity": 554765,
+								"popularity": 556267,
 								"startDate": {
 									"year": 2016
 								},
@@ -1154,7 +1158,7 @@
 								"episodes": 12,
 								"duration": 24,
 								"averageScore": 74,
-								"popularity": 55111,
+								"popularity": 55238,
 								"startDate": {
 									"year": 2014
 								},
@@ -1222,7 +1226,7 @@
 								"episodes": 13,
 								"duration": 24,
 								"averageScore": 75,
-								"popularity": 262210,
+								"popularity": 262967,
 								"startDate": {
 									"year": 2015
 								},
@@ -1304,7 +1308,7 @@
 									},
 									{
 										"name": "Tomboy",
-										"rank": 48
+										"rank": 46
 									},
 									{
 										"name": "Slapstick",
@@ -1364,7 +1368,7 @@
 								"episodes": 23,
 								"duration": 24,
 								"averageScore": 76,
-								"popularity": 191477,
+								"popularity": 191948,
 								"startDate": {
 									"year": 2007
 								},
@@ -1377,11 +1381,11 @@
 								],
 								"tags": [
 									{
-										"name": "Coming of Age",
-										"rank": 95
+										"name": "School",
+										"rank": 93
 									},
 									{
-										"name": "School",
+										"name": "Coming of Age",
 										"rank": 93
 									},
 									{
@@ -1426,14 +1430,14 @@
 									},
 									{
 										"name": "Slapstick",
-										"rank": 57
-									},
-									{
-										"name": "Kuudere",
-										"rank": 48
+										"rank": 58
 									},
 									{
 										"name": "Female Harem",
+										"rank": 51
+									},
+									{
+										"name": "Kuudere",
 										"rank": 48
 									},
 									{
@@ -1474,7 +1478,7 @@
 								"episodes": 26,
 								"duration": 23,
 								"averageScore": 73,
-								"popularity": 72184,
+								"popularity": 72432,
 								"startDate": {
 									"year": 2007
 								},
@@ -1555,7 +1559,7 @@
 								"episodes": 25,
 								"duration": 24,
 								"averageScore": 77,
-								"popularity": 111699,
+								"popularity": 111977,
 								"startDate": {
 									"year": 2007
 								},
@@ -1663,7 +1667,7 @@
 								"episodes": 12,
 								"duration": 23,
 								"averageScore": 80,
-								"popularity": 300288,
+								"popularity": 301124,
 								"startDate": {
 									"year": 2015
 								},
@@ -1736,6 +1740,10 @@
 										"rank": 38
 									},
 									{
+										"name": "Ice Skating",
+										"rank": 35
+									},
+									{
 										"name": "Tanned Skin",
 										"rank": 20
 									},
@@ -1746,10 +1754,6 @@
 									{
 										"name": "Male Protagonist",
 										"rank": 20
-									},
-									{
-										"name": "Ice Skating",
-										"rank": 13
 									},
 									{
 										"name": "Revenge",
@@ -1769,7 +1773,7 @@
 								"episodes": 12,
 								"duration": 24,
 								"averageScore": 68,
-								"popularity": 48887,
+								"popularity": 48993,
 								"startDate": {
 									"year": 2011
 								},
@@ -1864,7 +1868,7 @@
 								"episodes": null,
 								"duration": 25,
 								"averageScore": 81,
-								"popularity": 47418,
+								"popularity": 47573,
 								"startDate": {
 									"year": 1996
 								},
@@ -1888,12 +1892,12 @@
 										"rank": 94
 									},
 									{
-										"name": "Police",
+										"name": "Tragedy",
 										"rank": 90
 									},
 									{
-										"name": "Tragedy",
-										"rank": 90
+										"name": "Police",
+										"rank": 89
 									},
 									{
 										"name": "Age Regression",
@@ -2001,7 +2005,7 @@
 								"episodes": 153,
 								"duration": 24,
 								"averageScore": 77,
-								"popularity": 132502,
+								"popularity": 132960,
 								"startDate": {
 									"year": 1986
 								},
@@ -2119,7 +2123,7 @@
 								"episodes": 12,
 								"duration": 25,
 								"averageScore": 75,
-								"popularity": 81512,
+								"popularity": 81745,
 								"startDate": {
 									"year": 2016
 								},
@@ -2221,14 +2225,14 @@
 							"media": {
 								"id": 4789,
 								"title": {
-									"userPreferred": "ef: A Tale of Melodies."
+									"userPreferred": "ef: a tale of melodies."
 								},
 								"status": "FINISHED",
 								"format": "TV",
 								"episodes": 12,
 								"duration": 24,
 								"averageScore": 77,
-								"popularity": 22264,
+								"popularity": 22297,
 								"startDate": {
 									"year": 2008
 								},
@@ -2286,7 +2290,7 @@
 								"episodes": 13,
 								"duration": 24,
 								"averageScore": 81,
-								"popularity": 226139,
+								"popularity": 226758,
 								"startDate": {
 									"year": 2011
 								},
@@ -2375,7 +2379,7 @@
 								"episodes": 6,
 								"duration": 25,
 								"averageScore": 78,
-								"popularity": 124938,
+								"popularity": 125322,
 								"startDate": {
 									"year": 2000
 								},
@@ -2496,7 +2500,7 @@
 								"episodes": 24,
 								"duration": 24,
 								"averageScore": 72,
-								"popularity": 59467,
+								"popularity": 59623,
 								"startDate": {
 									"year": 2002
 								},
@@ -2585,7 +2589,7 @@
 								"episodes": 12,
 								"duration": 24,
 								"averageScore": 74,
-								"popularity": 85094,
+								"popularity": 85318,
 								"startDate": {
 									"year": 2015
 								},
@@ -2679,7 +2683,7 @@
 								"episodes": 12,
 								"duration": 24,
 								"averageScore": 71,
-								"popularity": 87879,
+								"popularity": 88123,
 								"startDate": {
 									"year": 2015
 								},
@@ -2754,7 +2758,7 @@
 								"episodes": 24,
 								"duration": 24,
 								"averageScore": 79,
-								"popularity": 39454,
+								"popularity": 39550,
 								"startDate": {
 									"year": 2004
 								},
@@ -2872,7 +2876,7 @@
 								"episodes": 12,
 								"duration": 25,
 								"averageScore": 70,
-								"popularity": 35437,
+								"popularity": 35494,
 								"startDate": {
 									"year": 2013
 								},
@@ -2919,6 +2923,10 @@
 										"rank": 60
 									},
 									{
+										"name": "LGBTQ+ Themes",
+										"rank": 56
+									},
+									{
 										"name": "CGI",
 										"rank": 53
 									},
@@ -2933,10 +2941,6 @@
 									{
 										"name": "Artificial Intelligence",
 										"rank": 33
-									},
-									{
-										"name": "LGBTQ+ Themes",
-										"rank": 20
 									},
 									{
 										"name": "Kuudere",
@@ -2968,7 +2972,7 @@
 								"episodes": 25,
 								"duration": 25,
 								"averageScore": 73,
-								"popularity": 26488,
+								"popularity": 26548,
 								"startDate": {
 									"year": 2006
 								},
@@ -3045,7 +3049,7 @@
 								"episodes": 110,
 								"duration": 26,
 								"averageScore": 88,
-								"popularity": 52190,
+								"popularity": 52325,
 								"startDate": {
 									"year": 1988
 								},
@@ -3144,7 +3148,7 @@
 								"episodes": 21,
 								"duration": 23,
 								"averageScore": 72,
-								"popularity": 4179,
+								"popularity": 4196,
 								"startDate": {
 									"year": 1986
 								},
@@ -3196,7 +3200,7 @@
 								"episodes": 6,
 								"duration": 29,
 								"averageScore": 77,
-								"popularity": 58281,
+								"popularity": 58485,
 								"startDate": {
 									"year": 1995
 								},
@@ -3280,7 +3284,7 @@
 								"episodes": 43,
 								"duration": 25,
 								"averageScore": 84,
-								"popularity": 99317,
+								"popularity": 99640,
 								"startDate": {
 									"year": 1999
 								},
@@ -3295,10 +3299,6 @@
 										"rank": 95
 									},
 									{
-										"name": "Cosmic Horror",
-										"rank": 95
-									},
-									{
 										"name": "School",
 										"rank": 89
 									},
@@ -3308,6 +3308,10 @@
 									},
 									{
 										"name": "Delinquents",
+										"rank": 80
+									},
+									{
+										"name": "Cosmic Horror",
 										"rank": 80
 									},
 									{
@@ -3356,11 +3360,11 @@
 									},
 									{
 										"name": "Real Robot",
-										"rank": 40
+										"rank": 30
 									},
 									{
 										"name": "Suicide",
-										"rank": 30
+										"rank": 26
 									}
 								]
 							}
@@ -3376,7 +3380,7 @@
 								"episodes": 26,
 								"duration": 25,
 								"averageScore": 73,
-								"popularity": 23095,
+								"popularity": 23167,
 								"startDate": {
 									"year": 2003
 								},
@@ -3460,7 +3464,7 @@
 								"episodes": 1,
 								"duration": 83,
 								"averageScore": 73,
-								"popularity": 9640,
+								"popularity": 9676,
 								"startDate": {
 									"year": 1983
 								},
@@ -3518,7 +3522,7 @@
 								"episodes": 13,
 								"duration": 24,
 								"averageScore": 79,
-								"popularity": 53310,
+								"popularity": 53497,
 								"startDate": {
 									"year": 2002
 								},
@@ -3624,7 +3628,7 @@
 								"episodes": 75,
 								"duration": 23,
 								"averageScore": 86,
-								"popularity": 71536,
+								"popularity": 71798,
 								"startDate": {
 									"year": 2000
 								},
@@ -3648,7 +3652,7 @@
 									},
 									{
 										"name": "Shounen",
-										"rank": 84
+										"rank": 85
 									},
 									{
 										"name": "Martial Arts",
@@ -3692,7 +3696,7 @@
 								"episodes": 26,
 								"duration": 24,
 								"averageScore": 70,
-								"popularity": 14620,
+								"popularity": 14679,
 								"startDate": {
 									"year": 1999
 								},
@@ -3712,6 +3716,10 @@
 									{
 										"name": "Meta",
 										"rank": 88
+									},
+									{
+										"name": "Tokusatsu",
+										"rank": 79
 									},
 									{
 										"name": "Slapstick",
@@ -3767,7 +3775,7 @@
 								"episodes": 11,
 								"duration": 23,
 								"averageScore": 74,
-								"popularity": 76069,
+								"popularity": 76240,
 								"startDate": {
 									"year": 2009
 								},
@@ -3870,7 +3878,7 @@
 								"episodes": 26,
 								"duration": 24,
 								"averageScore": 75,
-								"popularity": 116541,
+								"popularity": 116871,
 								"startDate": {
 									"year": 2006
 								},
@@ -4012,7 +4020,7 @@
 								"episodes": 109,
 								"duration": 25,
 								"averageScore": 75,
-								"popularity": 20577,
+								"popularity": 20635,
 								"startDate": {
 									"year": 1984
 								},
@@ -4116,7 +4124,7 @@
 								"episodes": 1,
 								"duration": 88,
 								"averageScore": 82,
-								"popularity": 114386,
+								"popularity": 114797,
 								"startDate": {
 									"year": 1988
 								},
@@ -4186,7 +4194,7 @@
 								"episodes": 12,
 								"duration": 24,
 								"averageScore": 83,
-								"popularity": 98387,
+								"popularity": 98700,
 								"startDate": {
 									"year": 2017
 								},
@@ -4308,7 +4316,7 @@
 								"episodes": 62,
 								"duration": 23,
 								"averageScore": 82,
-								"popularity": 75144,
+								"popularity": 75397,
 								"startDate": {
 									"year": 1999
 								},
@@ -4376,7 +4384,7 @@
 								"episodes": 148,
 								"duration": 24,
 								"averageScore": 89,
-								"popularity": 515387,
+								"popularity": 516835,
 								"startDate": {
 									"year": 2011
 								},
@@ -4500,7 +4508,7 @@
 									},
 									{
 										"name": "Vore",
-										"rank": 38
+										"rank": 36
 									},
 									{
 										"name": "Environmental",
@@ -4508,7 +4516,7 @@
 									},
 									{
 										"name": "Transgender",
-										"rank": 28
+										"rank": 26
 									}
 								]
 							}
@@ -4524,7 +4532,7 @@
 								"episodes": 11,
 								"duration": 23,
 								"averageScore": 74,
-								"popularity": 113746,
+								"popularity": 114073,
 								"startDate": {
 									"year": 2017
 								},
@@ -4637,7 +4645,7 @@
 								"episodes": 1,
 								"duration": 102,
 								"averageScore": 76,
-								"popularity": 30954,
+								"popularity": 31050,
 								"startDate": {
 									"year": 2000
 								},
@@ -4731,7 +4739,7 @@
 								"episodes": 12,
 								"duration": 23,
 								"averageScore": 76,
-								"popularity": 41106,
+								"popularity": 41180,
 								"startDate": {
 									"year": 2012
 								},
@@ -4807,7 +4815,7 @@
 								"episodes": 13,
 								"duration": 24,
 								"averageScore": 65,
-								"popularity": 42342,
+								"popularity": 42487,
 								"startDate": {
 									"year": 2015
 								},
@@ -4867,7 +4875,7 @@
 								"episodes": 13,
 								"duration": 24,
 								"averageScore": 73,
-								"popularity": 40535,
+								"popularity": 40641,
 								"startDate": {
 									"year": 2012
 								},
@@ -4882,7 +4890,7 @@
 									},
 									{
 										"name": "Meta",
-										"rank": 91
+										"rank": 89
 									},
 									{
 										"name": "Surreal Comedy",
@@ -4946,7 +4954,7 @@
 								"episodes": 45,
 								"duration": 25,
 								"averageScore": 76,
-								"popularity": 22271,
+								"popularity": 22327,
 								"startDate": {
 									"year": 2002
 								},
@@ -5039,7 +5047,7 @@
 								"episodes": 13,
 								"duration": 24,
 								"averageScore": 71,
-								"popularity": 117388,
+								"popularity": 117666,
 								"startDate": {
 									"year": 2012
 								},
@@ -5143,7 +5151,7 @@
 								"episodes": 26,
 								"duration": 24,
 								"averageScore": 78,
-								"popularity": 186014,
+								"popularity": 186492,
 								"startDate": {
 									"year": 2010
 								},
@@ -5159,19 +5167,19 @@
 									},
 									{
 										"name": "Female Protagonist",
-										"rank": 93
+										"rank": 92
 									},
 									{
 										"name": "School",
-										"rank": 90
-									},
-									{
-										"name": "Maids",
-										"rank": 86
+										"rank": 91
 									},
 									{
 										"name": "Work",
 										"rank": 86
+									},
+									{
+										"name": "Maids",
+										"rank": 85
 									},
 									{
 										"name": "Heterosexual",
@@ -5227,7 +5235,7 @@
 								"episodes": 12,
 								"duration": 23,
 								"averageScore": 74,
-								"popularity": 90283,
+								"popularity": 90503,
 								"startDate": {
 									"year": 2010
 								},
@@ -5355,7 +5363,7 @@
 								"episodes": 13,
 								"duration": 23,
 								"averageScore": 69,
-								"popularity": 25179,
+								"popularity": 25252,
 								"startDate": {
 									"year": 2008
 								},
@@ -5430,7 +5438,7 @@
 								"episodes": 12,
 								"duration": 50,
 								"averageScore": 82,
-								"popularity": 92064,
+								"popularity": 92326,
 								"startDate": {
 									"year": 2010
 								},
@@ -5554,7 +5562,7 @@
 								"episodes": 12,
 								"duration": 25,
 								"averageScore": 74,
-								"popularity": 144598,
+								"popularity": 145073,
 								"startDate": {
 									"year": 2015
 								},
@@ -5650,7 +5658,7 @@
 								"episodes": 50,
 								"duration": 25,
 								"averageScore": 80,
-								"popularity": 16190,
+								"popularity": 16239,
 								"startDate": {
 									"year": 2009
 								},
@@ -5729,7 +5737,7 @@
 								"episodes": 13,
 								"duration": 24,
 								"averageScore": 69,
-								"popularity": 13565,
+								"popularity": 13613,
 								"startDate": {
 									"year": 2006
 								},
@@ -5814,7 +5822,7 @@
 								"episodes": 1,
 								"duration": 107,
 								"averageScore": 86,
-								"popularity": 417817,
+								"popularity": 419221,
 								"startDate": {
 									"year": 2016
 								},
@@ -5910,7 +5918,7 @@
 								"episodes": 12,
 								"duration": 24,
 								"averageScore": 71,
-								"popularity": 133288,
+								"popularity": 133612,
 								"startDate": {
 									"year": 2016
 								},
@@ -5994,7 +6002,7 @@
 								"episodes": 1,
 								"duration": 130,
 								"averageScore": 88,
-								"popularity": 408762,
+								"popularity": 410075,
 								"startDate": {
 									"year": 2016
 								},
@@ -6082,7 +6090,7 @@
 								"episodes": 150,
 								"duration": 23,
 								"averageScore": 72,
-								"popularity": 17836,
+								"popularity": 17878,
 								"startDate": {
 									"year": 2003
 								},
@@ -6150,7 +6158,7 @@
 								"episodes": 26,
 								"duration": 24,
 								"averageScore": 74,
-								"popularity": 22018,
+								"popularity": 22083,
 								"startDate": {
 									"year": 2003
 								},
@@ -6206,7 +6214,7 @@
 								"episodes": 1,
 								"duration": 26,
 								"averageScore": 76,
-								"popularity": 71876,
+								"popularity": 72047,
 								"startDate": {
 									"year": 2013
 								},
@@ -6217,27 +6225,27 @@
 								"tags": [
 									{
 										"name": "Magic",
-										"rank": 97
+										"rank": 98
 									},
 									{
 										"name": "Witch",
-										"rank": 94
+										"rank": 95
 									},
 									{
 										"name": "Female Protagonist",
 										"rank": 86
 									},
 									{
+										"name": "School",
+										"rank": 76
+									},
+									{
 										"name": "Primarily Female Cast",
 										"rank": 76
 									},
 									{
-										"name": "School",
-										"rank": 74
-									},
-									{
 										"name": "Cute Girls Doing Cute Things",
-										"rank": 53
+										"rank": 55
 									},
 									{
 										"name": "Urban Fantasy",
@@ -6269,7 +6277,7 @@
 								"episodes": 13,
 								"duration": 24,
 								"averageScore": 71,
-								"popularity": 38296,
+								"popularity": 38373,
 								"startDate": {
 									"year": 2013
 								},
@@ -6336,7 +6344,7 @@
 								"episodes": 24,
 								"duration": 24,
 								"averageScore": 74,
-								"popularity": 91500,
+								"popularity": 91739,
 								"startDate": {
 									"year": 2007
 								},
@@ -6427,7 +6435,7 @@
 								"episodes": 36,
 								"duration": 26,
 								"averageScore": 75,
-								"popularity": 19222,
+								"popularity": 19264,
 								"startDate": {
 									"year": 1982
 								},
@@ -6514,7 +6522,7 @@
 								"episodes": 13,
 								"duration": 25,
 								"averageScore": 85,
-								"popularity": 236812,
+								"popularity": 237646,
 								"startDate": {
 									"year": 2017
 								},
@@ -6581,7 +6589,7 @@
 									},
 									{
 										"name": "Cosmic Horror",
-										"rank": 68
+										"rank": 69
 									},
 									{
 										"name": "Male Protagonist",
@@ -6600,7 +6608,7 @@
 										"rank": 46
 									},
 									{
-										"name": "Time Manipulation",
+										"name": "Food",
 										"rank": 40
 									},
 									{
@@ -6624,8 +6632,8 @@
 										"rank": 32
 									},
 									{
-										"name": "Food",
-										"rank": 28
+										"name": "Time Manipulation",
+										"rank": 30
 									},
 									{
 										"name": "Agender",
@@ -6653,7 +6661,7 @@
 								"episodes": 24,
 								"duration": 25,
 								"averageScore": 78,
-								"popularity": 142498,
+								"popularity": 142936,
 								"startDate": {
 									"year": 2017
 								},
@@ -6771,7 +6779,7 @@
 								"episodes": 24,
 								"duration": 24,
 								"averageScore": 79,
-								"popularity": 58213,
+								"popularity": 58346,
 								"startDate": {
 									"year": 2011
 								},
@@ -6920,7 +6928,7 @@
 								"episodes": 12,
 								"duration": 23,
 								"averageScore": 72,
-								"popularity": 69870,
+								"popularity": 70038,
 								"startDate": {
 									"year": 2014
 								},
@@ -6992,7 +7000,7 @@
 								"episodes": 13,
 								"duration": 24,
 								"averageScore": 73,
-								"popularity": 25075,
+								"popularity": 25135,
 								"startDate": {
 									"year": 2007
 								},
@@ -7039,7 +7047,7 @@
 								"episodes": 26,
 								"duration": 23,
 								"averageScore": 69,
-								"popularity": 285096,
+								"popularity": 285805,
 								"startDate": {
 									"year": 2011
 								},
@@ -7170,7 +7178,7 @@
 								"episodes": 26,
 								"duration": 29,
 								"averageScore": 76,
-								"popularity": 9465,
+								"popularity": 9510,
 								"startDate": {
 									"year": 1978
 								},
@@ -7242,7 +7250,7 @@
 								"episodes": 6,
 								"duration": 45,
 								"averageScore": 67,
-								"popularity": 23247,
+								"popularity": 23314,
 								"startDate": {
 									"year": 2008
 								},
@@ -7329,10 +7337,6 @@
 									{
 										"name": "Virtual World",
 										"rank": 35
-									},
-									{
-										"name": "Yuri",
-										"rank": 20
 									}
 								]
 							}
@@ -7348,7 +7352,7 @@
 								"episodes": 13,
 								"duration": 13,
 								"averageScore": 66,
-								"popularity": 8120,
+								"popularity": 8137,
 								"startDate": {
 									"year": 2013
 								},
@@ -7396,7 +7400,7 @@
 								"episodes": 24,
 								"duration": 25,
 								"averageScore": 74,
-								"popularity": 341632,
+								"popularity": 342517,
 								"startDate": {
 									"year": 2014
 								},
@@ -7491,7 +7495,7 @@
 								"episodes": 13,
 								"duration": 24,
 								"averageScore": 80,
-								"popularity": 79757,
+								"popularity": 79981,
 								"startDate": {
 									"year": 2008
 								},
@@ -7564,7 +7568,7 @@
 								"episodes": 13,
 								"duration": 24,
 								"averageScore": 69,
-								"popularity": 47360,
+								"popularity": 47502,
 								"startDate": {
 									"year": 2012
 								},
@@ -7624,7 +7628,7 @@
 								"episodes": 13,
 								"duration": 23,
 								"averageScore": 73,
-								"popularity": 48313,
+								"popularity": 48466,
 								"startDate": {
 									"year": 2016
 								},
@@ -7693,7 +7697,7 @@
 								"episodes": 26,
 								"duration": 24,
 								"averageScore": 83,
-								"popularity": 281744,
+								"popularity": 282711,
 								"startDate": {
 									"year": 1995
 								},
@@ -7776,7 +7780,7 @@
 									},
 									{
 										"name": "Military",
-										"rank": 70
+										"rank": 71
 									},
 									{
 										"name": "Trains",
@@ -7795,16 +7799,16 @@
 										"rank": 62
 									},
 									{
-										"name": "Female Harem",
+										"name": "Tsundere",
 										"rank": 60
 									},
 									{
-										"name": "Tsundere",
-										"rank": 59
+										"name": "Kuudere",
+										"rank": 60
 									},
 									{
-										"name": "Kuudere",
-										"rank": 58
+										"name": "Female Harem",
+										"rank": 60
 									},
 									{
 										"name": "Gore",
@@ -7831,6 +7835,10 @@
 										"rank": 40
 									},
 									{
+										"name": "Suicide",
+										"rank": 20
+									},
+									{
 										"name": "Video Games",
 										"rank": 10
 									}
@@ -7848,7 +7856,7 @@
 								"episodes": 24,
 								"duration": 24,
 								"averageScore": 82,
-								"popularity": 113011,
+								"popularity": 113389,
 								"startDate": {
 									"year": 2006
 								},
@@ -7889,15 +7897,15 @@
 										"rank": 76
 									},
 									{
-										"name": "Suicide",
-										"rank": 76
-									},
-									{
 										"name": "Primarily Adult Cast",
 										"rank": 75
 									},
 									{
 										"name": "Denpa",
+										"rank": 75
+									},
+									{
+										"name": "Suicide",
 										"rank": 75
 									},
 									{
@@ -7954,7 +7962,7 @@
 								"episodes": 26,
 								"duration": 23,
 								"averageScore": 82,
-								"popularity": 146419,
+								"popularity": 146809,
 								"startDate": {
 									"year": 2011
 								},
@@ -7980,15 +7988,15 @@
 										"rank": 87
 									},
 									{
+										"name": "Ensemble Cast",
+										"rank": 84
+									},
+									{
 										"name": "Female Protagonist",
 										"rank": 84
 									},
 									{
 										"name": "Primarily Female Cast",
-										"rank": 83
-									},
-									{
-										"name": "Ensemble Cast",
 										"rank": 83
 									},
 									{
@@ -8029,7 +8037,7 @@
 									},
 									{
 										"name": "Go",
-										"rank": 30
+										"rank": 31
 									}
 								]
 							}
@@ -8045,7 +8053,7 @@
 								"episodes": 20,
 								"duration": 24,
 								"averageScore": 73,
-								"popularity": 176514,
+								"popularity": 176961,
 								"startDate": {
 									"year": 2014
 								},
@@ -8129,7 +8137,7 @@
 								"episodes": 24,
 								"duration": 25,
 								"averageScore": 70,
-								"popularity": 15783,
+								"popularity": 15825,
 								"startDate": {
 									"year": 2005
 								},
@@ -8207,7 +8215,7 @@
 								"episodes": 13,
 								"duration": 24,
 								"averageScore": 80,
-								"popularity": 117458,
+								"popularity": 117759,
 								"startDate": {
 									"year": 2008
 								},
@@ -8295,7 +8303,7 @@
 								"episodes": 13,
 								"duration": 24,
 								"averageScore": 74,
-								"popularity": 152823,
+								"popularity": 153189,
 								"startDate": {
 									"year": 2016
 								},
@@ -8375,7 +8383,7 @@
 								"episodes": 12,
 								"duration": 8,
 								"averageScore": 68,
-								"popularity": 33670,
+								"popularity": 33730,
 								"startDate": {
 									"year": 2016
 								},
@@ -8442,7 +8450,7 @@
 								"episodes": 26,
 								"duration": 24,
 								"averageScore": 75,
-								"popularity": 40571,
+								"popularity": 40674,
 								"startDate": {
 									"year": 2009
 								},
@@ -8534,7 +8542,7 @@
 								"episodes": 26,
 								"duration": 25,
 								"averageScore": 80,
-								"popularity": 39614,
+								"popularity": 39715,
 								"startDate": {
 									"year": 2003
 								},
@@ -8607,7 +8615,7 @@
 								"episodes": 13,
 								"duration": 24,
 								"averageScore": 77,
-								"popularity": 163346,
+								"popularity": 163774,
 								"startDate": {
 									"year": 2015
 								},
@@ -8681,7 +8689,7 @@
 								"episodes": 12,
 								"duration": 24,
 								"averageScore": 75,
-								"popularity": 47767,
+								"popularity": 47869,
 								"startDate": {
 									"year": 2017
 								},
@@ -8705,18 +8713,18 @@
 									},
 									{
 										"name": "Primarily Female Cast",
-										"rank": 87
+										"rank": 88
 									},
 									{
 										"name": "Foreign",
 										"rank": 87
 									},
 									{
-										"name": "Urban Fantasy",
-										"rank": 80
+										"name": "Achronological Order",
+										"rank": 79
 									},
 									{
-										"name": "Achronological Order",
+										"name": "Urban Fantasy",
 										"rank": 79
 									},
 									{
@@ -8729,11 +8737,11 @@
 									},
 									{
 										"name": "Guns",
-										"rank": 56
+										"rank": 57
 									},
 									{
 										"name": "Historical",
-										"rank": 55
+										"rank": 56
 									},
 									{
 										"name": "Assassins",
@@ -8741,7 +8749,7 @@
 									},
 									{
 										"name": "Anti-Hero",
-										"rank": 40
+										"rank": 48
 									},
 									{
 										"name": "Trains",
@@ -8773,7 +8781,7 @@
 								"episodes": 24,
 								"duration": 23,
 								"averageScore": 67,
-								"popularity": 5171,
+								"popularity": 5179,
 								"startDate": {
 									"year": 2006
 								},
@@ -8841,7 +8849,7 @@
 								"episodes": 12,
 								"duration": 24,
 								"averageScore": 66,
-								"popularity": 42515,
+								"popularity": 42619,
 								"startDate": {
 									"year": 2015
 								},
@@ -8934,7 +8942,7 @@
 								"episodes": 26,
 								"duration": 23,
 								"averageScore": 70,
-								"popularity": 18383,
+								"popularity": 18425,
 								"startDate": {
 									"year": 2002
 								},
@@ -9010,7 +9018,7 @@
 								"episodes": 22,
 								"duration": 24,
 								"averageScore": 73,
-								"popularity": 84889,
+								"popularity": 85118,
 								"startDate": {
 									"year": 2017
 								},
@@ -9108,7 +9116,7 @@
 								"episodes": 13,
 								"duration": 24,
 								"averageScore": 78,
-								"popularity": 155776,
+								"popularity": 156221,
 								"startDate": {
 									"year": 2016
 								},
@@ -9205,7 +9213,7 @@
 								"episodes": 12,
 								"duration": 24,
 								"averageScore": 70,
-								"popularity": 24600,
+								"popularity": 24663,
 								"startDate": {
 									"year": 2004
 								},
@@ -9278,7 +9286,7 @@
 								"episodes": 94,
 								"duration": 25,
 								"averageScore": 79,
-								"popularity": 58710,
+								"popularity": 58864,
 								"startDate": {
 									"year": 1996
 								},
@@ -9344,7 +9352,7 @@
 								"episodes": 11,
 								"duration": 23,
 								"averageScore": 68,
-								"popularity": 40551,
+								"popularity": 40638,
 								"startDate": {
 									"year": 2014
 								},
@@ -9396,7 +9404,7 @@
 								"episodes": 13,
 								"duration": 24,
 								"averageScore": 73,
-								"popularity": 114457,
+								"popularity": 114729,
 								"startDate": {
 									"year": 2015
 								},
@@ -9480,7 +9488,7 @@
 								"episodes": 26,
 								"duration": 24,
 								"averageScore": 84,
-								"popularity": 167672,
+								"popularity": 168203,
 								"startDate": {
 									"year": 2004
 								},
@@ -9608,7 +9616,7 @@
 								"episodes": 22,
 								"duration": 24,
 								"averageScore": 67,
-								"popularity": 25254,
+								"popularity": 25295,
 								"startDate": {
 									"year": 2013
 								},
@@ -9627,7 +9635,7 @@
 									},
 									{
 										"name": "Tokusatsu",
-										"rank": 85
+										"rank": 86
 									},
 									{
 										"name": "Male Protagonist",
@@ -9635,18 +9643,18 @@
 									},
 									{
 										"name": "Primarily Adult Cast",
-										"rank": 68
-									},
-									{
-										"name": "Idol",
-										"rank": 63
+										"rank": 70
 									},
 									{
 										"name": "Aliens",
-										"rank": 62
+										"rank": 67
 									},
 									{
 										"name": "Police",
+										"rank": 63
+									},
+									{
+										"name": "Idol",
 										"rank": 61
 									},
 									{
@@ -9667,7 +9675,7 @@
 									},
 									{
 										"name": "Ensemble Cast",
-										"rank": 30
+										"rank": 26
 									},
 									{
 										"name": "Super Robot",
@@ -9687,7 +9695,7 @@
 								"episodes": 13,
 								"duration": 24,
 								"averageScore": 73,
-								"popularity": 74198,
+								"popularity": 74410,
 								"startDate": {
 									"year": 2010
 								},
@@ -9750,7 +9758,7 @@
 								"episodes": 13,
 								"duration": 23,
 								"averageScore": 68,
-								"popularity": 31312,
+								"popularity": 31402,
 								"startDate": {
 									"year": 2012
 								},
@@ -9836,7 +9844,7 @@
 									},
 									{
 										"name": "Nudity",
-										"rank": 28
+										"rank": 26
 									},
 									{
 										"name": "Military",
@@ -9860,7 +9868,7 @@
 								"episodes": 13,
 								"duration": 23,
 								"averageScore": 63,
-								"popularity": 6616,
+								"popularity": 6627,
 								"startDate": {
 									"year": 2010
 								},
@@ -9902,7 +9910,7 @@
 								"episodes": 64,
 								"duration": 23,
 								"averageScore": 73,
-								"popularity": 40167,
+								"popularity": 40261,
 								"startDate": {
 									"year": 2001
 								},
@@ -9980,7 +9988,7 @@
 								"episodes": 22,
 								"duration": 23,
 								"averageScore": 84,
-								"popularity": 382519,
+								"popularity": 383464,
 								"startDate": {
 									"year": 2014
 								},
@@ -10009,7 +10017,7 @@
 									},
 									{
 										"name": "Rehabilitation",
-										"rank": 80
+										"rank": 81
 									},
 									{
 										"name": "Female Protagonist",
@@ -10020,12 +10028,12 @@
 										"rank": 79
 									},
 									{
-										"name": "Tomboy",
-										"rank": 79
-									},
-									{
 										"name": "Love Triangle",
 										"rank": 75
+									},
+									{
+										"name": "Tomboy",
+										"rank": 70
 									},
 									{
 										"name": "Heterosexual",
@@ -10061,7 +10069,7 @@
 								"episodes": 22,
 								"duration": 23,
 								"averageScore": 75,
-								"popularity": 82859,
+								"popularity": 83084,
 								"startDate": {
 									"year": 2010
 								},
@@ -10182,7 +10190,7 @@
 								"episodes": 12,
 								"duration": 23,
 								"averageScore": 70,
-								"popularity": 126979,
+								"popularity": 127361,
 								"startDate": {
 									"year": 2015
 								},
@@ -10269,7 +10277,7 @@
 								"episodes": 12,
 								"duration": 24,
 								"averageScore": 72,
-								"popularity": 34446,
+								"popularity": 34543,
 								"startDate": {
 									"year": 2010
 								},
@@ -10340,7 +10348,7 @@
 								"episodes": 24,
 								"duration": 24,
 								"averageScore": 82,
-								"popularity": 79760,
+								"popularity": 79915,
 								"startDate": {
 									"year": 2014
 								},
@@ -10428,7 +10436,7 @@
 								"episodes": 39,
 								"duration": 23,
 								"averageScore": 81,
-								"popularity": 46042,
+								"popularity": 46201,
 								"startDate": {
 									"year": 1997
 								},
@@ -10610,7 +10618,7 @@
 								"episodes": 12,
 								"duration": 24,
 								"averageScore": 75,
-								"popularity": 70549,
+								"popularity": 70730,
 								"startDate": {
 									"year": 2017
 								},
@@ -10697,7 +10705,7 @@
 								"episodes": 26,
 								"duration": 23,
 								"averageScore": 73,
-								"popularity": 18810,
+								"popularity": 18856,
 								"startDate": {
 									"year": 1995
 								},
@@ -10749,7 +10757,7 @@
 								"episodes": 26,
 								"duration": 24,
 								"averageScore": 72,
-								"popularity": 22559,
+								"popularity": 22618,
 								"startDate": {
 									"year": 1996
 								},
@@ -10830,7 +10838,7 @@
 								"episodes": 178,
 								"duration": 22,
 								"averageScore": 74,
-								"popularity": 23399,
+								"popularity": 23449,
 								"startDate": {
 									"year": 2001
 								},
@@ -10890,7 +10898,7 @@
 								"episodes": 3,
 								"duration": 23,
 								"averageScore": 68,
-								"popularity": 2954,
+								"popularity": 2960,
 								"startDate": {
 									"year": 1993
 								},
@@ -10945,7 +10953,7 @@
 								"episodes": 25,
 								"duration": 24,
 								"averageScore": 76,
-								"popularity": 33849,
+								"popularity": 33925,
 								"startDate": {
 									"year": 2011
 								},
@@ -10958,11 +10966,19 @@
 								"tags": [
 									{
 										"name": "Superhero",
-										"rank": 94
+										"rank": 92
 									},
 									{
 										"name": "Super Power",
 										"rank": 88
+									},
+									{
+										"name": "Henshin",
+										"rank": 79
+									},
+									{
+										"name": "Tokusatsu",
+										"rank": 79
 									},
 									{
 										"name": "Ensemble Cast",
@@ -10985,6 +11001,10 @@
 										"rank": 60
 									},
 									{
+										"name": "CGI",
+										"rank": 60
+									},
+									{
 										"name": "Super Robot",
 										"rank": 55
 									},
@@ -10995,6 +11015,10 @@
 									{
 										"name": "Robots",
 										"rank": 37
+									},
+									{
+										"name": "Conspiracy",
+										"rank": 20
 									},
 									{
 										"name": "Motorcycles",
@@ -11014,7 +11038,7 @@
 								"episodes": 24,
 								"duration": 24,
 								"averageScore": 75,
-								"popularity": 102850,
+								"popularity": 103112,
 								"startDate": {
 									"year": 2009
 								},
@@ -11057,12 +11081,12 @@
 										"rank": 69
 									},
 									{
-										"name": "Shounen",
-										"rank": 66
+										"name": "Bisexual",
+										"rank": 68
 									},
 									{
-										"name": "Bisexual",
-										"rank": 65
+										"name": "Shounen",
+										"rank": 66
 									},
 									{
 										"name": "School",
@@ -11098,7 +11122,7 @@
 								"episodes": 6,
 								"duration": 28,
 								"averageScore": 77,
-								"popularity": 28934,
+								"popularity": 29019,
 								"startDate": {
 									"year": 1988
 								},
@@ -11224,7 +11248,7 @@
 								"episodes": 26,
 								"duration": 23,
 								"averageScore": 77,
-								"popularity": 19428,
+								"popularity": 19482,
 								"startDate": {
 									"year": 2005
 								},
@@ -11304,7 +11328,7 @@
 								"episodes": 26,
 								"duration": 24,
 								"averageScore": 79,
-								"popularity": 94645,
+								"popularity": 94980,
 								"startDate": {
 									"year": 1998
 								},
@@ -11318,11 +11342,11 @@
 								"tags": [
 									{
 										"name": "Guns",
-										"rank": 90
+										"rank": 91
 									},
 									{
 										"name": "Fugitive",
-										"rank": 90
+										"rank": 91
 									},
 									{
 										"name": "Philosophy",
@@ -11338,7 +11362,7 @@
 									},
 									{
 										"name": "Crime",
-										"rank": 73
+										"rank": 74
 									},
 									{
 										"name": "Tragedy",
@@ -11350,7 +11374,7 @@
 									},
 									{
 										"name": "Episodic",
-										"rank": 66
+										"rank": 67
 									},
 									{
 										"name": "Twins",
@@ -11390,7 +11414,7 @@
 								"episodes": 42,
 								"duration": 25,
 								"averageScore": 71,
-								"popularity": 7189,
+								"popularity": 7209,
 								"startDate": {
 									"year": 1978
 								},
@@ -11451,7 +11475,7 @@
 								"episodes": 13,
 								"duration": 24,
 								"averageScore": 71,
-								"popularity": 31163,
+								"popularity": 31309,
 								"startDate": {
 									"year": 2018
 								},
@@ -11519,7 +11543,7 @@
 								"episodes": 26,
 								"duration": 24,
 								"averageScore": 72,
-								"popularity": 33142,
+								"popularity": 33202,
 								"startDate": {
 									"year": 2015
 								},
@@ -11569,7 +11593,7 @@
 								"episodes": 13,
 								"duration": 24,
 								"averageScore": 85,
-								"popularity": 331217,
+								"popularity": 332200,
 								"startDate": {
 									"year": 2018
 								},
@@ -11673,7 +11697,7 @@
 								"episodes": 13,
 								"duration": 24,
 								"averageScore": 74,
-								"popularity": 65828,
+								"popularity": 65964,
 								"startDate": {
 									"year": 2010
 								},
@@ -11744,7 +11768,7 @@
 								"episodes": 12,
 								"duration": 24,
 								"averageScore": 73,
-								"popularity": 120757,
+								"popularity": 121058,
 								"startDate": {
 									"year": 2015
 								},
@@ -11821,7 +11845,7 @@
 								"episodes": 11,
 								"duration": 23,
 								"averageScore": 85,
-								"popularity": 95945,
+								"popularity": 96281,
 								"startDate": {
 									"year": 2010
 								},
@@ -11926,7 +11950,7 @@
 								"episodes": 12,
 								"duration": 24,
 								"averageScore": 67,
-								"popularity": 23449,
+								"popularity": 23502,
 								"startDate": {
 									"year": 2015
 								},
@@ -12020,7 +12044,7 @@
 								"episodes": 12,
 								"duration": 24,
 								"averageScore": 72,
-								"popularity": 34001,
+								"popularity": 34073,
 								"startDate": {
 									"year": 2014
 								},
@@ -12127,7 +12151,7 @@
 								"episodes": 13,
 								"duration": 23,
 								"averageScore": 68,
-								"popularity": 98744,
+								"popularity": 99029,
 								"startDate": {
 									"year": 2006
 								},
@@ -12234,7 +12258,7 @@
 								"episodes": 12,
 								"duration": 24,
 								"averageScore": 65,
-								"popularity": 65823,
+								"popularity": 66033,
 								"startDate": {
 									"year": 2018
 								},
@@ -12272,7 +12296,7 @@
 									},
 									{
 										"name": "Yuri",
-										"rank": 80
+										"rank": 79
 									},
 									{
 										"name": "Anti-Hero",
@@ -12287,6 +12311,10 @@
 										"rank": 73
 									},
 									{
+										"name": "Urban",
+										"rank": 70
+									},
+									{
 										"name": "Hypersexuality",
 										"rank": 70
 									},
@@ -12297,10 +12325,6 @@
 									{
 										"name": "Amnesia",
 										"rank": 62
-									},
-									{
-										"name": "Urban",
-										"rank": 60
 									},
 									{
 										"name": "Work",
@@ -12332,7 +12356,7 @@
 								"episodes": 203,
 								"duration": 24,
 								"averageScore": 76,
-								"popularity": 65364,
+								"popularity": 65501,
 								"startDate": {
 									"year": 2006
 								},
@@ -12403,7 +12427,7 @@
 								"episodes": 12,
 								"duration": 24,
 								"averageScore": 74,
-								"popularity": 103548,
+								"popularity": 103809,
 								"startDate": {
 									"year": 2018
 								},
@@ -12511,7 +12535,7 @@
 								"episodes": 38,
 								"duration": 16,
 								"averageScore": 81,
-								"popularity": 28830,
+								"popularity": 28918,
 								"startDate": {
 									"year": 2002
 								},
@@ -12605,8 +12629,8 @@
 								"format": "TV",
 								"episodes": 11,
 								"duration": 24,
-								"averageScore": 70,
-								"popularity": 23699,
+								"averageScore": 69,
+								"popularity": 23749,
 								"startDate": {
 									"year": 2011
 								},
@@ -12692,7 +12716,7 @@
 								"episodes": 13,
 								"duration": 23,
 								"averageScore": 72,
-								"popularity": 49524,
+								"popularity": 49638,
 								"startDate": {
 									"year": 2013
 								},
@@ -12785,7 +12809,7 @@
 								"episodes": 1,
 								"duration": 118,
 								"averageScore": 74,
-								"popularity": 23072,
+								"popularity": 23159,
 								"startDate": {
 									"year": 2018
 								},
@@ -12858,7 +12882,7 @@
 								"episodes": 13,
 								"duration": 24,
 								"averageScore": 73,
-								"popularity": 24856,
+								"popularity": 24915,
 								"startDate": {
 									"year": 2013
 								},
@@ -12924,7 +12948,7 @@
 								"episodes": 12,
 								"duration": 23,
 								"averageScore": 70,
-								"popularity": 68990,
+								"popularity": 69173,
 								"startDate": {
 									"year": 2013
 								},
@@ -13004,7 +13028,7 @@
 								"episodes": 99,
 								"duration": 24,
 								"averageScore": 83,
-								"popularity": 33685,
+								"popularity": 33777,
 								"startDate": {
 									"year": 2012
 								},
@@ -13080,7 +13104,7 @@
 								"episodes": 14,
 								"duration": 24,
 								"averageScore": 78,
-								"popularity": 56218,
+								"popularity": 56453,
 								"startDate": {
 									"year": 2019
 								},
@@ -13146,61 +13170,6 @@
 						},
 						{
 							"media": {
-								"id": 21329,
-								"title": {
-									"userPreferred": "Sekkou Boys"
-								},
-								"status": "FINISHED",
-								"format": "TV_SHORT",
-								"episodes": 12,
-								"duration": 8,
-								"averageScore": 59,
-								"popularity": 11611,
-								"startDate": {
-									"year": 2016
-								},
-								"genres": [
-									"Comedy",
-									"Music"
-								],
-								"tags": [
-									{
-										"name": "Idol",
-										"rank": 92
-									},
-									{
-										"name": "Parody",
-										"rank": 87
-									},
-									{
-										"name": "Cute Boys Doing Cute Things",
-										"rank": 82
-									},
-									{
-										"name": "Work",
-										"rank": 80
-									},
-									{
-										"name": "Surreal Comedy",
-										"rank": 79
-									},
-									{
-										"name": "Female Protagonist",
-										"rank": 79
-									},
-									{
-										"name": "Primarily Male Cast",
-										"rank": 72
-									},
-									{
-										"name": "Mythology",
-										"rank": 60
-									}
-								]
-							}
-						},
-						{
-							"media": {
 								"id": 106479,
 								"title": {
 									"userPreferred": "Itai no wa Iya nano de Bougyoryoku ni Kyokufuri Shitai to Omoimasu."
@@ -13210,7 +13179,7 @@
 								"episodes": 12,
 								"duration": 24,
 								"averageScore": 74,
-								"popularity": 97744,
+								"popularity": 98197,
 								"startDate": {
 									"year": 2020
 								},
@@ -13332,7 +13301,7 @@
 								"episodes": 6,
 								"duration": 19,
 								"averageScore": 78,
-								"popularity": 27607,
+								"popularity": 27674,
 								"startDate": {
 									"year": 2008
 								},
@@ -13387,7 +13356,7 @@
 								"episodes": 3,
 								"duration": 36,
 								"averageScore": 64,
-								"popularity": 12055,
+								"popularity": 12107,
 								"startDate": {
 									"year": 2004
 								},
@@ -13465,7 +13434,7 @@
 								"episodes": 14,
 								"duration": 23,
 								"averageScore": 76,
-								"popularity": 131019,
+								"popularity": 131338,
 								"startDate": {
 									"year": 2006
 								},
@@ -13579,7 +13548,7 @@
 								"episodes": 11,
 								"duration": 22,
 								"averageScore": 77,
-								"popularity": 52682,
+								"popularity": 52788,
 								"startDate": {
 									"year": 2009
 								},
@@ -13649,7 +13618,7 @@
 								"episodes": 24,
 								"duration": 23,
 								"averageScore": 84,
-								"popularity": 206639,
+								"popularity": 207195,
 								"startDate": {
 									"year": 2018
 								},
@@ -13763,7 +13732,7 @@
 								"episodes": 26,
 								"duration": 12,
 								"averageScore": 75,
-								"popularity": 23349,
+								"popularity": 23391,
 								"startDate": {
 									"year": 2003
 								},
@@ -13837,7 +13806,7 @@
 								"episodes": 49,
 								"duration": 24,
 								"averageScore": 69,
-								"popularity": 3410,
+								"popularity": 3420,
 								"startDate": {
 									"year": 1996
 								},
@@ -13886,7 +13855,7 @@
 								"episodes": 12,
 								"duration": 25,
 								"averageScore": 63,
-								"popularity": 4916,
+								"popularity": 4923,
 								"startDate": {
 									"year": 2008
 								},
@@ -13958,7 +13927,7 @@
 								"episodes": 15,
 								"duration": 24,
 								"averageScore": 82,
-								"popularity": 42293,
+								"popularity": 42454,
 								"startDate": {
 									"year": 2018
 								},
@@ -14101,7 +14070,7 @@
 								"episodes": 13,
 								"duration": 24,
 								"averageScore": 77,
-								"popularity": 35572,
+								"popularity": 35678,
 								"startDate": {
 									"year": 2013
 								},
@@ -14207,7 +14176,7 @@
 								"episodes": 1,
 								"duration": 50,
 								"averageScore": 73,
-								"popularity": 74508,
+								"popularity": 74677,
 								"startDate": {
 									"year": 2007
 								},
@@ -14280,7 +14249,7 @@
 								"episodes": 26,
 								"duration": 24,
 								"averageScore": 73,
-								"popularity": 41522,
+								"popularity": 41611,
 								"startDate": {
 									"year": 2007
 								},
@@ -14347,7 +14316,7 @@
 								"episodes": 12,
 								"duration": 23,
 								"averageScore": 75,
-								"popularity": 17829,
+								"popularity": 17881,
 								"startDate": {
 									"year": 2010
 								},
@@ -14402,7 +14371,7 @@
 								"episodes": 6,
 								"duration": 30,
 								"averageScore": 52,
-								"popularity": 4044,
+								"popularity": 4057,
 								"startDate": {
 									"year": 1989
 								},
@@ -14474,7 +14443,7 @@
 								"episodes": 4,
 								"duration": 45,
 								"averageScore": 57,
-								"popularity": 2410,
+								"popularity": 2420,
 								"startDate": {
 									"year": 1990
 								},
@@ -14521,7 +14490,7 @@
 								"episodes": 24,
 								"duration": 24,
 								"averageScore": 87,
-								"popularity": 262572,
+								"popularity": 263666,
 								"startDate": {
 									"year": 2019
 								},
@@ -14633,7 +14602,7 @@
 									},
 									{
 										"name": "CGI",
-										"rank": 44
+										"rank": 43
 									},
 									{
 										"name": "Heterosexual",
@@ -14669,7 +14638,7 @@
 								"episodes": 1,
 								"duration": 89,
 								"averageScore": 70,
-								"popularity": 12309,
+								"popularity": 12367,
 								"startDate": {
 									"year": 1973
 								},
@@ -14832,7 +14801,7 @@
 								"episodes": 26,
 								"duration": 24,
 								"averageScore": 74,
-								"popularity": 4663,
+								"popularity": 4672,
 								"startDate": {
 									"year": 1978
 								},
@@ -14908,7 +14877,7 @@
 								"episodes": 24,
 								"duration": 24,
 								"averageScore": 76,
-								"popularity": 42131,
+								"popularity": 42296,
 								"startDate": {
 									"year": 2006
 								},
@@ -14999,7 +14968,7 @@
 								"episodes": 12,
 								"duration": 24,
 								"averageScore": 68,
-								"popularity": 46646,
+								"popularity": 46726,
 								"startDate": {
 									"year": 2014
 								},
@@ -15059,7 +15028,7 @@
 								"episodes": 1,
 								"duration": 101,
 								"averageScore": 23,
-								"popularity": 436,
+								"popularity": 437,
 								"startDate": {
 									"year": 1994
 								},
@@ -15107,7 +15076,7 @@
 								"episodes": 195,
 								"duration": 25,
 								"averageScore": 72,
-								"popularity": 18031,
+								"popularity": 18141,
 								"startDate": {
 									"year": 1981
 								},
@@ -15125,11 +15094,11 @@
 									},
 									{
 										"name": "Aliens",
-										"rank": 86
+										"rank": 87
 									},
 									{
 										"name": "Shounen",
-										"rank": 85
+										"rank": 87
 									},
 									{
 										"name": "Urban Fantasy",
@@ -15140,68 +15109,68 @@
 										"rank": 83
 									},
 									{
+										"name": "Parody",
+										"rank": 82
+									},
+									{
 										"name": "Surreal Comedy",
-										"rank": 81
+										"rank": 82
+									},
+									{
+										"name": "Female Protagonist",
+										"rank": 80
+									},
+									{
+										"name": "Heterosexual",
+										"rank": 80
+									},
+									{
+										"name": "Tomboy",
+										"rank": 79
 									},
 									{
 										"name": "Super Power",
-										"rank": 80
+										"rank": 77
 									},
 									{
-										"name": "Parody",
-										"rank": 80
-									},
-									{
-										"name": "Monster Girl",
-										"rank": 76
-									},
-									{
-										"name": "Mythology",
-										"rank": 75
+										"name": "Love Triangle",
+										"rank": 77
 									},
 									{
 										"name": "School",
 										"rank": 75
 									},
 									{
-										"name": "Female Protagonist",
-										"rank": 75
+										"name": "Mythology",
+										"rank": 74
 									},
 									{
-										"name": "Heterosexual",
-										"rank": 75
+										"name": "Youkai",
+										"rank": 74
 									},
 									{
 										"name": "Male Protagonist",
 										"rank": 73
 									},
 									{
-										"name": "Love Triangle",
-										"rank": 73
-									},
-									{
-										"name": "Youkai",
-										"rank": 71
-									},
-									{
-										"name": "Tomboy",
+										"name": "Monster Girl",
 										"rank": 70
 									},
 									{
-										"name": "Family Life",
-										"rank": 60
+										"name": "Nudity",
+										"rank": 65
 									},
 									{
-										"name": "Nudity",
-										"rank": 60
+										"name": "Family Life",
+										"rank": 62
 									},
 									{
 										"name": "Shrine Maiden",
-										"rank": 53
+										"rank": 60
 									},
 									{
 										"name": "Tanks",
-										"rank": 53
+										"rank": 60
 									},
 									{
 										"name": "Crossdressing",
@@ -15218,6 +15187,10 @@
 									{
 										"name": "Time Manipulation",
 										"rank": 20
+									},
+									{
+										"name": "Goblin",
+										"rank": 10
 									}
 								]
 							}
@@ -15233,7 +15206,7 @@
 								"episodes": 13,
 								"duration": 12,
 								"averageScore": 72,
-								"popularity": 10711,
+								"popularity": 10742,
 								"startDate": {
 									"year": 2011
 								},
@@ -15272,7 +15245,7 @@
 								"episodes": 11,
 								"duration": 24,
 								"averageScore": 73,
-								"popularity": 37531,
+								"popularity": 37610,
 								"startDate": {
 									"year": 2019
 								},
@@ -15426,7 +15399,7 @@
 								"episodes": 24,
 								"duration": 25,
 								"averageScore": 71,
-								"popularity": 20324,
+								"popularity": 20370,
 								"startDate": {
 									"year": 2005
 								},
@@ -15487,7 +15460,7 @@
 								"episodes": 12,
 								"duration": 23,
 								"averageScore": 68,
-								"popularity": 17610,
+								"popularity": 17652,
 								"startDate": {
 									"year": 2007
 								},
@@ -15567,7 +15540,7 @@
 								"episodes": 12,
 								"duration": 22,
 								"averageScore": 73,
-								"popularity": 34540,
+								"popularity": 34632,
 								"startDate": {
 									"year": 2009
 								},
@@ -15683,7 +15656,7 @@
 								"episodes": 96,
 								"duration": 25,
 								"averageScore": 77,
-								"popularity": 15144,
+								"popularity": 15197,
 								"startDate": {
 									"year": 1986
 								},
@@ -15772,7 +15745,7 @@
 								"episodes": 26,
 								"duration": 24,
 								"averageScore": 69,
-								"popularity": 10101,
+								"popularity": 10135,
 								"startDate": {
 									"year": 2001
 								},
@@ -15812,7 +15785,7 @@
 								"episodes": 12,
 								"duration": 22,
 								"averageScore": 82,
-								"popularity": 55274,
+								"popularity": 55432,
 								"startDate": {
 									"year": 2007
 								},
@@ -15910,7 +15883,7 @@
 								"episodes": 24,
 								"duration": 24,
 								"averageScore": 73,
-								"popularity": 33607,
+								"popularity": 33699,
 								"startDate": {
 									"year": 2010
 								},
@@ -15973,7 +15946,7 @@
 								"episodes": 75,
 								"duration": 23,
 								"averageScore": 78,
-								"popularity": 17624,
+								"popularity": 17662,
 								"startDate": {
 									"year": 2001
 								},
@@ -16009,6 +15982,10 @@
 									},
 									{
 										"name": "Foreign",
+										"rank": 30
+									},
+									{
+										"name": "Primarily Male Cast",
 										"rank": 20
 									}
 								]
@@ -16025,7 +16002,7 @@
 								"episodes": 12,
 								"duration": 24,
 								"averageScore": 76,
-								"popularity": 64886,
+								"popularity": 65057,
 								"startDate": {
 									"year": 2020
 								},
@@ -16114,7 +16091,7 @@
 								"episodes": 26,
 								"duration": 24,
 								"averageScore": 73,
-								"popularity": 19717,
+								"popularity": 19769,
 								"startDate": {
 									"year": 2008
 								},
@@ -16185,7 +16162,7 @@
 								"episodes": 12,
 								"duration": 24,
 								"averageScore": 77,
-								"popularity": 33412,
+								"popularity": 33557,
 								"startDate": {
 									"year": 2005
 								},
@@ -16230,15 +16207,15 @@
 									},
 									{
 										"name": "LGBTQ+ Themes",
-										"rank": 59
+										"rank": 57
 									},
 									{
 										"name": "Bisexual",
-										"rank": 52
+										"rank": 50
 									},
 									{
 										"name": "Transgender",
-										"rank": 50
+										"rank": 43
 									},
 									{
 										"name": "Crossdressing",
@@ -16266,7 +16243,7 @@
 								"episodes": 24,
 								"duration": 23,
 								"averageScore": 71,
-								"popularity": 22214,
+								"popularity": 22259,
 								"startDate": {
 									"year": 2003
 								},
@@ -16330,7 +16307,7 @@
 								"episodes": 50,
 								"duration": 23,
 								"averageScore": 81,
-								"popularity": 20597,
+								"popularity": 20647,
 								"startDate": {
 									"year": 2009
 								},
@@ -16366,12 +16343,12 @@
 										"rank": 76
 									},
 									{
-										"name": "Tomboy",
+										"name": "Female Protagonist",
 										"rank": 74
 									},
 									{
-										"name": "Female Protagonist",
-										"rank": 71
+										"name": "Tomboy",
+										"rank": 74
 									},
 									{
 										"name": "School",
@@ -16382,20 +16359,20 @@
 										"rank": 68
 									},
 									{
+										"name": "Heterosexual",
+										"rank": 60
+									},
+									{
 										"name": "Time Skip",
 										"rank": 54
 									},
 									{
-										"name": "Heterosexual",
-										"rank": 46
+										"name": "Primarily Teen Cast",
+										"rank": 50
 									},
 									{
 										"name": "Shounen",
 										"rank": 43
-									},
-									{
-										"name": "Primarily Teen Cast",
-										"rank": 20
 									}
 								]
 							}
@@ -16411,7 +16388,7 @@
 								"episodes": 33,
 								"duration": 23,
 								"averageScore": 79,
-								"popularity": 8937,
+								"popularity": 8960,
 								"startDate": {
 									"year": 1995
 								},
@@ -16487,7 +16464,7 @@
 								"episodes": 11,
 								"duration": 23,
 								"averageScore": 68,
-								"popularity": 11064,
+								"popularity": 11083,
 								"startDate": {
 									"year": 2006
 								},
@@ -16567,7 +16544,7 @@
 								"episodes": 26,
 								"duration": 25,
 								"averageScore": 71,
-								"popularity": 50408,
+								"popularity": 50532,
 								"startDate": {
 									"year": 2005
 								},
@@ -16657,7 +16634,7 @@
 								"episodes": 25,
 								"duration": 23,
 								"averageScore": 70,
-								"popularity": 8221,
+								"popularity": 8240,
 								"startDate": {
 									"year": 2007
 								},
@@ -16701,7 +16678,7 @@
 								"episodes": 7,
 								"duration": 30,
 								"averageScore": 70,
-								"popularity": 10350,
+								"popularity": 10389,
 								"startDate": {
 									"year": 1988
 								},
@@ -16769,7 +16746,7 @@
 								"episodes": 25,
 								"duration": 24,
 								"averageScore": 79,
-								"popularity": 83763,
+								"popularity": 83956,
 								"startDate": {
 									"year": 2010
 								},
@@ -16838,7 +16815,7 @@
 								"episodes": 50,
 								"duration": 24,
 								"averageScore": 77,
-								"popularity": 58565,
+								"popularity": 58711,
 								"startDate": {
 									"year": 2005
 								},
@@ -16941,7 +16918,7 @@
 								"episodes": 4,
 								"duration": 15,
 								"averageScore": 67,
-								"popularity": 6419,
+								"popularity": 6438,
 								"startDate": {
 									"year": 2009
 								},
@@ -17019,7 +16996,7 @@
 								"episodes": 25,
 								"duration": 25,
 								"averageScore": 58,
-								"popularity": 4251,
+								"popularity": 4267,
 								"startDate": {
 									"year": 1973
 								},
@@ -17092,7 +17069,7 @@
 								"episodes": 1,
 								"duration": 99,
 								"averageScore": 77,
-								"popularity": 52071,
+								"popularity": 52228,
 								"startDate": {
 									"year": 2013
 								},
@@ -17156,7 +17133,7 @@
 								"episodes": 50,
 								"duration": 23,
 								"averageScore": 69,
-								"popularity": 6955,
+								"popularity": 6968,
 								"startDate": {
 									"year": 2000
 								},
@@ -17201,7 +17178,7 @@
 								"episodes": 5,
 								"duration": 29,
 								"averageScore": 51,
-								"popularity": 6289,
+								"popularity": 6311,
 								"startDate": {
 									"year": 1994
 								},
@@ -17247,7 +17224,7 @@
 								"episodes": 1,
 								"duration": 118,
 								"averageScore": 80,
-								"popularity": 72576,
+								"popularity": 72767,
 								"startDate": {
 									"year": 2015
 								},
@@ -17346,7 +17323,7 @@
 								"episodes": 1,
 								"duration": 90,
 								"averageScore": 65,
-								"popularity": 4065,
+								"popularity": 4083,
 								"startDate": {
 									"year": 1983
 								},
@@ -17422,7 +17399,7 @@
 								"episodes": 12,
 								"duration": 24,
 								"averageScore": 73,
-								"popularity": 33469,
+								"popularity": 33534,
 								"startDate": {
 									"year": 2014
 								},
@@ -17535,7 +17512,7 @@
 								"episodes": 11,
 								"duration": 23,
 								"averageScore": 72,
-								"popularity": 11329,
+								"popularity": 11349,
 								"startDate": {
 									"year": 2007
 								},
@@ -17590,7 +17567,7 @@
 								"episodes": 1,
 								"duration": 45,
 								"averageScore": 60,
-								"popularity": 1688,
+								"popularity": 1698,
 								"startDate": {
 									"year": 1993
 								},
@@ -17643,7 +17620,7 @@
 								"episodes": 4,
 								"duration": 30,
 								"averageScore": 72,
-								"popularity": 6312,
+								"popularity": 6348,
 								"startDate": {
 									"year": 1994
 								},
@@ -17698,7 +17675,7 @@
 								"episodes": 1,
 								"duration": 45,
 								"averageScore": 51,
-								"popularity": 1906,
+								"popularity": 1919,
 								"startDate": {
 									"year": 1987
 								},
@@ -17724,49 +17701,6 @@
 						},
 						{
 							"media": {
-								"id": 5251,
-								"title": {
-									"userPreferred": "Angel Densetsu"
-								},
-								"status": "FINISHED",
-								"format": "OVA",
-								"episodes": 2,
-								"duration": 24,
-								"averageScore": 71,
-								"popularity": 6768,
-								"startDate": {
-									"year": 1996
-								},
-								"genres": [
-									"Action",
-									"Comedy"
-								],
-								"tags": [
-									{
-										"name": "Delinquents",
-										"rank": 80
-									},
-									{
-										"name": "School",
-										"rank": 79
-									},
-									{
-										"name": "Primarily Male Cast",
-										"rank": 79
-									},
-									{
-										"name": "Male Protagonist",
-										"rank": 73
-									},
-									{
-										"name": "Gangs",
-										"rank": 33
-									}
-								]
-							}
-						},
-						{
-							"media": {
 								"id": 539,
 								"title": {
 									"userPreferred": "Tenchi Muyou! Ryououki Dai 1-ki"
@@ -17776,7 +17710,7 @@
 								"episodes": 6,
 								"duration": 29,
 								"averageScore": 72,
-								"popularity": 7038,
+								"popularity": 7056,
 								"startDate": {
 									"year": 1992
 								},
@@ -17852,7 +17786,7 @@
 								"episodes": 26,
 								"duration": 23,
 								"averageScore": 73,
-								"popularity": 22929,
+								"popularity": 22995,
 								"startDate": {
 									"year": 2006
 								},
@@ -17941,7 +17875,7 @@
 								"episodes": 12,
 								"duration": 4,
 								"averageScore": 72,
-								"popularity": 20498,
+								"popularity": 20572,
 								"startDate": {
 									"year": 2017
 								},
@@ -17996,7 +17930,7 @@
 								"episodes": 26,
 								"duration": 23,
 								"averageScore": 72,
-								"popularity": 9938,
+								"popularity": 9958,
 								"startDate": {
 									"year": 1996
 								},
@@ -18062,7 +17996,7 @@
 								"episodes": 13,
 								"duration": 25,
 								"averageScore": 77,
-								"popularity": 76627,
+								"popularity": 76870,
 								"startDate": {
 									"year": 2020
 								},
@@ -18168,7 +18102,7 @@
 								"episodes": 3,
 								"duration": 37,
 								"averageScore": 75,
-								"popularity": 24416,
+								"popularity": 24535,
 								"startDate": {
 									"year": 1995
 								},
@@ -18260,7 +18194,7 @@
 								"episodes": 26,
 								"duration": 24,
 								"averageScore": 69,
-								"popularity": 9236,
+								"popularity": 9264,
 								"startDate": {
 									"year": 2005
 								},
@@ -18326,7 +18260,7 @@
 								"episodes": 52,
 								"duration": 20,
 								"averageScore": 71,
-								"popularity": 2377,
+								"popularity": 2385,
 								"startDate": {
 									"year": 1994
 								},
@@ -18370,7 +18304,7 @@
 								"episodes": 39,
 								"duration": 25,
 								"averageScore": 76,
-								"popularity": 7284,
+								"popularity": 7304,
 								"startDate": {
 									"year": 2011
 								},
@@ -18433,7 +18367,7 @@
 								"episodes": 69,
 								"duration": 24,
 								"averageScore": 75,
-								"popularity": 13320,
+								"popularity": 13354,
 								"startDate": {
 									"year": 2004
 								},
@@ -18491,7 +18425,7 @@
 								"episodes": 7,
 								"duration": 49,
 								"averageScore": 75,
-								"popularity": 6916,
+								"popularity": 6931,
 								"startDate": {
 									"year": 1992
 								},
@@ -18566,8 +18500,8 @@
 								"format": "TV",
 								"episodes": 148,
 								"duration": 24,
-								"averageScore": 73,
-								"popularity": 4841,
+								"averageScore": 74,
+								"popularity": 4863,
 								"startDate": {
 									"year": 1997
 								},
@@ -18617,7 +18551,7 @@
 								"episodes": 48,
 								"duration": 8,
 								"averageScore": 68,
-								"popularity": 2403,
+								"popularity": 2404,
 								"startDate": {
 									"year": 1998
 								},
@@ -18675,7 +18609,7 @@
 								"episodes": 10,
 								"duration": 22,
 								"averageScore": 71,
-								"popularity": 10325,
+								"popularity": 10348,
 								"startDate": {
 									"year": 2014
 								},
@@ -18730,7 +18664,7 @@
 								"episodes": 52,
 								"duration": 25,
 								"averageScore": 74,
-								"popularity": 6245,
+								"popularity": 6259,
 								"startDate": {
 									"year": 1983
 								},
@@ -18805,7 +18739,7 @@
 								"episodes": 26,
 								"duration": 23,
 								"averageScore": 65,
-								"popularity": 2896,
+								"popularity": 2901,
 								"startDate": {
 									"year": 2009
 								},
@@ -18855,8 +18789,8 @@
 								"format": "TV_SHORT",
 								"episodes": 104,
 								"duration": 10,
-								"averageScore": 60,
-								"popularity": 1578,
+								"averageScore": 61,
+								"popularity": 1591,
 								"startDate": {
 									"year": 1989
 								},
@@ -18914,7 +18848,7 @@
 								"episodes": 32,
 								"duration": 40,
 								"averageScore": 52,
-								"popularity": 705,
+								"popularity": 710,
 								"startDate": {
 									"year": 1993
 								},
@@ -18945,7 +18879,7 @@
 								"episodes": 18,
 								"duration": 24,
 								"averageScore": 74,
-								"popularity": 32317,
+								"popularity": 32417,
 								"startDate": {
 									"year": 1989
 								},
@@ -19026,73 +18960,6 @@
 						},
 						{
 							"media": {
-								"id": 116673,
-								"title": {
-									"userPreferred": "BURN THE WITCH"
-								},
-								"status": "FINISHED",
-								"format": "ONA",
-								"episodes": 3,
-								"duration": 21,
-								"averageScore": 70,
-								"popularity": 59980,
-								"startDate": {
-									"year": 2020
-								},
-								"genres": [
-									"Action",
-									"Fantasy"
-								],
-								"tags": [
-									{
-										"name": "Witch",
-										"rank": 95
-									},
-									{
-										"name": "Magic",
-										"rank": 94
-									},
-									{
-										"name": "Urban Fantasy",
-										"rank": 94
-									},
-									{
-										"name": "Female Protagonist",
-										"rank": 89
-									},
-									{
-										"name": "Dragons",
-										"rank": 88
-									},
-									{
-										"name": "Shounen",
-										"rank": 76
-									},
-									{
-										"name": "Primarily Female Cast",
-										"rank": 75
-									},
-									{
-										"name": "Foreign",
-										"rank": 74
-									},
-									{
-										"name": "Kuudere",
-										"rank": 71
-									},
-									{
-										"name": "Work",
-										"rank": 71
-									},
-									{
-										"name": "Steampunk",
-										"rank": 24
-									}
-								]
-							}
-						},
-						{
-							"media": {
 								"id": 2780,
 								"title": {
 									"userPreferred": "Kyoufu no Bio Ningen Saishuu Kyoushi"
@@ -19102,7 +18969,7 @@
 								"episodes": 1,
 								"duration": 56,
 								"averageScore": 49,
-								"popularity": 1001,
+								"popularity": 1003,
 								"startDate": {
 									"year": 1988
 								},
@@ -19143,7 +19010,7 @@
 								"episodes": 11,
 								"duration": 23,
 								"averageScore": 73,
-								"popularity": 73853,
+								"popularity": 73980,
 								"startDate": {
 									"year": 2011
 								},
@@ -19224,7 +19091,7 @@
 								"episodes": 6,
 								"duration": 25,
 								"averageScore": 56,
-								"popularity": 1430,
+								"popularity": 1436,
 								"startDate": {
 									"year": 1988
 								},
@@ -19263,7 +19130,7 @@
 								"episodes": 12,
 								"duration": 28,
 								"averageScore": 78,
-								"popularity": 64920,
+								"popularity": 65070,
 								"startDate": {
 									"year": 2019
 								},
@@ -19359,7 +19226,7 @@
 								"episodes": 26,
 								"duration": 23,
 								"averageScore": 75,
-								"popularity": 39974,
+								"popularity": 40076,
 								"startDate": {
 									"year": 2004
 								},
@@ -19435,7 +19302,7 @@
 								"episodes": 24,
 								"duration": 23,
 								"averageScore": 72,
-								"popularity": 31768,
+								"popularity": 31847,
 								"startDate": {
 									"year": 2007
 								},
@@ -19520,7 +19387,7 @@
 								"episodes": 4,
 								"duration": 29,
 								"averageScore": 52,
-								"popularity": 606,
+								"popularity": 610,
 								"startDate": {
 									"year": 1994
 								},
@@ -19566,7 +19433,7 @@
 								"episodes": 1,
 								"duration": 70,
 								"averageScore": 34,
-								"popularity": 325,
+								"popularity": 327,
 								"startDate": {
 									"year": 1979
 								},
@@ -19604,7 +19471,7 @@
 								"episodes": 12,
 								"duration": 25,
 								"averageScore": 73,
-								"popularity": 26394,
+								"popularity": 26467,
 								"startDate": {
 									"year": 2004
 								},
@@ -19671,7 +19538,7 @@
 								"episodes": 1,
 								"duration": 49,
 								"averageScore": 37,
-								"popularity": 1067,
+								"popularity": 1068,
 								"startDate": {
 									"year": 1989
 								},
@@ -19732,7 +19599,7 @@
 								"episodes": 1,
 								"duration": 90,
 								"averageScore": null,
-								"popularity": 133,
+								"popularity": 134,
 								"startDate": {
 									"year": 1983
 								},
@@ -19762,7 +19629,7 @@
 								"episodes": 1,
 								"duration": 75,
 								"averageScore": null,
-								"popularity": 89,
+								"popularity": 90,
 								"startDate": {
 									"year": 1981
 								},
@@ -19789,7 +19656,7 @@
 								"episodes": 1,
 								"duration": 88,
 								"averageScore": 53,
-								"popularity": 943,
+								"popularity": 944,
 								"startDate": {
 									"year": 1960
 								},
@@ -19856,7 +19723,7 @@
 								"episodes": 1,
 								"duration": 90,
 								"averageScore": 68,
-								"popularity": 5806,
+								"popularity": 5830,
 								"startDate": {
 									"year": 2017
 								},
@@ -19925,7 +19792,7 @@
 								"episodes": 1,
 								"duration": 139,
 								"averageScore": 42,
-								"popularity": 761,
+								"popularity": 765,
 								"startDate": {
 									"year": 1985
 								},
@@ -19961,7 +19828,7 @@
 								"episodes": 52,
 								"duration": 24,
 								"averageScore": 71,
-								"popularity": 12455,
+								"popularity": 12488,
 								"startDate": {
 									"year": 2006
 								},
@@ -20007,7 +19874,7 @@
 								"episodes": 45,
 								"duration": 24,
 								"averageScore": 66,
-								"popularity": 2429,
+								"popularity": 2439,
 								"startDate": {
 									"year": 1993
 								},
@@ -20054,7 +19921,7 @@
 								"episodes": 48,
 								"duration": 25,
 								"averageScore": 70,
-								"popularity": 10151,
+								"popularity": 10190,
 								"startDate": {
 									"year": 1987
 								},
@@ -20160,7 +20027,7 @@
 								"episodes": 12,
 								"duration": 25,
 								"averageScore": 73,
-								"popularity": 9293,
+								"popularity": 9318,
 								"startDate": {
 									"year": 2005
 								},
@@ -20232,7 +20099,7 @@
 								"episodes": 6,
 								"duration": 52,
 								"averageScore": 56,
-								"popularity": 2088,
+								"popularity": 2100,
 								"startDate": {
 									"year": 1988
 								},
@@ -20288,7 +20155,7 @@
 								"episodes": 42,
 								"duration": 23,
 								"averageScore": 68,
-								"popularity": 7971,
+								"popularity": 7992,
 								"startDate": {
 									"year": 1997
 								},
@@ -20327,7 +20194,7 @@
 								"episodes": 1,
 								"duration": 48,
 								"averageScore": 55,
-								"popularity": 1251,
+								"popularity": 1256,
 								"startDate": {
 									"year": 1986
 								},
@@ -20375,7 +20242,7 @@
 								"episodes": 6,
 								"duration": 27,
 								"averageScore": 65,
-								"popularity": 4692,
+								"popularity": 4704,
 								"startDate": {
 									"year": 1994
 								},
@@ -20391,6 +20258,10 @@
 									},
 									{
 										"name": "Guns",
+										"rank": 79
+									},
+									{
+										"name": "Tokusatsu",
 										"rank": 79
 									},
 									{
@@ -20415,7 +20286,7 @@
 								"episodes": 13,
 								"duration": 23,
 								"averageScore": 68,
-								"popularity": 8827,
+								"popularity": 8853,
 								"startDate": {
 									"year": 2009
 								},
@@ -20471,7 +20342,7 @@
 								"episodes": 13,
 								"duration": 24,
 								"averageScore": 67,
-								"popularity": 16877,
+								"popularity": 16920,
 								"startDate": {
 									"year": 2008
 								},
@@ -20524,7 +20395,7 @@
 								"episodes": 3,
 								"duration": 26,
 								"averageScore": 62,
-								"popularity": 3214,
+								"popularity": 3222,
 								"startDate": {
 									"year": 2007
 								},
@@ -20576,7 +20447,7 @@
 								"episodes": 54,
 								"duration": 24,
 								"averageScore": 62,
-								"popularity": 2060,
+								"popularity": 2068,
 								"startDate": {
 									"year": 1990
 								},
@@ -20633,7 +20504,7 @@
 								"episodes": 3,
 								"duration": 37,
 								"averageScore": 43,
-								"popularity": 1382,
+								"popularity": 1389,
 								"startDate": {
 									"year": 2007
 								},
@@ -20651,20 +20522,40 @@
 										"rank": 79
 									},
 									{
+										"name": "Philosophy",
+										"rank": 79
+									},
+									{
+										"name": "Primarily Female Cast",
+										"rank": 79
+									},
+									{
+										"name": "Female Protagonist",
+										"rank": 79
+									},
+									{
 										"name": "Yuri",
-										"rank": 70
+										"rank": 73
+									},
+									{
+										"name": "Post-Apocalyptic",
+										"rank": 66
+									},
+									{
+										"name": "Dystopian",
+										"rank": 60
 									},
 									{
 										"name": "Body Horror",
 										"rank": 50
 									},
 									{
-										"name": "Post-Apocalyptic",
+										"name": "Politics",
 										"rank": 50
 									},
 									{
-										"name": "Politics",
-										"rank": 20
+										"name": "Conspiracy",
+										"rank": 40
 									}
 								]
 							}
@@ -20680,7 +20571,7 @@
 								"episodes": 3,
 								"duration": 43,
 								"averageScore": 68,
-								"popularity": 5840,
+								"popularity": 5860,
 								"startDate": {
 									"year": 1990
 								},
@@ -20731,8 +20622,8 @@
 								"format": "OVA",
 								"episodes": 2,
 								"duration": 54,
-								"averageScore": 61,
-								"popularity": 4051,
+								"averageScore": 62,
+								"popularity": 4062,
 								"startDate": {
 									"year": 1992
 								},
@@ -20793,7 +20684,7 @@
 								"episodes": 26,
 								"duration": 24,
 								"averageScore": 71,
-								"popularity": 6269,
+								"popularity": 6284,
 								"startDate": {
 									"year": 2004
 								},
@@ -20867,7 +20758,7 @@
 								"episodes": 24,
 								"duration": 23,
 								"averageScore": 72,
-								"popularity": 5863,
+								"popularity": 5880,
 								"startDate": {
 									"year": 1998
 								},
@@ -20919,7 +20810,7 @@
 								"episodes": 49,
 								"duration": 25,
 								"averageScore": 74,
-								"popularity": 5122,
+								"popularity": 5131,
 								"startDate": {
 									"year": 1997
 								},
@@ -20995,7 +20886,7 @@
 								"episodes": 13,
 								"duration": 24,
 								"averageScore": 70,
-								"popularity": 59226,
+								"popularity": 59461,
 								"startDate": {
 									"year": 2020
 								},
@@ -21107,7 +20998,7 @@
 								"episodes": 3,
 								"duration": 33,
 								"averageScore": 72,
-								"popularity": 10339,
+								"popularity": 10390,
 								"startDate": {
 									"year": 2001
 								},
@@ -21180,7 +21071,7 @@
 								"episodes": 35,
 								"duration": 24,
 								"averageScore": 65,
-								"popularity": 2836,
+								"popularity": 2846,
 								"startDate": {
 									"year": 1983
 								},
@@ -21258,7 +21149,7 @@
 								"episodes": 13,
 								"duration": 24,
 								"averageScore": 65,
-								"popularity": 21698,
+								"popularity": 21747,
 								"startDate": {
 									"year": 2012
 								},
@@ -21312,7 +21203,7 @@
 								"episodes": 24,
 								"duration": 25,
 								"averageScore": 69,
-								"popularity": 7782,
+								"popularity": 7815,
 								"startDate": {
 									"year": 1985
 								},
@@ -21382,7 +21273,7 @@
 								"episodes": 26,
 								"duration": 23,
 								"averageScore": 71,
-								"popularity": 4741,
+								"popularity": 4762,
 								"startDate": {
 									"year": 2001
 								},
@@ -21448,7 +21339,7 @@
 								"episodes": 1,
 								"duration": 68,
 								"averageScore": 58,
-								"popularity": 4727,
+								"popularity": 4748,
 								"startDate": {
 									"year": 1988
 								},
@@ -21525,7 +21416,7 @@
 								"episodes": 11,
 								"duration": 23,
 								"averageScore": 75,
-								"popularity": 114019,
+								"popularity": 114302,
 								"startDate": {
 									"year": 2020
 								},
@@ -21598,7 +21489,7 @@
 								"episodes": 1,
 								"duration": 48,
 								"averageScore": 68,
-								"popularity": 13778,
+								"popularity": 13814,
 								"startDate": {
 									"year": 2011
 								},
@@ -21646,7 +21537,7 @@
 								"episodes": 2,
 								"duration": 27,
 								"averageScore": 61,
-								"popularity": 5453,
+								"popularity": 5462,
 								"startDate": {
 									"year": 2010
 								},
@@ -21693,7 +21584,7 @@
 								"episodes": 13,
 								"duration": 23,
 								"averageScore": 70,
-								"popularity": 6472,
+								"popularity": 6493,
 								"startDate": {
 									"year": 2004
 								},
@@ -21753,7 +21644,7 @@
 								"episodes": 1,
 								"duration": 114,
 								"averageScore": 68,
-								"popularity": 9684,
+								"popularity": 9710,
 								"startDate": {
 									"year": 2017
 								},
@@ -21809,7 +21700,7 @@
 								"episodes": 25,
 								"duration": 25,
 								"averageScore": 72,
-								"popularity": 3138,
+								"popularity": 3144,
 								"startDate": {
 									"year": 2002
 								},
@@ -21874,7 +21765,7 @@
 								"episodes": 1,
 								"duration": 121,
 								"averageScore": 72,
-								"popularity": 9511,
+								"popularity": 9536,
 								"startDate": {
 									"year": 1987
 								},
@@ -21954,7 +21845,7 @@
 								"episodes": 1,
 								"duration": 107,
 								"averageScore": 51,
-								"popularity": 799,
+								"popularity": 803,
 								"startDate": {
 									"year": 1984
 								},
@@ -22001,8 +21892,8 @@
 								"format": "OVA",
 								"episodes": 3,
 								"duration": 40,
-								"averageScore": 48,
-								"popularity": 841,
+								"averageScore": 49,
+								"popularity": 846,
 								"startDate": {
 									"year": 1985
 								},
@@ -22058,7 +21949,7 @@
 								"episodes": 1,
 								"duration": 109,
 								"averageScore": 42,
-								"popularity": 734,
+								"popularity": 739,
 								"startDate": {
 									"year": 1984
 								},
@@ -22096,7 +21987,7 @@
 								"episodes": 26,
 								"duration": 25,
 								"averageScore": 70,
-								"popularity": 6018,
+								"popularity": 6033,
 								"startDate": {
 									"year": 1974
 								},
@@ -22169,7 +22060,7 @@
 								"episodes": 6,
 								"duration": 30,
 								"averageScore": 70,
-								"popularity": 3331,
+								"popularity": 3345,
 								"startDate": {
 									"year": 1989
 								},
@@ -22252,7 +22143,7 @@
 								"episodes": 3,
 								"duration": 30,
 								"averageScore": 55,
-								"popularity": 625,
+								"popularity": 626,
 								"startDate": {
 									"year": 1995
 								},
@@ -22302,7 +22193,7 @@
 								"episodes": 1,
 								"duration": 49,
 								"averageScore": 47,
-								"popularity": 705,
+								"popularity": 707,
 								"startDate": {
 									"year": 1987
 								},
@@ -22333,64 +22224,6 @@
 						},
 						{
 							"media": {
-								"id": 1940,
-								"title": {
-									"userPreferred": "Outlanders"
-								},
-								"status": "FINISHED",
-								"format": "OVA",
-								"episodes": 1,
-								"duration": 51,
-								"averageScore": 52,
-								"popularity": 1959,
-								"startDate": {
-									"year": 1986
-								},
-								"genres": [
-									"Adventure",
-									"Comedy",
-									"Ecchi",
-									"Romance",
-									"Sci-Fi"
-								],
-								"tags": [
-									{
-										"name": "Aliens",
-										"rank": 66
-									},
-									{
-										"name": "Space",
-										"rank": 66
-									},
-									{
-										"name": "Shounen",
-										"rank": 60
-									},
-									{
-										"name": "Nudity",
-										"rank": 60
-									},
-									{
-										"name": "Monster Girl",
-										"rank": 60
-									},
-									{
-										"name": "Gore",
-										"rank": 40
-									},
-									{
-										"name": "Kemonomimi",
-										"rank": 35
-									},
-									{
-										"name": "Male Protagonist",
-										"rank": 20
-									}
-								]
-							}
-						},
-						{
-							"media": {
 								"id": 2291,
 								"title": {
 									"userPreferred": "Tatakae!! Iczer-1"
@@ -22400,7 +22233,7 @@
 								"episodes": 3,
 								"duration": 30,
 								"averageScore": 55,
-								"popularity": 2384,
+								"popularity": 2392,
 								"startDate": {
 									"year": 1985
 								},
@@ -22481,66 +22314,6 @@
 						},
 						{
 							"media": {
-								"id": 12321,
-								"title": {
-									"userPreferred": "Thermae Romae"
-								},
-								"status": "FINISHED",
-								"format": "TV",
-								"episodes": 3,
-								"duration": 24,
-								"averageScore": 66,
-								"popularity": 5560,
-								"startDate": {
-									"year": 2012
-								},
-								"genres": [
-									"Adventure",
-									"Comedy",
-									"Slice of Life"
-								],
-								"tags": [
-									{
-										"name": "Historical",
-										"rank": 79
-									},
-									{
-										"name": "Time Manipulation",
-										"rank": 79
-									},
-									{
-										"name": "Language Barrier",
-										"rank": 79
-									},
-									{
-										"name": "Male Protagonist",
-										"rank": 73
-									},
-									{
-										"name": "Seinen",
-										"rank": 70
-									},
-									{
-										"name": "Work",
-										"rank": 70
-									},
-									{
-										"name": "Anachronism",
-										"rank": 60
-									},
-									{
-										"name": "Primarily Adult Cast",
-										"rank": 53
-									},
-									{
-										"name": "LGBTQ+ Themes",
-										"rank": 20
-									}
-								]
-							}
-						},
-						{
-							"media": {
 								"id": 2078,
 								"title": {
 									"userPreferred": "Landlock"
@@ -22550,7 +22323,7 @@
 								"episodes": 2,
 								"duration": 45,
 								"averageScore": 45,
-								"popularity": 595,
+								"popularity": 599,
 								"startDate": {
 									"year": 1996
 								},
@@ -22589,7 +22362,7 @@
 								"episodes": 12,
 								"duration": 24,
 								"averageScore": 75,
-								"popularity": 98270,
+								"popularity": 98674,
 								"startDate": {
 									"year": 2020
 								},
@@ -22710,7 +22483,7 @@
 								"episodes": 1,
 								"duration": 56,
 								"averageScore": 47,
-								"popularity": 777,
+								"popularity": 780,
 								"startDate": {
 									"year": 1987
 								},
@@ -22734,97 +22507,6 @@
 						},
 						{
 							"media": {
-								"id": 125426,
-								"title": {
-									"userPreferred": "Gokushufudou"
-								},
-								"status": "FINISHED",
-								"format": "ONA",
-								"episodes": 5,
-								"duration": 17,
-								"averageScore": 71,
-								"popularity": 90162,
-								"startDate": {
-									"year": 2021
-								},
-								"genres": [
-									"Comedy",
-									"Slice of Life"
-								],
-								"tags": [
-									{
-										"name": "Male Protagonist",
-										"rank": 93
-									},
-									{
-										"name": "Episodic",
-										"rank": 92
-									},
-									{
-										"name": "Slapstick",
-										"rank": 92
-									},
-									{
-										"name": "Yakuza",
-										"rank": 91
-									},
-									{
-										"name": "Family Life",
-										"rank": 87
-									},
-									{
-										"name": "Gangs",
-										"rank": 84
-									},
-									{
-										"name": "Parody",
-										"rank": 83
-									},
-									{
-										"name": "Primarily Adult Cast",
-										"rank": 82
-									},
-									{
-										"name": "Seinen",
-										"rank": 75
-									},
-									{
-										"name": "Urban",
-										"rank": 71
-									},
-									{
-										"name": "Heterosexual",
-										"rank": 70
-									},
-									{
-										"name": "Flash",
-										"rank": 70
-									},
-									{
-										"name": "Food",
-										"rank": 68
-									},
-									{
-										"name": "Iyashikei",
-										"rank": 60
-									},
-									{
-										"name": "Mafia",
-										"rank": 44
-									},
-									{
-										"name": "Crime",
-										"rank": 42
-									},
-									{
-										"name": "Guns",
-										"rank": 40
-									}
-								]
-							}
-						},
-						{
-							"media": {
 								"id": 114124,
 								"title": {
 									"userPreferred": "Yuukoku no Moriarty"
@@ -22834,7 +22516,7 @@
 								"episodes": 11,
 								"duration": 24,
 								"averageScore": 81,
-								"popularity": 87389,
+								"popularity": 87737,
 								"startDate": {
 									"year": 2020
 								},
@@ -22884,12 +22566,12 @@
 										"rank": 84
 									},
 									{
-										"name": "Cute Boys Doing Cute Things",
+										"name": "Impersonation",
 										"rank": 79
 									},
 									{
-										"name": "Impersonation",
-										"rank": 79
+										"name": "Cute Boys Doing Cute Things",
+										"rank": 66
 									},
 									{
 										"name": "Mafia",
@@ -22933,7 +22615,7 @@
 								"episodes": null,
 								"duration": null,
 								"averageScore": null,
-								"popularity": 22983,
+								"popularity": 23179,
 								"startDate": {
 									"year": null
 								},
@@ -23026,7 +22708,7 @@
 								"episodes": 13,
 								"duration": 24,
 								"averageScore": 67,
-								"popularity": 36870,
+								"popularity": 36960,
 								"startDate": {
 									"year": 2013
 								},
@@ -23110,7 +22792,7 @@
 								"episodes": 4,
 								"duration": 30,
 								"averageScore": 61,
-								"popularity": 3971,
+								"popularity": 3977,
 								"startDate": {
 									"year": 1991
 								},
@@ -23163,7 +22845,7 @@
 								"episodes": 6,
 								"duration": 29,
 								"averageScore": 68,
-								"popularity": 5592,
+								"popularity": 5617,
 								"startDate": {
 									"year": 1992
 								},
@@ -23216,7 +22898,7 @@
 								"episodes": 12,
 								"duration": 24,
 								"averageScore": 66,
-								"popularity": 16178,
+								"popularity": 16205,
 								"startDate": {
 									"year": 2016
 								},
@@ -23279,7 +22961,7 @@
 								"episodes": 52,
 								"duration": 23,
 								"averageScore": 71,
-								"popularity": 12887,
+								"popularity": 12929,
 								"startDate": {
 									"year": 1995
 								},
@@ -23357,7 +23039,7 @@
 								"episodes": 3,
 								"duration": 55,
 								"averageScore": 42,
-								"popularity": 449,
+								"popularity": 452,
 								"startDate": {
 									"year": 1989
 								},
@@ -23407,7 +23089,7 @@
 								"episodes": 12,
 								"duration": 30,
 								"averageScore": 47,
-								"popularity": 463,
+								"popularity": 466,
 								"startDate": {
 									"year": 1989
 								},
@@ -23437,7 +23119,7 @@
 								"episodes": 45,
 								"duration": 25,
 								"averageScore": 72,
-								"popularity": 4794,
+								"popularity": 4806,
 								"startDate": {
 									"year": 2003
 								},
@@ -23485,7 +23167,7 @@
 								"episodes": 12,
 								"duration": 26,
 								"averageScore": 70,
-								"popularity": 70594,
+								"popularity": 70780,
 								"startDate": {
 									"year": 2018
 								},
@@ -23567,7 +23249,7 @@
 								"episodes": 13,
 								"duration": 24,
 								"averageScore": 67,
-								"popularity": 4870,
+								"popularity": 4889,
 								"startDate": {
 									"year": 2006
 								},
@@ -23628,7 +23310,7 @@
 								"episodes": 1,
 								"duration": 99,
 								"averageScore": 73,
-								"popularity": 12777,
+								"popularity": 12811,
 								"startDate": {
 									"year": 2011
 								},
@@ -23675,7 +23357,7 @@
 								"episodes": 12,
 								"duration": 24,
 								"averageScore": 74,
-								"popularity": 58173,
+								"popularity": 58307,
 								"startDate": {
 									"year": 2012
 								},
@@ -23760,7 +23442,7 @@
 								"episodes": 13,
 								"duration": 25,
 								"averageScore": 81,
-								"popularity": 55027,
+								"popularity": 55212,
 								"startDate": {
 									"year": 2003
 								},
@@ -23862,7 +23544,7 @@
 								"episodes": 6,
 								"duration": 32,
 								"averageScore": 68,
-								"popularity": 11345,
+								"popularity": 11416,
 								"startDate": {
 									"year": 2022
 								},
@@ -23933,7 +23615,7 @@
 								"episodes": null,
 								"duration": null,
 								"averageScore": null,
-								"popularity": 1537,
+								"popularity": 1545,
 								"startDate": {
 									"year": null
 								},
@@ -23960,7 +23642,7 @@
 								"episodes": 1,
 								"duration": 40,
 								"averageScore": 51,
-								"popularity": 908,
+								"popularity": 911,
 								"startDate": {
 									"year": 2008
 								},
@@ -23994,7 +23676,7 @@
 								"episodes": 39,
 								"duration": 25,
 								"averageScore": 77,
-								"popularity": 12012,
+								"popularity": 12045,
 								"startDate": {
 									"year": 1991
 								},
@@ -24037,11 +23719,15 @@
 									},
 									{
 										"name": "LGBTQ+ Themes",
-										"rank": 73
+										"rank": 62
 									},
 									{
 										"name": "Yuri",
-										"rank": 65
+										"rank": 60
+									},
+									{
+										"name": "Tomboy",
+										"rank": 60
 									},
 									{
 										"name": "Drugs",
@@ -24049,11 +23735,7 @@
 									},
 									{
 										"name": "Basketball",
-										"rank": 53
-									},
-									{
-										"name": "Tomboy",
-										"rank": 53
+										"rank": 54
 									},
 									{
 										"name": "Trains",
@@ -24081,7 +23763,7 @@
 								"episodes": 13,
 								"duration": 23,
 								"averageScore": 79,
-								"popularity": 3473,
+								"popularity": 3472,
 								"startDate": {
 									"year": 2016
 								},
@@ -24173,7 +23855,7 @@
 								"episodes": 52,
 								"duration": 25,
 								"averageScore": 73,
-								"popularity": 5818,
+								"popularity": 5831,
 								"startDate": {
 									"year": 2003
 								},
@@ -24271,7 +23953,7 @@
 								"episodes": null,
 								"duration": null,
 								"averageScore": null,
-								"popularity": 4697,
+								"popularity": 4720,
 								"startDate": {
 									"year": null
 								},
@@ -24309,7 +23991,7 @@
 								"episodes": 26,
 								"duration": 24,
 								"averageScore": 68,
-								"popularity": 15674,
+								"popularity": 15715,
 								"startDate": {
 									"year": 2001
 								},
@@ -24397,7 +24079,7 @@
 								"episodes": 25,
 								"duration": 24,
 								"averageScore": 71,
-								"popularity": 50160,
+								"popularity": 50288,
 								"startDate": {
 									"year": 2009
 								},
@@ -24461,7 +24143,7 @@
 								"episodes": null,
 								"duration": null,
 								"averageScore": null,
-								"popularity": 1303,
+								"popularity": 1315,
 								"startDate": {
 									"year": null
 								},
@@ -24510,7 +24192,7 @@
 								"episodes": 25,
 								"duration": 24,
 								"averageScore": 83,
-								"popularity": 77059,
+								"popularity": 77924,
 								"startDate": {
 									"year": 2022
 								},
@@ -24528,7 +24210,7 @@
 									},
 									{
 										"name": "Alternate Universe",
-										"rank": 95
+										"rank": 96
 									},
 									{
 										"name": "Reincarnation",
@@ -24571,6 +24253,10 @@
 										"rank": 80
 									},
 									{
+										"name": "Heterosexual",
+										"rank": 80
+									},
+									{
 										"name": "Aliens",
 										"rank": 80
 									},
@@ -24579,11 +24265,11 @@
 										"rank": 79
 									},
 									{
-										"name": "Ghost",
-										"rank": 78
+										"name": "Body Horror",
+										"rank": 79
 									},
 									{
-										"name": "Heterosexual",
+										"name": "Ghost",
 										"rank": 78
 									},
 									{
@@ -24612,7 +24298,7 @@
 									},
 									{
 										"name": "Love Triangle",
-										"rank": 59
+										"rank": 57
 									},
 									{
 										"name": "Inseki",
@@ -24636,7 +24322,7 @@
 								"episodes": 24,
 								"duration": 24,
 								"averageScore": 68,
-								"popularity": 17883,
+								"popularity": 17943,
 								"startDate": {
 									"year": 2004
 								},
@@ -24710,7 +24396,7 @@
 								"episodes": 13,
 								"duration": 24,
 								"averageScore": 71,
-								"popularity": 20325,
+								"popularity": 20380,
 								"startDate": {
 									"year": 2016
 								},
@@ -24753,7 +24439,7 @@
 								"episodes": 26,
 								"duration": 25,
 								"averageScore": 79,
-								"popularity": 29229,
+								"popularity": 29284,
 								"startDate": {
 									"year": 2007
 								},
@@ -24837,7 +24523,7 @@
 								"episodes": 25,
 								"duration": 24,
 								"averageScore": 82,
-								"popularity": 185872,
+								"popularity": 186474,
 								"startDate": {
 									"year": 2019
 								},
@@ -24983,7 +24669,7 @@
 								"episodes": 11,
 								"duration": 24,
 								"averageScore": 87,
-								"popularity": 61800,
+								"popularity": 62293,
 								"startDate": {
 									"year": 2021
 								},
@@ -25080,7 +24766,7 @@
 								"episodes": 52,
 								"duration": 24,
 								"averageScore": 72,
-								"popularity": 28656,
+								"popularity": 28730,
 								"startDate": {
 									"year": 2007
 								},
@@ -25168,7 +24854,7 @@
 								"episodes": 24,
 								"duration": 25,
 								"averageScore": 74,
-								"popularity": 21687,
+								"popularity": 21756,
 								"startDate": {
 									"year": 1998
 								},
@@ -25253,7 +24939,7 @@
 								"episodes": 26,
 								"duration": 22,
 								"averageScore": 64,
-								"popularity": 4387,
+								"popularity": 4403,
 								"startDate": {
 									"year": 2008
 								},
@@ -25301,7 +24987,7 @@
 								"episodes": 8,
 								"duration": null,
 								"averageScore": null,
-								"popularity": 5035,
+								"popularity": 5068,
 								"startDate": {
 									"year": null
 								},
@@ -25321,7 +25007,7 @@
 									},
 									{
 										"name": "Police",
-										"rank": 86
+										"rank": 87
 									},
 									{
 										"name": "Artificial Intelligence",
@@ -25345,7 +25031,7 @@
 									},
 									{
 										"name": "Philosophy",
-										"rank": 66
+										"rank": 71
 									},
 									{
 										"name": "Crime",
@@ -25389,7 +25075,7 @@
 								"episodes": 50,
 								"duration": 25,
 								"averageScore": 77,
-								"popularity": 32698,
+								"popularity": 32769,
 								"startDate": {
 									"year": 2006
 								},
@@ -25440,7 +25126,7 @@
 								"episodes": 13,
 								"duration": 24,
 								"averageScore": 78,
-								"popularity": 85246,
+								"popularity": 85492,
 								"startDate": {
 									"year": 2018
 								},
@@ -25544,7 +25230,7 @@
 								"episodes": 24,
 								"duration": 23,
 								"averageScore": 70,
-								"popularity": 12124,
+								"popularity": 12152,
 								"startDate": {
 									"year": 2003
 								},
@@ -25615,7 +25301,7 @@
 								"episodes": 3,
 								"duration": 30,
 								"averageScore": 48,
-								"popularity": 669,
+								"popularity": 670,
 								"startDate": {
 									"year": 1989
 								},
@@ -25663,7 +25349,7 @@
 								"episodes": 26,
 								"duration": 24,
 								"averageScore": 67,
-								"popularity": 8471,
+								"popularity": 8478,
 								"startDate": {
 									"year": 2007
 								},
@@ -25731,7 +25417,7 @@
 								"episodes": 12,
 								"duration": 23,
 								"averageScore": 55,
-								"popularity": 14397,
+								"popularity": 14421,
 								"startDate": {
 									"year": 2009
 								},
@@ -25792,7 +25478,7 @@
 								"episodes": 12,
 								"duration": 24,
 								"averageScore": 63,
-								"popularity": 20130,
+								"popularity": 20184,
 								"startDate": {
 									"year": 2015
 								},
@@ -25892,7 +25578,7 @@
 								"episodes": 47,
 								"duration": 23,
 								"averageScore": 84,
-								"popularity": 105661,
+								"popularity": 106097,
 								"startDate": {
 									"year": 2006
 								},
@@ -25978,7 +25664,7 @@
 								"episodes": 13,
 								"duration": 24,
 								"averageScore": 72,
-								"popularity": 9873,
+								"popularity": 9897,
 								"startDate": {
 									"year": 1999
 								},
@@ -26026,7 +25712,7 @@
 								"episodes": 24,
 								"duration": 24,
 								"averageScore": 75,
-								"popularity": 10101,
+								"popularity": 10126,
 								"startDate": {
 									"year": 2007
 								},
@@ -26102,7 +25788,7 @@
 								"episodes": 1,
 								"duration": 15,
 								"averageScore": 44,
-								"popularity": 574,
+								"popularity": 576,
 								"startDate": {
 									"year": 1991
 								},
@@ -26140,7 +25826,7 @@
 								"episodes": 75,
 								"duration": 24,
 								"averageScore": 79,
-								"popularity": 43795,
+								"popularity": 43911,
 								"startDate": {
 									"year": 2013
 								},
@@ -26195,7 +25881,7 @@
 								"episodes": 2,
 								"duration": 31,
 								"averageScore": 62,
-								"popularity": 5006,
+								"popularity": 5026,
 								"startDate": {
 									"year": 2000
 								},
@@ -26207,40 +25893,100 @@
 								],
 								"tags": [
 									{
-										"name": "Baseball",
+										"name": "Female Protagonist",
+										"rank": 80
+									},
+									{
+										"name": "Anti-Hero",
 										"rank": 79
 									},
 									{
-										"name": "Female Protagonist",
-										"rank": 76
+										"name": "Dystopian",
+										"rank": 79
+									},
+									{
+										"name": "Gore",
+										"rank": 79
+									},
+									{
+										"name": "Martial Arts",
+										"rank": 79
+									},
+									{
+										"name": "Gangs",
+										"rank": 79
+									},
+									{
+										"name": "Primarily Adult Cast",
+										"rank": 79
+									},
+									{
+										"name": "Primarily Male Cast",
+										"rank": 79
+									},
+									{
+										"name": "Urban",
+										"rank": 79
+									},
+									{
+										"name": "Baseball",
+										"rank": 73
 									},
 									{
 										"name": "Guns",
-										"rank": 63
+										"rank": 65
+									},
+									{
+										"name": "Assassins",
+										"rank": 60
+									},
+									{
+										"name": "DILF",
+										"rank": 60
+									},
+									{
+										"name": "Handjob",
+										"rank": 60
+									},
+									{
+										"name": "Nakadashi",
+										"rank": 60
+									},
+									{
+										"name": "Group Sex",
+										"rank": 60
 									},
 									{
 										"name": "Police",
-										"rank": 50
+										"rank": 52
 									},
 									{
 										"name": "Rape",
-										"rank": 50
+										"rank": 51
 									},
 									{
 										"name": "Crime",
-										"rank": 33
+										"rank": 50
 									},
 									{
 										"name": "Nudity",
-										"rank": 30
-									},
-									{
-										"name": "Anal Sex",
-										"rank": 20
+										"rank": 44
 									},
 									{
 										"name": "Fellatio",
-										"rank": 20
+										"rank": 40
+									},
+									{
+										"name": "Cunnilingus",
+										"rank": 40
+									},
+									{
+										"name": "Torture",
+										"rank": 40
+									},
+									{
+										"name": "Anal Sex",
+										"rank": 24
 									}
 								]
 							}
@@ -26256,7 +26002,7 @@
 								"episodes": 6,
 								"duration": 30,
 								"averageScore": 48,
-								"popularity": 532,
+								"popularity": 535,
 								"startDate": {
 									"year": 1990
 								},
@@ -26315,7 +26061,7 @@
 								"episodes": 12,
 								"duration": 24,
 								"averageScore": 77,
-								"popularity": 86617,
+								"popularity": 87091,
 								"startDate": {
 									"year": 2021
 								},
@@ -26398,7 +26144,7 @@
 								"episodes": 13,
 								"duration": 24,
 								"averageScore": 77,
-								"popularity": 58780,
+								"popularity": 58992,
 								"startDate": {
 									"year": 2019
 								},
@@ -26471,7 +26217,7 @@
 								"episodes": 12,
 								"duration": 24,
 								"averageScore": 71,
-								"popularity": 30235,
+								"popularity": 30281,
 								"startDate": {
 									"year": 2018
 								},
@@ -26558,7 +26304,7 @@
 								"episodes": 11,
 								"duration": 23,
 								"averageScore": 74,
-								"popularity": 25841,
+								"popularity": 25899,
 								"startDate": {
 									"year": 2016
 								},
@@ -26622,7 +26368,7 @@
 								"episodes": 12,
 								"duration": 22,
 								"averageScore": 81,
-								"popularity": 65520,
+								"popularity": 65698,
 								"startDate": {
 									"year": 2012
 								},
@@ -26699,7 +26445,7 @@
 								"episodes": 101,
 								"duration": 23,
 								"averageScore": 82,
-								"popularity": 40745,
+								"popularity": 40926,
 								"startDate": {
 									"year": 1993
 								},
@@ -26752,7 +26498,7 @@
 								"episodes": 13,
 								"duration": 24,
 								"averageScore": 69,
-								"popularity": 5223,
+								"popularity": 5236,
 								"startDate": {
 									"year": 2012
 								},
@@ -26787,7 +26533,7 @@
 								"episodes": 13,
 								"duration": 24,
 								"averageScore": 71,
-								"popularity": 70526,
+								"popularity": 70790,
 								"startDate": {
 									"year": 2020
 								},
@@ -26848,6 +26594,10 @@
 										"rank": 64
 									},
 									{
+										"name": "Shounen",
+										"rank": 60
+									},
+									{
 										"name": "Gore",
 										"rank": 52
 									},
@@ -26861,7 +26611,7 @@
 									},
 									{
 										"name": "Shapeshifting",
-										"rank": 45
+										"rank": 46
 									},
 									{
 										"name": "Kuudere",
@@ -26873,10 +26623,6 @@
 									},
 									{
 										"name": "Yandere",
-										"rank": 40
-									},
-									{
-										"name": "Shounen",
 										"rank": 40
 									},
 									{
@@ -26892,12 +26638,20 @@
 										"rank": 27
 									},
 									{
-										"name": "Shogi",
-										"rank": 26
-									},
-									{
 										"name": "Alternate Universe",
 										"rank": 22
+									},
+									{
+										"name": "Video Games",
+										"rank": 10
+									},
+									{
+										"name": "Shogi",
+										"rank": 10
+									},
+									{
+										"name": "Bullying",
+										"rank": 10
 									}
 								]
 							}
@@ -26913,7 +26667,7 @@
 								"episodes": 12,
 								"duration": 24,
 								"averageScore": 70,
-								"popularity": 31361,
+								"popularity": 31530,
 								"startDate": {
 									"year": 2020
 								},
@@ -27002,7 +26756,7 @@
 								"episodes": 1,
 								"duration": 50,
 								"averageScore": 59,
-								"popularity": 1491,
+								"popularity": 1497,
 								"startDate": {
 									"year": 1988
 								},
@@ -27054,7 +26808,7 @@
 								"episodes": 24,
 								"duration": 23,
 								"averageScore": 76,
-								"popularity": 39953,
+								"popularity": 40037,
 								"startDate": {
 									"year": 2005
 								},
@@ -27123,7 +26877,7 @@
 								"episodes": 13,
 								"duration": 24,
 								"averageScore": 79,
-								"popularity": 95813,
+								"popularity": 96136,
 								"startDate": {
 									"year": 2012
 								},
@@ -27228,7 +26982,7 @@
 								"episodes": 11,
 								"duration": 22,
 								"averageScore": 69,
-								"popularity": 7934,
+								"popularity": 7960,
 								"startDate": {
 									"year": 2009
 								},
@@ -27284,7 +27038,7 @@
 								"episodes": 11,
 								"duration": 22,
 								"averageScore": 78,
-								"popularity": 38214,
+								"popularity": 38330,
 								"startDate": {
 									"year": 2010
 								},
@@ -27372,7 +27126,7 @@
 								"episodes": 21,
 								"duration": 8,
 								"averageScore": 73,
-								"popularity": 38409,
+								"popularity": 38485,
 								"startDate": {
 									"year": 2014
 								},
@@ -27414,7 +27168,7 @@
 								"episodes": 26,
 								"duration": 25,
 								"averageScore": 68,
-								"popularity": 2759,
+								"popularity": 2770,
 								"startDate": {
 									"year": 1984
 								},
@@ -27478,7 +27232,7 @@
 								"episodes": 4,
 								"duration": 23,
 								"averageScore": 55,
-								"popularity": 815,
+								"popularity": 819,
 								"startDate": {
 									"year": 2003
 								},
@@ -27523,7 +27277,7 @@
 								"episodes": 26,
 								"duration": 23,
 								"averageScore": 74,
-								"popularity": 37692,
+								"popularity": 37789,
 								"startDate": {
 									"year": 2003
 								},
@@ -27590,7 +27344,7 @@
 								"episodes": null,
 								"duration": null,
 								"averageScore": null,
-								"popularity": 502,
+								"popularity": 512,
 								"startDate": {
 									"year": 2023
 								},
@@ -27614,7 +27368,7 @@
 								"episodes": 101,
 								"duration": 25,
 								"averageScore": 77,
-								"popularity": 7597,
+								"popularity": 7617,
 								"startDate": {
 									"year": 1985
 								},
@@ -27687,7 +27441,7 @@
 								"episodes": 1,
 								"duration": 127,
 								"averageScore": 75,
-								"popularity": 37166,
+								"popularity": 37279,
 								"startDate": {
 									"year": 2010
 								},
@@ -27751,7 +27505,7 @@
 								"episodes": 4,
 								"duration": 22,
 								"averageScore": 66,
-								"popularity": 9624,
+								"popularity": 9662,
 								"startDate": {
 									"year": 1999
 								},
@@ -27836,7 +27590,7 @@
 								"episodes": 12,
 								"duration": 23,
 								"averageScore": 73,
-								"popularity": 29077,
+								"popularity": 29120,
 								"startDate": {
 									"year": 2012
 								},
@@ -27909,7 +27663,7 @@
 								"episodes": 2,
 								"duration": 42,
 								"averageScore": 70,
-								"popularity": 25800,
+								"popularity": 25862,
 								"startDate": {
 									"year": 2009
 								},
@@ -28001,7 +27755,7 @@
 								"episodes": 1,
 								"duration": 42,
 								"averageScore": 55,
-								"popularity": 1719,
+								"popularity": 1729,
 								"startDate": {
 									"year": 1987
 								},
@@ -28037,7 +27791,7 @@
 								"episodes": 50,
 								"duration": 24,
 								"averageScore": 68,
-								"popularity": 3781,
+								"popularity": 3790,
 								"startDate": {
 									"year": 2002
 								},
@@ -28081,7 +27835,7 @@
 								"episodes": 1,
 								"duration": 103,
 								"averageScore": 79,
-								"popularity": 51273,
+								"popularity": 51419,
 								"startDate": {
 									"year": 2007
 								},
@@ -28168,7 +27922,7 @@
 								"episodes": 26,
 								"duration": 24,
 								"averageScore": 71,
-								"popularity": 3894,
+								"popularity": 3899,
 								"startDate": {
 									"year": 2004
 								},
@@ -28223,7 +27977,7 @@
 								"episodes": 1,
 								"duration": 18,
 								"averageScore": 37,
-								"popularity": 164,
+								"popularity": 166,
 								"startDate": {
 									"year": 1989
 								},
@@ -28245,7 +27999,7 @@
 								"episodes": 12,
 								"duration": 24,
 								"averageScore": 76,
-								"popularity": 60953,
+								"popularity": 61253,
 								"startDate": {
 									"year": 2021
 								},
@@ -28325,7 +28079,7 @@
 								"episodes": 1,
 								"duration": 109,
 								"averageScore": 73,
-								"popularity": 19759,
+								"popularity": 19838,
 								"startDate": {
 									"year": 2001
 								},
@@ -28402,7 +28156,7 @@
 								"episodes": 13,
 								"duration": 25,
 								"averageScore": 57,
-								"popularity": 4694,
+								"popularity": 4701,
 								"startDate": {
 									"year": 2001
 								},
@@ -28453,7 +28207,7 @@
 								"episodes": 6,
 								"duration": 30,
 								"averageScore": 67,
-								"popularity": 7779,
+								"popularity": 7790,
 								"startDate": {
 									"year": 2005
 								},
@@ -28465,11 +28219,11 @@
 								"tags": [
 									{
 										"name": "Tokusatsu",
-										"rank": 72
+										"rank": 76
 									},
 									{
 										"name": "Henshin",
-										"rank": 70
+										"rank": 74
 									},
 									{
 										"name": "CGI",
@@ -28494,6 +28248,14 @@
 									{
 										"name": "Shapeshifting",
 										"rank": 20
+									},
+									{
+										"name": "Youkai",
+										"rank": 20
+									},
+									{
+										"name": "Urban Fantasy",
+										"rank": 20
 									}
 								]
 							}
@@ -28509,7 +28271,7 @@
 								"episodes": 26,
 								"duration": 23,
 								"averageScore": 71,
-								"popularity": 8382,
+								"popularity": 8396,
 								"startDate": {
 									"year": 1999
 								},
@@ -28570,7 +28332,7 @@
 								"episodes": 2,
 								"duration": 50,
 								"averageScore": 49,
-								"popularity": 213,
+								"popularity": 218,
 								"startDate": {
 									"year": 1992
 								},
@@ -28608,7 +28370,7 @@
 								"episodes": 1,
 								"duration": 55,
 								"averageScore": 52,
-								"popularity": 1163,
+								"popularity": 1166,
 								"startDate": {
 									"year": 1987
 								},
@@ -28643,7 +28405,7 @@
 								"episodes": 12,
 								"duration": 24,
 								"averageScore": 67,
-								"popularity": 35110,
+								"popularity": 35216,
 								"startDate": {
 									"year": 2017
 								},
@@ -28748,7 +28510,7 @@
 								"episodes": 13,
 								"duration": 25,
 								"averageScore": 71,
-								"popularity": 29289,
+								"popularity": 29375,
 								"startDate": {
 									"year": 2018
 								},
@@ -28783,12 +28545,12 @@
 										"rank": 80
 									},
 									{
-										"name": "Rape",
-										"rank": 76
-									},
-									{
 										"name": "Male Protagonist",
 										"rank": 75
+									},
+									{
+										"name": "Rape",
+										"rank": 74
 									},
 									{
 										"name": "Tsundere",
@@ -28816,7 +28578,7 @@
 								"episodes": 12,
 								"duration": 24,
 								"averageScore": 57,
-								"popularity": 10704,
+								"popularity": 11312,
 								"startDate": {
 									"year": 2022
 								},
@@ -28913,7 +28675,7 @@
 								"episodes": 25,
 								"duration": 25,
 								"averageScore": 83,
-								"popularity": 86465,
+								"popularity": 86854,
 								"startDate": {
 									"year": 1997
 								},
@@ -29056,7 +28818,7 @@
 								"episodes": 6,
 								"duration": 30,
 								"averageScore": null,
-								"popularity": 262,
+								"popularity": 264,
 								"startDate": {
 									"year": 1990
 								},
@@ -29082,7 +28844,7 @@
 								"episodes": 1,
 								"duration": 50,
 								"averageScore": 40,
-								"popularity": 229,
+								"popularity": 230,
 								"startDate": {
 									"year": 1991
 								},
@@ -29109,7 +28871,7 @@
 								"episodes": null,
 								"duration": null,
 								"averageScore": null,
-								"popularity": 4782,
+								"popularity": 5176,
 								"startDate": {
 									"year": 2023
 								},
@@ -29121,8 +28883,12 @@
 								],
 								"tags": [
 									{
+										"name": "Nudity",
+										"rank": 79
+									},
+									{
 										"name": "POV",
-										"rank": 80
+										"rank": 76
 									},
 									{
 										"name": "Achronological Order",
@@ -29142,7 +28908,7 @@
 								"episodes": 1,
 								"duration": 76,
 								"averageScore": 48,
-								"popularity": 339,
+								"popularity": 342,
 								"startDate": {
 									"year": 1986
 								},
@@ -29175,7 +28941,7 @@
 								"episodes": 5,
 								"duration": 30,
 								"averageScore": 54,
-								"popularity": 711,
+								"popularity": 718,
 								"startDate": {
 									"year": 1993
 								},
@@ -29213,7 +28979,7 @@
 								"episodes": 4,
 								"duration": 55,
 								"averageScore": 49,
-								"popularity": 386,
+								"popularity": 387,
 								"startDate": {
 									"year": 1991
 								},
@@ -29248,7 +29014,7 @@
 								"episodes": 6,
 								"duration": 30,
 								"averageScore": 58,
-								"popularity": 1981,
+								"popularity": 1991,
 								"startDate": {
 									"year": 1990
 								},
@@ -29340,7 +29106,7 @@
 								"episodes": 6,
 								"duration": 30,
 								"averageScore": 53,
-								"popularity": 718,
+								"popularity": 721,
 								"startDate": {
 									"year": 1989
 								},
@@ -29366,7 +29132,7 @@
 								"episodes": 3,
 								"duration": 55,
 								"averageScore": 50,
-								"popularity": 594,
+								"popularity": 598,
 								"startDate": {
 									"year": 1988
 								},
@@ -29402,7 +29168,7 @@
 								"episodes": 12,
 								"duration": 24,
 								"averageScore": 68,
-								"popularity": 3042,
+								"popularity": 3050,
 								"startDate": {
 									"year": 1988
 								},
@@ -29457,8 +29223,8 @@
 								"format": "TV",
 								"episodes": 49,
 								"duration": 24,
-								"averageScore": 62,
-								"popularity": 1973,
+								"averageScore": 61,
+								"popularity": 1979,
 								"startDate": {
 									"year": 1982
 								},
@@ -29530,7 +29296,7 @@
 								"episodes": 11,
 								"duration": 23,
 								"averageScore": 83,
-								"popularity": 142190,
+								"popularity": 142553,
 								"startDate": {
 									"year": 2019
 								},
@@ -29586,11 +29352,11 @@
 										"rank": 63
 									},
 									{
-										"name": "Bisexual",
-										"rank": 60
+										"name": "Josei",
+										"rank": 63
 									},
 									{
-										"name": "Josei",
+										"name": "Bisexual",
 										"rank": 60
 									},
 									{
@@ -29623,7 +29389,7 @@
 								"episodes": 4,
 								"duration": 31,
 								"averageScore": 47,
-								"popularity": 513,
+								"popularity": 515,
 								"startDate": {
 									"year": 1989
 								},
@@ -29663,7 +29429,7 @@
 								"episodes": 1,
 								"duration": 44,
 								"averageScore": 44,
-								"popularity": 516,
+								"popularity": 519,
 								"startDate": {
 									"year": 1986
 								},
@@ -29693,8 +29459,8 @@
 								"format": "OVA",
 								"episodes": 3,
 								"duration": 43,
-								"averageScore": 45,
-								"popularity": 538,
+								"averageScore": 46,
+								"popularity": 542,
 								"startDate": {
 									"year": 1990
 								},
@@ -29719,43 +29485,6 @@
 						},
 						{
 							"media": {
-								"id": 2422,
-								"title": {
-									"userPreferred": "Kenritsu Chikyuu Boueigun"
-								},
-								"status": "FINISHED",
-								"format": "OVA",
-								"episodes": 3,
-								"duration": 15,
-								"averageScore": 56,
-								"popularity": 1020,
-								"startDate": {
-									"year": 1986
-								},
-								"genres": [
-									"Action",
-									"Adventure",
-									"Comedy",
-									"Sci-Fi"
-								],
-								"tags": [
-									{
-										"name": "Robots",
-										"rank": 60
-									},
-									{
-										"name": "Shounen",
-										"rank": 50
-									},
-									{
-										"name": "Female Protagonist",
-										"rank": 50
-									}
-								]
-							}
-						},
-						{
-							"media": {
 								"id": 146609,
 								"title": {
 									"userPreferred": "Dead Dead Demon's Dededededestruction"
@@ -29765,7 +29494,7 @@
 								"episodes": null,
 								"duration": null,
 								"averageScore": null,
-								"popularity": 5514,
+								"popularity": 5554,
 								"startDate": {
 									"year": null
 								},
@@ -29870,7 +29599,7 @@
 								"episodes": 24,
 								"duration": 25,
 								"averageScore": 82,
-								"popularity": 38606,
+								"popularity": 39100,
 								"startDate": {
 									"year": 2022
 								},
@@ -29936,7 +29665,7 @@
 								"episodes": 2,
 								"duration": 30,
 								"averageScore": 46,
-								"popularity": 503,
+								"popularity": 504,
 								"startDate": {
 									"year": 1998
 								},
@@ -29972,7 +29701,7 @@
 								"episodes": null,
 								"duration": null,
 								"averageScore": null,
-								"popularity": 4818,
+								"popularity": 4996,
 								"startDate": {
 									"year": 2023
 								},
@@ -30023,7 +29752,7 @@
 								"episodes": null,
 								"duration": null,
 								"averageScore": null,
-								"popularity": 1788,
+								"popularity": 1800,
 								"startDate": {
 									"year": null
 								},
@@ -30064,7 +29793,7 @@
 								"episodes": 4,
 								"duration": 29,
 								"averageScore": 47,
-								"popularity": 1811,
+								"popularity": 1817,
 								"startDate": {
 									"year": 2002
 								},
@@ -30117,7 +29846,7 @@
 								"episodes": 1,
 								"duration": 90,
 								"averageScore": 67,
-								"popularity": 2517,
+								"popularity": 2528,
 								"startDate": {
 									"year": 1991
 								},
@@ -30176,7 +29905,7 @@
 								"episodes": 1,
 								"duration": 70,
 								"averageScore": 71,
-								"popularity": 12342,
+								"popularity": 12372,
 								"startDate": {
 									"year": 2010
 								},
@@ -30245,7 +29974,7 @@
 								"episodes": 113,
 								"duration": 25,
 								"averageScore": 73,
-								"popularity": 8861,
+								"popularity": 8888,
 								"startDate": {
 									"year": 1978
 								},
@@ -30326,7 +30055,7 @@
 								"episodes": 1,
 								"duration": null,
 								"averageScore": null,
-								"popularity": 797,
+								"popularity": 813,
 								"startDate": {
 									"year": 2023
 								},
@@ -30349,7 +30078,7 @@
 								"episodes": 24,
 								"duration": 23,
 								"averageScore": 67,
-								"popularity": 1716,
+								"popularity": 1717,
 								"startDate": {
 									"year": 1983
 								},
@@ -30385,7 +30114,7 @@
 								"episodes": 1,
 								"duration": 90,
 								"averageScore": 37,
-								"popularity": 216,
+								"popularity": 218,
 								"startDate": {
 									"year": 1983
 								},
@@ -30415,7 +30144,7 @@
 								"episodes": 1,
 								"duration": 65,
 								"averageScore": 36,
-								"popularity": 135,
+								"popularity": 137,
 								"startDate": {
 									"year": 1980
 								},
@@ -30437,7 +30166,7 @@
 								"episodes": 1,
 								"duration": 40,
 								"averageScore": 77,
-								"popularity": 18338,
+								"popularity": 18517,
 								"startDate": {
 									"year": 2021
 								},
@@ -30492,7 +30221,7 @@
 								"episodes": 1,
 								"duration": 79,
 								"averageScore": 63,
-								"popularity": 1120,
+								"popularity": 1122,
 								"startDate": {
 									"year": 1999
 								},
@@ -30534,7 +30263,7 @@
 								"episodes": 1,
 								"duration": 27,
 								"averageScore": 68,
-								"popularity": 20825,
+								"popularity": 20879,
 								"startDate": {
 									"year": 2009
 								},
@@ -30601,7 +30330,7 @@
 								"episodes": null,
 								"duration": null,
 								"averageScore": null,
-								"popularity": 15376,
+								"popularity": 15675,
 								"startDate": {
 									"year": 2023
 								},
@@ -30614,7 +30343,7 @@
 								"tags": [
 									{
 										"name": "Acting",
-										"rank": 93
+										"rank": 94
 									},
 									{
 										"name": "Seinen",
@@ -30622,11 +30351,11 @@
 									},
 									{
 										"name": "Revenge",
-										"rank": 84
+										"rank": 85
 									},
 									{
 										"name": "Tragedy",
-										"rank": 84
+										"rank": 83
 									},
 									{
 										"name": "Idol",
@@ -30645,19 +30374,19 @@
 										"rank": 62
 									},
 									{
-										"name": "Love Triangle",
-										"rank": 60
+										"name": "Age Regression",
+										"rank": 58
 									},
 									{
-										"name": "Age Regression",
+										"name": "Heterosexual",
+										"rank": 57
+									},
+									{
+										"name": "Love Triangle",
 										"rank": 57
 									},
 									{
 										"name": "Primarily Female Cast",
-										"rank": 52
-									},
-									{
-										"name": "Heterosexual",
 										"rank": 50
 									},
 									{
@@ -30665,11 +30394,11 @@
 										"rank": 40
 									},
 									{
-										"name": "Adoption",
-										"rank": 34
+										"name": "Female Harem",
+										"rank": 37
 									},
 									{
-										"name": "Female Harem",
+										"name": "Adoption",
 										"rank": 33
 									}
 								]
@@ -30686,7 +30415,7 @@
 								"episodes": 11,
 								"duration": 24,
 								"averageScore": 77,
-								"popularity": 18057,
+								"popularity": 18135,
 								"startDate": {
 									"year": 2022
 								},
@@ -30771,7 +30500,7 @@
 								"episodes": 12,
 								"duration": 24,
 								"averageScore": 74,
-								"popularity": 38943,
+								"popularity": 39225,
 								"startDate": {
 									"year": 2022
 								},
@@ -30812,6 +30541,10 @@
 										"rank": 81
 									},
 									{
+										"name": "Henshin",
+										"rank": 79
+									},
+									{
 										"name": "Primarily Teen Cast",
 										"rank": 56
 									},
@@ -30849,7 +30582,7 @@
 								"episodes": 12,
 								"duration": 24,
 								"averageScore": 73,
-								"popularity": 18397,
+								"popularity": 18430,
 								"startDate": {
 									"year": 2007
 								},
@@ -30916,7 +30649,7 @@
 								"episodes": 6,
 								"duration": 28,
 								"averageScore": 65,
-								"popularity": 2462,
+								"popularity": 2500,
 								"startDate": {
 									"year": 1996
 								},
@@ -30977,7 +30710,7 @@
 								"episodes": 2,
 								"duration": 47,
 								"averageScore": 59,
-								"popularity": 2017,
+								"popularity": 2025,
 								"startDate": {
 									"year": 1991
 								},
@@ -31050,7 +30783,7 @@
 								"episodes": 1,
 								"duration": 67,
 								"averageScore": 56,
-								"popularity": 1504,
+								"popularity": 1511,
 								"startDate": {
 									"year": 1996
 								},
@@ -31118,7 +30851,7 @@
 								"episodes": 2,
 								"duration": 30,
 								"averageScore": 45,
-								"popularity": 509,
+								"popularity": 512,
 								"startDate": {
 									"year": 1989
 								},
@@ -31129,7 +30862,7 @@
 								"tags": [
 									{
 										"name": "Female Protagonist",
-										"rank": 20
+										"rank": 50
 									}
 								]
 							}
@@ -31145,7 +30878,7 @@
 								"episodes": 1,
 								"duration": 125,
 								"averageScore": 79,
-								"popularity": 131834,
+								"popularity": 132345,
 								"startDate": {
 									"year": 1988
 								},
@@ -31243,12 +30976,12 @@
 										"rank": 50
 									},
 									{
-										"name": "Nudity",
+										"name": "Mythology",
 										"rank": 33
 									},
 									{
-										"name": "Mythology",
-										"rank": 33
+										"name": "Nudity",
+										"rank": 32
 									},
 									{
 										"name": "Aliens",
@@ -31268,7 +31001,7 @@
 								"episodes": 1,
 								"duration": 79,
 								"averageScore": 68,
-								"popularity": 1334,
+								"popularity": 1341,
 								"startDate": {
 									"year": 2003
 								},
@@ -31279,7 +31012,11 @@
 								"tags": [
 									{
 										"name": "Disability",
-										"rank": 84
+										"rank": 86
+									},
+									{
+										"name": "Kuudere",
+										"rank": 79
 									},
 									{
 										"name": "Male Protagonist",
@@ -31291,27 +31028,23 @@
 									},
 									{
 										"name": "School",
-										"rank": 60
+										"rank": 73
 									},
 									{
 										"name": "Primarily Child Cast",
-										"rank": 60
-									},
-									{
-										"name": "Kuudere",
-										"rank": 60
+										"rank": 73
 									},
 									{
 										"name": "Bullying",
-										"rank": 40
-									},
-									{
-										"name": "Tragedy",
-										"rank": 20
+										"rank": 60
 									},
 									{
 										"name": "Family Life",
-										"rank": 20
+										"rank": 60
+									},
+									{
+										"name": "Tragedy",
+										"rank": 46
 									}
 								]
 							}
@@ -31327,7 +31060,7 @@
 								"episodes": 1,
 								"duration": 82,
 								"averageScore": 85,
-								"popularity": 126756,
+								"popularity": 127272,
 								"startDate": {
 									"year": 1998
 								},
@@ -31393,6 +31126,10 @@
 									{
 										"name": "Noir",
 										"rank": 53
+									},
+									{
+										"name": "Seinen",
+										"rank": 20
 									}
 								]
 							}
@@ -31408,7 +31145,7 @@
 								"episodes": 3,
 								"duration": 48,
 								"averageScore": 54,
-								"popularity": 2259,
+								"popularity": 2267,
 								"startDate": {
 									"year": 1987
 								},
@@ -31508,7 +31245,7 @@
 								"episodes": 1,
 								"duration": 65,
 								"averageScore": 55,
-								"popularity": 525,
+								"popularity": 530,
 								"startDate": {
 									"year": 1980
 								},
@@ -31563,7 +31300,7 @@
 								"episodes": 1,
 								"duration": 100,
 								"averageScore": 59,
-								"popularity": 1998,
+								"popularity": 2011,
 								"startDate": {
 									"year": 1986
 								},
@@ -31637,7 +31374,7 @@
 								"episodes": 1,
 								"duration": 59,
 								"averageScore": 54,
-								"popularity": 1830,
+								"popularity": 1835,
 								"startDate": {
 									"year": 1981
 								},
@@ -31704,7 +31441,7 @@
 								"episodes": 1,
 								"duration": 80,
 								"averageScore": 61,
-								"popularity": 1882,
+								"popularity": 1888,
 								"startDate": {
 									"year": 1990
 								},
@@ -31761,7 +31498,7 @@
 								"episodes": 24,
 								"duration": 23,
 								"averageScore": 67,
-								"popularity": 2790,
+								"popularity": 2800,
 								"startDate": {
 									"year": 2006
 								},
@@ -31821,7 +31558,7 @@
 								"episodes": 13,
 								"duration": 25,
 								"averageScore": 64,
-								"popularity": 5906,
+								"popularity": 5922,
 								"startDate": {
 									"year": 1999
 								},
@@ -31887,7 +31624,7 @@
 								"episodes": 22,
 								"duration": 23,
 								"averageScore": 70,
-								"popularity": 4829,
+								"popularity": 4835,
 								"startDate": {
 									"year": 2007
 								},
@@ -31943,7 +31680,7 @@
 								"episodes": 2,
 								"duration": 48,
 								"averageScore": 69,
-								"popularity": 7805,
+								"popularity": 7819,
 								"startDate": {
 									"year": 1991
 								},
@@ -32012,7 +31749,7 @@
 								"episodes": 4,
 								"duration": 30,
 								"averageScore": 63,
-								"popularity": 3495,
+								"popularity": 3505,
 								"startDate": {
 									"year": 1988
 								},
@@ -32068,7 +31805,7 @@
 								"episodes": null,
 								"duration": null,
 								"averageScore": null,
-								"popularity": 7161,
+								"popularity": 7250,
 								"startDate": {
 									"year": null
 								},
@@ -32116,7 +31853,7 @@
 								"episodes": null,
 								"duration": null,
 								"averageScore": null,
-								"popularity": 1343,
+								"popularity": 1361,
 								"startDate": {
 									"year": null
 								},
@@ -32151,7 +31888,7 @@
 								"episodes": 8,
 								"duration": null,
 								"averageScore": 56,
-								"popularity": 1207,
+								"popularity": 1276,
 								"startDate": {
 									"year": 2022
 								},
@@ -32194,8 +31931,8 @@
 								"format": "TV",
 								"episodes": 24,
 								"duration": 25,
-								"averageScore": 65,
-								"popularity": 7837,
+								"averageScore": 66,
+								"popularity": 7853,
 								"startDate": {
 									"year": 2006
 								},
@@ -32254,7 +31991,7 @@
 								"episodes": 1,
 								"duration": 60,
 								"averageScore": 47,
-								"popularity": 549,
+								"popularity": 551,
 								"startDate": {
 									"year": 1991
 								},
@@ -32321,7 +32058,7 @@
 								"episodes": 3,
 								"duration": 30,
 								"averageScore": 48,
-								"popularity": 566,
+								"popularity": 569,
 								"startDate": {
 									"year": 2000
 								},
@@ -32344,42 +32081,6 @@
 						},
 						{
 							"media": {
-								"id": 9356,
-								"title": {
-									"userPreferred": "Cool Cool Bye"
-								},
-								"status": "FINISHED",
-								"format": "OVA",
-								"episodes": 1,
-								"duration": 30,
-								"averageScore": 42,
-								"popularity": 537,
-								"startDate": {
-									"year": 1986
-								},
-								"genres": [
-									"Action",
-									"Adventure",
-									"Fantasy"
-								],
-								"tags": [
-									{
-										"name": "Nudity",
-										"rank": 60
-									},
-									{
-										"name": "Henshin",
-										"rank": 20
-									},
-									{
-										"name": "Robots",
-										"rank": 20
-									}
-								]
-							}
-						},
-						{
-							"media": {
 								"id": 110,
 								"title": {
 									"userPreferred": "Chuuka Ichiban!"
@@ -32389,7 +32090,7 @@
 								"episodes": 52,
 								"duration": 23,
 								"averageScore": 69,
-								"popularity": 2753,
+								"popularity": 2759,
 								"startDate": {
 									"year": 1997
 								},
@@ -32429,7 +32130,7 @@
 								"episodes": 1,
 								"duration": 108,
 								"averageScore": 61,
-								"popularity": 1518,
+								"popularity": 1529,
 								"startDate": {
 									"year": 1981
 								},
@@ -32491,7 +32192,7 @@
 								"episodes": 1,
 								"duration": 43,
 								"averageScore": 46,
-								"popularity": 880,
+								"popularity": 882,
 								"startDate": {
 									"year": 1992
 								},
@@ -32530,8 +32231,8 @@
 								"format": "MOVIE",
 								"episodes": 1,
 								"duration": 75,
-								"averageScore": 60,
-								"popularity": 897,
+								"averageScore": 61,
+								"popularity": 903,
 								"startDate": {
 									"year": 1981
 								},
@@ -32579,7 +32280,7 @@
 								"episodes": 1,
 								"duration": 45,
 								"averageScore": 47,
-								"popularity": 486,
+								"popularity": 488,
 								"startDate": {
 									"year": 2000
 								},
@@ -32614,7 +32315,7 @@
 								"episodes": 4,
 								"duration": 32,
 								"averageScore": 65,
-								"popularity": 8604,
+								"popularity": 8680,
 								"startDate": {
 									"year": 1998
 								},
@@ -32638,12 +32339,12 @@
 										"rank": 79
 									},
 									{
-										"name": "Post-Apocalyptic",
-										"rank": 60
+										"name": "CGI",
+										"rank": 65
 									},
 									{
-										"name": "CGI",
-										"rank": 53
+										"name": "Post-Apocalyptic",
+										"rank": 60
 									},
 									{
 										"name": "Seinen",
@@ -32667,7 +32368,7 @@
 								"episodes": null,
 								"duration": null,
 								"averageScore": null,
-								"popularity": 4169,
+								"popularity": 4223,
 								"startDate": {
 									"year": null
 								},
@@ -32702,8 +32403,8 @@
 								"format": "OVA",
 								"episodes": 4,
 								"duration": 30,
-								"averageScore": 61,
-								"popularity": 1561,
+								"averageScore": 60,
+								"popularity": 1574,
 								"startDate": {
 									"year": 1999
 								},
@@ -32749,7 +32450,7 @@
 								"episodes": 26,
 								"duration": 5,
 								"averageScore": 62,
-								"popularity": 1363,
+								"popularity": 1368,
 								"startDate": {
 									"year": 2005
 								},
@@ -32792,7 +32493,7 @@
 								"episodes": 26,
 								"duration": 22,
 								"averageScore": 66,
-								"popularity": 3025,
+								"popularity": 3037,
 								"startDate": {
 									"year": 2008
 								},
@@ -32852,7 +32553,7 @@
 								"episodes": 1,
 								"duration": 30,
 								"averageScore": 50,
-								"popularity": 461,
+								"popularity": 463,
 								"startDate": {
 									"year": 1991
 								},
@@ -32908,7 +32609,7 @@
 								"episodes": 1,
 								"duration": 47,
 								"averageScore": 46,
-								"popularity": 740,
+								"popularity": 742,
 								"startDate": {
 									"year": 1991
 								},
@@ -32954,7 +32655,7 @@
 								"episodes": 6,
 								"duration": 25,
 								"averageScore": 48,
-								"popularity": 396,
+								"popularity": 397,
 								"startDate": {
 									"year": 1989
 								},
@@ -32963,48 +32664,6 @@
 									"Sci-Fi"
 								],
 								"tags": []
-							}
-						},
-						{
-							"media": {
-								"id": 2081,
-								"title": {
-									"userPreferred": "Makeruna! Makendo"
-								},
-								"status": "FINISHED",
-								"format": "OVA",
-								"episodes": 1,
-								"duration": 30,
-								"averageScore": 48,
-								"popularity": 509,
-								"startDate": {
-									"year": 1995
-								},
-								"genres": [
-									"Comedy"
-								],
-								"tags": [
-									{
-										"name": "Magic",
-										"rank": 79
-									},
-									{
-										"name": "Youkai",
-										"rank": 79
-									},
-									{
-										"name": "Henshin",
-										"rank": 79
-									},
-									{
-										"name": "Nudity",
-										"rank": 70
-									},
-									{
-										"name": "Robots",
-										"rank": 20
-									}
-								]
 							}
 						},
 						{
@@ -33018,7 +32677,7 @@
 								"episodes": 1,
 								"duration": 54,
 								"averageScore": 56,
-								"popularity": 976,
+								"popularity": 978,
 								"startDate": {
 									"year": 1991
 								},
@@ -33117,7 +32776,7 @@
 								"episodes": 1,
 								"duration": 83,
 								"averageScore": 53,
-								"popularity": 741,
+								"popularity": 743,
 								"startDate": {
 									"year": 1961
 								},
@@ -33179,7 +32838,7 @@
 								"episodes": 3,
 								"duration": 45,
 								"averageScore": 57,
-								"popularity": 1302,
+								"popularity": 1308,
 								"startDate": {
 									"year": 1992
 								},
@@ -33227,7 +32886,7 @@
 								"episodes": null,
 								"duration": null,
 								"averageScore": null,
-								"popularity": 1447,
+								"popularity": 1527,
 								"startDate": {
 									"year": 2023
 								},
@@ -33253,7 +32912,7 @@
 								"episodes": null,
 								"duration": null,
 								"averageScore": null,
-								"popularity": 2741,
+								"popularity": 2845,
 								"startDate": {
 									"year": 2023
 								},
@@ -33297,7 +32956,7 @@
 								"episodes": 39,
 								"duration": 25,
 								"averageScore": 74,
-								"popularity": 10322,
+								"popularity": 10351,
 								"startDate": {
 									"year": 2006
 								},
@@ -33330,6 +32989,14 @@
 										"rank": 79
 									},
 									{
+										"name": "Coming of Age",
+										"rank": 79
+									},
+									{
+										"name": "Swordplay",
+										"rank": 60
+									},
+									{
 										"name": "Primarily Male Cast",
 										"rank": 51
 									},
@@ -33359,7 +33026,7 @@
 								"episodes": 15,
 								"duration": 18,
 								"averageScore": 74,
-								"popularity": 61894,
+								"popularity": 62456,
 								"startDate": {
 									"year": 2020
 								},
@@ -33441,7 +33108,7 @@
 								"episodes": 1,
 								"duration": 55,
 								"averageScore": 57,
-								"popularity": 1305,
+								"popularity": 1306,
 								"startDate": {
 									"year": 2010
 								},
@@ -33483,7 +33150,7 @@
 								"episodes": null,
 								"duration": null,
 								"averageScore": null,
-								"popularity": 1529,
+								"popularity": 1567,
 								"startDate": {
 									"year": 2023
 								},
@@ -33509,7 +33176,7 @@
 								"episodes": null,
 								"duration": null,
 								"averageScore": null,
-								"popularity": 1906,
+								"popularity": 1948,
 								"startDate": {
 									"year": null
 								},
@@ -33564,7 +33231,7 @@
 								"episodes": 3,
 								"duration": 23,
 								"averageScore": 56,
-								"popularity": 3230,
+								"popularity": 3236,
 								"startDate": {
 									"year": 2008
 								},
@@ -33613,37 +33280,204 @@
 						},
 						{
 							"media": {
-								"id": 137621,
+								"id": 800,
 								"title": {
-									"userPreferred": "Hanabi-chan wa Okure-gachi"
+									"userPreferred": "NieA Under 7"
 								},
 								"status": "FINISHED",
-								"format": "TV_SHORT",
-								"episodes": 12,
-								"duration": 5,
-								"averageScore": 58,
-								"popularity": 1326,
+								"format": "TV",
+								"episodes": 13,
+								"duration": 23,
+								"averageScore": 64,
+								"popularity": 9192,
 								"startDate": {
-									"year": 2022
+									"year": 2000
 								},
 								"genres": [
 									"Comedy",
-									"Fantasy",
-									"Romance",
+									"Sci-Fi",
 									"Slice of Life"
 								],
 								"tags": [
 									{
-										"name": "Chibi",
-										"rank": 90
+										"name": "Aliens",
+										"rank": 87
 									},
 									{
-										"name": "Gambling",
+										"name": "Work",
+										"rank": 84
+									},
+									{
+										"name": "Female Protagonist",
+										"rank": 83
+									},
+									{
+										"name": "Family Life",
 										"rank": 79
 									},
 									{
-										"name": "Shapeshifting",
-										"rank": 73
+										"name": "Slapstick",
+										"rank": 79
+									},
+									{
+										"name": "Found Family",
+										"rank": 79
+									},
+									{
+										"name": "Primarily Adult Cast",
+										"rank": 79
+									},
+									{
+										"name": "Rural",
+										"rank": 70
+									},
+									{
+										"name": "Surreal Comedy",
+										"rank": 70
+									},
+									{
+										"name": "Terrorism",
+										"rank": 13
+									}
+								]
+							}
+						},
+						{
+							"media": {
+								"id": 20709,
+								"title": {
+									"userPreferred": "Sarusuberi: Miss HOKUSAI"
+								},
+								"status": "FINISHED",
+								"format": "MOVIE",
+								"episodes": 1,
+								"duration": 90,
+								"averageScore": 69,
+								"popularity": 7395,
+								"startDate": {
+									"year": 2015
+								},
+								"genres": [
+									"Drama",
+									"Supernatural"
+								],
+								"tags": [
+									{
+										"name": "Historical",
+										"rank": 90
+									},
+									{
+										"name": "Drawing",
+										"rank": 80
+									},
+									{
+										"name": "Seinen",
+										"rank": 75
+									},
+									{
+										"name": "Female Protagonist",
+										"rank": 66
+									},
+									{
+										"name": "Family Life",
+										"rank": 50
+									},
+									{
+										"name": "Time Skip",
+										"rank": 40
+									},
+									{
+										"name": "CGI",
+										"rank": 40
+									},
+									{
+										"name": "Biographical",
+										"rank": 30
+									}
+								]
+							}
+						},
+						{
+							"media": {
+								"id": 156822,
+								"title": {
+									"userPreferred": "Tensei Shitara Slime Datta Ken 3rd Season"
+								},
+								"status": "NOT_YET_RELEASED",
+								"format": "TV",
+								"episodes": null,
+								"duration": null,
+								"averageScore": null,
+								"popularity": 6245,
+								"startDate": {
+									"year": null
+								},
+								"genres": [
+									"Action",
+									"Adventure",
+									"Comedy",
+									"Fantasy"
+								],
+								"tags": [
+									{
+										"name": "Reincarnation",
+										"rank": 96
+									},
+									{
+										"name": "Magic",
+										"rank": 95
+									},
+									{
+										"name": "Isekai",
+										"rank": 83
+									},
+									{
+										"name": "Demons",
+										"rank": 80
+									},
+									{
+										"name": "Politics",
+										"rank": 80
+									},
+									{
+										"name": "War",
+										"rank": 79
+									},
+									{
+										"name": "Male Protagonist",
+										"rank": 60
+									},
+									{
+										"name": "Goblin",
+										"rank": 20
+									},
+									{
+										"name": "Ensemble Cast",
+										"rank": 20
+									}
+								]
+							}
+						},
+						{
+							"media": {
+								"id": 156896,
+								"title": {
+									"userPreferred": "Kizuna no Allele"
+								},
+								"status": "NOT_YET_RELEASED",
+								"format": "TV",
+								"episodes": null,
+								"duration": null,
+								"averageScore": null,
+								"popularity": 450,
+								"startDate": {
+									"year": 2023
+								},
+								"genres": [],
+								"tags": [
+									{
+										"name": "VTuber",
+										"rank": 79
 									}
 								]
 							}
@@ -33666,7 +33500,7 @@
 								"episodes": 26,
 								"duration": 24,
 								"averageScore": 80,
-								"popularity": 34091,
+								"popularity": 34182,
 								"startDate": {
 									"year": 2009
 								},
@@ -33756,7 +33590,7 @@
 								"episodes": 24,
 								"duration": 24,
 								"averageScore": 79,
-								"popularity": 208158,
+								"popularity": 208818,
 								"startDate": {
 									"year": 2014
 								},
@@ -33860,7 +33694,7 @@
 								"episodes": 12,
 								"duration": 25,
 								"averageScore": 84,
-								"popularity": 446960,
+								"popularity": 448273,
 								"startDate": {
 									"year": 2017
 								},
@@ -33928,6 +33762,10 @@
 										"rank": 60
 									},
 									{
+										"name": "LGBTQ+ Themes",
+										"rank": 57
+									},
+									{
 										"name": "Cult",
 										"rank": 56
 									},
@@ -33937,10 +33775,6 @@
 									},
 									{
 										"name": "Primarily Male Cast",
-										"rank": 50
-									},
-									{
-										"name": "LGBTQ+ Themes",
 										"rank": 50
 									},
 									{
@@ -33989,7 +33823,7 @@
 								"episodes": 13,
 								"duration": 24,
 								"averageScore": 81,
-								"popularity": 37979,
+								"popularity": 38117,
 								"startDate": {
 									"year": 2021
 								},
@@ -34066,7 +33900,7 @@
 								"episodes": 13,
 								"duration": 23,
 								"averageScore": 77,
-								"popularity": 7855,
+								"popularity": 7873,
 								"startDate": {
 									"year": 2017
 								},
@@ -34130,7 +33964,7 @@
 								"episodes": 1,
 								"duration": null,
 								"averageScore": 66,
-								"popularity": 16254,
+								"popularity": 16301,
 								"startDate": {
 									"year": 2022
 								},
@@ -34177,7 +34011,7 @@
 								"episodes": 12,
 								"duration": 24,
 								"averageScore": 82,
-								"popularity": 132098,
+								"popularity": 132533,
 								"startDate": {
 									"year": 2020
 								},
@@ -34250,7 +34084,7 @@
 								"episodes": null,
 								"duration": null,
 								"averageScore": null,
-								"popularity": 8597,
+								"popularity": 8629,
 								"startDate": {
 									"year": null
 								},
@@ -34280,7 +34114,7 @@
 								"episodes": 4,
 								"duration": null,
 								"averageScore": null,
-								"popularity": 23295,
+								"popularity": 23386,
 								"startDate": {
 									"year": null
 								},
@@ -34361,7 +34195,7 @@
 								"episodes": null,
 								"duration": null,
 								"averageScore": null,
-								"popularity": 47667,
+								"popularity": 47893,
 								"startDate": {
 									"year": 2023
 								},
@@ -34421,8 +34255,8 @@
 								"format": "MOVIE",
 								"episodes": 1,
 								"duration": 105,
-								"averageScore": 86,
-								"popularity": 152899,
+								"averageScore": 85,
+								"popularity": 154436,
 								"startDate": {
 									"year": 2021
 								},
@@ -34537,7 +34371,7 @@
 								"episodes": null,
 								"duration": null,
 								"averageScore": null,
-								"popularity": 15615,
+								"popularity": 15696,
 								"startDate": {
 									"year": null
 								},
@@ -34599,7 +34433,7 @@
 								"episodes": null,
 								"duration": null,
 								"averageScore": null,
-								"popularity": 31592,
+								"popularity": 31841,
 								"startDate": {
 									"year": null
 								},
@@ -34676,7 +34510,7 @@
 								"episodes": 1,
 								"duration": 108,
 								"averageScore": null,
-								"popularity": 39561,
+								"popularity": 40004,
 								"startDate": {
 									"year": 2022
 								},
@@ -34700,7 +34534,7 @@
 									},
 									{
 										"name": "Female Harem",
-										"rank": 42
+										"rank": 41
 									}
 								]
 							}
@@ -34716,7 +34550,7 @@
 								"episodes": null,
 								"duration": null,
 								"averageScore": null,
-								"popularity": 13823,
+								"popularity": 13940,
 								"startDate": {
 									"year": null
 								},
@@ -34777,7 +34611,7 @@
 								"episodes": 4,
 								"duration": 26,
 								"averageScore": 74,
-								"popularity": 3204,
+								"popularity": 3215,
 								"startDate": {
 									"year": 2015
 								},
@@ -34845,7 +34679,7 @@
 								"episodes": null,
 								"duration": null,
 								"averageScore": null,
-								"popularity": 26356,
+								"popularity": 26949,
 								"startDate": {
 									"year": 2023
 								},
@@ -34950,7 +34784,7 @@
 								"episodes": 12,
 								"duration": 25,
 								"averageScore": 67,
-								"popularity": 2598,
+								"popularity": 2613,
 								"startDate": {
 									"year": 2022
 								},
@@ -35026,7 +34860,7 @@
 								"episodes": null,
 								"duration": null,
 								"averageScore": null,
-								"popularity": 3093,
+								"popularity": 3149,
 								"startDate": {
 									"year": 2023
 								},
@@ -35048,7 +34882,7 @@
 								"episodes": 13,
 								"duration": 5,
 								"averageScore": 54,
-								"popularity": 3857,
+								"popularity": 3876,
 								"startDate": {
 									"year": 2019
 								},
@@ -35079,7 +34913,7 @@
 								"episodes": null,
 								"duration": null,
 								"averageScore": null,
-								"popularity": 2894,
+								"popularity": 2932,
 								"startDate": {
 									"year": 2023
 								},
@@ -35129,7 +34963,7 @@
 								"episodes": 1,
 								"duration": 113,
 								"averageScore": 75,
-								"popularity": 45570,
+								"popularity": 45692,
 								"startDate": {
 									"year": 2015
 								},
@@ -35224,7 +35058,7 @@
 								"episodes": null,
 								"duration": null,
 								"averageScore": null,
-								"popularity": 7106,
+								"popularity": 7177,
 								"startDate": {
 									"year": null
 								},
@@ -35253,7 +35087,7 @@
 								"episodes": null,
 								"duration": null,
 								"averageScore": null,
-								"popularity": 43071,
+								"popularity": 43850,
 								"startDate": {
 									"year": 2023
 								},
@@ -35329,7 +35163,7 @@
 								"episodes": 1,
 								"duration": 48,
 								"averageScore": 58,
-								"popularity": 1394,
+								"popularity": 1400,
 								"startDate": {
 									"year": 1987
 								},
@@ -35365,7 +35199,7 @@
 								"episodes": null,
 								"duration": null,
 								"averageScore": null,
-								"popularity": 9152,
+								"popularity": 9392,
 								"startDate": {
 									"year": null
 								},
@@ -35390,7 +35224,7 @@
 								"episodes": null,
 								"duration": null,
 								"averageScore": null,
-								"popularity": 4494,
+								"popularity": 4659,
 								"startDate": {
 									"year": 2023
 								},
@@ -35414,7 +35248,7 @@
 								"episodes": 1,
 								"duration": null,
 								"averageScore": null,
-								"popularity": 1014,
+								"popularity": 1025,
 								"startDate": {
 									"year": null
 								},
@@ -35426,22 +35260,22 @@
 								"tags": [
 									{
 										"name": "Historical",
-										"rank": 60
+										"rank": 73
 									},
 									{
 										"name": "Shoujo",
-										"rank": 60
+										"rank": 73
 									},
 									{
 										"name": "Military",
-										"rank": 20
-									},
-									{
-										"name": "Ojou-sama",
-										"rank": 20
+										"rank": 60
 									},
 									{
 										"name": "Foreign",
+										"rank": 60
+									},
+									{
+										"name": "Ojou-sama",
 										"rank": 20
 									}
 								]
@@ -35458,7 +35292,7 @@
 								"episodes": null,
 								"duration": null,
 								"averageScore": null,
-								"popularity": 5947,
+								"popularity": 6017,
 								"startDate": {
 									"year": null
 								},
@@ -35498,7 +35332,7 @@
 								"episodes": null,
 								"duration": null,
 								"averageScore": null,
-								"popularity": 8927,
+								"popularity": 9200,
 								"startDate": {
 									"year": null
 								},
@@ -35555,7 +35389,7 @@
 								"episodes": null,
 								"duration": null,
 								"averageScore": null,
-								"popularity": 611,
+								"popularity": 623,
 								"startDate": {
 									"year": 2023
 								},
@@ -35584,7 +35418,7 @@
 								"episodes": null,
 								"duration": null,
 								"averageScore": null,
-								"popularity": 11368,
+								"popularity": 11987,
 								"startDate": {
 									"year": 2023
 								},
@@ -35630,7 +35464,7 @@
 								"episodes": null,
 								"duration": null,
 								"averageScore": null,
-								"popularity": 1172,
+								"popularity": 1212,
 								"startDate": {
 									"year": 2024
 								},
@@ -35651,7 +35485,7 @@
 								"episodes": null,
 								"duration": null,
 								"averageScore": null,
-								"popularity": 1643,
+								"popularity": 1854,
 								"startDate": {
 									"year": 2023
 								},
@@ -35678,7 +35512,7 @@
 								"episodes": 6,
 								"duration": 30,
 								"averageScore": null,
-								"popularity": 982,
+								"popularity": 1043,
 								"startDate": {
 									"year": 2022
 								},
@@ -35697,7 +35531,7 @@
 								"episodes": null,
 								"duration": null,
 								"averageScore": null,
-								"popularity": 25180,
+								"popularity": 25614,
 								"startDate": {
 									"year": 2023
 								},
@@ -35825,10 +35659,6 @@
 										"rank": 40
 									},
 									{
-										"name": "Amnesia",
-										"rank": 30
-									},
-									{
 										"name": "Otaku Culture",
 										"rank": 30
 									},
@@ -35858,7 +35688,7 @@
 								"episodes": 1,
 								"duration": null,
 								"averageScore": null,
-								"popularity": 8805,
+								"popularity": 9038,
 								"startDate": {
 									"year": null
 								},
@@ -35906,7 +35736,7 @@
 								"episodes": 1,
 								"duration": null,
 								"averageScore": null,
-								"popularity": 633,
+								"popularity": 635,
 								"startDate": {
 									"year": null
 								},
@@ -35928,7 +35758,7 @@
 								"episodes": 1,
 								"duration": 10,
 								"averageScore": 55,
-								"popularity": 641,
+								"popularity": 644,
 								"startDate": {
 									"year": 2016
 								},
@@ -35951,7 +35781,7 @@
 								"episodes": 63,
 								"duration": 25,
 								"averageScore": 77,
-								"popularity": 4604,
+								"popularity": 4618,
 								"startDate": {
 									"year": 1988
 								},
@@ -35998,6 +35828,69 @@
 									}
 								]
 							}
+						},
+						{
+							"media": {
+								"id": 125447,
+								"title": {
+									"userPreferred": "Thermae Romae Novae"
+								},
+								"status": "FINISHED",
+								"format": "ONA",
+								"episodes": 11,
+								"duration": 29,
+								"averageScore": 69,
+								"popularity": 5333,
+								"startDate": {
+									"year": 2022
+								},
+								"genres": [
+									"Comedy",
+									"Slice of Life"
+								],
+								"tags": [
+									{
+										"name": "Time Manipulation",
+										"rank": 85
+									},
+									{
+										"name": "Male Protagonist",
+										"rank": 84
+									},
+									{
+										"name": "Anachronism",
+										"rank": 73
+									},
+									{
+										"name": "Seinen",
+										"rank": 70
+									},
+									{
+										"name": "Foreign",
+										"rank": 70
+									},
+									{
+										"name": "Language Barrier",
+										"rank": 66
+									},
+									{
+										"name": "Work",
+										"rank": 66
+									},
+									{
+										"name": "Historical",
+										"rank": 65
+									},
+									{
+										"name": "Primarily Adult Cast",
+										"rank": 64
+									},
+									{
+										"name": "LGBTQ+ Themes",
+										"rank": 20
+									}
+								]
+							}
 						}
 					]
 				},
@@ -36017,7 +35910,7 @@
 								"episodes": 1,
 								"duration": 47,
 								"averageScore": 43,
-								"popularity": 363,
+								"popularity": 365,
 								"startDate": {
 									"year": 1989
 								},
@@ -36056,7 +35949,7 @@
 								"episodes": 3,
 								"duration": 45,
 								"averageScore": null,
-								"popularity": 207,
+								"popularity": 208,
 								"startDate": {
 									"year": 1991
 								},
@@ -36098,7 +35991,7 @@
 								"episodes": 86,
 								"duration": 25,
 								"averageScore": 60,
-								"popularity": 888,
+								"popularity": 891,
 								"startDate": {
 									"year": 1985
 								},
@@ -36133,7 +36026,7 @@
 								"episodes": 1,
 								"duration": 83,
 								"averageScore": 52,
-								"popularity": 342,
+								"popularity": 343,
 								"startDate": {
 									"year": 2001
 								},
@@ -36159,7 +36052,7 @@
 								"episodes": 156,
 								"duration": 10,
 								"averageScore": null,
-								"popularity": 177,
+								"popularity": 178,
 								"startDate": {
 									"year": 1967
 								},
@@ -36186,7 +36079,7 @@
 								"episodes": 5,
 								"duration": 30,
 								"averageScore": null,
-								"popularity": 103,
+								"popularity": 105,
 								"startDate": {
 									"year": 1991
 								},
@@ -36214,7 +36107,7 @@
 								"episodes": 77,
 								"duration": 3,
 								"averageScore": null,
-								"popularity": 465,
+								"popularity": 471,
 								"startDate": {
 									"year": 1986
 								},
@@ -36244,7 +36137,7 @@
 								"episodes": 25,
 								"duration": 13,
 								"averageScore": 56,
-								"popularity": 1414,
+								"popularity": 1418,
 								"startDate": {
 									"year": 2015
 								},
@@ -36278,7 +36171,7 @@
 								"episodes": 26,
 								"duration": 5,
 								"averageScore": null,
-								"popularity": 193,
+								"popularity": 195,
 								"startDate": {
 									"year": 2021
 								},

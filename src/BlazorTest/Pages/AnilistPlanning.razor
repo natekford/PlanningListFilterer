@@ -19,45 +19,44 @@
 		@* onclick:stopPropagation so the @onclick to close the menu doesn't trigger *@
 		@* when clicking any of the elements inside the modal *@
 		<div class="modal-dialog modal-lg" role="document" @onclick:stopPropagation="true">
-			<div class="modal-content container">
-				<div class="row">
-					<div class="col-sm" style="background:red">
-						<h5>first</h5>
-					</div>
-					<div class="col-sm" style="background:green">
-						<h5>second</h5>
-					</div>
-					<div class="col-sm" style="background:blue">
-						<h5>third</h5>
-					</div>
-				</div>
-				<GenreSelector
-					AllowedItems="@search.AllowedGenres"
-					ItemAdded="@search.AddGenre"
-					ItemRemoved="@search.RemoveGenre"
-					Items="@search.Genres"
-					ItemType="Genre"
-				/>
-				<GenreSelector
-					AllowedItems="@search.AllowedTags"
-					ItemAdded="@search.AddTag"
-					ItemRemoved="@search.RemoveTag"
-					Items="@search.Tags"
-					ItemType="Tag"
-				/>
+			<div class="modal-content container overflow-hidden">
+				<MudSelect Label="Genre Select" Variant="Variant.Outlined"
+					MultiSelection="true" Clearable="true"
+					T="string" SelectedValues="@search.Genres"
+					SelectedValuesChanged="@search.SetGenres">
+					<Virtualize Items="@search.AllowedGenres" Context="genre">
+						<MudSelectItem Value="@genre">@genre</MudSelectItem>
+					</Virtualize>
+				</MudSelect>
+				<MudSelect Label="Tag Select" Variant="Variant.Outlined"
+					MultiSelection="true" Clearable="true"
+					T="string" SelectedValues="@search.Tags"
+					SelectedValuesChanged="@search.SetTags">
+					<Virtualize Items="@search.AllowedTags" Context="tag">
+						<MudSelectItem Value="@tag">@tag</MudSelectItem>
+					</Virtualize>
+				</MudSelect>
+				<MudSelect Label="Format Select" Variant="Variant.Outlined"
+					MultiSelection="true" Clearable="true"
+					T="MediaFormat" SelectedValues="@search.Formats"
+					SelectedValuesChanged="@search.SetFormats">
+					<Virtualize Items="@search.AllowedFormats" Context="format">
+						<MudSelectItem Value="@format">@format</MudSelectItem>
+					</Virtualize>
+				</MudSelect>
 				<div class="row">
 					<div class="col-sm">
 						<MudNumericField Label="Minimum Duration" Variant="Variant.Outlined"
 							Min="0" Max="@search.MaximumDuration"
-							Value="@search.MinimumDuration"
-							ValueChanged="@((int? value) => search.SetMinimumDuration(value))"
+							T="int?" Value="@search.MinimumDuration"
+							ValueChanged="@search.SetMinimumDuration"
 						/>
 					</div>
 					<div class="col-sm">
 						<MudNumericField Label="Maximum Duration" Variant="Variant.Outlined"
 							Min="@(search.MinimumDuration ?? 0)" Max="int.MaxValue"
-							Value="@search.MaximumDuration"
-							ValueChanged="@((int? value) => search.SetMaximumDuration(value))"
+							T="int?" Value="@search.MaximumDuration"
+							ValueChanged="@search.SetMaximumDuration"
 						/>
 					</div>
 				</div>
@@ -65,17 +64,23 @@
 					<div class="col-sm">
 						<MudNumericField Label="Minimum Year" Variant="Variant.Outlined"
 							Min="0" Max="@search.MaximumYear"
-							Value="@search.MinimumYear"
-							ValueChanged="@((int? value) => search.SetMinimumYear(value))"
+							T="int?" Value="@search.MinimumYear"
+							ValueChanged="@search.SetMinimumYear"
 						/>
 					</div>
 					<div class="col-sm">
 						<MudNumericField Label="Maximum Year" Variant="Variant.Outlined"
 							Min="@(search.MinimumYear ?? 0)" Max="int.MaxValue"
-							Value="@search.MaximumYear"
-							ValueChanged="@((int? value) => search.SetMaximumYear(value))"
+							T="int?" Value="@search.MaximumYear"
+							ValueChanged="@search.SetMaximumYear"
 						/>
 					</div>
+				</div>
+				<div>
+					<button class="btn btn-secondary btn-sm my-2 float-end"
+						@onclick="@(() => search.Clear())">
+						Clear
+					</button>
 				</div>
 			</div>
 		</div>
@@ -196,10 +201,10 @@ else
 	private async Task LoadEntries()
 	{
 #if false
-	var response = await AnilistResponse.GetAnilistResponseAsync(Http, username!).ConfigureAwait(false);
+		var response = await AnilistResponse.GetAnilistResponseAsync(Http, username!).ConfigureAwait(false);
 #else
 		var response = (await Http.GetFromJsonAsync<AnilistResponse>(
-			requestUri: "sample-data/anilistresponse3.json",
+			requestUri: "sample-data/anilistresponse5.json",
 			options: AnilistResponse.JsonOptions
 		).ConfigureAwait(false))!;
 #endif

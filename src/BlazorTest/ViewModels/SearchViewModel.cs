@@ -8,8 +8,10 @@ public sealed class SearchViewModel
 {
 	private readonly IEnumerable<Media> _Media;
 
+	public ImmutableArray<MediaFormat> AllowedFormats { get; private set; } = ImmutableArray<MediaFormat>.Empty;
 	public ImmutableArray<string> AllowedGenres { get; private set; } = ImmutableArray<string>.Empty;
 	public ImmutableArray<string> AllowedTags { get; private set; } = ImmutableArray<string>.Empty;
+	public ImmutableHashSet<MediaFormat> Formats { get; set; } = ImmutableHashSet<MediaFormat>.Empty;
 	public ImmutableHashSet<string> Genres { get; set; } = ImmutableHashSet<string>.Empty;
 	public bool IsModalActive { get; private set; }
 	public int? MaximumDuration { get; private set; }
@@ -30,27 +32,27 @@ public sealed class SearchViewModel
 		return vm;
 	}
 
-	public Task AddGenre(string genre)
+	public Task Clear()
 	{
-		Genres = Genres.Add(genre);
+		Formats = ImmutableHashSet<MediaFormat>.Empty;
+		Genres = ImmutableHashSet<string>.Empty;
+		Tags = ImmutableHashSet<string>.Empty;
+		MaximumDuration = null;
+		MinimumDuration = null;
+		MaximumYear = null;
+		MinimumYear = null;
 		return UpdateVisibilityAsync();
 	}
 
-	public Task AddTag(string tag)
+	public Task SetFormats(IEnumerable<MediaFormat> formats)
 	{
-		Tags = Tags.Add(tag);
+		Formats = formats.ToImmutableHashSet();
 		return UpdateVisibilityAsync();
 	}
 
-	public Task RemoveGenre(string genre)
+	public Task SetGenres(IEnumerable<string> genres)
 	{
-		Genres = Genres.Remove(genre);
-		return UpdateVisibilityAsync();
-	}
-
-	public Task RemoveTag(string tag)
-	{
-		Tags = Tags.Remove(tag);
+		Genres = genres.ToImmutableHashSet();
 		return UpdateVisibilityAsync();
 	}
 
@@ -78,16 +80,29 @@ public sealed class SearchViewModel
 		return UpdateVisibilityAsync();
 	}
 
+	public Task SetTags(IEnumerable<string> tags)
+	{
+		Tags = tags.ToImmutableHashSet();
+		return UpdateVisibilityAsync();
+	}
+
 	public void ToggleModal()
 		=> IsModalActive = !IsModalActive;
 
 	public async Task UpdateVisibilityAsync()
 	{
+		var formats = new HashSet<MediaFormat>();
 		var genres = new HashSet<string>();
 		var tags = new HashSet<string>();
 
 		foreach (var media in _Media)
 		{
+			// visbility doesn't matter for formats
+			if (media.Format is MediaFormat format)
+			{
+				formats.Add(format);
+			}
+
 			media.IsEntryVisible = GetUpdatedVisibility(media);
 			if (!media.IsEntryVisible)
 			{
@@ -96,23 +111,18 @@ public sealed class SearchViewModel
 
 			foreach (var genre in media.Genres)
 			{
-				if (!Genres.Contains(genre))
-				{
-					genres.Add(genre);
-				}
+				genres.Add(genre);
 			}
 			foreach (var tag in media.Tags)
 			{
-				if (!Tags.Contains(tag.Name))
-				{
-					tags.Add(tag.Name);
-				}
+				tags.Add(tag.Name);
 			}
 
 			// await so the UI is more responsive
 			await Task.Yield();
 		}
 
+		AllowedFormats = formats.OrderBy(x => x).ToImmutableArray();
 		AllowedGenres = genres.OrderBy(x => x).ToImmutableArray();
 		AllowedTags = tags.OrderBy(x => x).ToImmutableArray();
 	}
@@ -126,6 +136,11 @@ public sealed class SearchViewModel
 		}
 		if (media.GetTotalDuration() is int duration
 			&& (duration < MinimumDuration || duration > MaximumDuration))
+		{
+			return false;
+		}
+		if (media.Format is MediaFormat format
+			&& Formats.Count > 0 && !Formats.Contains(format))
 		{
 			return false;
 		}
