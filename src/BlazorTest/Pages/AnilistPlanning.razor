@@ -78,7 +78,7 @@
 				</div>
 				<div>
 					<button class="btn btn-secondary btn-sm my-2 float-end"
-						@onclick="@(() => search.Clear())">
+						@onclick="@search.Clear">
 						Clear
 					</button>
 				</div>
@@ -97,59 +97,46 @@ else if (!entries.Any())
 }
 else
 {
-	<table class="table table-striped table-bordered">
+	<table class="table table-striped table-bordered table-sm table-responsive-sm">
 		<thead>
-			<tr>
-				<th>
-					<span class="sort-link" onclick="@(() => SortEntries(e => e.Id))">
-						Id
-					</span>
+			<tr class="sort-link">
+				<th @onclick="@(() => SortEntries(e => e.Id))">
+					Id
+				</th>
+				<th @onclick="@(() => SortEntries(e => e.Title.UserPreferred))">
+					Name
+				</th>
+				<th @onclick="@(() => SortEntries(e => e.Format))">
+					Format
+				</th>
+				<th @onclick="@(() => SortEntries(e => e.GetHighestEpisode()))">
+					Episode Count
+				</th>
+				<th @onclick="@(() => SortEntries(e => e.GetTotalDuration()))">
+					Duration
+				</th>
+				<th @onclick="@(() => SortEntries(e => e.AverageScore))">
+					Average Score
+				</th>
+				<th @onclick="@(() => SortEntries(e => e.Popularity))">
+					Popularity
+				</th>
+				<th @onclick="@(() => SortEntries(e => e.StartDate!.Year))">
+					Start Year
 				</th>
 				<th>
-					<span class="sort-link" onclick="@(() => SortEntries(e => e.Title.UserPreferred))">
-						Name
-					</span>
+					Genres
 				</th>
 				<th>
-					<span class="sort-link" onclick="@(() => SortEntries(e => e.Format))">
-						Format
-					</span>
+					Tags
 				</th>
-				<th>
-					<span class="sort-link" onclick="@(() => SortEntries(e => e.GetHighestEpisode()))">
-						Episode Count
-					</span>
-				</th>
-				<th>
-					<span class="sort-link" onclick="@(() => SortEntries(e => e.GetTotalDuration()))">
-						Duration
-					</span>
-				</th>
-				<th>
-					<span class="sort-link" onclick="@(() => SortEntries(e => e.AverageScore))">
-						Average Score
-					</span>
-				</th>
-				<th>
-					<span class="sort-link" onclick="@(() => SortEntries(e => e.Popularity))">
-						Popularity
-					</span>
-				</th>
-				<th>
-					<span class="sort-link" onclick="@(() => SortEntries(e => e.StartDate!.Year))">
-						Start Year
-					</span>
-				</th>
-				<th>Genres</th>
-				<th>Tags</th>
 			</tr>
 		</thead>
 		<tbody>
-			@foreach (var entry in entries)
-			{
+			<Virtualize Items="@entries" Context="entry" OverscanCount="100">
 				@if (!entry.IsEntryVisible)
 				{
-					continue;
+					return;
 				}
 				<tr class="text-nowrap">
 					<td>
@@ -170,7 +157,7 @@ else
 						@if (entry.Genres.Count > 1)
 						{
 							<button class="btn btn-secondary btn-xs float-end ms-4"
-							@onclick="@(() => entry.ToggleGenresExpanded())">
+								@onclick="@entry.ToggleGenresExpanded">
 								@entry.Genres.DisplayExpanderButton(entry.IsGenresExpanded)
 							</button>
 						}
@@ -180,14 +167,14 @@ else
 						@if (entry.Tags.Count > 1)
 						{
 							<button class="btn btn-secondary btn-xs float-end ms-4"
-							@onclick="@(() => entry.ToggleTagsExpanded())">
+								@onclick="@entry.ToggleTagsExpanded">
 								@entry.Tags.DisplayExpanderButton(entry.IsTagsExpanded)
 							</button>
 						}
 						@entry.DisplayTags(entry.IsTagsExpanded)
 					</td>
 				</tr>
-			}
+			</Virtualize>
 		</tbody>
 	</table>
 }
