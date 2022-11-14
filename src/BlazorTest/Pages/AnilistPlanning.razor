@@ -9,9 +9,6 @@
 <button class="btn btn-primary btn-sm" @onclick="@LoadEntries">
 	Load Entries
 </button>
-<button class="btn btn-primary btn-sm float-end" @onclick="@search.ToggleModal">
-	Search
-</button>
 
 @if (search.IsModalActive)
 {
@@ -97,91 +94,97 @@ else if (!entries.Any())
 }
 else
 {
-	<table class="table table-striped table-bordered table-sm table-responsive-sm">
-		<thead>
-			<tr class="sort-link">
-				<th @onclick="@(() => SortEntries(e => e.Id))">
+	<MudTable Hover="true" Bordered="true" Striped="true" FixedHeader="true" FixedFooter="true"
+		Context="entry" Items="@entries" Filter="@FilterFunc">
+		<ToolBarContent>
+			<MudText Typo="Typo.h6">Planning To Watch</MudText>
+			<MudSpacer />
+			<MudButton OnClick="@search.ToggleModal">
+				Search
+			</MudButton>
+		</ToolBarContent>
+		<HeaderContent>
+			<MudTh>
+				<MudTableSortLabel SortBy="@((Media m) => m.Id)">
 					Id
-				</th>
-				<th @onclick="@(() => SortEntries(e => e.Title.UserPreferred))">
+				</MudTableSortLabel>
+			</MudTh>
+			<MudTh>
+				<MudTableSortLabel SortBy="@((Media m) => m.Title.UserPreferred)">
 					Name
-				</th>
-				<th @onclick="@(() => SortEntries(e => e.Format))">
+				</MudTableSortLabel>
+			</MudTh>
+			<MudTh>
+				<MudTableSortLabel SortBy="@((Media m) => m.Format)">
 					Format
-				</th>
-				<th @onclick="@(() => SortEntries(e => e.GetHighestEpisode()))">
+				</MudTableSortLabel>
+			</MudTh>
+			<MudTh>
+				<MudTableSortLabel SortBy="@((Media m) => m.GetHighestEpisode())" Class="text-nowrap">
 					Episode Count
-				</th>
-				<th @onclick="@(() => SortEntries(e => e.GetTotalDuration()))">
+				</MudTableSortLabel>
+			</MudTh>
+			<MudTh>
+				<MudTableSortLabel SortBy="@((Media m) => m.GetTotalDuration())">
 					Duration
-				</th>
-				<th @onclick="@(() => SortEntries(e => e.AverageScore))">
+				</MudTableSortLabel>
+			</MudTh>
+			<MudTh>
+				<MudTableSortLabel SortBy="@((Media m) => m.AverageScore)" Class="text-nowrap">
 					Average Score
-				</th>
-				<th @onclick="@(() => SortEntries(e => e.Popularity))">
+				</MudTableSortLabel>
+			</MudTh>
+			<MudTh>
+				<MudTableSortLabel SortBy="@((Media m) => m.Popularity)">
 					Popularity
-				</th>
-				<th @onclick="@(() => SortEntries(e => e.StartDate!.Year))">
+				</MudTableSortLabel>
+			</MudTh>
+			<MudTh>
+				<MudTableSortLabel SortBy="@((Media m) => m.StartDate!.Year)" Class="text-nowrap">
 					Start Year
-				</th>
-				<th>
-					Genres
-				</th>
-				<th>
-					Tags
-				</th>
-			</tr>
-		</thead>
-		<tbody>
-			<Virtualize Items="@entries" Context="entry" OverscanCount="100">
-				@if (!entry.IsEntryVisible)
-				{
-					return;
-				}
-				<tr class="text-nowrap">
-					<td>
-						<a href="@entry.GetUrl()" target="_blank">@entry.Id</a>
-					</td>
-					<td class="text-wrap">@entry.Title.UserPreferred</td>
-					<td>@entry.DisplayFormat()</td>
-					<td>@entry.DisplayEpisodeCount()</td>
-					<td>@entry.DisplayDuration()</td>
-					<td>@entry.DisplayScore()</td>
-					<td>@entry.Popularity</td>
-					<td>@entry.DisplayYear()</td>
-					@* button added before the text otherwise the button gets positioned *@
-					@* to be at the bottom right of the text *@
-					@* float-end aligns it to the right correctly, but makes the vertical *@
-					@* alignment a bit off centered (it's not a huge issue) *@
-					<td class="text-pre">
-						@if (entry.Genres.Count > 1)
-						{
-							<button class="btn btn-secondary btn-xs float-end ms-4"
-								@onclick="@entry.ToggleGenresExpanded">
-								@entry.Genres.DisplayExpanderButton(entry.IsGenresExpanded)
-							</button>
-						}
-						@entry.DisplayGenres(entry.IsGenresExpanded)
-					</td>
-					<td class="text-pre">
-						@if (entry.Tags.Count > 1)
-						{
-							<button class="btn btn-secondary btn-xs float-end ms-4"
-								@onclick="@entry.ToggleTagsExpanded">
-								@entry.Tags.DisplayExpanderButton(entry.IsTagsExpanded)
-							</button>
-						}
-						@entry.DisplayTags(entry.IsTagsExpanded)
-					</td>
-				</tr>
-			</Virtualize>
-		</tbody>
-	</table>
+				</MudTableSortLabel>
+			</MudTh>
+			<MudTh>Genres</MudTh>
+			<MudTh>Tags</MudTh>
+		</HeaderContent>
+		<RowTemplate>
+			<MudTd>
+				<MudNavLink Href="@entry.GetUrl()" Target="_blank">
+					@entry.Id
+				</MudNavLink>
+			</MudTd>
+			<MudTd>@entry.Title.UserPreferred</MudTd>
+			<MudTd>@entry.DisplayFormat()</MudTd>
+			<MudTd>@entry.DisplayEpisodeCount()</MudTd>
+			<MudTd>@entry.DisplayDuration()</MudTd>
+			<MudTd>@entry.DisplayScore()</MudTd>
+			<MudTd>@entry.Popularity</MudTd>
+			<MudTd>@entry.DisplayYear()</MudTd>
+			<MudTd>
+				<MudExpansionPanel Text="@entry.DisplayGenres(expanded: false)"
+					Disabled="@(entry.Genres.Count <= 1)">
+					<pre>
+						@entry.DisplayGenres(expanded: true)
+					</pre>
+				</MudExpansionPanel>
+			</MudTd>
+			<MudTd>
+				<MudExpansionPanel Text="@entry.DisplayTags(expanded: false)"
+					Disabled="@(entry.Tags.Count <= 1)">
+					<pre>
+						@entry.DisplayTags(expanded: true)
+					</pre>
+				</MudExpansionPanel>
+			</MudTd>
+		</RowTemplate>
+		<PagerContent>
+			<MudTablePager />
+		</PagerContent>
+	</MudTable>
 }
 
 @code {
 	private List<Media>? entries;
-	private LastSortedBy lastSortedBy;
 	private SearchViewModel search = new(Enumerable.Empty<Media>());
 	private string? username;
 
@@ -203,28 +206,10 @@ else
 			.ToList();
 
 		search = await SearchViewModel.CreateAsync(entries).ConfigureAwait(false);
-
-		// By default, sorted ascending by id
-		// keySelector here won't be the same instance as the passed in argument
-		// so no point in giving it any value other than null
-		lastSortedBy = new(null, IsAscending: true);
 	}
 
-	private void SortEntries<TKey>(Func<Media, TKey> keySelector)
+	private bool FilterFunc(Media media)
 	{
-		var nullsAtEnd = entries!.OrderBy(x => keySelector(x) == null);
-		if (!lastSortedBy.IsAscending
-			|| !object.ReferenceEquals(lastSortedBy.KeySelector, keySelector))
-		{
-			entries = nullsAtEnd.ThenBy(keySelector).ToList();
-			lastSortedBy = new(keySelector, IsAscending: true);
-		}
-		else
-		{
-			entries = nullsAtEnd.ThenByDescending(keySelector).ToList();
-			lastSortedBy = new(keySelector, IsAscending: false);
-		}
+		return media.IsEntryVisible;
 	}
-
-	private record struct LastSortedBy(object? KeySelector, bool IsAscending);
 }

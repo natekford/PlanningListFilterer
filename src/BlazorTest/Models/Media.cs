@@ -30,10 +30,6 @@ public sealed record Media(
 )
 {
 	[JsonIgnore]
-	public bool IsGenresExpanded { get; set; }
-	[JsonIgnore]
-	public bool IsTagsExpanded { get; set; }
-	[JsonIgnore]
 	public bool IsEntryVisible { get; set; } = true;
 }
 
@@ -61,17 +57,6 @@ public static class MediaUtils
 		return $"{count} episode{(count == 1 ? "" : "s")}";
 	}
 
-	public static string DisplayExpanderButton<T>(
-		this IReadOnlyList<T> list,
-		bool expanded)
-	{
-		if (expanded)
-		{
-			return "🗙";
-		}
-		return $"+{list.Count - 1}";
-	}
-
 	public static string DisplayFormat(this Media media)
 		=> media.Format?.ToString() ?? NO_VALUE;
 
@@ -84,7 +69,8 @@ public static class MediaUtils
 
 		if (expanded)
 		{
-			return string.Join(Environment.NewLine, media.Genres);
+			var genres = media.Genres.Skip(1);
+			return string.Join(Environment.NewLine, genres);
 		}
 		return media.Genres[0];
 	}
@@ -118,8 +104,8 @@ public static class MediaUtils
 
 		if (expanded)
 		{
-			var selected = media.Tags.Select(x => x.DisplayTag());
-			return string.Join(Environment.NewLine, selected);
+			var tags = media.Tags.Skip(1).Select(x => x.DisplayTag());
+			return string.Join(Environment.NewLine, tags);
 		}
 		return media.Tags[0].DisplayTag();
 	}
@@ -142,10 +128,4 @@ public static class MediaUtils
 
 	public static string GetUrl(this Media media)
 		=> $"https://anilist.co/anime/{media.Id}/";
-
-	public static void ToggleGenresExpanded(this Media media)
-		=> media.IsGenresExpanded = !media.IsGenresExpanded;
-
-	public static void ToggleTagsExpanded(this Media media)
-		=> media.IsTagsExpanded = !media.IsTagsExpanded;
 }
