@@ -7,7 +7,6 @@
 		"date",
 		"favorite_color",
 		"gender",
-		"location",
 		"pets"
 	],
 	"properties": {

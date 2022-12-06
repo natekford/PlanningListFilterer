@@ -33,10 +33,11 @@ public partial class JsonEditor
 		{
 			return node is null;
 		}
-		// default has a value, node is null, keep null value in serialization
+		// default has a value, node is null, user cannot provide a null value
+		// means to remove this value
 		else if (node is null)
 		{
-			return false;
+			return true;
 		}
 		else if (@default.GetType() != node.GetType())
 		{
@@ -127,7 +128,7 @@ public partial class JsonEditor
 	protected override async Task OnInitializedAsync()
 	{
 		var schema = (await Http.GetFromJsonAsync<JsonSchema>(
-			requestUri: "sample-data/sampleschema.json"
+			requestUri: "sample-data/sampleschema4.json"
 		).ConfigureAwait(false))!;
 
 		var module = await JS.InvokeAsync<IJSObjectReference>(
