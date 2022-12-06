@@ -12,7 +12,7 @@ using System.Text.Json.Nodes;
 
 namespace BlazorTest.Pages;
 
-public partial class JsonEditor
+public sealed partial class JsonEditor : IDisposable
 {
 	private readonly DotNetObjectReference<JsonEditor> _DotNetReference;
 	private readonly JsonSerializerOptions _Options = new()
@@ -124,6 +124,9 @@ public partial class JsonEditor
 		}
 	}
 
+	public void Dispose()
+		=> _DotNetReference.Dispose();
+
 	[JSInvokable]
 	public Task OnJsonEditorChanged(JsonElement obj, JsonErrors[] errors)
 	{
@@ -160,7 +163,7 @@ public partial class JsonEditor
 			requestUri: "sample-data/sampleschema4.json"
 		).ConfigureAwait(false))!;
 
-		var module = await JS.InvokeAsync<IJSObjectReference>(
+		await using var module = await JS.InvokeAsync<IJSObjectReference>(
 			identifier: "import",
 			args: "./Pages/JsonEditor.razor.js"
 		).ConfigureAwait(false);
