@@ -6,17 +6,22 @@ export async function initJsonEditor(dotNetRef, id, schema, startval) {
 	}
 	const div = document.querySelector(id);
 
-	const temp = createEditor(div, schema, null);
-	temp.on('change', function () {
-		dotNetRef.invokeMethodAsync('OnJsonEditorInstantiated', temp.getValue());
-		temp.destroy();
+	await new Promise(function (resolve) {
+		const temp = createEditor(div, schema, null);
+		const listener = async () => {
+			temp.off('change', listener);
+			await dotNetRef.invokeMethodAsync('OnJsonEditorInstantiated', temp.getValue());
+			temp.destroy();
+			resolve();
+		};
+		temp.on('change', listener);
+	});
 
-		editor = createEditor(div, schema, startval);
-		editor.on('change', function () {
-			const json = editor.getValue();
-			const errors = editor.validate();
-			dotNetRef.invokeMethodAsync('OnJsonEditorChanged', json, errors);
-		});
+	editor = createEditor(div, schema, startval);
+	editor.on('change', async function () {
+		const json = editor.getValue();
+		const errors = editor.validate();
+		await dotNetRef.invokeMethodAsync('OnJsonEditorChanged', json, errors);
 	});
 };
 
