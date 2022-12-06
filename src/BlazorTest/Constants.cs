@@ -2,10 +2,13 @@
 
 public static class IDs
 {
-	public const string SearchModal = "searchModal";
+	public const string JsonEditor = "json-editor-form";
+	public const string SearchModal = "search-modal";
+
+	public static string Query(this string id) => $"#{id}";
 }
 
 public static class JSMethods
 {
-	public const string ResetSelectedIndex = "resetSelectedIndex";
+	public const string InitJsonEditor = "initJsonEditor";
 }
