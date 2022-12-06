@@ -76,7 +76,11 @@ public sealed partial class JsonEditor : IDisposable
 		{
 			var jDefault = jDefaultValue.AsJsonString();
 			var jString = jValue.AsJsonString();
-			Console.WriteLine($"{jDefault}/{jString}");
+			Console.WriteLine(
+				$"{jValue.GetPath()}\n" +
+				$"Default: {jDefault}\n" +
+				$"Current: {jString}"
+			);
 			return jDefault == jString || RemoveEmpty(jValue);
 		}
 		else
@@ -151,7 +155,6 @@ public sealed partial class JsonEditor : IDisposable
 	[JSInvokable]
 	public Task OnJsonEditorInstantiated(JsonElement obj)
 	{
-		Console.WriteLine($"Default: {obj}");
 		_Default = obj.AsNode();
 		Json = "{}";
 
@@ -162,7 +165,7 @@ public sealed partial class JsonEditor : IDisposable
 	protected override async Task OnInitializedAsync()
 	{
 		var schema = (await Http.GetFromJsonAsync<JsonSchema>(
-			requestUri: "sample-data/sampleschema.json?a=1"
+			requestUri: "sample-data/sampleschema.json?a=3"
 		).ConfigureAwait(false))!;
 
 		await using var module = await JS.InvokeAsync<IJSObjectReference>(
