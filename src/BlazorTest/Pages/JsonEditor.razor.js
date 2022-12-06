@@ -8,6 +8,7 @@ export async function initJsonEditor(id, schema, dotNetRef) {
 		object_layout: 'grid',
 		disable_edit_json: true,
 		disable_properties: true,
+		show_opt_in: false,
 		schema: schema,
 	};
 

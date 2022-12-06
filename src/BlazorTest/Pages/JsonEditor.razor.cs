@@ -17,7 +17,7 @@ public partial class JsonEditor
 	};
 	private readonly DotNetObjectReference<JsonEditor> _Ref;
 
-	private JsonNode? _Defaults;
+	private JsonNode? _Default;
 	public string? Errors { get; set; }
 	public string? Json { get; set; }
 
@@ -26,10 +26,10 @@ public partial class JsonEditor
 		_Ref = DotNetObjectReference.Create(this);
 	}
 
-	public static bool RemoveDefaults(JsonNode? defaults, JsonNode? node)
+	public static bool RemoveDefaults(JsonNode? @default, JsonNode? node)
 	{
 		// node == defaults even if both ar enull
-		if (defaults is null)
+		if (@default is null)
 		{
 			return node is null;
 		}
@@ -38,7 +38,7 @@ public partial class JsonEditor
 		{
 			return false;
 		}
-		else if (defaults.GetType() != node.GetType())
+		else if (@default.GetType() != node.GetType())
 		{
 			throw new InvalidOperationException(
 				$"Defaults and current JSON node are not the same type at '{node.GetPath()}'.");
@@ -46,9 +46,8 @@ public partial class JsonEditor
 
 		var isDefaultValue = true;
 		// loop through all array values
-		if (node is JsonArray jArray)
+		if (@default is JsonArray jDefaultArray && node is JsonArray jArray)
 		{
-			var jDefaultArray = (JsonArray)defaults;
 			isDefaultValue = jArray.Count == jDefaultArray.Count;
 			for (var i = jDefaultArray.Count - 1; i >= 0; --i)
 			{
@@ -63,10 +62,10 @@ public partial class JsonEditor
 			}
 		}
 		// loop through all properties
-		else if (node is JsonObject jObj)
+		else if (@default is JsonObject jDefaultObj && node is JsonObject jObj)
 		{
-			var jDefault = (JsonObject)defaults;
-			foreach (var (propertyName, jDefaultProperty) in jDefault)
+			isDefaultValue = jObj.All(x => jDefaultObj.ContainsKey(x.Key));
+			foreach (var (propertyName, jDefaultProperty) in jDefaultObj)
 			{
 				if (RemoveDefaults(jDefaultProperty, jObj[propertyName]))
 				{
@@ -79,10 +78,11 @@ public partial class JsonEditor
 			}
 		}
 		// check if json strings are the same
-		else if (node is JsonValue jValue)
+		else if (@default is JsonValue jDefaultValue && node is JsonValue jValue)
 		{
-			var jDefault = defaults.AsJsonString();
+			var jDefault = jDefaultValue.AsJsonString();
 			var jString = jValue.AsJsonString();
+			Console.WriteLine($"{jDefault}/{jString}");
 			isDefaultValue = jDefault == jString;
 		}
 		else
@@ -103,15 +103,15 @@ public partial class JsonEditor
 			var node = obj.AsNode()!;
 			// If default node is null, the first change event indicates that the
 			// js library has created an object from the schema
-			if (_Defaults is null)
+			if (_Default is null)
 			{
-				_Defaults = node;
+				_Default = node;
 				Json = "{}";
 			}
 			// If default node is not null, the user has changed a value in the ui
 			else
 			{
-				RemoveDefaults(_Defaults, node);
+				RemoveDefaults(_Default, node);
 				Json = JsonSerializer.Serialize(node, _Options);
 			}
 		}
@@ -126,7 +126,7 @@ public partial class JsonEditor
 
 	protected override async Task OnInitializedAsync()
 	{
-		var schema = (await Http.GetFromJsonAsync<JsonDocument>(
+		var schema = (await Http.GetFromJsonAsync<JsonSchema>(
 			requestUri: "sample-data/sampleschema.json"
 		).ConfigureAwait(false))!;
 
