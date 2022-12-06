@@ -7,8 +7,16 @@
   </PropertyGroup>
 	
   <ItemGroup>
-    <None Remove="Pages\AnilistPlanning.razor.js" />
-    <None Remove="Pages\AnilistPlanning.razor.js.map" />
+    <None Remove="Pages\JsonEditor.razor.js" />
+    <None Remove="Pages\JsonEditor.razor.js.map" />
+  </ItemGroup>
+	
+  <ItemGroup>
+    <TypeScriptCompile Remove="Pages\JsonEditor.razor.ts" />
+  </ItemGroup>
+	
+  <ItemGroup>
+    <None Include="Pages\JsonEditor.razor.ts" />
   </ItemGroup>
 
   <ItemGroup>
