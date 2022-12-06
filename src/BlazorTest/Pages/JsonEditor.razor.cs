@@ -131,7 +131,7 @@ public partial class JsonEditor
 
 		var module = await JS.InvokeAsync<IJSObjectReference>(
 			identifier: "import",
-			args: "./Pages/JsonEditor.razor.js"
+			args: "./Pages/JsonEditor.razor.ts"
 		).ConfigureAwait(false);
 
 		await module.InvokeVoidAsync(
