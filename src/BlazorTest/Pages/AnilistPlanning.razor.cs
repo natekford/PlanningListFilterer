@@ -17,7 +17,7 @@ public partial class AnilistPlanning
 		var response = await AnilistResponse.GetAnilistResponseAsync(Http, username!).ConfigureAwait(false);
 #else
 		var response = (await Http.GetFromJsonAsync<AnilistResponse>(
-			requestUri: "sample-data/anilistresponse5.json",
+			requestUri: "sample-data/anilistresponse.json?a=1",
 			options: AnilistResponse.JsonOptions
 		).ConfigureAwait(false))!;
 #endif
