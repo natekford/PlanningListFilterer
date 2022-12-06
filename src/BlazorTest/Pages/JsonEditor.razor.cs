@@ -11,19 +11,18 @@ namespace BlazorTest.Pages;
 
 public partial class JsonEditor
 {
+	private readonly DotNetObjectReference<JsonEditor> _DotNetReference;
 	private readonly JsonSerializerOptions _Options = new()
 	{
 		WriteIndented = true,
 	};
-	private readonly DotNetObjectReference<JsonEditor> _Ref;
-
 	private JsonNode? _Default;
 	public string? Errors { get; set; }
 	public string? Json { get; set; }
 
 	public JsonEditor()
 	{
-		_Ref = DotNetObjectReference.Create(this);
+		_DotNetReference = DotNetObjectReference.Create(this);
 	}
 
 	public static bool RemoveDefaults(JsonNode? @default, JsonNode? node)
@@ -102,24 +101,23 @@ public partial class JsonEditor
 		if (errors.Length == 0)
 		{
 			var node = obj.AsNode()!;
-			// If default node is null, the first change event indicates that the
-			// js library has created an object from the schema
-			if (_Default is null)
-			{
-				_Default = node;
-				Json = "{}";
-			}
-			// If default node is not null, the user has changed a value in the ui
-			else
-			{
-				RemoveDefaults(_Default, node);
-				Json = JsonSerializer.Serialize(node, _Options);
-			}
+			RemoveDefaults(_Default, node);
+			Json = JsonSerializer.Serialize(node, _Options);
 		}
 		else
 		{
 			Json = "Invalid";
 		}
+
+		StateHasChanged();
+		return Task.CompletedTask;
+	}
+
+	[JSInvokable]
+	public Task OnJsonEditorInstantiated(JsonElement obj)
+	{
+		_Default = obj.AsNode();
+		Json = "{}";
 
 		StateHasChanged();
 		return Task.CompletedTask;
@@ -140,9 +138,16 @@ public partial class JsonEditor
 			identifier: JSMethods.InitJsonEditor,
 			args: new object[]
 			{
+				_DotNetReference,
 				IDs.JsonEditor.Query(),
 				schema,
-				_Ref
+				new
+				{
+					location = new
+					{
+						city = "Petaluma",
+					},
+				},
 			}
 		).ConfigureAwait(false);
 	}
