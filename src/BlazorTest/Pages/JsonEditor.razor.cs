@@ -20,8 +20,11 @@ public sealed partial class JsonEditor : IDisposable
 		WriteIndented = true,
 	};
 	private JsonNode? _Default;
+
+	public string? DefaultJson { get; set; }
 	public string? Errors { get; set; }
 	public string? Json { get; set; }
+	public bool ShowDefaultJson { get; set; }
 
 	public JsonEditor()
 	{
@@ -76,12 +79,12 @@ public sealed partial class JsonEditor : IDisposable
 		{
 			var jDefault = jDefaultValue.AsJsonString();
 			var jString = jValue.AsJsonString();
-			Console.WriteLine(
-				$"{jValue.GetPath()}\n" +
-				$"Default: {jDefault}\n" +
-				$"Current: {jString}"
-			);
-			return jDefault == jString || RemoveEmpty(jValue);
+			var equal = jDefault == jString;
+
+			var display = equal ? "NO CHANGE" : $"{jDefault} -> {jString}";
+			Console.WriteLine($"{jValue.GetPath()}: {display}");
+
+			return equal || RemoveEmpty(jValue);
 		}
 		else
 		{
@@ -156,6 +159,7 @@ public sealed partial class JsonEditor : IDisposable
 	public Task OnJsonEditorInstantiated(JsonElement obj)
 	{
 		_Default = obj.AsNode();
+		DefaultJson = JsonSerializer.Serialize(_Default, _Options);
 		Json = "{}";
 
 		StateHasChanged();
@@ -190,6 +194,9 @@ public sealed partial class JsonEditor : IDisposable
 			}
 		).ConfigureAwait(false);
 	}
+
+	private void ToggleShowDefaultJson()
+		=> ShowDefaultJson = !ShowDefaultJson;
 
 	public record JsonErrors(
 		string Path,

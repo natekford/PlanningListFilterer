@@ -11,7 +11,7 @@ public partial class AnilistPlanning
 	public MediaSearch Search { get; set; } = new(Enumerable.Empty<Media>());
 	public string? Username { get; set; }
 
-	private async Task LoadEntries()
+	public async Task LoadEntries()
 	{
 #if false
 		var response = await AnilistResponse.GetAnilistResponseAsync(Http, username!).ConfigureAwait(false);
