@@ -39,7 +39,7 @@
 				</MudSelect>
 				<MudSelect Label="Format Select" Variant="Variant.Outlined"
 					MultiSelection="true" Clearable="true"
-					T="MediaFormat" SelectedValues="@Search.Formats"
+					T="AnilistMediaFormat" SelectedValues="@Search.Formats"
 					SelectedValuesChanged="@Search.SetFormats">
 					<Virtualize Items="@Search.AllowedFormats" Context="format">
 						<MudSelectItem Value="@format">@format</MudSelectItem>
@@ -100,42 +100,42 @@
 	</ToolBarContent>
 	<HeaderContent>
 		<MudTh>
-			<MudTableSortLabel SortBy="@((Media m) => m.Id)">
+			<MudTableSortLabel SortBy="@((AnilistMedia m) => m.Id)">
 				Id
 			</MudTableSortLabel>
 		</MudTh>
 		<MudTh>
-			<MudTableSortLabel SortBy="@((Media m) => m.Title.UserPreferred)">
+			<MudTableSortLabel SortBy="@((AnilistMedia m) => m.Title.UserPreferred)">
 				Name
 			</MudTableSortLabel>
 		</MudTh>
 		<MudTh>
-			<MudTableSortLabel SortBy="@((Media m) => m.Format)">
+			<MudTableSortLabel SortBy="@((AnilistMedia m) => m.Format)">
 				Format
 			</MudTableSortLabel>
 		</MudTh>
 		<MudTh>
-			<MudTableSortLabel SortBy="@((Media m) => m.GetHighestEpisode())" Class="text-nowrap">
+			<MudTableSortLabel SortBy="@((AnilistMedia m) => m.GetHighestEpisode())" Class="text-nowrap">
 				Episode Count
 			</MudTableSortLabel>
 		</MudTh>
 		<MudTh>
-			<MudTableSortLabel SortBy="@((Media m) => m.GetTotalDuration())">
+			<MudTableSortLabel SortBy="@((AnilistMedia m) => m.GetTotalDuration())">
 				Duration
 			</MudTableSortLabel>
 		</MudTh>
 		<MudTh>
-			<MudTableSortLabel SortBy="@((Media m) => m.AverageScore)" Class="text-nowrap">
+			<MudTableSortLabel SortBy="@((AnilistMedia m) => m.AverageScore)" Class="text-nowrap">
 				Average Score
 			</MudTableSortLabel>
 		</MudTh>
 		<MudTh>
-			<MudTableSortLabel SortBy="@((Media m) => m.Popularity)">
+			<MudTableSortLabel SortBy="@((AnilistMedia m) => m.Popularity)">
 				Popularity
 			</MudTableSortLabel>
 		</MudTh>
 		<MudTh>
-			<MudTableSortLabel SortBy="@((Media m) => m.StartDate!.Year)" Class="text-nowrap">
+			<MudTableSortLabel SortBy="@((AnilistMedia m) => m.StartDate!.Year)" Class="text-nowrap">
 				Start Year
 			</MudTableSortLabel>
 		</MudTh>

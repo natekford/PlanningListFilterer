@@ -2,7 +2,7 @@
 
 namespace BlazorTest.Models;
 
-public sealed record MediaTag(
+public sealed record AnilistMediaTag(
 	[property: JsonPropertyName("name")]
 	string Name,
 	[property: JsonPropertyName("rank")]

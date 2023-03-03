@@ -1,6 +1,6 @@
 ﻿namespace BlazorTest.Models;
 
-public enum MediaStatus
+public enum AnilistMediaStatus
 {
 	FINISHED,
 	RELEASING,

@@ -2,7 +2,7 @@
 
 namespace BlazorTest.Models;
 
-public sealed record StartDate(
+public sealed record AnilistStartDate(
 	[property: JsonPropertyName("year")]
 	int? Year
 );

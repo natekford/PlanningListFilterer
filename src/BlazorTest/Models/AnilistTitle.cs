@@ -2,7 +2,7 @@
 
 namespace BlazorTest.Models;
 
-public sealed record Title(
+public sealed record AnilistTitle(
 	[property: JsonPropertyName("userPreferred")]
 	string UserPreferred
 );

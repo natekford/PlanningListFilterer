@@ -7,8 +7,8 @@ namespace BlazorTest.Pages;
 
 public partial class AnilistPlanning
 {
-	public List<Media> Entries { get; set; } = new();
-	public MediaSearch Search { get; set; } = new(Enumerable.Empty<Media>());
+	public List<AnilistMedia> Entries { get; set; } = new();
+	public MediaSearch Search { get; set; } = new(Enumerable.Empty<AnilistMedia>());
 	public string? Username { get; set; }
 
 	public async Task LoadEntries()
@@ -24,7 +24,7 @@ public partial class AnilistPlanning
 
 		Entries = response.Data.MediaListCollection.Lists
 			.SelectMany(l => l.Entries.Select(e => e.Media))
-			.Where(x => x?.Status == MediaStatus.FINISHED)
+			.Where(x => x?.Status == AnilistMediaStatus.FINISHED)
 			.OrderBy(x => x.Id)
 			.ToList();
 
@@ -33,12 +33,12 @@ public partial class AnilistPlanning
 
 	public sealed class MediaSearch
 	{
-		private readonly IEnumerable<Media> _Media;
+		private readonly IEnumerable<AnilistMedia> _Media;
 
-		public ImmutableArray<MediaFormat> AllowedFormats { get; private set; } = ImmutableArray<MediaFormat>.Empty;
+		public ImmutableArray<AnilistMediaFormat> AllowedFormats { get; private set; } = ImmutableArray<AnilistMediaFormat>.Empty;
 		public ImmutableArray<string> AllowedGenres { get; private set; } = ImmutableArray<string>.Empty;
 		public ImmutableArray<string> AllowedTags { get; private set; } = ImmutableArray<string>.Empty;
-		public ImmutableHashSet<MediaFormat> Formats { get; set; } = ImmutableHashSet<MediaFormat>.Empty;
+		public ImmutableHashSet<AnilistMediaFormat> Formats { get; set; } = ImmutableHashSet<AnilistMediaFormat>.Empty;
 		public ImmutableHashSet<string> Genres { get; set; } = ImmutableHashSet<string>.Empty;
 		public bool IsModalActive { get; private set; }
 		public int? MaximumDuration { get; private set; }
@@ -47,12 +47,12 @@ public partial class AnilistPlanning
 		public int? MinimumYear { get; private set; }
 		public ImmutableHashSet<string> Tags { get; set; } = ImmutableHashSet<string>.Empty;
 
-		public MediaSearch(IEnumerable<Media> media)
+		public MediaSearch(IEnumerable<AnilistMedia> media)
 		{
 			_Media = media;
 		}
 
-		public static async Task<MediaSearch> CreateAsync(IEnumerable<Media> media)
+		public static async Task<MediaSearch> CreateAsync(IEnumerable<AnilistMedia> media)
 		{
 			var vm = new MediaSearch(media);
 			await vm.UpdateVisibilityAsync().ConfigureAwait(false);
@@ -61,7 +61,7 @@ public partial class AnilistPlanning
 
 		public Task Clear()
 		{
-			Formats = ImmutableHashSet<MediaFormat>.Empty;
+			Formats = ImmutableHashSet<AnilistMediaFormat>.Empty;
 			Genres = ImmutableHashSet<string>.Empty;
 			Tags = ImmutableHashSet<string>.Empty;
 			MaximumDuration = null;
@@ -71,7 +71,7 @@ public partial class AnilistPlanning
 			return UpdateVisibilityAsync();
 		}
 
-		public Task SetFormats(IEnumerable<MediaFormat> formats)
+		public Task SetFormats(IEnumerable<AnilistMediaFormat> formats)
 		{
 			Formats = formats.ToImmutableHashSet();
 			return UpdateVisibilityAsync();
@@ -118,14 +118,14 @@ public partial class AnilistPlanning
 
 		public async Task UpdateVisibilityAsync()
 		{
-			var formats = new HashSet<MediaFormat>();
+			var formats = new HashSet<AnilistMediaFormat>();
 			var genres = new HashSet<string>();
 			var tags = new HashSet<string>();
 
 			foreach (var media in _Media)
 			{
 				// visbility doesn't matter for formats
-				if (media.Format is MediaFormat format)
+				if (media.Format is AnilistMediaFormat format)
 				{
 					formats.Add(format);
 				}
@@ -154,7 +154,7 @@ public partial class AnilistPlanning
 			AllowedTags = tags.OrderBy(x => x).ToImmutableArray();
 		}
 
-		private bool GetUpdatedVisibility(Media media)
+		private bool GetUpdatedVisibility(AnilistMedia media)
 		{
 			if (media.StartDate?.Year is int year
 				&& (year < MinimumYear || year > MaximumYear))
@@ -166,7 +166,7 @@ public partial class AnilistPlanning
 			{
 				return false;
 			}
-			if (media.Format is MediaFormat format
+			if (media.Format is AnilistMediaFormat format
 				&& Formats.Count > 0 && !Formats.Contains(format))
 			{
 				return false;

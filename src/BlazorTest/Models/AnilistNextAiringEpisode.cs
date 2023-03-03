@@ -2,7 +2,7 @@
 
 namespace BlazorTest.Models;
 
-public sealed record NextAiringEpisode(
+public sealed record AnilistNextAiringEpisode(
 	[property: JsonPropertyName("episode")]
 	int Episode
 );
