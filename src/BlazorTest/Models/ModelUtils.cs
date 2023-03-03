@@ -40,6 +40,19 @@ public static class ModelUtils
 		return $"{score}%";
 	}
 
+	public static string DisplayStart(this AnilistMedia media)
+	{
+		var year = media.StartDate?.Year;
+		if (!year.HasValue)
+		{
+			return NO_VALUE;
+		}
+
+		var month = media.StartDate!.Month;
+		var format = month.HasValue ? "yyyy MMM" : "yyyy";
+		return media.StartDate!.Start!.Value.ToString(format);
+	}
+
 	public static string DisplayTag(this AnilistMediaTag tag)
 	{
 		var name = tag.Name;
@@ -54,16 +67,6 @@ public static class ModelUtils
 	{
 		var tags = media.Tags.Select(x => x.DisplayTag());
 		return DisplayExpandable(tags, expanded);
-	}
-
-	public static string DisplayYear(this AnilistMedia media)
-	{
-		var year = media.StartDate?.Year;
-		if (!year.HasValue)
-		{
-			return NO_VALUE;
-		}
-		return year.Value.ToString();
 	}
 
 	public static int? GetHighestEpisode(this AnilistMedia media)

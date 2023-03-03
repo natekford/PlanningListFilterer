@@ -24,10 +24,10 @@ public partial class AnilistPlanning
 	public async Task LoadEntries()
 	{
 #if false
-		var response = await AnilistResponse.GetAnilistResponseAsync(Http, username!).ConfigureAwait(false);
+		var response = await AnilistResponse.GetAnilistResponseAsync(Http, Username!).ConfigureAwait(false);
 #else
 		var response = (await Http.GetFromJsonAsync<AnilistResponse>(
-			requestUri: "sample-data/anilistresponse.json?a=1",
+			requestUri: "sample-data/anilistresponse.json?a=2",
 			options: AnilistResponse.JsonOptions
 		).ConfigureAwait(false))!;
 #endif
@@ -52,13 +52,13 @@ public sealed class MediaSearch
 	public ImmutableArray<string> AllowedFormats { get; private set; } = ImmutableArray<string>.Empty;
 	public ImmutableArray<string> AllowedGenres { get; private set; } = ImmutableArray<string>.Empty;
 	public ImmutableArray<string> AllowedTags { get; private set; } = ImmutableArray<string>.Empty;
-	public ImmutableHashSet<string> Formats { get; set; } = ImmutableHashSet<string>.Empty;
-	public ImmutableHashSet<string> Genres { get; set; } = ImmutableHashSet<string>.Empty;
+	public ImmutableHashSet<string> Formats { get; private set; } = ImmutableHashSet<string>.Empty;
+	public ImmutableHashSet<string> Genres { get; private set; } = ImmutableHashSet<string>.Empty;
 	public int? MaximumDuration { get; private set; }
 	public int? MaximumYear { get; private set; }
 	public int? MinimumDuration { get; private set; }
 	public int? MinimumYear { get; private set; }
-	public ImmutableHashSet<string> Tags { get; set; } = ImmutableHashSet<string>.Empty;
+	public ImmutableHashSet<string> Tags { get; private set; } = ImmutableHashSet<string>.Empty;
 
 	public MediaSearch(IEnumerable<AnilistMedia> media)
 	{

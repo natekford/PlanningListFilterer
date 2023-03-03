@@ -33,7 +33,8 @@ public sealed record AnilistResponse(
 						averageScore
 						popularity
 						startDate {
-							year
+							year,
+							month
 						}
 						genres
 						tags {

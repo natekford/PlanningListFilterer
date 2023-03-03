@@ -62,8 +62,8 @@
 			</MudTableSortLabel>
 		</MudTh>
 		<MudTh>
-			<MudTableSortLabel SortBy="@((AnilistMedia m) => m.StartDate!.Year)" Class="text-nowrap">
-				Start Year
+			<MudTableSortLabel SortBy="@((AnilistMedia m) => m.StartDate?.Start)" Class="text-nowrap">
+				Release Date
 			</MudTableSortLabel>
 		</MudTh>
 		<MudTh>Genres</MudTh>
@@ -81,7 +81,7 @@
 		<MudTd Class="text-nowrap">@entry.DisplayDuration()</MudTd>
 		<MudTd>@entry.DisplayScore()</MudTd>
 		<MudTd>@entry.Popularity</MudTd>
-		<MudTd>@entry.DisplayYear()</MudTd>
+		<MudTd>@entry.DisplayStart()</MudTd>
 		<MudTd>
 			<MudExpansionPanel Class="bg-transparent"
 				Text="@entry.DisplayGenres(expanded: false)"
