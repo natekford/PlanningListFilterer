@@ -29,8 +29,4 @@ public sealed record AnilistMedia(
 	IReadOnlyList<string> Genres,
 	[property: JsonPropertyName("tags")]
 	IReadOnlyList<AnilistMediaTag> Tags
-)
-{
-	[JsonIgnore]
-	public bool IsEntryVisible { get; set; } = true;
-}
+);

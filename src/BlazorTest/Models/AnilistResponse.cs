@@ -4,7 +4,5 @@ namespace BlazorTest.Models;
 
 public sealed record AnilistResponse(
 	[property: JsonPropertyName("data")]
-	AnilistData Data,
-	[property: JsonPropertyName("receivedAt")]
-	DateTime ReceivedAt
+	AnilistData Data
 );

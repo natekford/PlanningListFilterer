@@ -27,42 +27,42 @@
 	</ToolBarContent>
 	<HeaderContent>
 		<MudTh>
-			<MudTableSortLabel SortBy="@((AnilistMedia m) => m.Id)">
+			<MudTableSortLabel SortBy="@((AnilistViewModel m) => m.Id)">
 				Id
 			</MudTableSortLabel>
 		</MudTh>
 		<MudTh>
-			<MudTableSortLabel SortBy="@((AnilistMedia m) => m.Title.UserPreferred)">
+			<MudTableSortLabel SortBy="@((AnilistViewModel m) => m.Title)">
 				Name
 			</MudTableSortLabel>
 		</MudTh>
 		<MudTh>
-			<MudTableSortLabel SortBy="@((AnilistMedia m) => m.Format.ToString())">
+			<MudTableSortLabel SortBy="@((AnilistViewModel m) => m.Format.ToString())">
 				Format
 			</MudTableSortLabel>
 		</MudTh>
 		<MudTh>
-			<MudTableSortLabel SortBy="@((AnilistMedia m) => m.GetHighestEpisode())" Class="text-nowrap">
+			<MudTableSortLabel SortBy="@((AnilistViewModel m) => m.GetHighestEpisode())" Class="text-nowrap">
 				Episode Count
 			</MudTableSortLabel>
 		</MudTh>
 		<MudTh>
-			<MudTableSortLabel SortBy="@((AnilistMedia m) => m.GetTotalDuration())">
+			<MudTableSortLabel SortBy="@((AnilistViewModel m) => m.GetTotalDuration())">
 				Duration
 			</MudTableSortLabel>
 		</MudTh>
 		<MudTh>
-			<MudTableSortLabel SortBy="@((AnilistMedia m) => m.AverageScore)" Class="text-nowrap">
+			<MudTableSortLabel SortBy="@((AnilistViewModel m) => m.AverageScore)" Class="text-nowrap">
 				Average Score
 			</MudTableSortLabel>
 		</MudTh>
 		<MudTh>
-			<MudTableSortLabel SortBy="@((AnilistMedia m) => m.Popularity)">
+			<MudTableSortLabel SortBy="@((AnilistViewModel m) => m.Popularity)">
 				Popularity
 			</MudTableSortLabel>
 		</MudTh>
 		<MudTh>
-			<MudTableSortLabel SortBy="@((AnilistMedia m) => m.StartDate?.Start)" Class="text-nowrap">
+			<MudTableSortLabel SortBy="@((AnilistViewModel m) => m.Start)" Class="text-nowrap">
 				Release Date
 			</MudTableSortLabel>
 		</MudTh>
@@ -75,7 +75,7 @@
 				@entry.Id
 			</MudNavLink>
 		</MudTd>
-		<MudTd>@entry.Title.UserPreferred</MudTd>
+		<MudTd>@entry.Title</MudTd>
 		<MudTd>@entry.DisplayFormat()</MudTd>
 		<MudTd Class="text-nowrap">@entry.DisplayEpisodeCount()</MudTd>
 		<MudTd Class="text-nowrap">@entry.DisplayDuration()</MudTd>

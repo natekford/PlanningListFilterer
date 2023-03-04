@@ -44,7 +44,7 @@ public static class ModelUtils
 	public const string GRAPHQL_URL = "https://graphql.anilist.co";
 	public const string NO_VALUE = "N/A";
 
-	public static string DisplayDuration(this AnilistMedia media)
+	public static string DisplayDuration(this AnilistViewModel media)
 	{
 		var duration = media.GetTotalDuration();
 		if (!duration.HasValue)
@@ -54,7 +54,7 @@ public static class ModelUtils
 		return $"{duration} minute{(duration == 1 ? "" : "s")}";
 	}
 
-	public static string DisplayEpisodeCount(this AnilistMedia media)
+	public static string DisplayEpisodeCount(this AnilistViewModel media)
 	{
 		var count = media.GetHighestEpisode();
 		if (!count.HasValue)
@@ -64,13 +64,13 @@ public static class ModelUtils
 		return $"{count} episode{(count == 1 ? "" : "s")}";
 	}
 
-	public static string DisplayFormat(this AnilistMedia media)
+	public static string DisplayFormat(this AnilistViewModel media)
 		=> media.Format?.ToString() ?? NO_VALUE;
 
-	public static string DisplayGenres(this AnilistMedia media, bool expanded)
+	public static string DisplayGenres(this AnilistViewModel media, bool expanded)
 		=> DisplayExpandable(media.Genres, expanded);
 
-	public static string DisplayScore(this AnilistMedia media)
+	public static string DisplayScore(this AnilistViewModel media)
 	{
 		var score = media.AverageScore;
 		if (!score.HasValue)
@@ -80,32 +80,34 @@ public static class ModelUtils
 		return $"{score}%";
 	}
 
-	public static string DisplayStart(this AnilistMedia media)
+	public static string DisplayStart(this AnilistViewModel media)
 	{
-		var year = media.StartDate?.Year;
+		var year = media.StartYear;
 		if (!year.HasValue)
 		{
 			return NO_VALUE;
 		}
 
-		var month = media.StartDate!.Month;
+		var month = media.StartMonth;
 		var format = month.HasValue ? "yyyy MMM" : "yyyy";
-		return media.StartDate!.Start!.Value.ToString(format);
+		return media.Start!.Value.ToString(format);
 	}
 
-	public static string DisplayTag(this AnilistMediaTag tag)
+	public static string DisplayTag(this KeyValuePair<string, int> tag)
 	{
-		var name = tag.Name;
+		var name = tag.Key;
 		if (name is "Cute Girls Doing Cute Things")
 		{
 			name = "CGDCT";
 		}
-		return $"{name} ({tag.Rank}%)";
+		return $"{name} ({tag.Value}%)";
 	}
 
-	public static string DisplayTags(this AnilistMedia media, bool expanded)
+	public static string DisplayTags(this AnilistViewModel media, bool expanded)
 	{
-		var tags = media.Tags.Select(x => x.DisplayTag());
+		var tags = media.Tags
+			.OrderByDescending(x => x.Value)
+			.Select(x => x.DisplayTag());
 		return DisplayExpandable(tags, expanded);
 	}
 
@@ -139,35 +141,26 @@ public static class ModelUtils
 		using var response = await http.SendAsync(request).ConfigureAwait(false);
 		using var stream = await response.Content.ReadAsStreamAsync().ConfigureAwait(false);
 
-		var temp = await JsonSerializer.DeserializeAsync<AnilistResponse>(
+		return (await JsonSerializer.DeserializeAsync<AnilistResponse>(
 			utf8Json: stream
-		).ConfigureAwait(false);
-		return temp! with
-		{
-			ReceivedAt = DateTime.UtcNow
-		};
+		).ConfigureAwait(false))!;
 	}
 
 	public static async Task<AnilistResponse> GetAnilistSampleAsync(
 		this HttpClient http)
 	{
-		var url = $"sample-data/anilistresponse.json?a={Guid.NewGuid()}";
-		var temp = await http.GetFromJsonAsync<AnilistResponse>(
-			requestUri: url
-		).ConfigureAwait(false);
-		return temp! with
-		{
-			ReceivedAt = DateTime.UtcNow
-		};
+		return (await http.GetFromJsonAsync<AnilistResponse>(
+			requestUri: $"sample-data/anilistresponse.json?a={Guid.NewGuid()}"
+		).ConfigureAwait(false))!;
 	}
 
-	public static int? GetHighestEpisode(this AnilistMedia media)
-		=> media.Episodes ?? media.NextAiringEpisode?.Episode;
+	public static int? GetHighestEpisode(this AnilistViewModel media)
+		=> media.Episodes ?? media.NextAiringEpisode;
 
-	public static int? GetTotalDuration(this AnilistMedia media)
+	public static int? GetTotalDuration(this AnilistViewModel media)
 		=> media.GetHighestEpisode() * media.Duration;
 
-	public static string GetUrl(this AnilistMedia media)
+	public static string GetUrl(this AnilistViewModel media)
 		=> $"https://anilist.co/anime/{media.Id}/";
 
 	private static string DisplayExpandable(this IEnumerable<string> items, bool expanded)

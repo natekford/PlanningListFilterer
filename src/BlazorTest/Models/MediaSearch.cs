@@ -4,7 +4,7 @@ namespace BlazorTest.Models;
 
 public sealed class MediaSearch
 {
-	private readonly IEnumerable<AnilistMedia> _Media;
+	private readonly IEnumerable<AnilistViewModel> _Media;
 
 	public ImmutableArray<string> AllowedFormats { get; private set; } = ImmutableArray<string>.Empty;
 	public ImmutableArray<string> AllowedGenres { get; private set; } = ImmutableArray<string>.Empty;
@@ -17,12 +17,12 @@ public sealed class MediaSearch
 	public int? MinimumYear { get; private set; }
 	public ImmutableHashSet<string> Tags { get; private set; } = ImmutableHashSet<string>.Empty;
 
-	public MediaSearch(IEnumerable<AnilistMedia> media)
+	public MediaSearch(IEnumerable<AnilistViewModel> media)
 	{
 		_Media = media;
 	}
 
-	public static async Task<MediaSearch> CreateAsync(IEnumerable<AnilistMedia> media)
+	public static async Task<MediaSearch> CreateAsync(IEnumerable<AnilistViewModel> media)
 	{
 		var vm = new MediaSearch(media);
 		await vm.UpdateVisibilityAsync().ConfigureAwait(false);
@@ -83,9 +83,9 @@ public sealed class MediaSearch
 		return UpdateVisibilityAsync();
 	}
 
-	private bool GetUpdatedVisibility(AnilistMedia media)
+	private bool GetUpdatedVisibility(AnilistViewModel media)
 	{
-		if (media.StartDate?.Year is int year
+		if (media.StartYear is int year
 			&& (year < MinimumYear || year > MaximumYear))
 		{
 			return false;
@@ -109,7 +109,7 @@ public sealed class MediaSearch
 		}
 		foreach (var tag in Tags)
 		{
-			if (!media.Tags.Any(x => x.Name == tag))
+			if (!media.Tags.ContainsKey(tag))
 			{
 				return false;
 			}
@@ -143,7 +143,7 @@ public sealed class MediaSearch
 			}
 			foreach (var tag in media.Tags)
 			{
-				tags.Add(tag.Name);
+				tags.Add(tag.Key);
 			}
 
 			// await so the UI is more responsive

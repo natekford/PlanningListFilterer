@@ -2,13 +2,15 @@
 
 using MudBlazor;
 
+using System.Diagnostics;
+
 namespace BlazorTest.Pages;
 
 public partial class AnilistPlanning
 {
-	public List<AnilistMedia> Entries { get; set; } = new();
+	public List<AnilistViewModel> Entries { get; set; } = new();
 	public bool IsSearchVisible { get; set; }
-	public MediaSearch Search { get; set; } = new(Enumerable.Empty<AnilistMedia>());
+	public MediaSearch Search { get; set; } = new(Enumerable.Empty<AnilistViewModel>());
 	public DialogOptions SearchDialogOptions { get; set; } = new()
 	{
 		FullWidth = true,
@@ -26,20 +28,22 @@ public partial class AnilistPlanning
 		}
 
 		var key = Username.ToLower();
-		var response = await LocalStorage.GetItemAsync<AnilistResponse>(key).ConfigureAwait(false);
-		if (response is null
-			|| (DateTime.UtcNow - response.ReceivedAt) > TimeSpan.FromMinutes(15))
+		var list = await LocalStorage.GetItemAsync<AnilistViewModelList>(key).ConfigureAwait(false);
+		if (list is null
+			|| (DateTime.UtcNow - list.SavedAt) > TimeSpan.FromMinutes(15))
 		{
-			response = await Http.GetAnilistAsync(Username).ConfigureAwait(false);
-			await LocalStorage.SetItemAsync(key, response).ConfigureAwait(false);
+			var response = await Http.GetAnilistAsync(Username).ConfigureAwait(false);
+			var entries = response.Data.MediaListCollection.Lists
+				.SelectMany(l => l.Entries.Select(e => AnilistViewModel.FromMedia(e.Media)))
+				.Where(x => x?.Status == AnilistMediaStatus.FINISHED)
+				.OrderBy(x => x.Id)
+				.ToList();
+			list = new(entries, DateTime.UtcNow);
+
+			await LocalStorage.SetItemAsync(key, list).ConfigureAwait(false);
 		}
 
-		Entries = response.Data.MediaListCollection.Lists
-			.SelectMany(l => l.Entries.Select(e => e.Media))
-			.Where(x => x?.Status == AnilistMediaStatus.FINISHED)
-			.OrderBy(x => x.Id)
-			.ToList();
-
+		Entries = list.Entries;
 		Search = await MediaSearch.CreateAsync(Entries).ConfigureAwait(false);
 	}
 
