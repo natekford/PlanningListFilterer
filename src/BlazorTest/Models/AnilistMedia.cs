@@ -8,8 +8,10 @@ public sealed record AnilistMedia(
 	[property: JsonPropertyName("title")]
 	AnilistTitle Title,
 	[property: JsonPropertyName("status")]
+	[property: JsonConverter(typeof(JsonStringEnumConverter))]
 	AnilistMediaStatus? Status,
 	[property: JsonPropertyName("format")]
+	[property: JsonConverter(typeof(JsonStringEnumConverter))]
 	AnilistMediaFormat? Format,
 	[property: JsonPropertyName("episodes")]
 	int? Episodes,

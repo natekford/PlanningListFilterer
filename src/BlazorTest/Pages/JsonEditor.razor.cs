@@ -3,9 +3,6 @@ using Json.Schema;
 
 using Microsoft.JSInterop;
 
-using MudBlazor.Extensions;
-
-using System.Collections;
 using System.Net.Http.Json;
 using System.Text.Json;
 using System.Text.Json.Nodes;

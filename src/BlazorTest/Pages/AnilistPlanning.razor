@@ -1,5 +1,6 @@
 ﻿@page "/anilistplanning"
 @inject HttpClient Http
+@inject ILocalStorageService LocalStorage
 
 <PageTitle>Planning List Sorter</PageTitle>
 
@@ -7,8 +8,7 @@
 
 <div class="row p-3">
 	<MudTextField Class="col-11" Placeholder="Enter a username to get entries from..." 
-		@bind-Value="@Username" 
-	/>
+		@bind-Value="@Username" />
 	<MudButton Class="col-1" Color="Color.Primary" OnClick="@LoadEntries">
 		Load Entries
 	</MudButton>
