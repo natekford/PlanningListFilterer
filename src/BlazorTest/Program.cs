@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 
 using MudBlazor.Services;
 using Blazored.LocalStorage;
+using System.Text.Json.Serialization;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");
@@ -18,6 +19,9 @@ builder.Services.AddScoped(_ =>
 	};
 });
 builder.Services.AddMudServices();
-builder.Services.AddBlazoredLocalStorage();
+builder.Services.AddBlazoredLocalStorage(config =>
+{
+	config.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingDefault;
+});
 
 await builder.Build().RunAsync().ConfigureAwait(false);

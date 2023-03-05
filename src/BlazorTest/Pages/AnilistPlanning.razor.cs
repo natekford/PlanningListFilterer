@@ -27,12 +27,16 @@ public partial class AnilistPlanning
 			return;
 		}
 
+		var sw = Stopwatch.StartNew();
+
 		var key = Username.ToLower();
 		var list = await LocalStorage.GetItemAsync<AnilistViewModelList>(key).ConfigureAwait(false);
+		Console.WriteLine($"{sw.ElapsedMilliseconds}ms: Retrieved Cached");
 		if (list is null
 			|| (DateTime.UtcNow - list.SavedAt) > TimeSpan.FromMinutes(15))
 		{
 			var response = await Http.GetAnilistAsync(Username).ConfigureAwait(false);
+			Console.WriteLine($"{sw.ElapsedMilliseconds}ms: Retrieved External");
 			var entries = response.Data.MediaListCollection.Lists
 				.SelectMany(l => l.Entries.Select(e => AnilistViewModel.FromMedia(e.Media)))
 				.Where(x => x?.Status == AnilistMediaStatus.FINISHED)
@@ -41,6 +45,7 @@ public partial class AnilistPlanning
 			list = new(entries, DateTime.UtcNow);
 
 			await LocalStorage.SetItemAsync(key, list).ConfigureAwait(false);
+			Console.WriteLine($"{sw.ElapsedMilliseconds}ms: Saved");
 		}
 
 		Entries = list.Entries;
