@@ -12,11 +12,10 @@ public partial class AnilistPlanning
 	private static readonly TimeSpan ListTimeout = TimeSpan.FromMinutes(15);
 	private static readonly Random Random = new();
 
-	private readonly MudTableSortLabel<AnilistModel> RandomSort;
-	private int RandomId;
-
 	public List<AnilistModel> Entries { get; set; } = new();
 	public bool IsSearchVisible { get; set; }
+	public int RandomId { get; private set; }
+	public MudTableSortLabel<AnilistModel> RandomSort { get; }
 	public AnilistSearch Search { get; set; } = new(Enumerable.Empty<AnilistModel>());
 	public DialogOptions SearchDialogOptions { get; set; } = new()
 	{
@@ -58,6 +57,7 @@ public partial class AnilistPlanning
 		catch (Exception e)
 		{
 			Console.WriteLine($"Exception when retrieving cached list for {key}:\n{e}");
+			await LocalStorage.RemoveItemAsync(key).ConfigureAwait(false);
 		}
 
 		if (list is null || (DateTime.UtcNow - list.SavedAt) > ListTimeout)
@@ -81,10 +81,11 @@ public partial class AnilistPlanning
 
 	public void RandomizeTable()
 	{
+		var visibleEntries = Entries.Where(x => x.IsEntryVisible).ToList();
 		int id;
 		do
 		{
-			id = Entries[Random.Next(0, Entries.Count)].Id;
+			id = visibleEntries[Random.Next(0, visibleEntries.Count)].Id;
 		} while (id == RandomId);
 		RandomId = id;
 		Table.Context.SetSortFunc(RandomSort);

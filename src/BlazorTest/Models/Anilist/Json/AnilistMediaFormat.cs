@@ -6,5 +6,6 @@ public enum AnilistMediaFormat
 	TV_SHORT,
 	MOVIE,
 	ONA,
-	OVA
+	OVA,
+	SPECIAL
 }
