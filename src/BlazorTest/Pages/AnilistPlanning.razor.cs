@@ -11,9 +11,9 @@ public partial class AnilistPlanning
 {
 	private static readonly TimeSpan ListTimeout = TimeSpan.FromMinutes(15);
 
-	public List<AnilistViewModel> Entries { get; set; } = new();
+	public List<AnilistModel> Entries { get; set; } = new();
 	public bool IsSearchVisible { get; set; }
-	public MediaSearch Search { get; set; } = new(Enumerable.Empty<AnilistViewModel>());
+	public AnilistSearch Search { get; set; } = new(Enumerable.Empty<AnilistModel>());
 	public DialogOptions SearchDialogOptions { get; set; } = new()
 	{
 		FullWidth = true,
@@ -33,10 +33,10 @@ public partial class AnilistPlanning
 		var sw = Stopwatch.StartNew();
 
 		var key = Username.ToLower();
-		var list = default(AnilistViewModelList);
+		var list = default(AnilistCollection);
 		try
 		{
-			list = await LocalStorage.GetItemAsync<AnilistViewModelList>(key).ConfigureAwait(false);
+			list = await LocalStorage.GetItemAsync<AnilistCollection>(key).ConfigureAwait(false);
 			Console.WriteLine($"{sw.ElapsedMilliseconds}ms: Retrieved Cached");
 		}
 		catch
@@ -48,7 +48,7 @@ public partial class AnilistPlanning
 			var response = await Http.GetAnilistAsync(Username).ConfigureAwait(false);
 			Console.WriteLine($"{sw.ElapsedMilliseconds}ms: Retrieved External");
 			var entries = response.Data.MediaListCollection.Lists
-				.SelectMany(l => l.Entries.Select(e => AnilistViewModel.FromMedia(e.Media)))
+				.SelectMany(l => l.Entries.Select(e => AnilistModel.Create(e.Media)))
 				.Where(x => x?.Status == AnilistMediaStatus.FINISHED)
 				.OrderBy(x => x.Id)
 				.ToList();
@@ -59,7 +59,7 @@ public partial class AnilistPlanning
 		}
 
 		Entries = list.Entries;
-		Search = await MediaSearch.CreateAsync(Entries).ConfigureAwait(false);
+		Search = await AnilistSearch.CreateAsync(Entries).ConfigureAwait(false);
 	}
 
 	public void ToggleSearchVisibility()

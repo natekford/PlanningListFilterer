@@ -5,7 +5,7 @@ using System.Text.Json.Serialization;
 
 namespace BlazorTest.Models.Anilist;
 
-public sealed record AnilistViewModel(
+public sealed record AnilistModel(
 	int Id,
 	string Title,
 	AnilistMediaStatus? Status,
@@ -36,7 +36,7 @@ public sealed record AnilistViewModel(
 		}
 	}
 
-	public static AnilistViewModel FromMedia(AnilistMedia media)
+	public static AnilistModel Create(AnilistMedia media)
 	{
 		return new(
 			Id: media.Id,

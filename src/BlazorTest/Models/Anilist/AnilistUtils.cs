@@ -45,7 +45,7 @@ public static class AnilistUtils
 	public const string GRAPHQL_URL = "https://graphql.anilist.co";
 	public const string NO_VALUE = "N/A";
 
-	public static string DisplayDuration(this AnilistViewModel media)
+	public static string DisplayDuration(this AnilistModel media)
 	{
 		var duration = media.GetTotalDuration();
 		if (!duration.HasValue)
@@ -55,7 +55,7 @@ public static class AnilistUtils
 		return $"{duration} minute{(duration == 1 ? "" : "s")}";
 	}
 
-	public static string DisplayEpisodeCount(this AnilistViewModel media)
+	public static string DisplayEpisodeCount(this AnilistModel media)
 	{
 		var count = media.GetHighestEpisode();
 		if (!count.HasValue)
@@ -65,13 +65,13 @@ public static class AnilistUtils
 		return $"{count} episode{(count == 1 ? "" : "s")}";
 	}
 
-	public static string DisplayFormat(this AnilistViewModel media)
+	public static string DisplayFormat(this AnilistModel media)
 		=> media.Format?.ToString() ?? NO_VALUE;
 
-	public static string DisplayGenres(this AnilistViewModel media, bool expanded)
+	public static string DisplayGenres(this AnilistModel media, bool expanded)
 		=> media.Genres.DisplayExpandable(expanded);
 
-	public static string DisplayScore(this AnilistViewModel media)
+	public static string DisplayScore(this AnilistModel media)
 	{
 		var score = media.AverageScore;
 		if (!score.HasValue)
@@ -81,7 +81,7 @@ public static class AnilistUtils
 		return $"{score}%";
 	}
 
-	public static string DisplayStart(this AnilistViewModel media)
+	public static string DisplayStart(this AnilistModel media)
 	{
 		var year = media.StartYear;
 		if (!year.HasValue)
@@ -104,7 +104,7 @@ public static class AnilistUtils
 		return $"{name} ({tag.Value}%)";
 	}
 
-	public static string DisplayTags(this AnilistViewModel media, bool expanded)
+	public static string DisplayTags(this AnilistModel media, bool expanded)
 	{
 		var tags = media.Tags
 			.OrderByDescending(x => x.Value)
@@ -155,13 +155,13 @@ public static class AnilistUtils
 		).ConfigureAwait(false))!;
 	}
 
-	public static int? GetHighestEpisode(this AnilistViewModel media)
+	public static int? GetHighestEpisode(this AnilistModel media)
 		=> media.Episodes ?? media.NextAiringEpisode;
 
-	public static int? GetTotalDuration(this AnilistViewModel media)
+	public static int? GetTotalDuration(this AnilistModel media)
 		=> media.GetHighestEpisode() * media.Duration;
 
-	public static string GetUrl(this AnilistViewModel media)
+	public static string GetUrl(this AnilistModel media)
 		=> $"https://anilist.co/anime/{media.Id}/";
 
 	private static string DisplayExpandable(this IEnumerable<string> items, bool expanded)
