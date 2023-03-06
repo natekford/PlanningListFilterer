@@ -8,6 +8,8 @@ namespace BlazorTest.Pages;
 
 public partial class AnilistPlanning
 {
+	private static readonly TimeSpan ListTimeout = TimeSpan.FromMinutes(15);
+
 	public List<AnilistViewModel> Entries { get; set; } = new();
 	public bool IsSearchVisible { get; set; }
 	public MediaSearch Search { get; set; } = new(Enumerable.Empty<AnilistViewModel>());
@@ -30,10 +32,17 @@ public partial class AnilistPlanning
 		var sw = Stopwatch.StartNew();
 
 		var key = Username.ToLower();
-		var list = await LocalStorage.GetItemAsync<AnilistViewModelList>(key).ConfigureAwait(false);
-		Console.WriteLine($"{sw.ElapsedMilliseconds}ms: Retrieved Cached");
-		if (list is null
-			|| (DateTime.UtcNow - list.SavedAt) > TimeSpan.FromMinutes(15))
+		var list = default(AnilistViewModelList);
+		try
+		{
+			list = await LocalStorage.GetItemAsync<AnilistViewModelList>(key).ConfigureAwait(false);
+			Console.WriteLine($"{sw.ElapsedMilliseconds}ms: Retrieved Cached");
+		}
+		catch
+		{
+		}
+
+		if (list is null || (DateTime.UtcNow - list.SavedAt) > ListTimeout)
 		{
 			var response = await Http.GetAnilistAsync(Username).ConfigureAwait(false);
 			Console.WriteLine($"{sw.ElapsedMilliseconds}ms: Retrieved External");
