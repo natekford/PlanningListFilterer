@@ -14,12 +14,16 @@
 	</MudButton>
 </div>
 
-<MudTable Dense="true" Hover="true" Bordered="true" Striped="true"
-	FixedHeader="true" FixedFooter="true" Height="700px"
-	Items="@Entries" Context="entry" Filter="@(x => x.IsEntryVisible)">
+<MudTable Dense="true" Hover="true" Bordered="true" Striped="true" AllowUnsorted="false"
+	FixedHeader="true" FixedFooter="true" Height="700px" Context="entry"
+	Items="@Entries" Filter="@(x => x.IsEntryVisible)" @ref="Table">
 	<ToolBarContent>
 		<MudText Typo="Typo.h6">Planning To Watch</MudText>
 		<MudSpacer />
+		<MudButton Color="Color.Primary" OnClick="@RandomizeTable"
+			Disabled="@(Entries.Count == 0)">
+			Random
+		</MudButton>
 		<MudButton Color="Color.Primary" OnClick="@ToggleSearchVisibility"
 			Disabled="@(Entries.Count == 0)">
 			Search
@@ -27,7 +31,8 @@
 	</ToolBarContent>
 	<HeaderContent>
 		<MudTh>
-			<MudTableSortLabel SortBy="@((AnilistModel m) => m.Id)">
+			<MudTableSortLabel SortBy="@((AnilistModel m) => m.Id)"
+				InitialDirection="SortDirection.Ascending">
 				Id
 			</MudTableSortLabel>
 		</MudTh>

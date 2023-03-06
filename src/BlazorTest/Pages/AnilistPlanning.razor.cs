@@ -10,6 +10,10 @@ namespace BlazorTest.Pages;
 public partial class AnilistPlanning
 {
 	private static readonly TimeSpan ListTimeout = TimeSpan.FromMinutes(15);
+	private static readonly Random Random = new();
+
+	private readonly MudTableSortLabel<AnilistModel> RandomSort;
+	private int RandomId;
 
 	public List<AnilistModel> Entries { get; set; } = new();
 	public bool IsSearchVisible { get; set; }
@@ -21,7 +25,19 @@ public partial class AnilistPlanning
 		MaxWidth = MaxWidth.Large,
 		Position = DialogPosition.Center,
 	};
+	public MudTable<AnilistModel> Table { get; set; } = null!;
 	public string? Username { get; set; } = "advorange";
+
+	public AnilistPlanning()
+	{
+		RandomSort = new()
+		{
+#pragma warning disable BL0005 // Component parameter should not be set outside of its component.
+			SortDirection = SortDirection.Ascending,
+			SortBy = x => x.Id <= RandomId,
+#pragma warning restore BL0005 // Component parameter should not be set outside of its component.
+		};
+	}
 
 	public async Task LoadEntries()
 	{
@@ -39,8 +55,9 @@ public partial class AnilistPlanning
 			list = await LocalStorage.GetItemAsync<AnilistCollection>(key).ConfigureAwait(false);
 			Console.WriteLine($"{sw.ElapsedMilliseconds}ms: Retrieved Cached");
 		}
-		catch
+		catch (Exception e)
 		{
+			Console.WriteLine($"Exception when retrieving cached list for {key}:\n{e}");
 		}
 
 		if (list is null || (DateTime.UtcNow - list.SavedAt) > ListTimeout)
@@ -60,6 +77,17 @@ public partial class AnilistPlanning
 
 		Entries = list.Entries;
 		Search = await AnilistSearch.CreateAsync(Entries).ConfigureAwait(false);
+	}
+
+	public void RandomizeTable()
+	{
+		int id;
+		do
+		{
+			id = Entries[Random.Next(0, Entries.Count)].Id;
+		} while (id == RandomId);
+		RandomId = id;
+		Table.Context.SetSortFunc(RandomSort);
 	}
 
 	public void ToggleSearchVisibility()
