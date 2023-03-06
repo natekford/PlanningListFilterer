@@ -1,4 +1,4 @@
-﻿namespace BlazorTest.Models;
+﻿namespace BlazorTest.Models.Anilist.Json;
 
 public enum AnilistMediaStatus
 {

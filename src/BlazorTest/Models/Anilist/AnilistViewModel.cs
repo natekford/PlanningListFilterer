@@ -1,12 +1,9 @@
-﻿using System.Collections.Immutable;
+﻿using BlazorTest.Models.Anilist.Json;
+
+using System.Collections.Immutable;
 using System.Text.Json.Serialization;
 
-namespace BlazorTest.Models;
-
-public sealed record AnilistViewModelList(
-	List<AnilistViewModel> Entries,
-	DateTime SavedAt
-);
+namespace BlazorTest.Models.Anilist;
 
 public sealed record AnilistViewModel(
 	int Id,

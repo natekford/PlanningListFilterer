@@ -2,10 +2,11 @@
 using System.Text.Json;
 using System.Text;
 using System.Net.Http.Json;
+using BlazorTest.Models.Anilist.Json;
 
-namespace BlazorTest.Models;
+namespace BlazorTest.Models.Anilist;
 
-public static class ModelUtils
+public static class AnilistUtils
 {
 	public const string GRAPHQL_QUERY = @"
 	query ($username: String) {
@@ -68,7 +69,7 @@ public static class ModelUtils
 		=> media.Format?.ToString() ?? NO_VALUE;
 
 	public static string DisplayGenres(this AnilistViewModel media, bool expanded)
-		=> DisplayExpandable(media.Genres, expanded);
+		=> media.Genres.DisplayExpandable(expanded);
 
 	public static string DisplayScore(this AnilistViewModel media)
 	{
@@ -108,7 +109,7 @@ public static class ModelUtils
 		var tags = media.Tags
 			.OrderByDescending(x => x.Value)
 			.Select(x => x.DisplayTag());
-		return DisplayExpandable(tags, expanded);
+		return tags.DisplayExpandable(expanded);
 	}
 
 	public static async Task<AnilistResponse> GetAnilistAsync(
@@ -120,7 +121,7 @@ public static class ModelUtils
 			query = GRAPHQL_QUERY,
 			variables = new
 			{
-				username = username,
+				username,
 			}
 		});
 		var content = new StringContent(

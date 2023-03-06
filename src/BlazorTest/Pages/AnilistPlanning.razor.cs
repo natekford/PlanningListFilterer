@@ -1,4 +1,5 @@
-﻿using BlazorTest.Models;
+﻿using BlazorTest.Models.Anilist;
+using BlazorTest.Models.Anilist.Json;
 
 using MudBlazor;
 
