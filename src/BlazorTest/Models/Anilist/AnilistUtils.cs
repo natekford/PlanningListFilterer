@@ -65,14 +65,14 @@ public static class AnilistUtils
 		{
 			return NO_VALUE;
 		}
-		return $"{count} episode{(count == 1 ? "" : "s")}";
+		return count.Value.ToString();
 	}
 
 	public static string DisplayFormat(this AnilistModel media)
 		=> media.Format?.ToString() ?? NO_VALUE;
 
-	public static string DisplayGenres(this AnilistModel media, bool expanded)
-		=> media.Genres.DisplayExpandable(expanded);
+	public static string DisplayGenres(this AnilistModel media)
+		=> media.Genres.DisplayStrings();
 
 	public static string DisplayScore(this AnilistModel media)
 	{
@@ -107,12 +107,16 @@ public static class AnilistUtils
 		return $"{name} ({tag.Value}%)";
 	}
 
-	public static string DisplayTags(this AnilistModel media, bool expanded)
+	public static string DisplayTags(this IEnumerable<KeyValuePair<string, int>> tags)
+		=> tags.Select(x => x.DisplayTag()).DisplayStrings();
+
+	public static string DisplayTags(this AnilistModel media, int skip, int count)
 	{
-		var tags = media.Tags
+		return media.Tags
 			.OrderByDescending(x => x.Value)
-			.Select(x => x.DisplayTag());
-		return tags.DisplayExpandable(expanded);
+			.Skip(skip)
+			.Take(count)
+			.DisplayTags();
 	}
 
 	public static async Task<AnilistResponse> GetAnilistAsync(
@@ -167,17 +171,12 @@ public static class AnilistUtils
 	public static string GetUrl(this AnilistModel media)
 		=> $"https://anilist.co/anime/{media.Id}/";
 
-	private static string DisplayExpandable(this IEnumerable<string> items, bool expanded)
+	private static string DisplayStrings(this IEnumerable<string> items)
 	{
 		if (!items.Any())
 		{
 			return NO_VALUE;
 		}
-
-		if (expanded)
-		{
-			return string.Join(Environment.NewLine, items.Skip(1));
-		}
-		return items.First();
+		return string.Join(Environment.NewLine, items);
 	}
 }
