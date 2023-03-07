@@ -77,7 +77,7 @@
 	<RowTemplate>
 		<MudTd>
 			<MudNavLink Href="@entry.GetUrl()" Target="_blank">
-				@entry.Id
+				<MudImage Src="@entry.CoverImageUrl" ObjectFit="ObjectFit.Fill" />
 			</MudNavLink>
 		</MudTd>
 		<MudTd>@entry.Title</MudTd>
@@ -111,12 +111,12 @@
 	</PagerContent>
 </MudTable>
 
-<MudDialog @bind-IsVisible="IsSearchVisible" Options="SearchDialogOptions">
+<MudDialog @bind-IsVisible="IsSearchVisible" Options="@SearchDialogOptions">
 	<TitleContent>
 		<MudText Typo="Typo.h6">Search</MudText>
 	</TitleContent>
 	<DialogContent>
-		<div class="container overflow-hidden">
+		<div class="overflow-hidden">
 			<MudSelect Label="Genre Select" Variant="Variant.Outlined"
 				MultiSelection="true" Clearable="true"
 				T="string" SelectedValues="@Search.Genres"

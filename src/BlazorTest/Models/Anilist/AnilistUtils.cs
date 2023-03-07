@@ -31,6 +31,9 @@ public static class AnilistUtils
 							year,
 							month
 						}
+						coverImage {
+							medium
+						}
 						genres
 						tags {
 							name

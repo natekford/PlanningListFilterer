@@ -17,6 +17,7 @@ public sealed record AnilistModel(
 	int Popularity,
 	int? StartYear,
 	int? StartMonth,
+	string? CoverImageUrl,
 	ImmutableHashSet<string> Genres,
 	IReadOnlyDictionary<string, int> Tags
 )
@@ -50,6 +51,7 @@ public sealed record AnilistModel(
 			Popularity: media.Popularity,
 			StartYear: media.StartDate?.Year,
 			StartMonth: media.StartDate?.Month,
+			CoverImageUrl: media.CoverImage?.Medium,
 			Genres: media.Genres.ToImmutableHashSet(),
 			Tags: media.Tags.ToImmutableDictionary(x => x.Name, x => x.Rank)
 		);

@@ -25,6 +25,8 @@ public sealed record AnilistMedia(
 	int Popularity,
 	[property: JsonPropertyName("startDate")]
 	AnilistStartDate? StartDate,
+	[property: JsonPropertyName("coverImage")]
+	AnilistMediaCoverImage? CoverImage,
 	[property: JsonPropertyName("genres")]
 	IReadOnlyList<string> Genres,
 	[property: JsonPropertyName("tags")]

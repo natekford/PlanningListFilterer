@@ -9,34 +9,21 @@ namespace BlazorTest.Pages;
 
 public partial class AnilistPlanning
 {
-	private static readonly TimeSpan ListTimeout = TimeSpan.FromMinutes(15);
 	private static readonly Random Random = new();
 
 	public List<AnilistModel> Entries { get; set; } = new();
 	public bool IsSearchVisible { get; set; }
-	public int RandomId { get; private set; }
-	public MudTableSortLabel<AnilistModel> RandomSort { get; }
+	public int RandomId { get; set; }
 	public AnilistSearch Search { get; set; } = new(Enumerable.Empty<AnilistModel>());
 	public DialogOptions SearchDialogOptions { get; set; } = new()
 	{
 		FullWidth = true,
 		CloseOnEscapeKey = true,
-		MaxWidth = MaxWidth.Large,
+		MaxWidth = MaxWidth.Medium,
 		Position = DialogPosition.Center,
 	};
 	public MudTable<AnilistModel> Table { get; set; } = null!;
 	public string? Username { get; set; } = "advorange";
-
-	public AnilistPlanning()
-	{
-		RandomSort = new()
-		{
-#pragma warning disable BL0005 // Component parameter should not be set outside of its component.
-			SortDirection = SortDirection.Ascending,
-			SortBy = x => x.Id <= RandomId,
-#pragma warning restore BL0005 // Component parameter should not be set outside of its component.
-		};
-	}
 
 	public async Task LoadEntries()
 	{
@@ -60,16 +47,16 @@ public partial class AnilistPlanning
 			await LocalStorage.RemoveItemAsync(key).ConfigureAwait(false);
 		}
 
-		if (list is null || (DateTime.UtcNow - list.SavedAt) > ListTimeout)
+		if (list?.IsOutOfDate(TimeSpan.FromMinutes(15)) ?? true)
 		{
 			var response = await Http.GetAnilistAsync(Username).ConfigureAwait(false);
 			Console.WriteLine($"{sw.ElapsedMilliseconds}ms: Retrieved External");
 			var entries = response.Data.MediaListCollection.Lists
 				.SelectMany(l => l.Entries.Select(e => AnilistModel.Create(e.Media)))
-				.Where(x => x?.Status == AnilistMediaStatus.FINISHED)
+				.Where(x => x.Status == AnilistMediaStatus.FINISHED)
 				.OrderBy(x => x.Id)
 				.ToList();
-			list = new(entries, DateTime.UtcNow);
+			list = AnilistCollection.Create(entries);
 
 			await LocalStorage.SetItemAsync(key, list).ConfigureAwait(false);
 			Console.WriteLine($"{sw.ElapsedMilliseconds}ms: Saved");
@@ -87,8 +74,15 @@ public partial class AnilistPlanning
 		{
 			id = visibleEntries[Random.Next(0, visibleEntries.Count)].Id;
 		} while (id == RandomId);
+
 		RandomId = id;
-		Table.Context.SetSortFunc(RandomSort);
+		Table.Context.SetSortFunc(new()
+		{
+#pragma warning disable BL0005 // Component parameter should not be set outside of its component.
+			SortDirection = SortDirection.Ascending,
+			SortBy = x => x.Id <= RandomId,
+#pragma warning restore BL0005 // Component parameter should not be set outside of its component.
+		});
 	}
 
 	public void ToggleSearchVisibility()
