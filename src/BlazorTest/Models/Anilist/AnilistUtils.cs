@@ -140,30 +140,15 @@ public static class AnilistUtils
 		this HttpClient http,
 		string username)
 	{
-		var body = JsonSerializer.Serialize(new
+		var body = new
 		{
 			query = GRAPHQL_QUERY,
 			variables = new
 			{
 				username,
 			}
-		});
-		var content = new StringContent(
-			content: body,
-			encoding: Encoding.UTF8,
-			mediaType: MediaTypeNames.Application.Json
-		);
-
-		var request = new HttpRequestMessage(
-			method: HttpMethod.Post,
-			requestUri: GRAPHQL_URL
-		)
-		{
-			Content = content
 		};
-		request.Headers.Add("Accept", MediaTypeNames.Application.Json);
-
-		using var response = await http.SendAsync(request).ConfigureAwait(false);
+		using var response = await http.PostAsJsonAsync(GRAPHQL_URL, body).ConfigureAwait(false);
 		using var stream = await response.Content.ReadAsStreamAsync().ConfigureAwait(false);
 
 		return (await JsonSerializer.DeserializeAsync<AnilistResponse>(

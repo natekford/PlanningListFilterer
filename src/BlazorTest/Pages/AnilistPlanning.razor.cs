@@ -41,7 +41,7 @@ public partial class AnilistPlanning
 			catch
 			{
 				// json error or something, nothing we can do to save this
-				// try to receive new entry information from anilist
+				// retrieve new list from anilist
 			}
 		}
 
@@ -85,7 +85,7 @@ public partial class AnilistPlanning
 
 		var useCached = meta?.IsOutOfDate(TimeSpan.FromMinutes(15)) == false;
 		var entries = await GetAnilist(username, useCached).ConfigureAwait(false);
-		if (meta is null)
+		if (!useCached)
 		{
 			await LocalStorage.SetItemAsync(metaKey, AnilistMeta.New()).ConfigureAwait(false);
 		}

@@ -7,12 +7,12 @@ namespace BlazorTest;
 
 public static class LocalStorageUtils
 {
-	public static async Task<T> DecodeJsonBase64GZipAsync<T>(
-		string base64Json,
+	public static async Task<T> DecodeBase64GZipJsonAsync<T>(
+		string base64GZipJson,
 		JsonSerializerOptions? options = null,
 		CancellationToken cancellationToken = default)
 	{
-		var bytes = Convert.FromBase64String(base64Json);
+		var bytes = Convert.FromBase64String(base64GZipJson);
 
 		using var msi = new MemoryStream(bytes);
 		using var mso = new MemoryStream();
@@ -30,7 +30,7 @@ public static class LocalStorageUtils
 		))!;
 	}
 
-	public static async Task<string> EncodeJsonBase64GZipAsync<T>(
+	public static async Task<string> EncodeBase64GZipJsonAsync<T>(
 		T value,
 		JsonSerializerOptions? options = null,
 		CancellationToken cancellationToken = default)
@@ -61,8 +61,8 @@ public static class LocalStorageUtils
 		CancellationToken cancellationToken = default)
 	{
 		var encoded = await localStorage.GetItemAsStringAsync(key, cancellationToken).ConfigureAwait(false);
-		return await DecodeJsonBase64GZipAsync<T>(
-			base64Json: encoded,
+		return await DecodeBase64GZipJsonAsync<T>(
+			base64GZipJson: encoded,
 			options: options,
 			cancellationToken: cancellationToken
 		).ConfigureAwait(false);
@@ -75,7 +75,7 @@ public static class LocalStorageUtils
 		JsonSerializerOptions? options = null,
 		CancellationToken cancellationToken = default)
 	{
-		var encoded = await EncodeJsonBase64GZipAsync(
+		var encoded = await EncodeBase64GZipJsonAsync(
 			value: value,
 			options: options,
 			cancellationToken: cancellationToken
