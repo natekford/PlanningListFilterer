@@ -1,0 +1,21 @@
+﻿<div class="row">
+	<div class="col-sm">
+		<MudNumericField Label="@("Minimum " + Label)" Variant="Variant.Outlined"
+						 T="int?" Min="@DefaultMin" Max="@Source.Max"
+						 Value="@Source.Min" ValueChanged="@Source.SetMin" />
+	</div>
+	<div class="col-sm">
+		<MudNumericField Label="@("Maximum " + Label)" Variant="Variant.Outlined"
+						 T="int?" Min="@(Source.Min ?? DefaultMin)" Max="int.MaxValue"
+						 Value="@Source.Max" ValueChanged="@Source.SetMax" />
+	</div>
+</div>
+
+@code {
+	[Parameter]
+	public int DefaultMin { get; set; } = 0;
+	[Parameter]
+	public string Label { get; set; } = null!;
+	[Parameter]
+	public AnilistSearchMinMax Source { get; set; } = null!;
+}
