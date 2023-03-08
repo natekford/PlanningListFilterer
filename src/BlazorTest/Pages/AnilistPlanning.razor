@@ -74,7 +74,7 @@
 
 	<RowTemplate>
 		<MudTd>
-			<MudNavLink Href="@entry.GetUrl()" Target="_blank">
+			<MudNavLink Class="transparent-hover-bg" Href="@entry.GetUrl()" Target="_blank">
 				<MudImage Src="@entry.CoverImageUrl" ObjectFit="ObjectFit.Fill" />
 			</MudNavLink>
 		</MudTd>
@@ -99,9 +99,9 @@
 	</PagerContent>
 </MudTable>
 
-<MudDialog @bind-IsVisible="IsSearchVisible" Options="@SearchDialogOptions">
+<MudDialog IsVisible="@IsSearchVisible" Options="@SearchDialogOptions">
 	<TitleContent>
-		<MudText Typo="Typo.h6">Search</MudText>
+		<MudText Typo="Typo.h6">Filter</MudText>
 	</TitleContent>
 	<DialogContent>
 		<div class="overflow-hidden">

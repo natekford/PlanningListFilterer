@@ -66,3 +66,7 @@ a, .btn-link {
 .text-pre {
 	white-space: pre;
 }
+
+.transparent-hover-bg .mud-nav-link:hover:not(.mud-nav-link-disabled) {
+	background-color: transparent;
+}
