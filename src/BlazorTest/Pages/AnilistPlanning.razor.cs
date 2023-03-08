@@ -26,6 +26,36 @@ public partial class AnilistPlanning
 	public MudTable<AnilistModel> Table { get; set; } = null!;
 	public string? Username { get; set; } = "advorange";
 
+	public async Task<List<AnilistModel>> GetAnilist(string username, bool useCached)
+	{
+		var entries = default(List<AnilistModel>);
+		if (useCached)
+		{
+			try
+			{
+				entries = await LocalStorage.GetItemAsync<List<AnilistModel>>(username);
+			}
+			catch
+			{
+				// json error or something, nothing we can do to save this
+				// try to receive new entry information from anilist
+			}
+		}
+
+		if (entries is null)
+		{
+			var response = await Http.GetAnilistAsync(username).ConfigureAwait(false);
+			entries = response.Data.MediaListCollection.Lists
+				.SelectMany(l => l.Entries.Select(e => AnilistModel.Create(e.Media)))
+				.Where(x => x.Status == AnilistMediaStatus.FINISHED)
+				.OrderBy(x => x.Id)
+				.ToList();
+			await LocalStorage.SetItemAsync(username, entries).ConfigureAwait(false);
+		}
+
+		return entries;
+	}
+
 	public async Task LoadEntries()
 	{
 		if (Username is null)
@@ -33,38 +63,27 @@ public partial class AnilistPlanning
 			return;
 		}
 
-		var sw = Stopwatch.StartNew();
+		var username = Username.ToLower();
+		var metaKey = $"{username}-META";
 
-		var key = Username.ToLower();
-		var list = default(AnilistCollection);
+		var meta = default(AnilistMeta);
 		try
 		{
-			list = await LocalStorage.GetItemAsync<AnilistCollection>(key).ConfigureAwait(false);
-			Console.WriteLine($"{sw.ElapsedMilliseconds}ms: Retrieved Cached");
+			meta = await LocalStorage.GetItemAsync<AnilistMeta>(metaKey).ConfigureAwait(false);
 		}
-		catch (Exception e)
+		catch
 		{
-			Console.WriteLine($"Exception when retrieving cached list for {key}:\n{e}");
-			await LocalStorage.RemoveItemAsync(key).ConfigureAwait(false);
 		}
 
-		if (list?.IsOutOfDate(TimeSpan.FromMinutes(15)) ?? true)
+		var useCached = meta?.IsOutOfDate(TimeSpan.FromMinutes(15)) == false;
+		var entries = await GetAnilist(username, useCached).ConfigureAwait(false);
+		if (meta is null)
 		{
-			var response = await Http.GetAnilistAsync(Username).ConfigureAwait(false);
-			Console.WriteLine($"{sw.ElapsedMilliseconds}ms: Retrieved External");
-			var entries = response.Data.MediaListCollection.Lists
-				.SelectMany(l => l.Entries.Select(e => AnilistModel.Create(e.Media)))
-				.Where(x => x.Status == AnilistMediaStatus.FINISHED)
-				.OrderBy(x => x.Id)
-				.ToList();
-			list = AnilistCollection.Create(entries);
-
-			await LocalStorage.SetItemAsync(key, list).ConfigureAwait(false);
-			Console.WriteLine($"{sw.ElapsedMilliseconds}ms: Saved");
+			await LocalStorage.SetItemAsync(metaKey, AnilistMeta.Create(entries)).ConfigureAwait(false);
 		}
 
-		Entries = list.Entries;
-		Search = await AnilistSearch.CreateAsync(Entries).ConfigureAwait(false);
+		Entries = entries;
+		Search = await AnilistSearch.CreateAsync(entries).ConfigureAwait(false);
 	}
 
 	public void RandomizeTable()

@@ -5,6 +5,9 @@ namespace BlazorTest.Models.Anilist.Json;
 public sealed record AnilistMedia(
 	[property: JsonPropertyName("id")]
 	int Id,
+	[property: JsonPropertyName("type")]
+	[property: JsonConverter(typeof(JsonStringEnumConverter))]
+	AnilistMediaType Type,
 	[property: JsonPropertyName("title")]
 	AnilistTitle Title,
 	[property: JsonPropertyName("status")]
@@ -30,5 +33,7 @@ public sealed record AnilistMedia(
 	[property: JsonPropertyName("genres")]
 	IReadOnlyList<string> Genres,
 	[property: JsonPropertyName("tags")]
-	IReadOnlyList<AnilistMediaTag> Tags
+	IReadOnlyList<AnilistMediaTag> Tags,
+	[property: JsonPropertyName("relations")]
+	AnilistMediaRelations Relations
 );

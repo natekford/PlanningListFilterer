@@ -15,30 +15,19 @@ public sealed record AnilistModel(
 	int? Duration,
 	int? AverageScore,
 	int Popularity,
-	int? StartYear,
-	int? StartMonth,
+	AnilistStartModel Start,
 	string? CoverImageUrl,
 	ImmutableHashSet<string> Genres,
-	IReadOnlyDictionary<string, int> Tags
+	ImmutableDictionary<string, int> Tags,
+	bool IsSequel
 )
 {
 	[JsonIgnore]
 	public bool IsEntryVisible { get; set; } = true;
-	[JsonIgnore]
-	public DateTime? Start
-	{
-		get
-		{
-			if (StartYear is not int year)
-			{
-				return null;
-			}
-			return new DateTime(year: year, month: StartMonth ?? 12, day: 1);
-		}
-	}
 
 	public static AnilistModel Create(AnilistMedia media)
 	{
+		var start = media.CreateStartModel();
 		return new(
 			Id: media.Id,
 			Title: media.Title.UserPreferred,
@@ -49,11 +38,20 @@ public sealed record AnilistModel(
 			Duration: media.Duration,
 			AverageScore: media.AverageScore,
 			Popularity: media.Popularity,
-			StartYear: media.StartDate?.Year,
-			StartMonth: media.StartDate?.Month,
+			Start: start,
 			CoverImageUrl: media.CoverImage?.Medium,
 			Genres: media.Genres.ToImmutableHashSet(),
-			Tags: media.Tags.ToImmutableDictionary(x => x.Name, x => x.Rank)
+			Tags: media.Tags.ToImmutableDictionary(
+				keySelector: x => x.Name,
+				elementSelector: x => x.Rank
+			),
+			IsSequel: media.Relations.Edges.Any(x =>
+			{
+				return (x.RelationType == AnilistMediaRelation.PREQUEL
+					|| x.RelationType == AnilistMediaRelation.PARENT)
+					&& x.Node.Type == AnilistMediaType.ANIME
+					&& x.Node.CreateStartModel().Time < start.Time;
+			})
 		);
 	}
 }

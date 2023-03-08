@@ -10,7 +10,6 @@ public sealed class AnilistSearch
 	private readonly IEnumerable<AnilistModel> _Media;
 
 	public AnilistSearchMinMax Duration { get; }
-	// has to be nullable otherwise multiselect only shows the 1st enum
 	public AnilistSearchFormats Formats { get; }
 	public AnilistSearchGenres Genres { get; }
 	public AnilistSearchMinMax Popularity { get; }
@@ -26,7 +25,7 @@ public sealed class AnilistSearch
 		Popularity = new(this, x => x.Popularity);
 		Score = new(this, x => x.AverageScore);
 		Tags = new(this);
-		Year = new(this, x => x.StartYear);
+		Year = new(this, x => x.Start.Year);
 
 		_Media = media;
 		_Items = GetType()

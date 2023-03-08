@@ -39,6 +39,19 @@ public static class AnilistUtils
 							name
 							rank
 						}
+						relations {
+							edges {
+								node {
+									id
+									type
+									startDate {
+										year
+										month
+									}
+								}
+								relationType
+							}
+						}
 					}
 				}
 			}
@@ -48,9 +61,17 @@ public static class AnilistUtils
 	public const string GRAPHQL_URL = "https://graphql.anilist.co";
 	public const string NO_VALUE = "N/A";
 
-	public static string DisplayDuration(this AnilistModel media)
+	public static AnilistStartModel CreateStartModel(this AnilistMedia media)
 	{
-		var duration = media.GetTotalDuration();
+		return new(
+			Year: media.StartDate?.Year,
+			Month: media.StartDate?.Month
+		);
+	}
+
+	public static string DisplayDuration(this AnilistModel model)
+	{
+		var duration = model.GetTotalDuration();
 		if (!duration.HasValue)
 		{
 			return NO_VALUE;
@@ -58,9 +79,9 @@ public static class AnilistUtils
 		return $"{duration} minute{(duration == 1 ? "" : "s")}";
 	}
 
-	public static string DisplayEpisodeCount(this AnilistModel media)
+	public static string DisplayEpisodeCount(this AnilistModel model)
 	{
-		var count = media.GetHighestEpisode();
+		var count = model.GetHighestEpisode();
 		if (!count.HasValue)
 		{
 			return NO_VALUE;
@@ -68,33 +89,29 @@ public static class AnilistUtils
 		return count.Value.ToString();
 	}
 
-	public static string DisplayFormat(this AnilistModel media)
-		=> media.Format?.ToString() ?? NO_VALUE;
+	public static string DisplayFormat(this AnilistModel model)
+		=> model.Format?.ToString() ?? NO_VALUE;
 
-	public static string DisplayGenres(this AnilistModel media)
-		=> media.Genres.DisplayStrings();
+	public static string DisplayGenres(this AnilistModel model)
+		=> model.Genres.DisplayStrings();
 
-	public static string DisplayScore(this AnilistModel media)
+	public static string DisplayScore(this AnilistModel model)
 	{
-		var score = media.AverageScore;
-		if (!score.HasValue)
-		{
-			return NO_VALUE;
-		}
-		return $"{score}%";
+		var score = model.AverageScore;
+		return score.HasValue ? $"{score}%" : NO_VALUE;
 	}
 
-	public static string DisplayStart(this AnilistModel media)
+	public static string DisplayStart(this AnilistModel model)
 	{
-		var year = media.StartYear;
+		var year = model.Start.Year;
 		if (!year.HasValue)
 		{
 			return NO_VALUE;
 		}
 
-		var month = media.StartMonth;
+		var month = model.Start.Month;
 		var format = month.HasValue ? "yyyy MMM" : "yyyy";
-		return media.Start!.Value.ToString(format);
+		return model.Start.Time!.Value.ToString(format);
 	}
 
 	public static string DisplayTag(this KeyValuePair<string, int> tag)
@@ -110,9 +127,9 @@ public static class AnilistUtils
 	public static string DisplayTags(this IEnumerable<KeyValuePair<string, int>> tags)
 		=> tags.Select(x => x.DisplayTag()).DisplayStrings();
 
-	public static string DisplayTags(this AnilistModel media, int skip, int count)
+	public static string DisplayTags(this AnilistModel model, int skip, int count)
 	{
-		return media.Tags
+		return model.Tags
 			.OrderByDescending(x => x.Value)
 			.Skip(skip)
 			.Take(count)
@@ -162,14 +179,14 @@ public static class AnilistUtils
 		).ConfigureAwait(false))!;
 	}
 
-	public static int? GetHighestEpisode(this AnilistModel media)
-		=> media.Episodes ?? media.NextAiringEpisode;
+	public static int? GetHighestEpisode(this AnilistModel model)
+		=> model.Episodes ?? model.NextAiringEpisode;
 
-	public static int? GetTotalDuration(this AnilistModel media)
-		=> media.GetHighestEpisode() * media.Duration;
+	public static int? GetTotalDuration(this AnilistModel model)
+		=> model.GetHighestEpisode() * model.Duration;
 
-	public static string GetUrl(this AnilistModel media)
-		=> $"https://anilist.co/anime/{media.Id}/";
+	public static string GetUrl(this AnilistModel model)
+		=> $"https://anilist.co/anime/{model.Id}/";
 
 	private static string DisplayStrings(this IEnumerable<string> items)
 	{

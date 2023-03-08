@@ -2,9 +2,9 @@
 
 <MudSelect Label="@(Label + " Select")" Variant="Variant.Outlined"
 		   MultiSelection="true" Clearable="true"
-		   T="T" SelectedValues="@Selection.Values"
-		   SelectedValuesChanged="@Selection.SetValues">
-	<Virtualize Items="@Selection.Options">
+		   T="T" SelectedValues="@Source.Values"
+		   SelectedValuesChanged="@Source.SetValues">
+	<Virtualize Items="@Source.Options">
 		<MudSelectItem Value="@context">@context</MudSelectItem>
 	</Virtualize>
 </MudSelect>
@@ -13,5 +13,5 @@
 	[Parameter]
 	public string Label { get; set; } = null!;
 	[Parameter]
-	public AnilistSearchValues<T> Selection { get; set; } = null!;
+	public AnilistSearchValues<T> Source { get; set; } = null!;
 }

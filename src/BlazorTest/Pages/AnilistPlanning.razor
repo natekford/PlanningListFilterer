@@ -53,6 +53,9 @@
 		<MudTh>
 			<MudTableSortLabel SortBy="@((AnilistModel m) => m.Format.ToString())">Format</MudTableSortLabel>
 		</MudTh>
+		<MudTh>
+			<MudTableSortLabel SortBy="@((AnilistModel m) => m.IsSequel)">Sequel</MudTableSortLabel>
+		</MudTh>
 		<MudTh>Genres</MudTh>
 		<MudTh>Tags</MudTh>
 	</HeaderContent>
@@ -70,6 +73,7 @@
 		<MudTd Class="text-nowrap">@entry.DisplayScore()</MudTd>
 		<MudTd Class="text-nowrap">@entry.Popularity</MudTd>
 		<MudTd Class="text-nowrap">@entry.DisplayFormat()</MudTd>
+		<MudTd Class="text-nowrap">@entry.IsSequel</MudTd>
 		<MudTd Class="text-pre">@entry.DisplayGenres()</MudTd>
 		<MudTd>
 			<MudExpansionPanel Class="bg-transparent" Text="@entry.DisplayTags(0, 1)"
@@ -92,9 +96,9 @@
 
 	<DialogContent>
 		<div class="overflow-hidden">
-			<SearchSelection Selection="@Search.Genres" Label="Genre" />
-			<SearchSelection Selection="@Search.Tags" Label="Tag" />
-			<SearchSelection Selection="@Search.Formats" Label="Format" />
+			<SearchSelection Source="@Search.Genres" Label="Genre" />
+			<SearchSelection Source="@Search.Tags" Label="Tag" />
+			<SearchSelection Source="@Search.Formats" Label="Format" />
 			<SearchMinMax Source="@Search.Score" Label="Score" />
 			<SearchMinMax Source="@Search.Duration" Label="Duration" />
 			<SearchMinMax Source="@Search.Year" Label="Year" />
