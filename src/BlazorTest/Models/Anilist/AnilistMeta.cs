@@ -2,8 +2,7 @@
 
 public sealed record AnilistMeta(
 	DateTime SavedAt,
-	int Version,
-	int Length
+	int Version
 )
 {
 	public const int CURRENT_VERSION = 5;
@@ -11,12 +10,11 @@ public sealed record AnilistMeta(
 	public bool IsOutOfDate(TimeSpan limit)
 		=> Version < CURRENT_VERSION || (DateTime.UtcNow - SavedAt) > limit;
 
-	public static AnilistMeta Create(IReadOnlyList<AnilistModel> list)
+	public static AnilistMeta New()
 	{
 		return new(
 			SavedAt: DateTime.UtcNow,
-			Version: CURRENT_VERSION,
-			Length: list.Count
+			Version: CURRENT_VERSION
 		);
 	}
 }

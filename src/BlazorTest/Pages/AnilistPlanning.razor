@@ -36,7 +36,7 @@
 			<MudTableSortLabel SortBy="@((AnilistModel m) => m.Title)">Name</MudTableSortLabel>
 		</MudTh>
 		<MudTh>
-			<MudTableSortLabel SortBy="@((AnilistModel m) => m.Start)">Release</MudTableSortLabel>
+			<MudTableSortLabel SortBy="@((AnilistModel m) => m.Start.Time)">Release</MudTableSortLabel>
 		</MudTh>
 		<MudTh>
 			<MudTableSortLabel SortBy="@((AnilistModel m) => m.GetHighestEpisode())">Episodes</MudTableSortLabel>
@@ -54,7 +54,7 @@
 			<MudTableSortLabel SortBy="@((AnilistModel m) => m.Format.ToString())">Format</MudTableSortLabel>
 		</MudTh>
 		<MudTh>
-			<MudTableSortLabel SortBy="@((AnilistModel m) => m.IsSequel)">Sequel</MudTableSortLabel>
+			<MudTableSortLabel SortBy="@((AnilistModel m) => !m.IsSequel)">Sequel</MudTableSortLabel>
 		</MudTh>
 		<MudTh>Genres</MudTh>
 		<MudTh>Tags</MudTh>

@@ -28,12 +28,15 @@ public partial class AnilistPlanning
 
 	public async Task<List<AnilistModel>> GetAnilist(string username, bool useCached)
 	{
+		var sw = Stopwatch.StartNew();
+
 		var entries = default(List<AnilistModel>);
 		if (useCached)
 		{
 			try
 			{
-				entries = await LocalStorage.GetItemAsync<List<AnilistModel>>(username);
+				entries = await LocalStorage.GetItemCompressedAsync<List<AnilistModel>>(username);
+				Console.WriteLine($"{sw.ElapsedMilliseconds}ms: Retrieved cached");
 			}
 			catch
 			{
@@ -50,7 +53,9 @@ public partial class AnilistPlanning
 				.Where(x => x.Status == AnilistMediaStatus.FINISHED)
 				.OrderBy(x => x.Id)
 				.ToList();
-			await LocalStorage.SetItemAsync(username, entries).ConfigureAwait(false);
+			Console.WriteLine($"{sw.ElapsedMilliseconds}ms: Retrieved uncached");
+			await LocalStorage.SetItemCompressedAsync(username, entries).ConfigureAwait(false);
+			Console.WriteLine($"{sw.ElapsedMilliseconds}ms: Saved uncached");
 		}
 
 		return entries;
@@ -62,6 +67,9 @@ public partial class AnilistPlanning
 		{
 			return;
 		}
+
+		// stop showing old entries
+		Entries = new List<AnilistModel>();
 
 		var username = Username.ToLower();
 		var metaKey = $"{username}-META";
@@ -79,7 +87,7 @@ public partial class AnilistPlanning
 		var entries = await GetAnilist(username, useCached).ConfigureAwait(false);
 		if (meta is null)
 		{
-			await LocalStorage.SetItemAsync(metaKey, AnilistMeta.Create(entries)).ConfigureAwait(false);
+			await LocalStorage.SetItemAsync(metaKey, AnilistMeta.New()).ConfigureAwait(false);
 		}
 
 		Entries = entries;
