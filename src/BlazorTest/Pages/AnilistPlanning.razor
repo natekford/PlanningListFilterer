@@ -13,7 +13,9 @@
 	<ToolBarContent>
 		<MudText Typo="Typo.h6">Planning List</MudText>
 		<MudSpacer />
-		<MudTextField Placeholder="Enter a username to get entries from..."
+		<MudSpacer />
+		<MudSpacer />
+		<MudTextField Class="mb-5" Placeholder="Enter a username to get entries from..."
 					  @bind-Value="@Username" />
 		<MudButton Color="Color.Primary" OnClick="@LoadEntries">
 			Load Entries
@@ -73,14 +75,14 @@
 				<MudImage Src="@entry.CoverImageUrl" ObjectFit="ObjectFit.Fill" />
 			</MudNavLink>
 		</MudTd>
-		<MudTd Class="text-wrap">@entry.Title</MudTd>
-		<MudTd Class="text-nowrap">@entry.DisplayStart()</MudTd>
-		<MudTd Class="text-nowrap">@entry.DisplayEpisodeCount()</MudTd>
-		<MudTd Class="text-nowrap">@entry.DisplayDuration()</MudTd>
-		<MudTd Class="text-nowrap">@entry.DisplayScore()</MudTd>
-		<MudTd Class="text-nowrap">@entry.Popularity</MudTd>
-		<MudTd Class="text-nowrap">@entry.DisplayFormat()</MudTd>
-		<MudTd Class="text-nowrap">@entry.IsSequel</MudTd>
+		<MudTd>@entry.Title</MudTd>
+		<MudTd>@entry.DisplayStart()</MudTd>
+		<MudTd>@entry.DisplayEpisodeCount()</MudTd>
+		<MudTd>@entry.DisplayDuration()</MudTd>
+		<MudTd>@entry.DisplayScore()</MudTd>
+		<MudTd>@entry.Popularity</MudTd>
+		<MudTd>@entry.DisplayFormat()</MudTd>
+		<MudTd>@entry.IsSequel</MudTd>
 		<MudTd Class="text-pre">@entry.DisplayGenres()</MudTd>
 		<MudTd>
 			<MudExpansionPanel Class="bg-transparent" Text="@entry.DisplayTags(0, 1)"
