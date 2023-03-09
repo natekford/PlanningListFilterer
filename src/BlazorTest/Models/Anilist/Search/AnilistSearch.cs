@@ -63,7 +63,7 @@ public sealed class AnilistSearch
 			if (++i % 50 == 0)
 			{
 				// await so the UI is more responsive
-				await Task.Delay(1);
+				await Task.Delay(1).ConfigureAwait(false);
 			}
 
 			// formats are ORed instead of ANDed
@@ -78,14 +78,8 @@ public sealed class AnilistSearch
 				continue;
 			}
 
-			foreach (var genre in media.Genres)
-			{
-				genres.Add(genre);
-			}
-			foreach (var tag in media.Tags)
-			{
-				tags.Add(tag.Key);
-			}
+			genres.UnionWith(media.Genres);
+			tags.UnionWith(media.Tags.Keys);
 		}
 
 		Formats.SetOptions(formats);

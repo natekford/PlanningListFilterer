@@ -63,6 +63,18 @@ public partial class AnilistPlanning
 		return entries;
 	}
 
+	public async Task<AnilistMeta?> GetMeta(Username username)
+	{
+		try
+		{
+			return await LocalStorage.GetItemAsync<AnilistMeta>(username.Meta).ConfigureAwait(false);
+		}
+		catch
+		{
+			return null;
+		}
+	}
+
 	public async Task LoadEntries()
 	{
 		if (Username is null)
@@ -70,20 +82,12 @@ public partial class AnilistPlanning
 			return;
 		}
 
-		// stop showing old entries
-		Entries = new List<AnilistModel>();
 		IsLoading = true;
+		// Stop showing old entries
+		Entries = new List<AnilistModel>();
 
 		var username = new Username(Username);
-		var meta = default(AnilistMeta);
-		try
-		{
-			meta = await LocalStorage.GetItemAsync<AnilistMeta>(username.Meta).ConfigureAwait(false);
-		}
-		catch
-		{
-		}
-
+		var meta = await GetMeta(username).ConfigureAwait(false);
 		var useCached = meta?.IsOutOfDate(TimeSpan.FromMinutes(15)) == false;
 		var entries = await GetAnilist(username, useCached).ConfigureAwait(false);
 
@@ -95,13 +99,14 @@ public partial class AnilistPlanning
 	public void RandomizeTable()
 	{
 		var visibleEntries = Entries.Where(x => x.IsEntryVisible).ToList();
-		int id;
+		// Don't show the same
+		int randomId;
 		do
 		{
-			id = visibleEntries[Random.Next(0, visibleEntries.Count)].Id;
-		} while (id == RandomId);
+			randomId = visibleEntries[Random.Next(0, visibleEntries.Count)].Id;
+		} while (randomId == RandomId);
 
-		RandomId = id;
+		RandomId = randomId;
 		Table.Context.SetSortFunc(new()
 		{
 #pragma warning disable BL0005 // Component parameter should not be set outside of its component.

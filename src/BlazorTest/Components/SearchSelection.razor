@@ -1,13 +1,22 @@
 ﻿@typeparam T
 
-<MudSelect Label="@(Label + " Select")" Variant="Variant.Outlined"
-		   MultiSelection="true" Clearable="true"
-		   T="T" SelectedValues="@Source.Values"
-		   SelectedValuesChanged="@Source.SetValues">
-	<Virtualize Items="@Source.Options">
-		<MudSelectItem Value="@context">@context</MudSelectItem>
-	</Virtualize>
-</MudSelect>
+@*
+	Virtualize sometimes tries to expand past where it should
+	E.G. Tag list with 100+ tags, select 1, close/reopen menu, unselect the tag
+	and now the SpacerElements in Virtualize rapidly try to resize at a much
+	larger than expected height
+	overflow-hidden by itself doesnt solve this, max-height has to be set too
+*@
+<div class="virtualize-workaround">
+	<MudSelect Label="@(Label + " Select")" Variant="Variant.Outlined"
+			   MultiSelection="true" Clearable="true" Dense="true"
+			   T="T" SelectedValues="@Source.Values"
+			   SelectedValuesChanged="@Source.SetValues">
+		<Virtualize Items="@Source.Options" ItemSize="10">
+			<MudSelectItem Value="@context">@context</MudSelectItem>
+		</Virtualize>
+	</MudSelect>
+</div>
 
 @code {
 	[Parameter]

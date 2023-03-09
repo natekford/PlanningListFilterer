@@ -71,6 +71,15 @@ a, .btn-link {
 	background-color: transparent;
 }
 
+.transparent-hover-bg .mud-nav-link:focus:not(.mud-nav-link-disabled) {
+	background-color: transparent;
+}
+
 .no-disabled-text .mud-expand-panel-text {
 	color: var(--mud-palette-text-primary);
+}
+
+.virtualize-workaround {
+	max-height: 3.9rem;
+	overflow: hidden;
 }
