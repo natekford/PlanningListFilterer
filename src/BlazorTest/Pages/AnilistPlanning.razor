@@ -60,6 +60,13 @@
 		<MudTh>Tags</MudTh>
 	</HeaderContent>
 
+	<NoRecordsContent>
+		@if (IsLoading)
+		{
+			<MudProgressCircular Color="Color.Default" Indeterminate="true" />
+		}
+	</NoRecordsContent>
+
 	<RowTemplate>
 		<MudTd>
 			<MudNavLink Class="transparent-hover-bg" Href="@entry.GetUrl()" Target="_blank">

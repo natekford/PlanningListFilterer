@@ -13,6 +13,7 @@ public partial class AnilistPlanning
 	private static readonly Random Random = new();
 
 	public List<AnilistModel> Entries { get; set; } = new();
+	public bool IsLoading { get; set; }
 	public bool IsSearchVisible { get; set; }
 	public int RandomId { get; set; }
 	public AnilistSearch Search { get; set; } = new(Enumerable.Empty<AnilistModel>());
@@ -26,7 +27,7 @@ public partial class AnilistPlanning
 	public MudTable<AnilistModel> Table { get; set; } = null!;
 	public string? Username { get; set; } = "advorange";
 
-	public async Task<List<AnilistModel>> GetAnilist(string username, bool useCached)
+	public async Task<List<AnilistModel>> GetAnilist(Username username, bool useCached)
 	{
 		var sw = Stopwatch.StartNew();
 
@@ -35,7 +36,7 @@ public partial class AnilistPlanning
 		{
 			try
 			{
-				entries = await LocalStorage.GetItemCompressedAsync<List<AnilistModel>>(username);
+				entries = await LocalStorage.GetItemCompressedAsync<List<AnilistModel>>(username.Name);
 				Console.WriteLine($"{sw.ElapsedMilliseconds}ms: Retrieved cached");
 			}
 			catch
@@ -47,14 +48,15 @@ public partial class AnilistPlanning
 
 		if (entries is null)
 		{
-			var response = await Http.GetAnilistAsync(username).ConfigureAwait(false);
+			var response = await Http.GetAnilistAsync(username.Name).ConfigureAwait(false);
 			entries = response.Data.MediaListCollection.Lists
 				.SelectMany(l => l.Entries.Select(e => AnilistModel.Create(e.Media)))
 				.Where(x => x.Status == AnilistMediaStatus.FINISHED)
 				.OrderBy(x => x.Id)
 				.ToList();
 			Console.WriteLine($"{sw.ElapsedMilliseconds}ms: Retrieved uncached");
-			await LocalStorage.SetItemCompressedAsync(username, entries).ConfigureAwait(false);
+			await LocalStorage.SetItemCompressedAsync(username.Name, entries).ConfigureAwait(false);
+			await LocalStorage.SetItemAsync(username.Meta, AnilistMeta.New()).ConfigureAwait(false);
 			Console.WriteLine($"{sw.ElapsedMilliseconds}ms: Saved uncached");
 		}
 
@@ -70,14 +72,13 @@ public partial class AnilistPlanning
 
 		// stop showing old entries
 		Entries = new List<AnilistModel>();
+		IsLoading = true;
 
-		var username = Username.ToLower();
-		var metaKey = $"{username}-META";
-
+		var username = new Username(Username);
 		var meta = default(AnilistMeta);
 		try
 		{
-			meta = await LocalStorage.GetItemAsync<AnilistMeta>(metaKey).ConfigureAwait(false);
+			meta = await LocalStorage.GetItemAsync<AnilistMeta>(username.Meta).ConfigureAwait(false);
 		}
 		catch
 		{
@@ -85,13 +86,10 @@ public partial class AnilistPlanning
 
 		var useCached = meta?.IsOutOfDate(TimeSpan.FromMinutes(15)) == false;
 		var entries = await GetAnilist(username, useCached).ConfigureAwait(false);
-		if (!useCached)
-		{
-			await LocalStorage.SetItemAsync(metaKey, AnilistMeta.New()).ConfigureAwait(false);
-		}
 
-		Entries = entries;
 		Search = await AnilistSearch.CreateAsync(entries).ConfigureAwait(false);
+		Entries = entries;
+		IsLoading = false;
 	}
 
 	public void RandomizeTable()
@@ -115,4 +113,16 @@ public partial class AnilistPlanning
 
 	public void ToggleSearchVisibility()
 		=> IsSearchVisible = !IsSearchVisible;
+}
+
+public sealed class Username
+{
+	public string Meta { get; }
+	public string Name { get; }
+
+	public Username(string username)
+	{
+		Name = username.ToLower();
+		Meta = $"{Name}-META";
+	}
 }

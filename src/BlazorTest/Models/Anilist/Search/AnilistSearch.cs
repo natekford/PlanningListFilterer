@@ -57,10 +57,14 @@ public sealed class AnilistSearch
 		var genres = new HashSet<string>();
 		var tags = new HashSet<string>();
 
+		var i = 0;
 		foreach (var media in _Media)
 		{
-			// await so the UI is more responsive
-			await Task.Yield();
+			if (++i % 50 == 0)
+			{
+				// await so the UI is more responsive
+				await Task.Delay(1);
+			}
 
 			// formats are ORed instead of ANDed
 			if (media.Format is AnilistMediaFormat format)
