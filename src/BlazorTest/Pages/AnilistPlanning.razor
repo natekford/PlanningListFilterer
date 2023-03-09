@@ -31,33 +31,15 @@
 	</ToolBarContent>
 
 	<HeaderContent>
-		<MudTh>
-			<MudTableSortLabel SortBy="@((AnilistModel m) => m.Id)">Id</MudTableSortLabel>
-		</MudTh>
-		<MudTh>
-			<MudTableSortLabel SortBy="@((AnilistModel m) => m.Title)">Name</MudTableSortLabel>
-		</MudTh>
-		<MudTh>
-			<MudTableSortLabel SortBy="@((AnilistModel m) => m.Start.Time)">Release</MudTableSortLabel>
-		</MudTh>
-		<MudTh>
-			<MudTableSortLabel SortBy="@((AnilistModel m) => m.GetHighestEpisode())">Episodes</MudTableSortLabel>
-		</MudTh>
-		<MudTh>
-			<MudTableSortLabel SortBy="@((AnilistModel m) => m.GetTotalDuration())">Duration</MudTableSortLabel>
-		</MudTh>
-		<MudTh>
-			<MudTableSortLabel SortBy="@((AnilistModel m) => m.AverageScore)">Score</MudTableSortLabel>
-		</MudTh>
-		<MudTh>
-			<MudTableSortLabel SortBy="@((AnilistModel m) => m.Popularity)">Popularity</MudTableSortLabel>
-		</MudTh>
-		<MudTh>
-			<MudTableSortLabel SortBy="@((AnilistModel m) => m.Format.ToString())">Format</MudTableSortLabel>
-		</MudTh>
-		<MudTh>
-			<MudTableSortLabel SortBy="@((AnilistModel m) => !m.IsSequel)">Sequel</MudTableSortLabel>
-		</MudTh>
+		<ModelTh SortBy="@(m => m.Id)">Id</ModelTh>
+		<ModelTh SortBy="@(m => m.Title)">Name</ModelTh>
+		<ModelTh SortBy="@(m => m.Start.Time)">Release</ModelTh>
+		<ModelTh SortBy="@(m => m.GetHighestEpisode())">Episodes</ModelTh>
+		<ModelTh SortBy="@(m => m.GetTotalDuration())">Duration</ModelTh>
+		<ModelTh SortBy="@(m => m.AverageScore)">Score</ModelTh>
+		<ModelTh SortBy="@(m => m.Popularity)">Popularity</ModelTh>
+		<ModelTh SortBy="@(m => m.Format.ToString())">Format</ModelTh>
+		<ModelTh SortBy="@(m => !m.IsSequel)">Sequel</ModelTh>
 		<MudTh>Genres</MudTh>
 		<MudTh>Tags</MudTh>
 	</HeaderContent>
@@ -85,7 +67,7 @@
 		<MudTd>@entry.IsSequel</MudTd>
 		<MudTd Class="text-pre">@entry.DisplayGenres()</MudTd>
 		<MudTd>
-			<MudExpansionPanel Class="bg-transparent" Text="@entry.DisplayTags(0, 1)"
+			<MudExpansionPanel Class="bg-transparent no-disabled-text" Text="@entry.DisplayTags(0, 1)"
 							   Disabled="@(entry.Tags.Count <= 1)"
 							   HideIcon="@(entry.Tags.Count <= 1)">
 				<MudText Class="text-pre">@entry.DisplayTags(1, int.MaxValue)</MudText>

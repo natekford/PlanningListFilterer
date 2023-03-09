@@ -72,21 +72,13 @@ public static class AnilistUtils
 	public static string DisplayDuration(this AnilistModel model)
 	{
 		var duration = model.GetTotalDuration();
-		if (!duration.HasValue)
-		{
-			return NO_VALUE;
-		}
-		return $"{duration} minute{(duration == 1 ? "" : "s")}";
+		return duration.HasValue ? duration.Value.ToString() : NO_VALUE;
 	}
 
 	public static string DisplayEpisodeCount(this AnilistModel model)
 	{
 		var count = model.GetHighestEpisode();
-		if (!count.HasValue)
-		{
-			return NO_VALUE;
-		}
-		return count.Value.ToString();
+		return count.HasValue ? count.Value.ToString() : NO_VALUE;
 	}
 
 	public static string DisplayFormat(this AnilistModel model)
@@ -103,15 +95,14 @@ public static class AnilistUtils
 
 	public static string DisplayStart(this AnilistModel model)
 	{
-		var year = model.Start.Year;
-		if (!year.HasValue)
+		var start = model.Start;
+		if (!start.Year.HasValue)
 		{
 			return NO_VALUE;
 		}
 
-		var month = model.Start.Month;
-		var format = month.HasValue ? "yyyy MMM" : "yyyy";
-		return model.Start.Time!.Value.ToString(format);
+		var format = start.Month.HasValue ? "yyyy MMM" : "yyyy";
+		return start.Time!.Value.ToString(format);
 	}
 
 	public static string DisplayTag(this KeyValuePair<string, int> tag)

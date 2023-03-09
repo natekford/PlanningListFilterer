@@ -1,0 +1,10 @@
+﻿<MudTh>
+	<MudTableSortLabel SortBy="@SortBy">@ChildContent</MudTableSortLabel>
+</MudTh>
+
+@code {
+	[Parameter]
+	public Func<AnilistModel, IComparable> SortBy { get; set; } = null!;
+	[Parameter]
+	public RenderFragment ChildContent { get; set; } = null!;
+}

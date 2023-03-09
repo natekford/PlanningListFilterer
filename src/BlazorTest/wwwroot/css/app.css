@@ -70,3 +70,7 @@ a, .btn-link {
 .transparent-hover-bg .mud-nav-link:hover:not(.mud-nav-link-disabled) {
 	background-color: transparent;
 }
+
+.no-disabled-text .mud-expand-panel-text {
+	color: var(--mud-palette-text-primary);
+}
