@@ -91,7 +91,8 @@ public partial class AnilistPlanning
 		var useCached = meta?.IsOutOfDate(TimeSpan.FromMinutes(15)) == false;
 		var entries = await GetAnilist(username, useCached).ConfigureAwait(false);
 
-		Search = await AnilistSearch.CreateAsync(entries).ConfigureAwait(false);
+		Search = new(entries, StateHasChanged);
+		await Search.UpdateVisibilityAsync().ConfigureAwait(false);
 		Entries = entries;
 		IsLoading = false;
 	}

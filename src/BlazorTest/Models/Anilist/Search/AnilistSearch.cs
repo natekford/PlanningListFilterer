@@ -8,6 +8,7 @@ public sealed class AnilistSearch
 {
 	private readonly ImmutableArray<IAnilistSearchItem> _Items;
 	private readonly IEnumerable<AnilistModel> _Media;
+	private readonly Action? _OnSearchVisibiltyUpdated;
 
 	public AnilistSearchMinMax Duration { get; }
 	public AnilistSearchFormats Formats { get; }
@@ -17,7 +18,9 @@ public sealed class AnilistSearch
 	public AnilistSearchTags Tags { get; }
 	public AnilistSearchMinMax Year { get; }
 
-	public AnilistSearch(IEnumerable<AnilistModel> media)
+	public AnilistSearch(
+		IEnumerable<AnilistModel> media,
+		Action? onSearchVisibilityUpdated = null)
 	{
 		Duration = new(this, x => x.GetTotalDuration());
 		Formats = new(this);
@@ -28,18 +31,12 @@ public sealed class AnilistSearch
 		Year = new(this, x => x.Start.Year);
 
 		_Media = media;
+		_OnSearchVisibiltyUpdated = onSearchVisibilityUpdated;
 		_Items = GetType()
 			.GetProperties()
 			.Select(x => x.GetValue(this))
 			.OfType<IAnilistSearchItem>()
 			.ToImmutableArray();
-	}
-
-	public static async Task<AnilistSearch> CreateAsync(IEnumerable<AnilistModel> media)
-	{
-		var search = new AnilistSearch(media);
-		await search.UpdateVisibilityAsync().ConfigureAwait(false);
-		return search;
 	}
 
 	public Task Clear()
@@ -85,6 +82,8 @@ public sealed class AnilistSearch
 		Formats.SetOptions(formats);
 		Genres.SetOptions(genres);
 		Tags.SetOptions(tags);
+
+		_OnSearchVisibiltyUpdated?.Invoke();
 	}
 
 	private bool GetUpdatedVisibility(AnilistModel model)
