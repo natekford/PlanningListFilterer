@@ -5,12 +5,14 @@ using PlanningListFilterer.Models.Anilist.Filter;
 using MudBlazor;
 
 using System.Diagnostics;
+using PlanningListFilterer.Settings;
 
 namespace PlanningListFilterer.Pages;
 
 public partial class AnilistPlanning
 {
 	private static readonly Random Random = new();
+	private int _RandomId;
 
 	public List<AnilistModel> Entries { get; set; } = new();
 	public DialogOptions FilterDialogOptions { get; set; } = new()
@@ -21,10 +23,9 @@ public partial class AnilistPlanning
 		Position = DialogPosition.Center,
 	};
 	public AnilistFilterer Filterer { get; set; } = new(Enumerable.Empty<AnilistModel>());
-	public bool FriendScoresEnabled { get; set; } = true;
 	public bool IsFilterDialogVisible { get; set; }
 	public bool IsLoading { get; set; }
-	public int RandomId { get; set; }
+	public ListSettings ListSettings { get; set; } = null!;
 	public MudTable<AnilistModel> Table { get; set; } = null!;
 	public string? Username { get; set; } = "advorange";
 
@@ -32,7 +33,7 @@ public partial class AnilistPlanning
 		AnilistUser user,
 		IEnumerable<AnilistMedia> media)
 	{
-		if (!FriendScoresEnabled)
+		if (!ListSettings.EnableFriendScores)
 		{
 			foreach (var m in media)
 			{
@@ -143,20 +144,23 @@ public partial class AnilistPlanning
 		do
 		{
 			randomId = visibleEntries[Random.Next(0, visibleEntries.Count)].Id;
-		} while (randomId == RandomId);
+		} while (randomId == _RandomId);
 
-		RandomId = randomId;
+		_RandomId = randomId;
 		Table.Context.SetSortFunc(new()
 		{
 #pragma warning disable BL0005 // Component parameter should not be set outside of its component.
 			SortDirection = SortDirection.Ascending,
-			SortBy = x => x.Id <= RandomId,
+			SortBy = x => x.Id <= _RandomId,
 #pragma warning restore BL0005 // Component parameter should not be set outside of its component.
 		});
 	}
 
 	public void ToggleFilterDialogVisibility()
 		=> IsFilterDialogVisible = !IsFilterDialogVisible;
+
+	protected override async Task OnInitializedAsync()
+		=> ListSettings = await ListSettingsService.GetSettingsAsync().ConfigureAwait(false);
 }
 
 public sealed class Username

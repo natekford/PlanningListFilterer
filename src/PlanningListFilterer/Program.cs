@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using MudBlazor.Services;
 using Blazored.LocalStorage;
 using System.Text.Json.Serialization;
+using PlanningListFilterer.Settings;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");
@@ -18,6 +19,8 @@ builder.Services.AddScoped(_ =>
 		BaseAddress = new Uri(builder.HostEnvironment.BaseAddress)
 	};
 });
+builder.Services.AddScoped<ListSettingsService>();
+
 builder.Services.AddMudServices();
 builder.Services.AddBlazoredLocalStorage(config =>
 {
