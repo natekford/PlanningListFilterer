@@ -83,3 +83,7 @@ a, .btn-link {
 	max-height: 3.9rem;
 	overflow: hidden;
 }
+
+.planning-table {
+	max-width: 85vw;
+}

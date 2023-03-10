@@ -1,6 +1,6 @@
 ﻿using PlanningListFilterer.Models.Anilist;
 using PlanningListFilterer.Models.Anilist.Json;
-using PlanningListFilterer.Models.Anilist.Search;
+using PlanningListFilterer.Models.Anilist.Filter;
 
 using MudBlazor;
 
@@ -13,21 +13,58 @@ public partial class AnilistPlanning
 	private static readonly Random Random = new();
 
 	public List<AnilistModel> Entries { get; set; } = new();
-	public bool IsLoading { get; set; }
-	public bool IsSearchVisible { get; set; }
-	public int RandomId { get; set; }
-	public AnilistSearch Search { get; set; } = new(Enumerable.Empty<AnilistModel>());
-	public DialogOptions SearchDialogOptions { get; set; } = new()
+	public DialogOptions FilterDialogOptions { get; set; } = new()
 	{
 		FullWidth = true,
 		CloseOnEscapeKey = true,
 		MaxWidth = MaxWidth.Medium,
 		Position = DialogPosition.Center,
 	};
+	public AnilistFilterer Filterer { get; set; } = new(Enumerable.Empty<AnilistModel>());
+	public bool FriendScoresEnabled { get; set; } = true;
+	public bool IsFilterDialogVisible { get; set; }
+	public bool IsLoading { get; set; }
+	public int RandomId { get; set; }
 	public MudTable<AnilistModel> Table { get; set; } = null!;
 	public string? Username { get; set; } = "advorange";
 
-	public async Task<List<AnilistModel>> GetAnilist(Username username, bool useCached)
+	public async IAsyncEnumerable<FriendScore> GetFriendScores(
+		AnilistUser user,
+		IEnumerable<AnilistMedia> media)
+	{
+		if (!FriendScoresEnabled)
+		{
+			foreach (var m in media)
+			{
+				yield return new(m, null);
+			}
+			yield break;
+		}
+
+		var friends = new List<AnilistUser>();
+		await foreach (var friend in Http.GetAnilistFollowingAsync(user).ConfigureAwait(false))
+		{
+			friends.Add(friend);
+		}
+		await foreach (var fScore in Http.GetAnilistFriendScoresAsync(media, friends).ConfigureAwait(false))
+		{
+			yield return fScore;
+		}
+	}
+
+	public async Task<AnilistMeta?> GetMeta(Username username)
+	{
+		try
+		{
+			return await LocalStorage.GetItemAsync<AnilistMeta>(username.Meta).ConfigureAwait(false);
+		}
+		catch
+		{
+			return null;
+		}
+	}
+
+	public async Task<List<AnilistModel>> GetPlanningList(Username username, bool useCached)
 	{
 		var sw = Stopwatch.StartNew();
 
@@ -48,35 +85,32 @@ public partial class AnilistPlanning
 
 		if (entries is null)
 		{
-			entries = new List<AnilistModel>();
-			await foreach (var entry in Http.GetAnilistAsync(username.Name))
+			var media = new List<AnilistMedia>();
+			var user = default(AnilistUser);
+			await foreach (var entry in Http.GetAnilistPlanningListAsync(username.Name).ConfigureAwait(false))
 			{
-				if (entry.Status == AnilistMediaStatus.FINISHED)
+				user ??= entry.User;
+				if (entry.Media.Status == AnilistMediaStatus.FINISHED)
 				{
-					entries.Add(AnilistModel.Create(entry));
+					media.Add(entry.Media);
 				}
 			}
+			Console.WriteLine($"{sw.ElapsedMilliseconds}ms: Retrieved planning list");
+			entries = new List<AnilistModel>(media.Count);
+
+			await foreach (var fScore in GetFriendScores(user!, media).ConfigureAwait(false))
+			{
+				entries.Add(AnilistModel.Create(fScore.Media, fScore.Score));
+			}
+			Console.WriteLine($"{sw.ElapsedMilliseconds}ms: Retrieved friend scores");
 			entries.Sort((x, y) => x.Id.CompareTo(y.Id));
 
-			Console.WriteLine($"{sw.ElapsedMilliseconds}ms: Retrieved uncached");
 			await LocalStorage.SetItemCompressedAsync(username.Name, entries).ConfigureAwait(false);
 			await LocalStorage.SetItemAsync(username.Meta, AnilistMeta.New()).ConfigureAwait(false);
 			Console.WriteLine($"{sw.ElapsedMilliseconds}ms: Saved uncached");
 		}
 
 		return entries;
-	}
-
-	public async Task<AnilistMeta?> GetMeta(Username username)
-	{
-		try
-		{
-			return await LocalStorage.GetItemAsync<AnilistMeta>(username.Meta).ConfigureAwait(false);
-		}
-		catch
-		{
-			return null;
-		}
 	}
 
 	public async Task LoadEntries()
@@ -92,18 +126,18 @@ public partial class AnilistPlanning
 
 		var username = new Username(Username);
 		var meta = await GetMeta(username).ConfigureAwait(false);
-		var useCached = meta?.IsOutOfDate(TimeSpan.FromMinutes(15)) == false;
-		var entries = await GetAnilist(username, useCached).ConfigureAwait(false);
+		var useCached = meta?.IsOutOfDate(TimeSpan.FromHours(1)) == false;
+		var entries = await GetPlanningList(username, useCached).ConfigureAwait(false);
 
-		Search = new(entries, StateHasChanged);
-		await Search.UpdateVisibilityAsync().ConfigureAwait(false);
+		Filterer = new(entries, StateHasChanged);
+		await Filterer.UpdateVisibilityAsync().ConfigureAwait(false);
 		Entries = entries;
 		IsLoading = false;
 	}
 
 	public void RandomizeTable()
 	{
-		var visibleEntries = Entries.Where(x => x.IsEntryVisible).ToList();
+		var visibleEntries = Entries.Where(x => x.IsVisible).ToList();
 		// Don't show the same
 		int randomId;
 		do
@@ -121,8 +155,8 @@ public partial class AnilistPlanning
 		});
 	}
 
-	public void ToggleSearchVisibility()
-		=> IsSearchVisible = !IsSearchVisible;
+	public void ToggleFilterDialogVisibility()
+		=> IsFilterDialogVisible = !IsFilterDialogVisible;
 }
 
 public sealed class Username

@@ -2,7 +2,7 @@
 
 namespace PlanningListFilterer.Models.Anilist.Json;
 
-public sealed record AnilistStartDate(
+public sealed record AnilistFuzzyDate(
 	[property: JsonPropertyName("year")]
 	int? Year,
 	[property: JsonPropertyName("month")]

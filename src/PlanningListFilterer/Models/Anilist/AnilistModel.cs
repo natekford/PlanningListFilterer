@@ -14,6 +14,7 @@ public sealed record AnilistModel(
 	int? NextAiringEpisode,
 	int? Duration,
 	int? AverageScore,
+	int? FriendScore,
 	int Popularity,
 	AnilistStartModel Start,
 	string? CoverImageUrl,
@@ -23,9 +24,9 @@ public sealed record AnilistModel(
 )
 {
 	[JsonIgnore]
-	public bool IsEntryVisible { get; set; } = true;
+	public bool IsVisible { get; set; } = true;
 
-	public static AnilistModel Create(AnilistMedia media)
+	public static AnilistModel Create(AnilistMedia media, int? friendScore)
 	{
 		var start = media.CreateStartModel();
 		return new(
@@ -37,6 +38,7 @@ public sealed record AnilistModel(
 			NextAiringEpisode: media.NextAiringEpisode?.Episode,
 			Duration: media.Duration,
 			AverageScore: media.AverageScore,
+			FriendScore: friendScore,
 			Popularity: media.Popularity,
 			Start: start,
 			CoverImageUrl: media.CoverImage?.Medium,

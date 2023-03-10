@@ -2,7 +2,7 @@
 
 namespace PlanningListFilterer.Models.Anilist.Json;
 
-public sealed record AnilistResponse(
+public sealed record AnilistResponse<T>(
 	[property: JsonPropertyName("data")]
-	AnilistData Data
+	T Data
 );

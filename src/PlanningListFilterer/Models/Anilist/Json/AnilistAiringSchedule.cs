@@ -2,7 +2,7 @@
 
 namespace PlanningListFilterer.Models.Anilist.Json;
 
-public sealed record AnilistNextAiringEpisode(
+public sealed record AnilistAiringSchedule(
 	[property: JsonPropertyName("episode")]
 	int Episode
 );

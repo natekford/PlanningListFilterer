@@ -2,14 +2,15 @@
 @inject HttpClient Http
 @inject ILocalStorageService LocalStorage
 
-<PageTitle>Planning List Sorter</PageTitle>
+<PageTitle>Planning List Filterer</PageTitle>
 
 <MudTable Dense="true" Hover="true" Bordered="true" Striped="true"
 		  AllowUnsorted="false" FixedHeader="true" FixedFooter="true"
-		  Height="85vh" @ref="Table" Items="@Entries" Context="entry"
-		  Filter="@(x => x.IsEntryVisible)">
+		  HorizontalScrollbar="true" @ref="Table"
+		  Height="85vh" Class="planning-table"
+		  Items="@Entries" Context="entry" Filter="@(x => x.IsVisible)">
 	<ToolBarContent>
-		<MudText Typo="Typo.h6">Planning List Sorter</MudText>
+		<MudText Typo="Typo.h6">Planning List Filterer</MudText>
 		<MudSpacer />
 		<MudSpacer />
 		<MudSpacer />
@@ -22,7 +23,7 @@
 				   Disabled="@(Entries.Count == 0)">
 			Random
 		</MudButton>
-		<MudButton Color="Color.Primary" OnClick="@ToggleSearchVisibility"
+		<MudButton Color="Color.Primary" OnClick="@ToggleFilterDialogVisibility"
 				   Disabled ="@(Entries.Count == 0)">
 			Filter
 		</MudButton>
@@ -35,6 +36,7 @@
 		<ModelTh SortBy="@(m => m.GetHighestEpisode())">Episodes</ModelTh>
 		<ModelTh SortBy="@(m => m.GetTotalDuration())">Duration</ModelTh>
 		<ModelTh SortBy="@(m => m.AverageScore)">Score</ModelTh>
+		<ModelTh SortBy="@(m => m.FriendScore)">Friend Score</ModelTh>
 		<ModelTh SortBy="@(m => m.Popularity)">Popularity</ModelTh>
 		<ModelTh SortBy="@(m => m.Format.ToString())">Format</ModelTh>
 		<ModelTh SortBy="@(m => !m.IsSequel)">Sequel</ModelTh>
@@ -60,6 +62,7 @@
 		<MudTd>@entry.DisplayEpisodeCount()</MudTd>
 		<MudTd>@entry.DisplayDuration()</MudTd>
 		<MudTd>@entry.DisplayScore()</MudTd>
+		<MudTd>@entry.DisplayFriendScore()</MudTd>
 		<MudTd>@entry.Popularity</MudTd>
 		<MudTd>@entry.DisplayFormat()</MudTd>
 		<MudTd>@entry.IsSequel</MudTd>
@@ -78,25 +81,25 @@
 	</PagerContent>
 </MudTable>
 
-<MudDialog Options="@SearchDialogOptions" @bind-IsVisible="@IsSearchVisible">
+<MudDialog Options="@FilterDialogOptions" @bind-IsVisible="@IsFilterDialogVisible">
 	<TitleContent>
 		<MudText Typo="Typo.h6">Filter</MudText>
 	</TitleContent>
 
 	<DialogContent>
-		<SearchSelection Source="@Search.Genres" Label="Genre" />
-		<SearchSelection Source="@Search.Tags" Label="Tag" />
-		<SearchSelection Source="@Search.Formats" Label="Format" />
-		<SearchMinMax Source="@Search.Score" Label="Score" />
-		<SearchMinMax Source="@Search.Duration" Label="Duration" />
-		<SearchMinMax Source="@Search.Year" Label="Year" />
-		<SearchMinMax Source="@Search.Popularity" Label="Popularity" />
-		<SearchBool Source="@Search.Sequel">Don't Show Sequels</SearchBool>
+		<FilterSelection Source="@Filterer.Genres" Label="Genre" />
+		<FilterSelection Source="@Filterer.Tags" Label="Tag" />
+		<FilterSelection Source="@Filterer.Formats" Label="Format" />
+		<FilterMinMax Source="@Filterer.Score" Label="Score" />
+		<FilterMinMax Source="@Filterer.Duration" Label="Duration" />
+		<FilterMinMax Source="@Filterer.Year" Label="Year" />
+		<FilterMinMax Source="@Filterer.Popularity" Label="Popularity" />
+		<FilterBool Source="@Filterer.Sequel">Don't Show Sequels</FilterBool>
 	</DialogContent>
 
 	<DialogActions>
 		<MudButton Class="float-end" Color="Color.Secondary" Size="Size.Small"
-				   OnClick="@Search.Clear">
+				   OnClick="@Filterer.Clear">
 			Clear
 		</MudButton>
 	</DialogActions>

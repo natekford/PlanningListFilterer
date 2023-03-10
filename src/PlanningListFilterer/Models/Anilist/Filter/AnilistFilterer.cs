@@ -2,26 +2,26 @@
 
 using System.Collections.Immutable;
 
-namespace PlanningListFilterer.Models.Anilist.Search;
+namespace PlanningListFilterer.Models.Anilist.Filter;
 
-public sealed class AnilistSearch
+public sealed class AnilistFilterer
 {
-	private readonly ImmutableArray<AnilistSearchItem> _Items;
+	private readonly ImmutableArray<AnilistFilter> _Filters;
 	private readonly IEnumerable<AnilistModel> _Media;
-	private readonly Action? _OnSearchVisibiltyUpdated;
+	private readonly Action? _OnVisibiltyUpdated;
 
-	public AnilistSearchMinMax Duration { get; }
-	public AnilistSearchFormats Formats { get; }
-	public AnilistSearchGenres Genres { get; }
-	public AnilistSearchMinMax Popularity { get; }
-	public AnilistSearchMinMax Score { get; }
-	public AnilistSearchSequels Sequel { get; }
-	public AnilistSearchTags Tags { get; }
-	public AnilistSearchMinMax Year { get; }
+	public AnilistFilterMinMax Duration { get; }
+	public AnilistFilterFormats Formats { get; }
+	public AnilistFilterGenres Genres { get; }
+	public AnilistFilterMinMax Popularity { get; }
+	public AnilistFilterMinMax Score { get; }
+	public AnilistFilterSequels Sequel { get; }
+	public AnilistFilterTags Tags { get; }
+	public AnilistFilterMinMax Year { get; }
 
-	public AnilistSearch(
+	public AnilistFilterer(
 		IEnumerable<AnilistModel> media,
-		Action? onSearchVisibilityUpdated = null)
+		Action? onVisibilityUpdated = null)
 	{
 		Duration = new(this, x => x.GetTotalDuration());
 		Formats = new(this);
@@ -33,19 +33,19 @@ public sealed class AnilistSearch
 		Year = new(this, x => x.Start.Year);
 
 		_Media = media;
-		_OnSearchVisibiltyUpdated = onSearchVisibilityUpdated;
-		_Items = GetType()
+		_OnVisibiltyUpdated = onVisibilityUpdated;
+		_Filters = GetType()
 			.GetProperties()
 			.Select(x => x.GetValue(this))
-			.OfType<AnilistSearchItem>()
+			.OfType<AnilistFilter>()
 			.ToImmutableArray();
 	}
 
 	public Task Clear()
 	{
-		foreach (var item in _Items)
+		foreach (var filter in _Filters)
 		{
-			item.Reset();
+			filter.Reset();
 		}
 		return UpdateVisibilityAsync();
 	}
@@ -71,8 +71,8 @@ public sealed class AnilistSearch
 				formats.Add(format);
 			}
 
-			media.IsEntryVisible = GetUpdatedVisibility(media);
-			if (!media.IsEntryVisible)
+			media.IsVisible = GetUpdatedVisibility(media);
+			if (!media.IsVisible)
 			{
 				continue;
 			}
@@ -85,14 +85,14 @@ public sealed class AnilistSearch
 		Genres.SetOptions(genres);
 		Tags.SetOptions(tags);
 
-		_OnSearchVisibiltyUpdated?.Invoke();
+		_OnVisibiltyUpdated?.Invoke();
 	}
 
 	private bool GetUpdatedVisibility(AnilistModel model)
 	{
-		foreach (var item in _Items)
+		foreach (var filter in _Filters)
 		{
-			if (!item.IsValid(model))
+			if (!filter.IsValid(model))
 			{
 				return false;
 			}

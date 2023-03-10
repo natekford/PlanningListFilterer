@@ -1,11 +1,11 @@
 ﻿using PlanningListFilterer.Models.Anilist.Json;
 
-namespace PlanningListFilterer.Models.Anilist.Search;
+namespace PlanningListFilterer.Models.Anilist.Filter;
 
 // has to be nullable otherwise multiselect only shows the 1st enum
-public sealed class AnilistSearchFormats : AnilistSearchValues<AnilistMediaFormat?>
+public sealed class AnilistFilterFormats : AnilistFilterValues<AnilistMediaFormat?>
 {
-	public AnilistSearchFormats(AnilistSearch search) : base(search)
+	public AnilistFilterFormats(AnilistFilterer parent) : base(parent)
 	{
 	}
 

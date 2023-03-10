@@ -1,13 +1,13 @@
 ﻿using System.Collections.Immutable;
 
-namespace PlanningListFilterer.Models.Anilist.Search;
+namespace PlanningListFilterer.Models.Anilist.Filter;
 
-public abstract class AnilistSearchValues<T> : AnilistSearchItem
+public abstract class AnilistFilterValues<T> : AnilistFilter
 {
 	public ImmutableArray<T> Options { get; private set; } = ImmutableArray<T>.Empty;
 	public ImmutableHashSet<T> Values { get; private set; } = ImmutableHashSet<T>.Empty;
 
-	protected AnilistSearchValues(AnilistSearch search) : base(search)
+	protected AnilistFilterValues(AnilistFilterer search) : base(search)
 	{
 	}
 
@@ -28,6 +28,6 @@ public abstract class AnilistSearchValues<T> : AnilistSearchItem
 	public Task SetValues(IEnumerable<T> values)
 	{
 		Values = values.ToImmutableHashSet();
-		return Search.UpdateVisibilityAsync();
+		return Parent.UpdateVisibilityAsync();
 	}
 }

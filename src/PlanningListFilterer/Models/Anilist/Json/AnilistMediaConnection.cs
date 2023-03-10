@@ -2,7 +2,7 @@
 
 namespace PlanningListFilterer.Models.Anilist.Json;
 
-public sealed record AnilistMediaRelations(
+public sealed record AnilistMediaConnection(
 	[property: JsonPropertyName("edges")]
 	IReadOnlyList<AnilistMediaEdge> Edges
 );

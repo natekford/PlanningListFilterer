@@ -9,7 +9,7 @@ public sealed record AnilistMedia(
 	[property: JsonConverter(typeof(JsonStringEnumConverter))]
 	AnilistMediaType Type,
 	[property: JsonPropertyName("title")]
-	AnilistTitle Title,
+	AnilistMediaTitle Title,
 	[property: JsonPropertyName("status")]
 	[property: JsonConverter(typeof(JsonStringEnumConverter))]
 	AnilistMediaStatus? Status,
@@ -19,7 +19,7 @@ public sealed record AnilistMedia(
 	[property: JsonPropertyName("episodes")]
 	int? Episodes,
 	[property: JsonPropertyName("nextAiringEpisode")]
-	AnilistNextAiringEpisode? NextAiringEpisode,
+	AnilistAiringSchedule? NextAiringEpisode,
 	[property: JsonPropertyName("duration")]
 	int? Duration,
 	[property: JsonPropertyName("averageScore")]
@@ -27,7 +27,7 @@ public sealed record AnilistMedia(
 	[property: JsonPropertyName("popularity")]
 	int Popularity,
 	[property: JsonPropertyName("startDate")]
-	AnilistStartDate? StartDate,
+	AnilistFuzzyDate? StartDate,
 	[property: JsonPropertyName("coverImage")]
 	AnilistMediaCoverImage? CoverImage,
 	[property: JsonPropertyName("genres")]
@@ -35,5 +35,5 @@ public sealed record AnilistMedia(
 	[property: JsonPropertyName("tags")]
 	IReadOnlyList<AnilistMediaTag> Tags,
 	[property: JsonPropertyName("relations")]
-	AnilistMediaRelations Relations
+	AnilistMediaConnection Relations
 );

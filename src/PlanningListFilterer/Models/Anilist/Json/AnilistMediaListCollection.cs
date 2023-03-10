@@ -5,6 +5,8 @@ namespace PlanningListFilterer.Models.Anilist.Json;
 public sealed record AnilistMediaListCollection(
 	[property: JsonPropertyName("hasNextChunk")]
 	bool HasNextChunk,
+	[property: JsonPropertyName("user")]
+	AnilistUser User,
 	[property: JsonPropertyName("lists")]
-	AnilistEntryList[] Lists
+	AnilistMediaListGroup[] Lists
 );

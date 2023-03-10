@@ -1,23 +1,17 @@
-﻿namespace PlanningListFilterer.Models.Anilist.Search;
+﻿namespace PlanningListFilterer.Models.Anilist.Filter;
 
-public sealed class AnilistSearchMinMax : AnilistSearchItem
+public sealed class AnilistFilterMinMax : AnilistFilter
 {
 	private readonly Func<AnilistModel, int?> _GetProperty;
 
 	public int? Max { get; private set; }
 	public int? Min { get; private set; }
 
-	public AnilistSearchMinMax(
-		AnilistSearch search,
-		Func<AnilistModel, int?> getProperty) : base(search)
+	public AnilistFilterMinMax(
+		AnilistFilterer parent,
+		Func<AnilistModel, int?> getProperty) : base(parent)
 	{
 		_GetProperty = getProperty;
-	}
-
-	public override void Reset()
-	{
-		Max = null;
-		Min = null;
 	}
 
 	public override bool IsValid(AnilistModel model)
@@ -30,15 +24,21 @@ public sealed class AnilistSearchMinMax : AnilistSearchItem
 		return (Min is null || Min <= value) && (Max is null || Max >= value);
 	}
 
+	public override void Reset()
+	{
+		Max = null;
+		Min = null;
+	}
+
 	public Task SetMax(int? max)
 	{
 		Max = max;
-		return Search.UpdateVisibilityAsync();
+		return Parent.UpdateVisibilityAsync();
 	}
 
 	public Task SetMin(int? min)
 	{
 		Min = min;
-		return Search.UpdateVisibilityAsync();
+		return Parent.UpdateVisibilityAsync();
 	}
 }

@@ -5,7 +5,7 @@ public sealed record AnilistMeta(
 	int Version
 )
 {
-	public const int CURRENT_VERSION = 5;
+	public const int CURRENT_VERSION = 6;
 
 	public bool IsOutOfDate(TimeSpan limit)
 		=> Version < CURRENT_VERSION || (DateTime.UtcNow - SavedAt) > limit;

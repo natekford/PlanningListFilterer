@@ -2,7 +2,7 @@
 
 namespace PlanningListFilterer.Models.Anilist.Json;
 
-public sealed record AnilistTitle(
+public sealed record AnilistMediaTitle(
 	[property: JsonPropertyName("userPreferred")]
 	string UserPreferred
 );
