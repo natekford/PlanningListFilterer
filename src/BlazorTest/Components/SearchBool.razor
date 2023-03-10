@@ -1,0 +1,11 @@
+﻿<MudCheckBox T="bool" Color="Color.Primary" UnCheckedColor="Color.Default"
+			 Checked="@Source.Value" CheckedChanged="@Source.SetValue">
+	@ChildContent
+</MudCheckBox>
+
+@code {
+	[Parameter]
+	public AnilistSearchBool Source { get; set; } = null!;
+	[Parameter]
+	public RenderFragment ChildContent { get; set; } = null!;
+}

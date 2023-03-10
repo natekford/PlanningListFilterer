@@ -4,14 +4,12 @@
 
 <PageTitle>Planning List Sorter</PageTitle>
 
-<MudText Typo="Typo.h4">Planning List Sorter</MudText>
-
 <MudTable Dense="true" Hover="true" Bordered="true" Striped="true"
 		  AllowUnsorted="false" FixedHeader="true" FixedFooter="true"
-		  Height="80vh" @ref="Table" Items="@Entries" Context="entry"
+		  Height="85vh" @ref="Table" Items="@Entries" Context="entry"
 		  Filter="@(x => x.IsEntryVisible)">
 	<ToolBarContent>
-		<MudText Typo="Typo.h6">Planning List</MudText>
+		<MudText Typo="Typo.h6">Planning List Sorter</MudText>
 		<MudSpacer />
 		<MudSpacer />
 		<MudSpacer />
@@ -93,6 +91,7 @@
 		<SearchMinMax Source="@Search.Duration" Label="Duration" />
 		<SearchMinMax Source="@Search.Year" Label="Year" />
 		<SearchMinMax Source="@Search.Popularity" Label="Popularity" />
+		<SearchBool Source="@Search.Sequel">Don't Show Sequels</SearchBool>
 	</DialogContent>
 
 	<DialogActions>

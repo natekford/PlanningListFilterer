@@ -2,19 +2,20 @@
 
 namespace BlazorTest.Models.Anilist.Search;
 
-public abstract class AnilistSearchValues<T> : IAnilistSearchItem
+public abstract class AnilistSearchValues<T> : AnilistSearchItem
 {
-	private readonly AnilistSearch _Search;
-
 	public ImmutableArray<T> Options { get; private set; } = ImmutableArray<T>.Empty;
 	public ImmutableHashSet<T> Values { get; private set; } = ImmutableHashSet<T>.Empty;
 
-	protected AnilistSearchValues(AnilistSearch search)
+	protected AnilistSearchValues(AnilistSearch search) : base(search)
 	{
-		_Search = search;
 	}
 
-	public abstract bool IsValid(AnilistModel model);
+	public override void Reset()
+	{
+		Options = ImmutableArray<T>.Empty;
+		Values = ImmutableHashSet<T>.Empty;
+	}
 
 	public void SetOptions(IEnumerable<T> options)
 	{
@@ -27,12 +28,6 @@ public abstract class AnilistSearchValues<T> : IAnilistSearchItem
 	public Task SetValues(IEnumerable<T> values)
 	{
 		Values = values.ToImmutableHashSet();
-		return _Search.UpdateVisibilityAsync();
-	}
-
-	void IAnilistSearchItem.Clear()
-	{
-		Options = ImmutableArray<T>.Empty;
-		Values = ImmutableHashSet<T>.Empty;
+		return Search.UpdateVisibilityAsync();
 	}
 }

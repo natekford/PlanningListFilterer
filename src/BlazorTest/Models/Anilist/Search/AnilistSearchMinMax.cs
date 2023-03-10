@@ -1,22 +1,26 @@
 ﻿namespace BlazorTest.Models.Anilist.Search;
 
-public class AnilistSearchMinMax : IAnilistSearchItem
+public sealed class AnilistSearchMinMax : AnilistSearchItem
 {
 	private readonly Func<AnilistModel, int?> _GetProperty;
-	private readonly AnilistSearch _Search;
 
 	public int? Max { get; private set; }
 	public int? Min { get; private set; }
 
 	public AnilistSearchMinMax(
 		AnilistSearch search,
-		Func<AnilistModel, int?> getProperty)
+		Func<AnilistModel, int?> getProperty) : base(search)
 	{
-		_Search = search;
 		_GetProperty = getProperty;
 	}
 
-	public virtual bool IsValid(AnilistModel model)
+	public override void Reset()
+	{
+		Max = null;
+		Min = null;
+	}
+
+	public override bool IsValid(AnilistModel model)
 	{
 		// no value means to not bother checking it
 		if (_GetProperty(model) is not int value)
@@ -29,18 +33,12 @@ public class AnilistSearchMinMax : IAnilistSearchItem
 	public Task SetMax(int? max)
 	{
 		Max = max;
-		return _Search.UpdateVisibilityAsync();
+		return Search.UpdateVisibilityAsync();
 	}
 
 	public Task SetMin(int? min)
 	{
 		Min = min;
-		return _Search.UpdateVisibilityAsync();
-	}
-
-	void IAnilistSearchItem.Clear()
-	{
-		Max = null;
-		Min = null;
+		return Search.UpdateVisibilityAsync();
 	}
 }

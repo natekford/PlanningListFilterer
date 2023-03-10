@@ -6,7 +6,7 @@ namespace BlazorTest.Models.Anilist.Search;
 
 public sealed class AnilistSearch
 {
-	private readonly ImmutableArray<IAnilistSearchItem> _Items;
+	private readonly ImmutableArray<AnilistSearchItem> _Items;
 	private readonly IEnumerable<AnilistModel> _Media;
 	private readonly Action? _OnSearchVisibiltyUpdated;
 
@@ -15,6 +15,7 @@ public sealed class AnilistSearch
 	public AnilistSearchGenres Genres { get; }
 	public AnilistSearchMinMax Popularity { get; }
 	public AnilistSearchMinMax Score { get; }
+	public AnilistSearchSequels Sequel { get; }
 	public AnilistSearchTags Tags { get; }
 	public AnilistSearchMinMax Year { get; }
 
@@ -27,6 +28,7 @@ public sealed class AnilistSearch
 		Genres = new(this);
 		Popularity = new(this, x => x.Popularity);
 		Score = new(this, x => x.AverageScore);
+		Sequel = new(this);
 		Tags = new(this);
 		Year = new(this, x => x.Start.Year);
 
@@ -35,7 +37,7 @@ public sealed class AnilistSearch
 		_Items = GetType()
 			.GetProperties()
 			.Select(x => x.GetValue(this))
-			.OfType<IAnilistSearchItem>()
+			.OfType<AnilistSearchItem>()
 			.ToImmutableArray();
 	}
 
@@ -43,7 +45,7 @@ public sealed class AnilistSearch
 	{
 		foreach (var item in _Items)
 		{
-			item.Clear();
+			item.Reset();
 		}
 		return UpdateVisibilityAsync();
 	}
