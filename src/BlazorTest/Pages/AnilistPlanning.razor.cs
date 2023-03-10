@@ -48,12 +48,16 @@ public partial class AnilistPlanning
 
 		if (entries is null)
 		{
-			var response = await Http.GetAnilistAsync(username.Name).ConfigureAwait(false);
-			entries = response.Data.MediaListCollection.Lists
-				.SelectMany(l => l.Entries.Select(e => AnilistModel.Create(e.Media)))
-				.Where(x => x.Status == AnilistMediaStatus.FINISHED)
-				.OrderBy(x => x.Id)
-				.ToList();
+			entries = new List<AnilistModel>();
+			await foreach (var entry in Http.GetAnilistAsync(username.Name))
+			{
+				if (entry.Status == AnilistMediaStatus.FINISHED)
+				{
+					entries.Add(AnilistModel.Create(entry));
+				}
+			}
+			entries.Sort((x, y) => x.Id.CompareTo(y.Id));
+
 			Console.WriteLine($"{sw.ElapsedMilliseconds}ms: Retrieved uncached");
 			await LocalStorage.SetItemCompressedAsync(username.Name, entries).ConfigureAwait(false);
 			await LocalStorage.SetItemAsync(username.Meta, AnilistMeta.New()).ConfigureAwait(false);

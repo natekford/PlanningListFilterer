@@ -1,6 +1,4 @@
-﻿using System.Net.Mime;
-using System.Text.Json;
-using System.Text;
+﻿using System.Text.Json;
 using System.Net.Http.Json;
 using BlazorTest.Models.Anilist.Json;
 
@@ -8,13 +6,11 @@ namespace BlazorTest.Models.Anilist;
 
 public static class AnilistUtils
 {
-	public const string GRAPHQL_QUERY = @"
-	query ($username: String) {
-		MediaListCollection(userName: $username, type: ANIME, status: PLANNING) {
+	public const string GRAPHQL_LIST_QUERY = @"
+	query ($username: String, $chunk: Int) {
+		MediaListCollection(userName: $username, type: ANIME, status: PLANNING, perChunk: 500, chunk: $chunk) {
+			hasNextChunk
 			lists {
-				name
-				isCustomList
-				isCompletedList: isSplitCompletedList
 				entries {
 					media {
 						id
@@ -127,16 +123,41 @@ public static class AnilistUtils
 			.DisplayTags();
 	}
 
-	public static async Task<AnilistResponse> GetAnilistAsync(
+	public static async IAsyncEnumerable<AnilistMedia> GetAnilistAsync(
 		this HttpClient http,
 		string username)
 	{
+		var chunk = 1;
+		AnilistMediaListCollection collection;
+		do
+		{
+			var response = await http.GetAnilistResponseAsync(username, chunk).ConfigureAwait(false);
+			collection = response.Data.MediaListCollection;
+
+			foreach (var list in collection.Lists)
+			{
+				foreach (var entry in list.Entries)
+				{
+					yield return entry.Media;
+				}
+			}
+
+			++chunk;
+		} while (collection.HasNextChunk);
+	}
+
+	public static async Task<AnilistResponse> GetAnilistResponseAsync(
+		this HttpClient http,
+		string username,
+		int chunk)
+	{
 		var body = new
 		{
-			query = GRAPHQL_QUERY,
+			query = GRAPHQL_LIST_QUERY,
 			variables = new
 			{
-				username,
+				username = username,
+				chunk = chunk
 			}
 		};
 		using var response = await http.PostAsJsonAsync(GRAPHQL_URL, body).ConfigureAwait(false);
