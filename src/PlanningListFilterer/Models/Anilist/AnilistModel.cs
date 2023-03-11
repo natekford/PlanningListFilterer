@@ -11,9 +11,8 @@ public sealed record AnilistModel(
 	AnilistMediaStatus? Status,
 	AnilistMediaFormat? Format,
 	int? Episodes,
-	int? NextAiringEpisode,
 	int? Duration,
-	int? AverageScore,
+	int? Score,
 	int? FriendScore,
 	int Popularity,
 	AnilistStartModel Start,
@@ -25,6 +24,8 @@ public sealed record AnilistModel(
 {
 	[JsonIgnore]
 	public bool IsVisible { get; set; } = true;
+	[JsonIgnore]
+	public int? TotalDuration => Episodes * Duration;
 
 	public static AnilistModel Create(AnilistMedia media, int? friendScore)
 	{
@@ -34,10 +35,9 @@ public sealed record AnilistModel(
 			Title: media.Title.UserPreferred,
 			Status: media.Status,
 			Format: media.Format,
-			Episodes: media.Episodes,
-			NextAiringEpisode: media.NextAiringEpisode?.Episode,
+			Episodes: media.Episodes ?? media.NextAiringEpisode?.Episode,
 			Duration: media.Duration,
-			AverageScore: media.AverageScore,
+			Score: media.AverageScore,
 			FriendScore: friendScore,
 			Popularity: media.Popularity,
 			Start: start,

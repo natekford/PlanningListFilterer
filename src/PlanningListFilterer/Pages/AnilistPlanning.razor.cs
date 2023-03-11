@@ -23,10 +23,10 @@ public partial class AnilistPlanning
 		Position = DialogPosition.Center,
 	};
 	public AnilistFilterer Filterer { get; set; } = new(Enumerable.Empty<AnilistModel>());
+	public MudDataGrid<AnilistModel> Grid { get; set; } = null!;
 	public bool IsFilterDialogVisible { get; set; }
 	public bool IsLoading { get; set; }
-	public ListSettings ListSettings { get; set; } = null!;
-	public MudTable<AnilistModel> Table { get; set; } = null!;
+	public ListSettings ListSettings { get; set; } = new();
 	public string? Username { get; set; } = "advorange";
 
 	public async IAsyncEnumerable<FriendScore> GetFriendScores(
@@ -84,32 +84,37 @@ public partial class AnilistPlanning
 			}
 		}
 
-		if (entries is null)
+		if (entries is not null)
 		{
-			var media = new List<AnilistMedia>();
-			var user = default(AnilistUser);
-			await foreach (var entry in Http.GetAnilistPlanningListAsync(username.Name).ConfigureAwait(false))
-			{
-				user ??= entry.User;
-				if (entry.Media.Status == AnilistMediaStatus.FINISHED)
-				{
-					media.Add(entry.Media);
-				}
-			}
-			Console.WriteLine($"{sw.ElapsedMilliseconds}ms: Retrieved planning list");
-			entries = new List<AnilistModel>(media.Count);
-
-			await foreach (var fScore in GetFriendScores(user!, media).ConfigureAwait(false))
-			{
-				entries.Add(AnilistModel.Create(fScore.Media, fScore.Score));
-			}
-			Console.WriteLine($"{sw.ElapsedMilliseconds}ms: Retrieved friend scores");
-			entries.Sort((x, y) => x.Id.CompareTo(y.Id));
-
-			await LocalStorage.SetItemCompressedAsync(username.Name, entries).ConfigureAwait(false);
-			await LocalStorage.SetItemAsync(username.Meta, AnilistMeta.New()).ConfigureAwait(false);
-			Console.WriteLine($"{sw.ElapsedMilliseconds}ms: Saved uncached");
+			return entries;
 		}
+
+		var media = new List<AnilistMedia>();
+		var user = default(AnilistUser);
+		await foreach (var entry in Http.GetAnilistPlanningListAsync(username.Name).ConfigureAwait(false))
+		{
+			user ??= entry.User;
+			if (entry.Media.Status == AnilistMediaStatus.FINISHED)
+			{
+				media.Add(entry.Media);
+			}
+		}
+		Console.WriteLine($"{sw.ElapsedMilliseconds}ms: Retrieved planning list");
+		entries = new List<AnilistModel>(media.Count);
+
+		await foreach (var fScore in GetFriendScores(user!, media).ConfigureAwait(false))
+		{
+			entries.Add(AnilistModel.Create(fScore.Media, fScore.Score));
+		}
+		Console.WriteLine($"{sw.ElapsedMilliseconds}ms: Retrieved friend scores");
+		entries.Sort((x, y) => x.Id.CompareTo(y.Id));
+
+		await LocalStorage.SetItemCompressedAsync(username.Name, entries).ConfigureAwait(false);
+		await LocalStorage.SetItemAsync(username.Meta, AnilistMeta.New(
+			userId: user!.Id,
+			savedWithFriendScores: ListSettings.EnableFriendScores
+		)).ConfigureAwait(false);
+		Console.WriteLine($"{sw.ElapsedMilliseconds}ms: Saved uncached");
 
 		return entries;
 	}
@@ -127,7 +132,7 @@ public partial class AnilistPlanning
 
 		var username = new Username(Username);
 		var meta = await GetMeta(username).ConfigureAwait(false);
-		var useCached = meta?.IsOutOfDate(TimeSpan.FromHours(1)) == false;
+		var useCached = meta?.ShouldReacquire(ListSettings, TimeSpan.FromHours(1)) == false;
 		var entries = await GetPlanningList(username, useCached).ConfigureAwait(false);
 
 		Filterer = new(entries, StateHasChanged);
@@ -136,7 +141,7 @@ public partial class AnilistPlanning
 		IsLoading = false;
 	}
 
-	public void RandomizeTable()
+	public async Task RandomizeTable()
 	{
 		var visibleEntries = Entries.Where(x => x.IsVisible).ToList();
 		// Don't show the same
@@ -147,13 +152,11 @@ public partial class AnilistPlanning
 		} while (randomId == _RandomId);
 
 		_RandomId = randomId;
-		Table.Context.SetSortFunc(new()
-		{
-#pragma warning disable BL0005 // Component parameter should not be set outside of its component.
-			SortDirection = SortDirection.Ascending,
-			SortBy = x => x.Id <= _RandomId,
-#pragma warning restore BL0005 // Component parameter should not be set outside of its component.
-		});
+		await Grid.SetSortAsync(
+			field: "Random",
+			direction: SortDirection.Ascending,
+			sortFunc: x => x.Id <= _RandomId
+		).ConfigureAwait(false);
 	}
 
 	public void ToggleFilterDialogVisibility()

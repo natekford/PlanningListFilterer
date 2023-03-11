@@ -15,16 +15,10 @@ public static class AnilistModelUtils
 	}
 
 	public static string DisplayDuration(this AnilistModel model)
-	{
-		var duration = model.GetTotalDuration();
-		return duration.HasValue ? duration.Value.ToString() : NO_VALUE;
-	}
+		=> model.TotalDuration is int d ? d.ToString() : NO_VALUE;
 
 	public static string DisplayEpisodeCount(this AnilistModel model)
-	{
-		var count = model.GetHighestEpisode();
-		return count.HasValue ? count.Value.ToString() : NO_VALUE;
-	}
+		=> model.Episodes is int e ? e.ToString() : NO_VALUE;
 
 	public static string DisplayFormat(this AnilistModel model)
 		=> model.Format?.ToString() ?? NO_VALUE;
@@ -36,7 +30,7 @@ public static class AnilistModelUtils
 		=> model.Genres.DisplayStrings();
 
 	public static string DisplayScore(this AnilistModel model)
-		=> model.AverageScore is int s ? $"{s}%" : NO_VALUE;
+		=> model.Score is int s ? $"{s}%" : NO_VALUE;
 
 	public static string DisplayStart(this AnilistModel model)
 	{
@@ -71,12 +65,6 @@ public static class AnilistModelUtils
 			.Take(count)
 			.DisplayTags();
 	}
-
-	public static int? GetHighestEpisode(this AnilistModel model)
-		=> model.Episodes ?? model.NextAiringEpisode;
-
-	public static int? GetTotalDuration(this AnilistModel model)
-		=> model.GetHighestEpisode() * model.Duration;
 
 	public static string GetUrl(this AnilistModel model)
 		=> $"https://anilist.co/anime/{model.Id}/";

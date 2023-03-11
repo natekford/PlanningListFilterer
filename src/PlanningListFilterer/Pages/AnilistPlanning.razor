@@ -5,11 +5,11 @@
 
 <PageTitle>Planning List Filterer</PageTitle>
 
-<MudTable Dense="true" Hover="true" Bordered="true" Striped="true"
-		  AllowUnsorted="false" FixedHeader="true" FixedFooter="true"
-		  HorizontalScrollbar="true" @ref="Table"
-		  Height="85vh" Class="planning-table"
-		  Items="@Entries" Context="entry" Filter="@(x => x.IsVisible)">
+<MudDataGrid Dense="true" Hover="true" Bordered="true" Striped="true"
+			 FixedHeader="true" FixedFooter="true" HorizontalScrollbar="false"
+			 ColumnResizeMode="ResizeMode.None" Height="85vh"
+			 Class="planning-table"
+			 @ref="Grid" Items="@Entries" QuickFilter="@(x => x.IsVisible)">
 	<ToolBarContent>
 		<MudText Typo="Typo.h6">Planning List Filterer</MudText>
 		<MudSpacer />
@@ -30,21 +30,6 @@
 		</MudButton>
 	</ToolBarContent>
 
-	<HeaderContent>
-		<ModelTh SortBy="@(m => m.Id)">Id</ModelTh>
-		<ModelTh SortBy="@(m => m.Title)">Name</ModelTh>
-		<ModelTh SortBy="@(m => m.Start.Time)">Release</ModelTh>
-		<ModelTh SortBy="@(m => m.GetHighestEpisode())">Episodes</ModelTh>
-		<ModelTh SortBy="@(m => m.GetTotalDuration())">Duration</ModelTh>
-		<ModelTh SortBy="@(m => m.AverageScore)">Score</ModelTh>
-		<ModelTh SortBy="@(m => m.FriendScore)">Friend Score</ModelTh>
-		<ModelTh SortBy="@(m => m.Popularity)">Popularity</ModelTh>
-		<ModelTh SortBy="@(m => m.Format.ToString())">Format</ModelTh>
-		<ModelTh SortBy="@(m => !m.IsSequel)">Sequel</ModelTh>
-		<MudTh>Genres</MudTh>
-		<MudTh>Tags</MudTh>
-	</HeaderContent>
-
 	<NoRecordsContent>
 		@if (IsLoading)
 		{
@@ -52,35 +37,70 @@
 		}
 	</NoRecordsContent>
 
-	<RowTemplate>
-		<MudTd>
-			<MudNavLink Class="transparent-hover-bg" Href="@entry.GetUrl()" Target="_blank">
-				<MudImage Src="@entry.CoverImageUrl" ObjectFit="ObjectFit.Fill" />
-			</MudNavLink>
-		</MudTd>
-		<MudTd>@entry.Title</MudTd>
-		<MudTd>@entry.DisplayStart()</MudTd>
-		<MudTd>@entry.DisplayEpisodeCount()</MudTd>
-		<MudTd>@entry.DisplayDuration()</MudTd>
-		<MudTd>@entry.DisplayScore()</MudTd>
-		<MudTd>@entry.DisplayFriendScore()</MudTd>
-		<MudTd>@entry.Popularity</MudTd>
-		<MudTd>@entry.DisplayFormat()</MudTd>
-		<MudTd>@entry.IsSequel</MudTd>
-		<MudTd Class="text-pre">@entry.DisplayGenres()</MudTd>
-		<MudTd>
-			<MudExpansionPanel Class="bg-transparent no-disabled-text" Text="@entry.DisplayTags(0, 1)"
-							   Disabled="@(entry.Tags.Count <= 1)"
-							   HideIcon="@(entry.Tags.Count <= 1)">
-				<MudText Class="text-pre">@entry.DisplayTags(1, int.MaxValue)</MudText>
-			</MudExpansionPanel>
-		</MudTd>
-	</RowTemplate>
+	<Columns>
+		<Column T="AnilistModel" Field="Id"
+				SortBy="@(m => m.Id)">
+			<CellTemplate>
+				<MudNavLink Class="transparent-hover-bg" Target="_blank"
+							Href="@context.Item.GetUrl()">
+					<MudImage Src="@context.Item.CoverImageUrl" />
+				</MudNavLink>
+			</CellTemplate>
+		</Column>
+		<Column T="AnilistModel" Field="Title" CellClass="text-wrap"
+				SortBy="@(m => m.Title)" />
+		<Column T="AnilistModel" Field="Start"
+				SortBy="@(m => m.Start.Time)">
+			<CellTemplate>@context.Item.DisplayStart()</CellTemplate>
+		</Column>
+		<Column T="AnilistModel" Field="Episodes"
+				SortBy="@(m => m.Episodes)">
+			<CellTemplate>@context.Item.DisplayEpisodeCount()</CellTemplate>
+		</Column>
+		<Column T="AnilistModel" Field="Duration"
+				SortBy="@(m => m.TotalDuration)">
+			<CellTemplate>@context.Item.DisplayDuration()</CellTemplate>
+		</Column>
+		<Column T="AnilistModel" Field="Score"
+				SortBy="@(m => m.Score)">
+			<CellTemplate>@context.Item.DisplayScore()</CellTemplate>
+		</Column>
+		<Column T="AnilistModel" Field="FriendScore" Title="Friend Score"
+				SortBy="@(m => m.FriendScore)"
+				Hidden="@(!ListSettings.EnableFriendScores)">
+			<CellTemplate>@context.Item.DisplayFriendScore()</CellTemplate>
+		</Column>
+		<Column T="AnilistModel" Field="Popularity"
+				SortBy="@(m => m.Popularity)" />
+		<Column T="AnilistModel" Field="Format"
+				SortBy="@(m => m.Format.ToString())">
+			<CellTemplate>@context.Item.DisplayFormat()</CellTemplate>
+		</Column>
+		<Column T="AnilistModel" Field="IsSequel" Title="Sequel"
+				SortBy="@(m => !m.IsSequel)" />
+		<Column T="AnilistModel" Field="Genres"
+				Sortable="false">
+			<CellTemplate>
+				<MudText Class="text-pre">@context.Item.DisplayGenres()</MudText>
+			</CellTemplate>
+		</Column>
+		<Column T="AnilistModel" Field="Tags"
+				Sortable="false">
+			<CellTemplate>
+				<MudExpansionPanel Class="bg-transparent no-disabled-text"
+								   Text="@context.Item.DisplayTags(0, 1)"
+								   Disabled="@(context.Item.Tags.Count <= 1)"
+								   HideIcon="@(context.Item.Tags.Count <= 1)">
+					<MudText Class="text-pre">@context.Item.DisplayTags(1, int.MaxValue)</MudText>
+				</MudExpansionPanel>
+			</CellTemplate>
+		</Column>
+	</Columns>
 
 	<PagerContent>
-		<MudTablePager />
+		<MudDataGridPager T="AnilistModel" />
 	</PagerContent>
-</MudTable>
+</MudDataGrid>
 
 <MudDialog Options="@FilterDialogOptions" @bind-IsVisible="@IsFilterDialogVisible">
 	<TitleContent>

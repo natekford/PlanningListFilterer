@@ -23,11 +23,11 @@ public sealed class AnilistFilterer
 		IEnumerable<AnilistModel> media,
 		Action? onVisibilityUpdated = null)
 	{
-		Duration = new(this, x => x.GetTotalDuration());
+		Duration = new(this, x => x.TotalDuration);
 		Formats = new(this);
 		Genres = new(this);
 		Popularity = new(this, x => x.Popularity);
-		Score = new(this, x => x.AverageScore);
+		Score = new(this, x => x.Score);
 		Sequel = new(this);
 		Tags = new(this);
 		Year = new(this, x => x.Start.Year);
