@@ -87,3 +87,7 @@ a, .btn-link {
 .planning-table {
 	max-width: 85vw;
 }
+
+.filter-multi-select {
+	width: 40vw;
+}

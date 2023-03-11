@@ -15,16 +15,8 @@ public partial class AnilistPlanning
 	private int _RandomId;
 
 	public List<AnilistModel> Entries { get; set; } = new();
-	public DialogOptions FilterDialogOptions { get; set; } = new()
-	{
-		FullWidth = true,
-		CloseOnEscapeKey = true,
-		MaxWidth = MaxWidth.Medium,
-		Position = DialogPosition.Center,
-	};
 	public AnilistFilterer Filterer { get; set; } = new(Enumerable.Empty<AnilistModel>());
 	public MudDataGrid<AnilistModel> Grid { get; set; } = null!;
-	public bool IsFilterDialogVisible { get; set; }
 	public bool IsLoading { get; set; }
 	public ListSettings ListSettings { get; set; } = new();
 	public string? Username { get; set; } = "advorange";
@@ -158,9 +150,6 @@ public partial class AnilistPlanning
 			sortFunc: x => x.Id <= _RandomId
 		).ConfigureAwait(false);
 	}
-
-	public void ToggleFilterDialogVisibility()
-		=> IsFilterDialogVisible = !IsFilterDialogVisible;
 
 	protected override async Task OnInitializedAsync()
 		=> ListSettings = await ListSettingsService.GetSettingsAsync().ConfigureAwait(false);

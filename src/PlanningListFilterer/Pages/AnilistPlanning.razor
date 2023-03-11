@@ -5,10 +5,11 @@
 
 <PageTitle>Planning List Filterer</PageTitle>
 
-<MudDataGrid Dense="true" Hover="true" Bordered="true" Striped="true"
-			 FixedHeader="true" FixedFooter="true" HorizontalScrollbar="false"
-			 ColumnResizeMode="ResizeMode.None" Height="85vh"
-			 Class="planning-table" Filterable="true"
+<MudDataGrid Dense="true" Hover="true" Bordered="true" Striped="true" Filterable="true"
+			 FixedHeader="true" FixedFooter="true" ShowColumnOptions="false"
+			 ColumnResizeMode="ResizeMode.None"
+			 FilterMode="DataGridFilterMode.ColumnFilterMenu"
+			 Class="planning-table" Height="85vh" Loading="@IsLoading"
 			 @ref="Grid" Items="@Entries" QuickFilter="@(x => x.IsVisible)">
 	<ToolBarContent>
 		<MudText Typo="Typo.h6">Planning List Filterer</MudText>
@@ -24,18 +25,7 @@
 				   Disabled="@(Entries.Count == 0)">
 			Random
 		</MudButton>
-		<MudButton Color="Color.Primary" OnClick="@ToggleFilterDialogVisibility"
-				   Disabled ="@(Entries.Count == 0)">
-			Filter
-		</MudButton>
 	</ToolBarContent>
-
-	<NoRecordsContent>
-		@if (IsLoading)
-		{
-			<MudProgressCircular Color="Color.Default" Indeterminate="true" />
-		}
-	</NoRecordsContent>
 
 	<Columns>
 		<Column T="AnilistModel" Field="Id"
@@ -78,12 +68,20 @@
 				SortBy="@(m => !m.IsSequel)" />
 		<Column T="AnilistModel" Field="Genres"
 				Sortable="false">
+			<FilterTemplate>
+				<FilterSelection Source="@Filterer.Genres" Label="Genre" />
+			</FilterTemplate>
+
 			<CellTemplate>
 				<MudText Class="text-pre">@context.Item.DisplayGenres()</MudText>
 			</CellTemplate>
 		</Column>
 		<Column T="AnilistModel" Field="Tags"
 				Sortable="false">
+			<FilterTemplate>
+				<FilterSelection Source="@Filterer.Tags" Label="Tag" />
+			</FilterTemplate>
+
 			<CellTemplate>
 				<MudExpansionPanel Class="bg-transparent no-disabled-text"
 								   Text="@context.Item.DisplayTags(0, 1)"
@@ -99,21 +97,3 @@
 		<MudDataGridPager T="AnilistModel" />
 	</PagerContent>
 </MudDataGrid>
-
-<MudDialog Options="@FilterDialogOptions" @bind-IsVisible="@IsFilterDialogVisible">
-	<TitleContent>
-		<MudText Typo="Typo.h6">Filter</MudText>
-	</TitleContent>
-
-	<DialogContent>
-		<FilterSelection Source="@Filterer.Genres" Label="Genre" />
-		<FilterSelection Source="@Filterer.Tags" Label="Tag" />
-	</DialogContent>
-
-	<DialogActions>
-		<MudButton Class="float-end" Color="Color.Secondary" Size="Size.Small"
-				   OnClick="@Filterer.Clear">
-			Clear
-		</MudButton>
-	</DialogActions>
-</MudDialog>
