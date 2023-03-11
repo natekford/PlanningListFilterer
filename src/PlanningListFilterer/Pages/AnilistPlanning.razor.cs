@@ -1,10 +1,10 @@
-﻿using PlanningListFilterer.Models.Anilist;
-using PlanningListFilterer.Models.Anilist.Json;
+﻿using MudBlazor;
 
-using MudBlazor;
+using PlanningListFilterer.Models.Anilist;
+using PlanningListFilterer.Models.Anilist.Json;
+using PlanningListFilterer.Settings;
 
 using System.Diagnostics;
-using PlanningListFilterer.Settings;
 
 namespace PlanningListFilterer.Pages;
 

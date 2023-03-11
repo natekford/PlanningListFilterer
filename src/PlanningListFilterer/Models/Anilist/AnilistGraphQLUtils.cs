@@ -1,6 +1,7 @@
-﻿using System.Text.Json;
+﻿using PlanningListFilterer.Models.Anilist.Json;
+
 using System.Net.Http.Json;
-using PlanningListFilterer.Models.Anilist.Json;
+using System.Text.Json;
 
 namespace PlanningListFilterer.Models.Anilist;
 

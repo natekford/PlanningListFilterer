@@ -1,12 +1,14 @@
-using PlanningListFilterer;
+using Blazored.LocalStorage;
 
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 
 using MudBlazor.Services;
-using Blazored.LocalStorage;
-using System.Text.Json.Serialization;
+
+using PlanningListFilterer;
 using PlanningListFilterer.Settings;
+
+using System.Text.Json.Serialization;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");
