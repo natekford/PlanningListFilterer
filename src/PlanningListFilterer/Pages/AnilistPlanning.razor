@@ -1,4 +1,5 @@
 ﻿@page "/anilistplanning"
+
 @inject HttpClient Http
 @inject ILocalStorageService LocalStorage
 @inject ListSettingsService ListSettingsService
@@ -58,18 +59,20 @@
 		<PropertyColumn Property="@(m => m.Format)" SortBy="@(m => m.Format.ToString())" />
 		<PropertyColumn Property="@(m => m.IsSequel)" SortBy="@(m => !m.IsSequel)"
 						Title="Sequel" />
-		<PropertyColumn Property="@(m => m.Genres)" Sortable="false">
+		<PropertyColumn Property="@(m => m.Genres)" Sortable="false"
+						@ref="@GenreColumn">
 			<FilterTemplate>
-				<FilterSelection Property="@(m => m.Genres)" DataGrid="@Grid" />
+				<FilterSelection Property="@(m => m.Genres)" Column="@GenreColumn" />
 			</FilterTemplate>
 
 			<CellTemplate>
 				<MudText Class="text-pre">@context.Item.DisplayGenres()</MudText>
 			</CellTemplate>
 		</PropertyColumn>
-		<PropertyColumn Property="@(m => m.Tags)" Sortable="false">
+		<PropertyColumn Property="@(m => m.Tags)" Sortable="false"
+						@ref="@TagColumn">
 			<FilterTemplate>
-				<FilterSelection Property="@(m => m.TagNames)" DataGrid="@Grid" />
+				<FilterSelection Property="@(m => m.TagNames)" Column="@TagColumn" />
 			</FilterTemplate>
 
 			<CellTemplate>
@@ -87,3 +90,9 @@
 		<MudDataGridPager T="AnilistModel" />
 	</PagerContent>
 </MudDataGrid>
+
+@code {
+	public MudDataGrid<AnilistModel> Grid { get; set; } = null!;
+	public Column<AnilistModel> GenreColumn { get; set; } = null!;
+	public Column<AnilistModel> TagColumn { get; set; } = null!;
+}

@@ -17,17 +17,17 @@
 
 @code {
 	private Func<AnilistModel, IReadOnlyCollection<string>> _PropertyFunc = null!;
+	private FilterDefinition<AnilistModel> _FilterDefinition = null!;
 
-	public ImmutableArray<string> Options => DataGrid
-		.FilteredItems
+	public ImmutableArray<string> Options => Column.DataGrid.FilteredItems
 		.SelectMany(x => _PropertyFunc(x))
 		.Distinct()
 		.OrderByDescending(x => SelectedItems.Contains(x))
 		.ThenBy(x => x)
 		.ToImmutableArray();
-	public ICollection<string> SelectedItems { get; set; } = null!;
+	public HashSet<string> SelectedItems { get; private set; } = null!;
 	[Parameter]
-	public MudDataGrid<AnilistModel> DataGrid { get; set; } = null!;
+	public Column<AnilistModel> Column { get; set; } = null!;
 	[Parameter]
 	public Expression<Func<AnilistModel, IReadOnlyCollection<string>>> Property { get; set; } = null!;
 
@@ -36,21 +36,23 @@
 		_PropertyFunc = Property.Compile();
 
 		var property = GetPropertyName();
-		var filterDefinition = DataGrid.FilterDefinitions.SingleOrDefault(x => x.Title == property);
+		var filterDefinition = Column.DataGrid.FilterDefinitions.SingleOrDefault(x => x.Title == property);
 		if (filterDefinition is null)
 		{
 			filterDefinition = new()
 			{
+				Column = this.Column,
 				Id = Guid.NewGuid(),
-					Title = property,
+				Title = property,
 				Value = new HashSet<string>(),
 			};
 
-			DataGrid.AddFilter(filterDefinition);
+			Column.DataGrid.AddFilter(filterDefinition);
 		}
 
-		SelectedItems = (ICollection<string>)filterDefinition.Value;
+		SelectedItems = (HashSet<string>)filterDefinition.Value;
 		filterDefinition.FilterFunction = m => SelectedItems.All(i => _PropertyFunc(m).Contains(i));
+		_FilterDefinition = filterDefinition;
 	}
 
 	private string GetPropertyName()
@@ -59,19 +61,40 @@
 		return expression.Member.Name;
 	}
 
+	private void MarkFilterAsEnabled()
+	{
+		_FilterDefinition.Operator = "ignored";
+	}
+
+	private void MarkFilterAsDisabled()
+	{
+		_FilterDefinition.Operator = null;
+	}
+
 	public void OnCheckedChanged(bool value, string item)
 	{
 		if (value)
 		{
 			SelectedItems.Add(item);
+			MarkFilterAsEnabled();
 		}
 		else
 		{
 			SelectedItems.Remove(item);
+			if (SelectedItems.Count == 0)
+			{
+				MarkFilterAsDisabled();
+			}
 		}
-		DataGrid.ToggleFiltersMenu();
+
+		// StateHasChanged needs to be invoked
+		// This method does the least while still doing that
+		Column.DataGrid.ToggleFiltersMenu();
 	}
 
 	public void Clear()
-		=> SelectedItems.Clear();
+	{
+		SelectedItems.Clear();
+		MarkFilterAsDisabled();
+	}
 }

@@ -15,7 +15,6 @@ public partial class AnilistPlanning
 
 	public List<AnilistModel> Entries { get; set; } = new();
 	public IEnumerable<AnilistModel> FilteredEntries => Grid.FilteredItems;
-	public MudDataGrid<AnilistModel> Grid { get; set; } = null!;
 	public bool IsLoading { get; set; }
 	public ListSettings ListSettings { get; set; } = new();
 	public string? Username { get; set; } = "advorange";
