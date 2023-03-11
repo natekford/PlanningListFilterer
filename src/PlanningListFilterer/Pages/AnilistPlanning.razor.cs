@@ -15,6 +15,7 @@ public partial class AnilistPlanning
 	private int _RandomId;
 
 	public List<AnilistModel> Entries { get; set; } = new();
+	public IEnumerable<AnilistModel> FilteredEntries => Grid.FilteredItems;
 	public AnilistFilterer Filterer { get; set; } = new(Enumerable.Empty<AnilistModel>());
 	public MudDataGrid<AnilistModel> Grid { get; set; } = null!;
 	public bool IsLoading { get; set; }

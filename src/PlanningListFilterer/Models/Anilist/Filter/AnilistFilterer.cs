@@ -1,12 +1,7 @@
-﻿using PlanningListFilterer.Models.Anilist.Json;
-
-using System.Collections.Immutable;
-
-namespace PlanningListFilterer.Models.Anilist.Filter;
+﻿namespace PlanningListFilterer.Models.Anilist.Filter;
 
 public sealed class AnilistFilterer
 {
-	private readonly ImmutableArray<AnilistFilter> _Filters;
 	private readonly IEnumerable<AnilistModel> _Media;
 	private readonly Action? _OnVisibiltyUpdated;
 
@@ -22,25 +17,10 @@ public sealed class AnilistFilterer
 
 		_Media = media;
 		_OnVisibiltyUpdated = onVisibilityUpdated;
-		_Filters = GetType()
-			.GetProperties()
-			.Select(x => x.GetValue(this))
-			.OfType<AnilistFilter>()
-			.ToImmutableArray();
-	}
-
-	public Task Clear()
-	{
-		foreach (var filter in _Filters)
-		{
-			filter.Reset();
-		}
-		return UpdateVisibilityAsync();
 	}
 
 	public async Task UpdateVisibilityAsync()
 	{
-		var formats = new HashSet<AnilistMediaFormat?>();
 		var genres = new HashSet<string>();
 		var tags = new HashSet<string>();
 
@@ -51,12 +31,6 @@ public sealed class AnilistFilterer
 			{
 				// await so the UI is more responsive
 				await Task.Delay(1).ConfigureAwait(false);
-			}
-
-			// formats are ORed instead of ANDed
-			if (media.Format is AnilistMediaFormat format)
-			{
-				formats.Add(format);
 			}
 
 			media.IsVisible = GetUpdatedVisibility(media);
@@ -76,14 +50,5 @@ public sealed class AnilistFilterer
 	}
 
 	private bool GetUpdatedVisibility(AnilistModel model)
-	{
-		foreach (var filter in _Filters)
-		{
-			if (!filter.IsValid(model))
-			{
-				return false;
-			}
-		}
-		return true;
-	}
+		=> Genres.IsValid(model) && Tags.IsValid(model);
 }

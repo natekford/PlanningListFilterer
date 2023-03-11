@@ -23,4 +23,9 @@
 	public string Label { get; set; } = null!;
 	[Parameter]
 	public AnilistFilterValues<T> Source { get; set; } = null!;
+
+	protected override void OnInitialized()
+	{
+		var dog = 1;
+	}
 }

@@ -2,16 +2,20 @@
 
 namespace PlanningListFilterer.Models.Anilist.Filter;
 
-public abstract class AnilistFilterValues<T> : AnilistFilter
+public abstract class AnilistFilterValues<T>
 {
 	public ImmutableArray<T> Options { get; private set; } = ImmutableArray<T>.Empty;
 	public ImmutableHashSet<T> Values { get; private set; } = ImmutableHashSet<T>.Empty;
+	protected AnilistFilterer Parent { get; }
 
-	protected AnilistFilterValues(AnilistFilterer search) : base(search)
+	protected AnilistFilterValues(AnilistFilterer parent)
 	{
+		Parent = parent;
 	}
 
-	public override void Reset()
+	public abstract bool IsValid(AnilistModel model);
+
+	public void Reset()
 	{
 		Options = ImmutableArray<T>.Empty;
 		Values = ImmutableHashSet<T>.Empty;
