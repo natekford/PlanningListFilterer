@@ -10,7 +10,7 @@
 			 ColumnResizeMode="ResizeMode.None"
 			 FilterMode="DataGridFilterMode.ColumnFilterMenu"
 			 Class="planning-table" Height="85vh" Loading="@IsLoading"
-			 @ref="Grid" Items="@Entries" QuickFilter="@(x => x.IsVisible)">
+			 @ref="Grid" Items="@Entries">
 	<ToolBarContent>
 		<MudText Typo="Typo.h6">Planning List Filterer</MudText>
 		<MudSpacer />
@@ -28,58 +28,48 @@
 	</ToolBarContent>
 
 	<Columns>
-		<Column T="AnilistModel" Field="Id"
-				SortBy="@(m => m.Id)">
+		<PropertyColumn Property="@(m => m.Id)" SortBy="@(m => m.Id)">
 			<CellTemplate>
 				<MudNavLink Class="transparent-hover-bg" Target="_blank"
 							Href="@context.Item.GetUrl()">
 					<MudImage Src="@context.Item.CoverImageUrl" />
 				</MudNavLink>
 			</CellTemplate>
-		</Column>
-		<Column T="AnilistModel" Field="Title" CellClass="text-wrap"
-				SortBy="@(m => m.Title)" />
-		<Column T="AnilistModel" Field="Start"
-				SortBy="@(m => m.Start)">
+		</PropertyColumn>
+		<PropertyColumn Property="@(m => m.Title)" SortBy="@(m => m.Title)"
+						CellClass="text-wrap" />
+		<PropertyColumn Property="@(m => m.Start)" SortBy="@(m => m.Start)">
 			<CellTemplate>@context.Item.DisplayStart()</CellTemplate>
-		</Column>
-		<Column T="AnilistModel" Field="Episodes"
-				SortBy="@(m => m.Episodes)">
+		</PropertyColumn>
+		<PropertyColumn Property="@(m => m.Episodes)" SortBy="@(m => m.Episodes)">
 			<CellTemplate>@context.Item.DisplayEpisodeCount()</CellTemplate>
-		</Column>
-		<Column T="AnilistModel" Field="Duration"
-				SortBy="@(m => m.Duration)">
+		</PropertyColumn>
+		<PropertyColumn Property="@(m => m.Duration)" SortBy="@(m => m.Duration)">
 			<CellTemplate>@context.Item.DisplayDuration()</CellTemplate>
-		</Column>
-		<Column T="AnilistModel" Field="Score"
-				SortBy="@(m => m.Score)">
+		</PropertyColumn>
+		<PropertyColumn Property="@(m => m.Score)" SortBy="@(m => m.Score)">
 			<CellTemplate>@context.Item.DisplayScore()</CellTemplate>
-		</Column>
-		<Column T="AnilistModel" Field="FriendScore" Title="Friend Score"
-				SortBy="@(m => m.FriendScore)"
-				Hidden="@(!ListSettings.EnableFriendScores)">
+		</PropertyColumn>
+		<PropertyColumn Property="@(m => m.FriendScore)" SortBy="@(m => m.FriendScore)"
+						Title="Friend Score" Hidden="@(!ListSettings.EnableFriendScores)">
 			<CellTemplate>@context.Item.DisplayFriendScore()</CellTemplate>
-		</Column>
-		<Column T="AnilistModel" Field="Popularity"
-				SortBy="@(m => m.Popularity)" />
-		<Column T="AnilistModel" Field="Format"
-				SortBy="@(m => m.Format.ToString())" />
-		<Column T="AnilistModel" Field="IsSequel" Title="Sequel"
-				SortBy="@(m => !m.IsSequel)" />
-		<Column T="AnilistModel" Field="Genres"
-				Sortable="false">
+		</PropertyColumn>
+		<PropertyColumn Property="@(m => m.Popularity)" SortBy="@(m => m.Popularity)" />
+		<PropertyColumn Property="@(m => m.Format)" SortBy="@(m => m.Format.ToString())" />
+		<PropertyColumn Property="@(m => m.IsSequel)" SortBy="@(m => !m.IsSequel)"
+						Title="Sequel" />
+		<PropertyColumn Property="@(m => m.Genres)" Sortable="false">
 			<FilterTemplate>
-				<FilterSelection Source="@Filterer.Genres" Label="Genre" />
+				<FilterSelection Property="@(m => m.Genres)" DataGrid="@Grid" />
 			</FilterTemplate>
 
 			<CellTemplate>
 				<MudText Class="text-pre">@context.Item.DisplayGenres()</MudText>
 			</CellTemplate>
-		</Column>
-		<Column T="AnilistModel" Field="Tags"
-				Sortable="false">
+		</PropertyColumn>
+		<PropertyColumn Property="@(m => m.Tags)" Sortable="false">
 			<FilterTemplate>
-				<FilterSelection Source="@Filterer.Tags" Label="Tag" />
+				<FilterSelection Property="@(m => m.TagNames)" DataGrid="@Grid" />
 			</FilterTemplate>
 
 			<CellTemplate>
@@ -90,7 +80,7 @@
 					<MudText Class="text-pre">@context.Item.DisplayTags(1, int.MaxValue)</MudText>
 				</MudExpansionPanel>
 			</CellTemplate>
-		</Column>
+		</PropertyColumn>
 	</Columns>
 
 	<PagerContent>

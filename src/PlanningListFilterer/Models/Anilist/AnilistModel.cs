@@ -24,9 +24,9 @@ public sealed record AnilistModel(
 ) : IFuzzyDate
 {
 	[JsonIgnore]
-	public bool IsVisible { get; set; } = true;
-	[JsonIgnore]
 	public DateTime? Start => this.GetDate();
+	[JsonIgnore]
+	public IReadOnlyList<string> TagNames => Tags.Keys.ToList();
 
 	public static AnilistModel Create(AnilistMedia media, int? friendScore)
 	{

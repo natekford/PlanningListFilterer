@@ -79,15 +79,16 @@ a, .btn-link {
 	color: var(--mud-palette-text-primary);
 }
 
-.virtualize-workaround {
-	max-height: 3.9rem;
-	overflow: hidden;
-}
-
 .planning-table {
 	max-width: 85vw;
+	max-height: 85vh;
 }
 
-.filter-multi-select {
-	width: 40vw;
+.filter-selection-grid {
+	min-width: 30vw;
+}
+
+.filter-selection-stack {
+	overflow-y: auto;
+	max-height: 250px;
 }

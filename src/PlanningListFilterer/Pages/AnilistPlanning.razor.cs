@@ -1,6 +1,5 @@
 ﻿using PlanningListFilterer.Models.Anilist;
 using PlanningListFilterer.Models.Anilist.Json;
-using PlanningListFilterer.Models.Anilist.Filter;
 
 using MudBlazor;
 
@@ -16,7 +15,6 @@ public partial class AnilistPlanning
 
 	public List<AnilistModel> Entries { get; set; } = new();
 	public IEnumerable<AnilistModel> FilteredEntries => Grid.FilteredItems;
-	public AnilistFilterer Filterer { get; set; } = new(Enumerable.Empty<AnilistModel>());
 	public MudDataGrid<AnilistModel> Grid { get; set; } = null!;
 	public bool IsLoading { get; set; }
 	public ListSettings ListSettings { get; set; } = new();
@@ -126,17 +124,14 @@ public partial class AnilistPlanning
 		var username = new Username(Username);
 		var meta = await GetMeta(username).ConfigureAwait(false);
 		var useCached = meta?.ShouldReacquire(ListSettings, TimeSpan.FromHours(1)) == false;
-		var entries = await GetPlanningList(username, useCached).ConfigureAwait(false);
 
-		Filterer = new(entries, StateHasChanged);
-		await Filterer.UpdateVisibilityAsync().ConfigureAwait(false);
-		Entries = entries;
+		Entries = await GetPlanningList(username, useCached).ConfigureAwait(false);
 		IsLoading = false;
 	}
 
 	public async Task RandomizeTable()
 	{
-		var visibleEntries = Entries.Where(x => x.IsVisible).ToList();
+		var visibleEntries = Grid.FilteredItems.ToList();
 		// Don't show the same
 		int randomId;
 		do
