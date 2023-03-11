@@ -2,10 +2,11 @@
 
 public enum AnilistMediaFormat
 {
-	TV,
-	TV_SHORT,
-	MOVIE,
-	ONA,
-	OVA,
-	SPECIAL
+	UNKNOWN = 0,
+	TV = 1,
+	TV_SHORT = 2,
+	MOVIE = 3,
+	ONA = 4,
+	OVA = 5,
+	SPECIAL = 6,
 }

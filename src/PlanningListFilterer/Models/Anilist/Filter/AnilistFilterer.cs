@@ -10,27 +10,15 @@ public sealed class AnilistFilterer
 	private readonly IEnumerable<AnilistModel> _Media;
 	private readonly Action? _OnVisibiltyUpdated;
 
-	public AnilistFilterMinMax Duration { get; }
-	public AnilistFilterFormats Formats { get; }
 	public AnilistFilterGenres Genres { get; }
-	public AnilistFilterMinMax Popularity { get; }
-	public AnilistFilterMinMax Score { get; }
-	public AnilistFilterSequels Sequel { get; }
 	public AnilistFilterTags Tags { get; }
-	public AnilistFilterMinMax Year { get; }
 
 	public AnilistFilterer(
 		IEnumerable<AnilistModel> media,
 		Action? onVisibilityUpdated = null)
 	{
-		Duration = new(this, x => x.TotalDuration);
-		Formats = new(this);
 		Genres = new(this);
-		Popularity = new(this, x => x.Popularity);
-		Score = new(this, x => x.Score);
-		Sequel = new(this);
 		Tags = new(this);
-		Year = new(this, x => x.Start.Year);
 
 		_Media = media;
 		_OnVisibiltyUpdated = onVisibilityUpdated;
@@ -81,7 +69,6 @@ public sealed class AnilistFilterer
 			tags.UnionWith(media.Tags.Keys);
 		}
 
-		Formats.SetOptions(formats);
 		Genres.SetOptions(genres);
 		Tags.SetOptions(tags);
 

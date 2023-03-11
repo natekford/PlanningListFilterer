@@ -8,7 +8,7 @@
 <MudDataGrid Dense="true" Hover="true" Bordered="true" Striped="true"
 			 FixedHeader="true" FixedFooter="true" HorizontalScrollbar="false"
 			 ColumnResizeMode="ResizeMode.None" Height="85vh"
-			 Class="planning-table"
+			 Class="planning-table" Filterable="true"
 			 @ref="Grid" Items="@Entries" QuickFilter="@(x => x.IsVisible)">
 	<ToolBarContent>
 		<MudText Typo="Typo.h6">Planning List Filterer</MudText>
@@ -50,7 +50,7 @@
 		<Column T="AnilistModel" Field="Title" CellClass="text-wrap"
 				SortBy="@(m => m.Title)" />
 		<Column T="AnilistModel" Field="Start"
-				SortBy="@(m => m.Start.Time)">
+				SortBy="@(m => m.Start)">
 			<CellTemplate>@context.Item.DisplayStart()</CellTemplate>
 		</Column>
 		<Column T="AnilistModel" Field="Episodes"
@@ -58,7 +58,7 @@
 			<CellTemplate>@context.Item.DisplayEpisodeCount()</CellTemplate>
 		</Column>
 		<Column T="AnilistModel" Field="Duration"
-				SortBy="@(m => m.TotalDuration)">
+				SortBy="@(m => m.Duration)">
 			<CellTemplate>@context.Item.DisplayDuration()</CellTemplate>
 		</Column>
 		<Column T="AnilistModel" Field="Score"
@@ -73,9 +73,7 @@
 		<Column T="AnilistModel" Field="Popularity"
 				SortBy="@(m => m.Popularity)" />
 		<Column T="AnilistModel" Field="Format"
-				SortBy="@(m => m.Format.ToString())">
-			<CellTemplate>@context.Item.DisplayFormat()</CellTemplate>
-		</Column>
+				SortBy="@(m => m.Format.ToString())" />
 		<Column T="AnilistModel" Field="IsSequel" Title="Sequel"
 				SortBy="@(m => !m.IsSequel)" />
 		<Column T="AnilistModel" Field="Genres"
@@ -110,12 +108,6 @@
 	<DialogContent>
 		<FilterSelection Source="@Filterer.Genres" Label="Genre" />
 		<FilterSelection Source="@Filterer.Tags" Label="Tag" />
-		<FilterSelection Source="@Filterer.Formats" Label="Format" />
-		<FilterMinMax Source="@Filterer.Score" Label="Score" />
-		<FilterMinMax Source="@Filterer.Duration" Label="Duration" />
-		<FilterMinMax Source="@Filterer.Year" Label="Year" />
-		<FilterMinMax Source="@Filterer.Popularity" Label="Popularity" />
-		<FilterBool Source="@Filterer.Sequel">Don't Show Sequels</FilterBool>
 	</DialogContent>
 
 	<DialogActions>

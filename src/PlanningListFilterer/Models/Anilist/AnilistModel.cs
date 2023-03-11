@@ -8,39 +8,44 @@ namespace PlanningListFilterer.Models.Anilist;
 public sealed record AnilistModel(
 	int Id,
 	string Title,
-	AnilistMediaStatus? Status,
-	AnilistMediaFormat? Format,
+	AnilistMediaStatus Status,
+	AnilistMediaFormat Format,
 	int? Episodes,
 	int? Duration,
 	int? Score,
 	int? FriendScore,
 	int Popularity,
-	AnilistStartModel Start,
+	int? Year,
+	int? Month,
 	string? CoverImageUrl,
 	ImmutableHashSet<string> Genres,
 	ImmutableDictionary<string, int> Tags,
 	bool IsSequel
-)
+) : IFuzzyDate
 {
 	[JsonIgnore]
 	public bool IsVisible { get; set; } = true;
 	[JsonIgnore]
-	public int? TotalDuration => Episodes * Duration;
+	public DateTime? Start => this.GetDate();
 
 	public static AnilistModel Create(AnilistMedia media, int? friendScore)
 	{
-		var start = media.CreateStartModel();
+		var year = media.StartDate?.Year;
+		var month = media.StartDate?.Month;
+		var start = AnilistModelUtils.GetDate(year, month);
+		var episodes = media.Episodes ?? media.NextAiringEpisode?.Episode;
 		return new(
 			Id: media.Id,
 			Title: media.Title.UserPreferred,
-			Status: media.Status,
-			Format: media.Format,
-			Episodes: media.Episodes ?? media.NextAiringEpisode?.Episode,
-			Duration: media.Duration,
+			Status: media.Status ?? AnilistMediaStatus.UNKNOWN,
+			Format: media.Format ?? AnilistMediaFormat.UNKNOWN,
+			Episodes: episodes,
+			Duration: episodes * media.Duration,
 			Score: media.AverageScore,
 			FriendScore: friendScore,
 			Popularity: media.Popularity,
-			Start: start,
+			Year: year,
+			Month: month,
 			CoverImageUrl: media.CoverImage?.Medium,
 			Genres: media.Genres.ToImmutableHashSet(),
 			Tags: media.Tags.ToImmutableDictionary(
@@ -52,7 +57,7 @@ public sealed record AnilistModel(
 				return (x.RelationType == AnilistMediaRelation.PREQUEL
 					|| x.RelationType == AnilistMediaRelation.PARENT)
 					&& x.Node.Type == AnilistMediaType.ANIME
-					&& x.Node.CreateStartModel().Time < start.Time;
+					&& (x.Node.StartDate?.GetDate() < start);
 			})
 		);
 	}

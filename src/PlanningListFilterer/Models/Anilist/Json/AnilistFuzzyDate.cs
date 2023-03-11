@@ -7,4 +7,4 @@ public sealed record AnilistFuzzyDate(
 	int? Year,
 	[property: JsonPropertyName("month")]
 	int? Month
-);
+) : IFuzzyDate;

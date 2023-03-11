@@ -6,22 +6,11 @@ public static class AnilistModelUtils
 {
 	public const string NO_VALUE = "N/A";
 
-	public static AnilistStartModel CreateStartModel(this AnilistMedia media)
-	{
-		return new(
-			Year: media.StartDate?.Year,
-			Month: media.StartDate?.Month
-		);
-	}
-
 	public static string DisplayDuration(this AnilistModel model)
-		=> model.TotalDuration is int d ? d.ToString() : NO_VALUE;
+		=> model.Duration is int d ? d.ToString() : NO_VALUE;
 
 	public static string DisplayEpisodeCount(this AnilistModel model)
 		=> model.Episodes is int e ? e.ToString() : NO_VALUE;
-
-	public static string DisplayFormat(this AnilistModel model)
-		=> model.Format?.ToString() ?? NO_VALUE;
 
 	public static string DisplayFriendScore(this AnilistModel model)
 		=> model.FriendScore is int s ? $"{s}%" : NO_VALUE;
@@ -34,14 +23,13 @@ public static class AnilistModelUtils
 
 	public static string DisplayStart(this AnilistModel model)
 	{
-		var start = model.Start;
-		if (!start.Year.HasValue)
+		if (!model.Year.HasValue)
 		{
 			return NO_VALUE;
 		}
 
-		var format = start.Month.HasValue ? "yyyy MMM" : "yyyy";
-		return start.Time!.Value.ToString(format);
+		var format = model.Month.HasValue ? "yyyy MMM" : "yyyy";
+		return model.Start!.Value.ToString(format);
 	}
 
 	public static string DisplayTag(this KeyValuePair<string, int> tag)
@@ -64,6 +52,18 @@ public static class AnilistModelUtils
 			.Skip(skip)
 			.Take(count)
 			.DisplayTags();
+	}
+
+	public static DateTime? GetDate(this IFuzzyDate date)
+		=> GetDate(date.Year, date.Month);
+
+	public static DateTime? GetDate(int? year, int? month)
+	{
+		if (year is not int y)
+		{
+			return null;
+		}
+		return new(year: y, month: month ?? 12, day: 1);
 	}
 
 	public static string GetUrl(this AnilistModel model)

@@ -2,6 +2,7 @@
 
 public enum AnilistMediaType
 {
-	ANIME,
-	MANGA
+	UNKNOWN = 0,
+	ANIME = 1,
+	MANGA = 2,
 }

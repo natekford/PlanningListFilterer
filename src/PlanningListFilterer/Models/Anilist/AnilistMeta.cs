@@ -9,7 +9,7 @@ public sealed record AnilistMeta(
 	bool SavedWithFriendScores
 )
 {
-	public const int CURRENT_VERSION = 7;
+	public const int CURRENT_VERSION = 10;
 
 	public bool ShouldReacquire(ListSettings settings, TimeSpan limit)
 	{
