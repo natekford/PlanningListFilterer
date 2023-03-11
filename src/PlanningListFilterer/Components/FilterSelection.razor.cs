@@ -28,6 +28,7 @@ public partial class FilterSelection
 	{
 		SelectedItems.Clear();
 		MarkFilterAsDisabled();
+		GridStateHasChanged();
 	}
 
 	public void OnCheckedChanged(bool value, string item)
@@ -46,9 +47,7 @@ public partial class FilterSelection
 			}
 		}
 
-		// StateHasChanged needs to be invoked
-		// This method does the least while still doing that
-		Column.DataGrid.ToggleFiltersMenu();
+		GridStateHasChanged();
 	}
 
 	protected override void OnParametersSet()
@@ -76,8 +75,13 @@ public partial class FilterSelection
 		_FilterDefinition = filterDefinition;
 	}
 
+	private void GridStateHasChanged()
+		// StateHasChanged needs to be invoked
+		// This method does the least while still doing that
+		=> Column.DataGrid.ToggleFiltersMenu();
+
 	private void MarkFilterAsDisabled()
-		=> _FilterDefinition.Operator = null;
+			=> _FilterDefinition.Operator = null;
 
 	private void MarkFilterAsEnabled()
 		=> _FilterDefinition.Operator = "ignored";
