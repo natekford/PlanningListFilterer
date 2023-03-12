@@ -91,3 +91,9 @@ a, .btn-link {
 	overflow-y: auto;
 	max-height: 250px;
 }
+
+/* Popover provider would extend past sidebar/page bottom without this */
+/* Doesn't work when applied to #id */
+body {
+	overflow-y: clip;
+}
