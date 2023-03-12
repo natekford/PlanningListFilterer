@@ -13,8 +13,9 @@ public sealed record AnilistModel(
 	int? Episodes,
 	int? Duration,
 	int? Score,
-	int? FriendScore,
 	int Popularity,
+	int? FriendScore,
+	int? FriendPopularity,
 	int? Year,
 	int? Month,
 	string? CoverImageUrl,
@@ -25,8 +26,6 @@ public sealed record AnilistModel(
 {
 	[JsonIgnore]
 	public DateTime Start => this.GetDate();
-	[JsonIgnore]
-	public IReadOnlyList<string> TagNames => Tags.Keys.ToList();
 
 	public static AnilistModel Create(AnilistMedia media, int? friendScore)
 	{
@@ -42,8 +41,9 @@ public sealed record AnilistModel(
 			Episodes: episodes,
 			Duration: episodes * media.Duration,
 			Score: media.AverageScore,
-			FriendScore: friendScore,
 			Popularity: media.Popularity,
+			FriendScore: friendScore,
+			FriendPopularity: 0,
 			Year: year,
 			Month: month,
 			CoverImageUrl: media.CoverImage?.Medium,

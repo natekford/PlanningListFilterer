@@ -14,15 +14,10 @@ public partial class FilterSelection
 
 	[Parameter]
 	public Column<AnilistModel> Column { get; set; } = null!;
-	public ImmutableArray<string> Options => Column.DataGrid.FilteredItems
-		.SelectMany(x => Property(x))
-		.Distinct()
-		.OrderByDescending(x => SelectedItems.Contains(x))
-		.ThenBy(x => x)
-		.ToImmutableArray();
-	[Parameter]
-	public Func<AnilistModel, IReadOnlyCollection<string>> Property { get; set; } = null!;
+	public ImmutableArray<string> Options { get; private set; } = ImmutableArray<string>.Empty;
 	public HashSet<string> SelectedItems { get; private set; } = null!;
+	[Parameter]
+	public Func<AnilistModel, IEnumerable<string>> Selector { get; set; } = null!;
 
 	public void Clear()
 	{
@@ -36,17 +31,22 @@ public partial class FilterSelection
 		if (value)
 		{
 			SelectedItems.Add(item);
-			MarkFilterAsEnabled();
 		}
 		else
 		{
 			SelectedItems.Remove(item);
-			if (SelectedItems.Count == 0)
-			{
-				MarkFilterAsDisabled();
-			}
 		}
 
+		if (SelectedItems.Count == 0)
+		{
+			MarkFilterAsDisabled();
+		}
+		else if (SelectedItems.Count == 1)
+		{
+			MarkFilterAsEnabled();
+		}
+
+		UpdateOptions();
 		GridStateHasChanged();
 	}
 
@@ -71,8 +71,10 @@ public partial class FilterSelection
 		}
 
 		SelectedItems = (HashSet<string>)filterDefinition.Value;
-		filterDefinition.FilterFunction = m => SelectedItems.All(i => Property(m).Contains(i));
+		filterDefinition.FilterFunction = m => SelectedItems.All(i => Selector(m).Contains(i));
 		_FilterDefinition = filterDefinition;
+
+		UpdateOptions();
 	}
 
 	private void GridStateHasChanged()
@@ -81,8 +83,18 @@ public partial class FilterSelection
 		=> Column.DataGrid.ToggleFiltersMenu();
 
 	private void MarkFilterAsDisabled()
-			=> _FilterDefinition.Operator = null;
+		=> _FilterDefinition.Operator = null;
 
 	private void MarkFilterAsEnabled()
 		=> _FilterDefinition.Operator = "ignored";
+
+	private void UpdateOptions()
+	{
+		Options = Column.DataGrid.FilteredItems
+			.SelectMany(x => Selector(x))
+			.Distinct()
+			.OrderByDescending(SelectedItems.Contains)
+			.ThenBy(x => x)
+			.ToImmutableArray();
+	}
 }

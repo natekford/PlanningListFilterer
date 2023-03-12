@@ -62,7 +62,7 @@
 		<PropertyColumn Property="@(m => m.Genres)" Sortable="false"
 						@ref="@GenreColumn">
 			<FilterTemplate>
-				<FilterSelection Property="@(m => m.Genres)" Column="@GenreColumn" />
+				<FilterSelection Selector="@(m => m.Genres)" Column="@GenreColumn" />
 			</FilterTemplate>
 
 			<CellTemplate>
@@ -72,7 +72,7 @@
 		<PropertyColumn Property="@(m => m.Tags)" Sortable="false"
 						@ref="@TagColumn">
 			<FilterTemplate>
-				<FilterSelection Property="@(m => m.TagNames)" Column="@TagColumn" />
+				<FilterSelection Selector="@(m => m.Tags.Keys)" Column="@TagColumn" />
 			</FilterTemplate>
 
 			<CellTemplate>
