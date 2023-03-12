@@ -5,6 +5,7 @@ namespace PlanningListFilterer.Models.Anilist;
 public static class AnilistModelUtils
 {
 	public const string NO_VALUE = "N/A";
+	public static DateTime NoReleaseDate { get; } = new(year: 2100, month: 1, day: 1);
 
 	public static string DisplayDuration(this AnilistModel model)
 		=> model.Duration is int d ? d.ToString() : NO_VALUE;
@@ -23,13 +24,14 @@ public static class AnilistModelUtils
 
 	public static string DisplayStart(this AnilistModel model)
 	{
-		if (!model.Year.HasValue)
+		var start = model.Start;
+		if (start == NoReleaseDate)
 		{
 			return NO_VALUE;
 		}
 
 		var format = model.Month.HasValue ? "yyyy MMM" : "yyyy";
-		return model.Start!.Value.ToString(format);
+		return start.ToString(format);
 	}
 
 	public static string DisplayTag(this KeyValuePair<string, int> tag)
@@ -54,14 +56,14 @@ public static class AnilistModelUtils
 			.DisplayTags();
 	}
 
-	public static DateTime? GetDate(this IFuzzyDate date)
+	public static DateTime GetDate(this IFuzzyDate date)
 		=> GetDate(date.Year, date.Month);
 
-	public static DateTime? GetDate(int? year, int? month)
+	public static DateTime GetDate(int? year, int? month)
 	{
 		if (year is not int y)
 		{
-			return null;
+			return NoReleaseDate;
 		}
 		return new(year: y, month: month ?? 12, day: 1);
 	}

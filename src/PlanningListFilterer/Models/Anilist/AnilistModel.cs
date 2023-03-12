@@ -24,7 +24,7 @@ public sealed record AnilistModel(
 ) : IFuzzyDate
 {
 	[JsonIgnore]
-	public DateTime? Start => this.GetDate();
+	public DateTime Start => this.GetDate();
 	[JsonIgnore]
 	public IReadOnlyList<string> TagNames => Tags.Keys.ToList();
 
