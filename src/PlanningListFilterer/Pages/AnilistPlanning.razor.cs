@@ -19,30 +19,6 @@ public partial class AnilistPlanning
 	public ListSettings ListSettings { get; set; } = new();
 	public string? Username { get; set; } = "advorange";
 
-	public async IAsyncEnumerable<FriendScore> GetFriendScores(
-		AnilistUser user,
-		IEnumerable<AnilistMedia> media)
-	{
-		if (!ListSettings.EnableFriendScores)
-		{
-			foreach (var m in media)
-			{
-				yield return new(m, null);
-			}
-			yield break;
-		}
-
-		var friends = new List<AnilistUser>();
-		await foreach (var friend in Http.GetAnilistFollowingAsync(user).ConfigureAwait(false))
-		{
-			friends.Add(friend);
-		}
-		await foreach (var fScore in Http.GetAnilistFriendScoresAsync(media, friends).ConfigureAwait(false))
-		{
-			yield return fScore;
-		}
-	}
-
 	public async Task<AnilistMeta?> GetMeta(Username username)
 	{
 		try
@@ -57,15 +33,12 @@ public partial class AnilistPlanning
 
 	public async Task<List<AnilistModel>> GetPlanningList(Username username, bool useCached)
 	{
-		var sw = Stopwatch.StartNew();
-
 		var entries = default(List<AnilistModel>);
 		if (useCached)
 		{
 			try
 			{
 				entries = await LocalStorage.GetItemCompressedAsync<List<AnilistModel>>(username.Name);
-				Console.WriteLine($"{sw.ElapsedMilliseconds}ms: Retrieved cached");
 			}
 			catch
 			{
@@ -73,38 +46,55 @@ public partial class AnilistPlanning
 				// retrieve new list from anilist
 			}
 		}
-
 		if (entries is not null)
 		{
 			return entries;
 		}
 
-		var media = new List<AnilistMedia>();
+		var medias = new List<AnilistMedia>();
 		var user = default(AnilistUser);
 		await foreach (var entry in Http.GetAnilistPlanningListAsync(username.Name).ConfigureAwait(false))
 		{
 			user ??= entry.User;
 			if (entry.Media.Status == AnilistMediaStatus.FINISHED)
 			{
-				media.Add(entry.Media);
+				medias.Add(entry.Media);
 			}
 		}
-		Console.WriteLine($"{sw.ElapsedMilliseconds}ms: Retrieved planning list");
-		entries = new List<AnilistModel>(media.Count);
 
-		await foreach (var fScore in GetFriendScores(user!, media).ConfigureAwait(false))
+		if (ListSettings.EnableFriendScores)
 		{
-			entries.Add(AnilistModel.Create(fScore.Media, fScore.Score));
-		}
-		Console.WriteLine($"{sw.ElapsedMilliseconds}ms: Retrieved friend scores");
-		entries.Sort((x, y) => x.Id.CompareTo(y.Id));
+			var friends = new List<AnilistUser>();
+			await foreach (var friend in Http.GetAnilistFollowingAsync(user!).ConfigureAwait(false))
+			{
+				friends.Add(friend);
+			}
+			var friendScores = new List<AnilistFriendScore>(medias.Count);
+			await foreach (var friendScore in Http.GetAnilistFriendScoresAsync(medias, friends).ConfigureAwait(false))
+			{
+				friendScores.Add(friendScore);
+			}
 
+			entries = friendScores.ConvertAll(x =>
+			{
+				return AnilistModel.Create(x.Media) with
+				{
+					FriendScore = x.Score,
+					FriendPopularity = x.Popularity,
+				};
+			});
+		}
+		else
+		{
+			entries = medias.ConvertAll(AnilistModel.Create);
+		}
+
+		entries.Sort((x, y) => x.Id.CompareTo(y.Id));
 		await LocalStorage.SetItemCompressedAsync(username.Name, entries).ConfigureAwait(false);
 		await LocalStorage.SetItemAsync(username.Meta, AnilistMeta.New(
 			userId: user!.Id,
 			savedWithFriendScores: ListSettings.EnableFriendScores
 		)).ConfigureAwait(false);
-		Console.WriteLine($"{sw.ElapsedMilliseconds}ms: Saved uncached");
 
 		return entries;
 	}

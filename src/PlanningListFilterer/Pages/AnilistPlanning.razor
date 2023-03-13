@@ -51,11 +51,15 @@
 		<PropertyColumn Property="@(m => m.Score)" SortBy="@(m => m.Score)">
 			<CellTemplate>@context.Item.DisplayScore()</CellTemplate>
 		</PropertyColumn>
+		<PropertyColumn Property="@(m => m.Popularity)" SortBy="@(m => m.Popularity)" />
 		<PropertyColumn Property="@(m => m.FriendScore)" SortBy="@(m => m.FriendScore)"
-						Title="Friend Score" Hidden="@(!ListSettings.EnableFriendScores)">
+						Hidden="@(!ListSettings.EnableFriendScores)"
+						Title="Friend Score">
 			<CellTemplate>@context.Item.DisplayFriendScore()</CellTemplate>
 		</PropertyColumn>
-		<PropertyColumn Property="@(m => m.Popularity)" SortBy="@(m => m.Popularity)" />
+		<PropertyColumn Property="@(m => m.FriendPopularity)" SortBy="@(m => m.FriendPopularity)"
+						Hidden="@(!ListSettings.EnableFriendScores)"
+						Title = "Friend Popularity" />
 		<PropertyColumn Property="@(m => m.Format)" SortBy="@(m => m.Format.ToString())" />
 		<PropertyColumn Property="@(m => m.IsSequel)" SortBy="@(m => !m.IsSequel)"
 						Title="Sequel" />

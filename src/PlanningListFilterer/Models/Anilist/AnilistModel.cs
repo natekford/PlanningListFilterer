@@ -15,7 +15,7 @@ public sealed record AnilistModel(
 	int? Score,
 	int Popularity,
 	int? FriendScore,
-	int? FriendPopularity,
+	int FriendPopularity,
 	int? Year,
 	int? Month,
 	string? CoverImageUrl,
@@ -27,7 +27,7 @@ public sealed record AnilistModel(
 	[JsonIgnore]
 	public DateTime Start => this.GetDate();
 
-	public static AnilistModel Create(AnilistMedia media, int? friendScore)
+	public static AnilistModel Create(AnilistMedia media)
 	{
 		var year = media.StartDate?.Year;
 		var month = media.StartDate?.Month;
@@ -42,8 +42,8 @@ public sealed record AnilistModel(
 			Duration: episodes * media.Duration,
 			Score: media.AverageScore,
 			Popularity: media.Popularity,
-			FriendScore: friendScore,
-			FriendPopularity: 0,
+			FriendScore: default,
+			FriendPopularity: default,
 			Year: year,
 			Month: month,
 			CoverImageUrl: media.CoverImage?.Medium,

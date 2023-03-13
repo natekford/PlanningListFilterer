@@ -91,7 +91,7 @@ public partial class FilterSelection
 	private void UpdateOptions()
 	{
 		Options = Column.DataGrid.FilteredItems
-			.SelectMany(x => Selector(x))
+			.SelectMany(Selector)
 			.Distinct()
 			.OrderByDescending(SelectedItems.Contains)
 			.ThenBy(x => x)

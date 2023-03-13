@@ -34,7 +34,7 @@ public static class AnilistGraphQLUtils
 		} while (page.PageInfo.HasNextPage);
 	}
 
-	public static async IAsyncEnumerable<FriendScore> GetAnilistFriendScoresAsync(
+	public static async IAsyncEnumerable<AnilistFriendScore> GetAnilistFriendScoresAsync(
 		this HttpClient http,
 		IEnumerable<AnilistMedia> media,
 		IEnumerable<AnilistUser> users)
@@ -55,7 +55,7 @@ public static class AnilistGraphQLUtils
 			foreach (var (key, page) in pages)
 			{
 				var id = int.Parse(key[1..]);
-				var (count, sum) = storage.GetValueOrDefault(id);
+				var (popularity, sum) = storage.GetValueOrDefault(id);
 				foreach (var entry in page.MediaList)
 				{
 					if (entry.Score == 0)
@@ -63,20 +63,22 @@ public static class AnilistGraphQLUtils
 						continue;
 					}
 
-					++count;
+					++popularity;
 					sum += entry.Score;
 				}
 
 				if (page.MediaList.Length == PAGE_SIZE)
 				{
-					storage[id] = (count, sum);
+					storage[id] = (popularity, sum);
 				}
 				else
 				{
 					mediaIds.Remove(id);
 					storage.Remove(id);
-					var avg = (int)(sum / Math.Max(1, count));
-					yield return new(mediaDict[id], avg == 0 ? null : avg);
+
+					var avg = (int?)(sum / Math.Max(1, popularity));
+					avg = avg == 0 ? null : avg;
+					yield return new(mediaDict[id], avg, popularity);
 				}
 			}
 
@@ -84,7 +86,7 @@ public static class AnilistGraphQLUtils
 		} while (mediaIds.Count > 0);
 	}
 
-	public static async IAsyncEnumerable<PlanningEntry> GetAnilistPlanningListAsync(
+	public static async IAsyncEnumerable<AnilistPlanningEntry> GetAnilistPlanningListAsync(
 		this HttpClient http,
 		string username)
 	{
