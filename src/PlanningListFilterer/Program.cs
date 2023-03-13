@@ -22,6 +22,7 @@ builder.Services.AddScoped(_ =>
 	};
 });
 builder.Services.AddScoped<ListSettingsService>();
+builder.Services.AddScoped<ColumnSettingsService>();
 
 builder.Services.AddMudServices();
 builder.Services.AddBlazoredLocalStorage(config =>

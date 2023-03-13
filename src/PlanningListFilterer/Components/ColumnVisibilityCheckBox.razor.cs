@@ -39,5 +39,16 @@ public partial class ColumnVisibilityCheckBox<T>
 	}
 
 	public void OpenMenu()
-			=> IsMenuOpen = true;
+		=> IsMenuOpen = true;
+
+	public async Task Save()
+	{
+		var hiddenColumns = Grid.RenderedColumns
+			.Where(x => x.Hidden)
+			.Select(x => x.Title)
+			.ToHashSet();
+		await ColumnSettingsService.SaveSettingsAsync(new(
+			HiddenColumns: hiddenColumns
+		)).ConfigureAwait(false);
+	}
 }

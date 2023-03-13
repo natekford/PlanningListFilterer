@@ -1,5 +1,7 @@
 ﻿@typeparam T
 
+@inject ColumnSettingsService ColumnSettingsService
+
 <MudButton Color="Color.Primary" OnClick="@OpenMenu">
 	Columns
 </MudButton>
@@ -19,6 +21,8 @@
 			</MudStack>
 		</MudItem>
 		<MudItem xs="12" Class="d-flex justify-end">
+			<MudButton OnClick="@Save">Save</MudButton>
+			<MudSpacer />
 			<MudButton OnClick="@EnableAll">Enable All</MudButton>
 			<MudButton OnClick="@DisableAll">Disable All</MudButton>
 		</MudItem>

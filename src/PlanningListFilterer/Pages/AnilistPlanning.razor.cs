@@ -11,6 +11,7 @@ public partial class AnilistPlanning
 	private static readonly Random Random = new();
 	private int _RandomId;
 
+	public ColumnSettings ColumnSettings { get; set; } = new();
 	public List<AnilistModel> Entries { get; set; } = new();
 	public IEnumerable<AnilistModel> FilteredEntries => Grid.FilteredItems;
 	public bool IsLoading { get; set; }
@@ -134,8 +135,30 @@ public partial class AnilistPlanning
 		).ConfigureAwait(false);
 	}
 
-	protected override async Task OnInitializedAsync()
-		=> ListSettings = await ListSettingsService.GetSettingsAsync().ConfigureAwait(false);
+	protected override async Task OnAfterRenderAsync(bool firstRender)
+	{
+		if (!firstRender)
+		{
+			return;
+		}
+
+		ListSettings = await ListSettingsService.GetSettingsAsync().ConfigureAwait(false);
+		ColumnSettings = await ColumnSettingsService.GetSettingsAsync().ConfigureAwait(false);
+
+		var columnHidden = false;
+		foreach (var column in Grid.RenderedColumns)
+		{
+			if (column.Hideable != false && ColumnSettings.HiddenColumns.Contains(column.Title))
+			{
+				await column.HideAsync().ConfigureAwait(false);
+				columnHidden = true;
+			}
+		}
+		if (columnHidden)
+		{
+			StateHasChanged();
+		}
+	}
 }
 
 public sealed class Username

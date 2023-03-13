@@ -24,9 +24,9 @@ public partial class FilterSelection<T>
 		Column.DataGrid.ExternalStateHasChanged();
 	}
 
-	public void OnCheckedChanged(string item, bool value)
+	public void OnCheckedChanged(string item, bool add)
 	{
-		if (value)
+		if (add)
 		{
 			SelectedItems.Add(item);
 		}
