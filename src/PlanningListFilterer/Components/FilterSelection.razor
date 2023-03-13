@@ -6,7 +6,7 @@
 			<Virtualize Items="@Options">
 				<MudCheckBox T="bool" Label="@context" Size="@Size.Small"
 							 Checked="@(SelectedItems.Contains(context))"
-							 CheckedChanged="@(x => OnCheckedChanged(x, context))" />
+							 CheckedChanged="@(x => OnCheckedChanged(context, x))" />
 			</Virtualize>
 		</MudStack>
 	</MudItem>

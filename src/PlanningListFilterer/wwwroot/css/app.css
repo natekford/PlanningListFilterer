@@ -89,7 +89,7 @@ a, .btn-link {
 
 .filter-selection-stack {
 	overflow-y: auto;
-	max-height: 250px;
+	max-height: 50vh;
 }
 
 /* Popover provider would extend past sidebar/page bottom without this */

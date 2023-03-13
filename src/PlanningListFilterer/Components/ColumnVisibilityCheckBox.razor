@@ -8,13 +8,13 @@
 			Open="@IsMenuOpen">
 	<MudGrid Class="filter-selection-grid">
 		<MudItem xs="12">
-			<MudStack Class="filter-selection-stack" Spacing="0">
+			<MudStack Spacing="0">
 				@foreach (var column in Columns)
 				{
 					<MudCheckBox T="bool" Label="@column.Title" Size="@Size.Small"
 								 Checked="@(!column.Hidden)"
 								 Disabled="@(column.Hideable == false)"
-								 CheckedChanged="@(x => SetVisible(column, x))" />
+								 CheckedChanged="@(x => OnCheckedChanged(column, x))" />
 				}
 			</MudStack>
 		</MudItem>

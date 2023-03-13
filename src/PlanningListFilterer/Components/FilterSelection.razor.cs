@@ -24,7 +24,7 @@ public partial class FilterSelection<T>
 		Column.DataGrid.ExternalStateHasChanged();
 	}
 
-	public void OnCheckedChanged(bool value, string item)
+	public void OnCheckedChanged(string item, bool value)
 	{
 		if (value)
 		{
@@ -39,7 +39,7 @@ public partial class FilterSelection<T>
 		{
 			MarkFilterAsDisabled();
 		}
-		else if (SelectedItems.Count == 1)
+		else if (!IsFilterEnabled())
 		{
 			MarkFilterAsEnabled();
 		}
@@ -74,6 +74,9 @@ public partial class FilterSelection<T>
 
 		UpdateOptions();
 	}
+
+	private bool IsFilterEnabled()
+		=> _FilterDefinition.Operator != null;
 
 	private void MarkFilterAsDisabled()
 		=> _FilterDefinition.Operator = null;

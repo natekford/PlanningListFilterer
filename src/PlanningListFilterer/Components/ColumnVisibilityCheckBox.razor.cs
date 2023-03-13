@@ -32,12 +32,12 @@ public partial class ColumnVisibilityCheckBox<T>
 		Grid.ExternalStateHasChanged();
 	}
 
-	public void OpenMenu()
-		=> IsMenuOpen = true;
-
-	public async Task SetVisible(Column<T> column, bool visible)
+	public async Task OnCheckedChanged(Column<T> column, bool visible)
 	{
 		await (visible ? column.ShowAsync() : column.HideAsync()).ConfigureAwait(false);
 		Grid.ExternalStateHasChanged();
 	}
+
+	public void OpenMenu()
+			=> IsMenuOpen = true;
 }
