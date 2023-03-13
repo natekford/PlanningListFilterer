@@ -6,8 +6,9 @@
 
 <PageTitle>Planning List Filterer</PageTitle>
 
-<MudDataGrid Dense="true" Hover="true" Bordered="true" Striped="true" Filterable="true"
-			 FixedHeader="true" FixedFooter="true" ShowColumnOptions="false"
+<MudDataGrid Dense="true" Hover="true" Bordered="true" Striped="true"
+			 Filterable="true" Hideable="true" ShowColumnOptions="false"
+			 FixedHeader="true" FixedFooter="true"
 			 ColumnResizeMode="ResizeMode.None"
 			 FilterMode="DataGridFilterMode.ColumnFilterMenu"
 			 Class="planning-table" Height="85vh" Loading="@IsLoading"
@@ -26,6 +27,7 @@
 				   Disabled="@(Entries.Count == 0)">
 			Random
 		</MudButton>
+		<ColumnVisibilityCheckBox Grid="@Grid" />
 	</ToolBarContent>
 
 	<Columns>
@@ -51,15 +53,20 @@
 		<PropertyColumn Property="@(m => m.Score)" SortBy="@(m => m.Score)">
 			<CellTemplate>@context.Item.DisplayScore()</CellTemplate>
 		</PropertyColumn>
-		<PropertyColumn Property="@(m => m.Popularity)" SortBy="@(m => m.Popularity)" />
-		<PropertyColumn Property="@(m => m.FriendScore)" SortBy="@(m => m.FriendScore)"
-						Hidden="@(!ListSettings.EnableFriendScores)"
-						Title="Friend Score">
-			<CellTemplate>@context.Item.DisplayFriendScore()</CellTemplate>
+		<PropertyColumn Property="@(m => m.Popularity)" SortBy="@(m => m.Popularity)">
+			<CellTemplate>@context.Item.DisplayPopularity()</CellTemplate>
 		</PropertyColumn>
-		<PropertyColumn Property="@(m => m.FriendPopularity)" SortBy="@(m => m.FriendPopularity)"
-						Hidden="@(!ListSettings.EnableFriendScores)"
-						Title = "Friend Popularity" />
+		@if (ListSettings.EnableFriendScores)
+		{
+			<PropertyColumn Property="@(m => m.FriendScore)" SortBy="@(m => m.FriendScore)"
+							Title="Friend Score">
+				<CellTemplate>@context.Item.DisplayFriendScore()</CellTemplate>
+			</PropertyColumn>
+			<PropertyColumn Property="@(m => m.FriendPopularity)" SortBy="@(m => m.FriendPopularity)"
+							Title="Friend Popularity">
+				<CellTemplate>@context.Item.DisplayFriendPopularity()</CellTemplate>
+			</PropertyColumn>
+		}
 		<PropertyColumn Property="@(m => m.Format)" SortBy="@(m => m.Format.ToString())" />
 		<PropertyColumn Property="@(m => m.IsSequel)" SortBy="@(m => !m.IsSequel)"
 						Title="Sequel" />

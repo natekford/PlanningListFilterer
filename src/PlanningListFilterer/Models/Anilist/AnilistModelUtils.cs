@@ -8,16 +8,22 @@ public static class AnilistModelUtils
 	public static DateTime NoReleaseDate { get; } = new(year: 2100, month: 1, day: 1);
 
 	public static string DisplayDuration(this AnilistModel model)
-		=> model.Duration is int d ? d.ToString() : NO_VALUE;
+		=> model.Duration is int d ? d.ToString("n0") : NO_VALUE;
 
 	public static string DisplayEpisodeCount(this AnilistModel model)
-		=> model.Episodes is int e ? e.ToString() : NO_VALUE;
+		=> model.Episodes is int e ? e.ToString("n0") : NO_VALUE;
+
+	public static string DisplayFriendPopularity(this AnilistModel model)
+		=> model.FriendPopularity.ToString("n0");
 
 	public static string DisplayFriendScore(this AnilistModel model)
-		=> model.FriendScore is int s ? $"{s}%" : NO_VALUE;
+			=> model.FriendScore is int s ? $"{s}%" : NO_VALUE;
 
 	public static string DisplayGenres(this AnilistModel model)
 		=> model.Genres.DisplayStrings();
+
+	public static string DisplayPopularity(this AnilistModel model)
+		=> model.Popularity.ToString("n0");
 
 	public static string DisplayScore(this AnilistModel model)
 		=> model.Score is int s ? $"{s}%" : NO_VALUE;

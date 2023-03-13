@@ -2,28 +2,26 @@
 
 using MudBlazor;
 
-using PlanningListFilterer.Models.Anilist;
-
 using System.Collections.Immutable;
 
 namespace PlanningListFilterer.Components;
 
-public partial class FilterSelection
+public partial class FilterSelection<T>
 {
-	private FilterDefinition<AnilistModel> _FilterDefinition = null!;
+	private FilterDefinition<T> _FilterDefinition = null!;
 
 	[Parameter]
-	public Column<AnilistModel> Column { get; set; } = null!;
+	public Column<T> Column { get; set; } = null!;
 	public ImmutableArray<string> Options { get; private set; } = ImmutableArray<string>.Empty;
 	public HashSet<string> SelectedItems { get; private set; } = null!;
 	[Parameter]
-	public Func<AnilistModel, IEnumerable<string>> Selector { get; set; } = null!;
+	public Func<T, IEnumerable<string>> Selector { get; set; } = null!;
 
 	public void Clear()
 	{
 		SelectedItems.Clear();
 		MarkFilterAsDisabled();
-		GridStateHasChanged();
+		Column.DataGrid.ExternalStateHasChanged();
 	}
 
 	public void OnCheckedChanged(bool value, string item)
@@ -47,7 +45,7 @@ public partial class FilterSelection
 		}
 
 		UpdateOptions();
-		GridStateHasChanged();
+		Column.DataGrid.ExternalStateHasChanged();
 	}
 
 	protected override void OnParametersSet()
@@ -76,11 +74,6 @@ public partial class FilterSelection
 
 		UpdateOptions();
 	}
-
-	private void GridStateHasChanged()
-		// StateHasChanged needs to be invoked
-		// This method does the least while still doing that
-		=> Column.DataGrid.ToggleFiltersMenu();
 
 	private void MarkFilterAsDisabled()
 		=> _FilterDefinition.Operator = null;

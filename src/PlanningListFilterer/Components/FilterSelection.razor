@@ -1,4 +1,4 @@
-﻿@using System.Linq.Expressions;
+﻿@typeparam T
 
 <MudGrid Class="filter-selection-grid">
 	<MudItem xs="12">
@@ -11,6 +11,6 @@
 		</MudStack>
 	</MudItem>
 	<MudItem xs="12" Class="d-flex justify-end">
-		<MudButton Class="clear-filter-button" OnClick="@Clear">Clear</MudButton>
+		<MudButton OnClick="@Clear">Clear</MudButton>
 	</MudItem>
 </MudGrid>

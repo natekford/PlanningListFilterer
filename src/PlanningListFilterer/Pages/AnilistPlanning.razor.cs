@@ -4,8 +4,6 @@ using PlanningListFilterer.Models.Anilist;
 using PlanningListFilterer.Models.Anilist.Json;
 using PlanningListFilterer.Settings;
 
-using System.Diagnostics;
-
 namespace PlanningListFilterer.Pages;
 
 public partial class AnilistPlanning

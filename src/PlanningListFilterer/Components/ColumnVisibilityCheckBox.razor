@@ -1,0 +1,26 @@
+﻿@typeparam T
+
+<MudButton Color="Color.Primary" OnClick="@OpenMenu">
+	Columns
+</MudButton>
+<MudOverlay Visible="@IsMenuOpen" OnClick="@CloseMenu" />
+<MudPopover Class="pa-4" AnchorOrigin="Origin.BottomRight" TransformOrigin="Origin.TopRight"
+			Open="@IsMenuOpen">
+	<MudGrid Class="filter-selection-grid">
+		<MudItem xs="12">
+			<MudStack Class="filter-selection-stack" Spacing="0">
+				@foreach (var column in Columns)
+				{
+					<MudCheckBox T="bool" Label="@column.Title" Size="@Size.Small"
+								 Checked="@(!column.Hidden)"
+								 Disabled="@(column.Hideable == false)"
+								 CheckedChanged="@(x => SetVisible(column, x))" />
+				}
+			</MudStack>
+		</MudItem>
+		<MudItem xs="12" Class="d-flex justify-end">
+			<MudButton OnClick="@EnableAll">Enable All</MudButton>
+			<MudButton OnClick="@DisableAll">Disable All</MudButton>
+		</MudItem>
+	</MudGrid>
+</MudPopover>
