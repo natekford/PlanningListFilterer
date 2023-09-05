@@ -2,15 +2,9 @@
 
 namespace PlanningListFilterer.Settings;
 
-public sealed record ListSettings(
-	bool EnableFriendScores
-)
+public sealed class ListSettings
 {
-	public ListSettings() : this(
-		EnableFriendScores: false
-	)
-	{
-	}
+	public bool EnableFriendScores { get; set; }
 }
 
 public class ListSettingsService : LocalStorageJsonSettingsService<ListSettings>

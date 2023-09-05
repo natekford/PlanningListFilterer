@@ -1,0 +1,21 @@
+﻿@inject ListSettingsService ListSettingsService
+
+<MudButton Color="Color.Primary" OnClick="@OpenMenu">
+	Settings
+</MudButton>
+<MudOverlay Visible="@IsMenuOpen" OnClick="@CloseMenu" />
+<MudPopover Class="pa-4" AnchorOrigin="Origin.BottomRight" TransformOrigin="Origin.TopRight"
+			Open="@IsMenuOpen">
+	<MudItem xs="12">
+		<MudStack Spacing="0">
+			<MudCheckBox T="bool" Label="Friend Scores" Size="@Size.Small"
+						 @bind-Checked="@Settings.EnableFriendScores" />
+		</MudStack>
+	</MudItem>
+	<MudGrid Class="filter-selection-grid">
+		<MudItem xs="12" Class="d-flex justify-end">
+			<MudButton OnClick="@Save">Save</MudButton>
+			<MudSpacer />
+		</MudItem>
+	</MudGrid>
+</MudPopover>
