@@ -148,7 +148,7 @@ public partial class AnilistPlanning
 		var columnHidden = false;
 		foreach (var column in Grid.RenderedColumns)
 		{
-			if (column.Hideable != false && ColumnSettings.HiddenColumns.Contains(column.Title))
+			if (column.Hideable != false && ColumnSettings.HiddenColumns.Contains(column.PropertyName))
 			{
 				await column.HideAsync().ConfigureAwait(false);
 				columnHidden = true;

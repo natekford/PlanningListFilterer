@@ -29,7 +29,7 @@
 			Random
 		</MudButton>
 		<ColumnVisibilityCheckBox Grid="@Grid" />
-		<ListSettingsMenu Settings="@ListSettings" />
+		<ListSettingsMenu Grid="@Grid" Settings="@ListSettings" />
 	</ToolBarContent>
 
 	<Columns>
@@ -58,17 +58,14 @@
 		<PropertyColumn Property="@(m => m.Popularity)" SortBy="@(m => m.Popularity)">
 			<CellTemplate>@context.Item.DisplayPopularity()</CellTemplate>
 		</PropertyColumn>
-		@if (ListSettings.EnableFriendScores)
-		{
-			<PropertyColumn Property="@(m => m.FriendScore)" SortBy="@(m => m.FriendScore)"
-							Title="Friend Score">
-				<CellTemplate>@context.Item.DisplayFriendScore()</CellTemplate>
-			</PropertyColumn>
-			<PropertyColumn Property="@(m => m.FriendPopularity)" SortBy="@(m => m.FriendPopularity)"
-							Title="Friend Popularity">
-				<CellTemplate>@context.Item.DisplayFriendPopularity()</CellTemplate>
-			</PropertyColumn>
-		}
+		<PropertyColumn Property="@(m => m.FriendScore)" SortBy="@(m => m.FriendScore)"
+						Title="Friend Score">
+			<CellTemplate>@context.Item.DisplayFriendScore()</CellTemplate>
+		</PropertyColumn>
+		<PropertyColumn Property="@(m => m.FriendPopularity)" SortBy="@(m => m.FriendPopularity)"
+						Title="Friend Popularity">
+			<CellTemplate>@context.Item.DisplayFriendPopularity()</CellTemplate>
+		</PropertyColumn>
 		<PropertyColumn Property="@(m => m.Format)" SortBy="@(m => m.Format.ToString())" />
 		<PropertyColumn Property="@(m => m.IsSequel)" SortBy="@(m => !m.IsSequel)"
 						Title="Sequel" />

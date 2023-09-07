@@ -1,5 +1,7 @@
 ﻿using Blazored.LocalStorage;
 
+using PlanningListFilterer.Models.Anilist;
+
 namespace PlanningListFilterer.Settings;
 
 public sealed record ColumnSettings(
@@ -8,6 +10,13 @@ public sealed record ColumnSettings(
 {
 	public ColumnSettings() : this(
 		HiddenColumns: new()
+		{
+			nameof(AnilistModel.Episodes),
+			nameof(AnilistModel.FriendScore),
+			nameof(AnilistModel.FriendPopularity),
+			nameof(AnilistModel.Format),
+			nameof(AnilistModel.IsSequel),
+		}
 	)
 	{
 	}

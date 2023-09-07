@@ -40,9 +40,9 @@ public static class AnilistGraphQLUtils
 		IEnumerable<AnilistUser> users)
 	{
 		var mediaDict = media.ToDictionary(x => x.Id, x => x);
-		var mediaIds = mediaDict.Keys.ToHashSet();
+		var mediaIds = media.Select(x => x.Id).ToHashSet();
 		var userIds = users.Select(x => x.Id).ToList();
-		var storage = new Dictionary<int, (int Count, double Sum)>();
+		var storage = new Dictionary<int, (int ScoredCount, double Sum)>();
 
 		var pageNumber = 1;
 		do
@@ -54,8 +54,9 @@ public static class AnilistGraphQLUtils
 			).ConfigureAwait(false);
 			foreach (var (key, page) in pages)
 			{
+				// we name the property/key in the graphql query as _{id}
 				var id = int.Parse(key[1..]);
-				var (popularity, sum) = storage.GetValueOrDefault(id);
+				var (scoredCount, sum) = storage.GetValueOrDefault(id);
 				foreach (var entry in page.MediaList)
 				{
 					if (entry.Score == 0)
@@ -63,22 +64,31 @@ public static class AnilistGraphQLUtils
 						continue;
 					}
 
-					++popularity;
+					++scoredCount;
 					sum += entry.Score;
 				}
 
-				if (page.MediaList.Length == PAGE_SIZE)
+				// graphql query only returns the users who have the anime on
+				// their list, e.g.
+				// 1000 followers, 2 people with anime, only 2 in list
+				// 51 followers, 51 people with anime, 50 in list, must go to next
+				// page to get the last one
+				// 2nd condition is to deal with something like
+				// 50 followers, 50 people with anime, 50 in list, no need to go
+				// to next page since 1 page is all we needed
+				if (page.MediaList.Length == PAGE_SIZE
+					&& (pageNumber * PAGE_SIZE) < userIds.Count)
 				{
-					storage[id] = (popularity, sum);
+					storage[id] = (scoredCount, sum);
 				}
 				else
 				{
 					mediaIds.Remove(id);
 					storage.Remove(id);
 
-					var avg = (int?)(sum / Math.Max(1, popularity));
+					var avg = (int?)(sum / Math.Max(1, scoredCount));
 					avg = avg == 0 ? null : avg;
-					yield return new(mediaDict[id], avg, popularity);
+					yield return new(mediaDict[id], avg, scoredCount);
 				}
 			}
 
