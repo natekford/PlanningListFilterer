@@ -42,24 +42,24 @@ public static class AnilistGraphQLUtils
 	{
 		var mediaDict = media.ToDictionary(x => x.Id, x => x);
 		// concurrentdict solely because getoradd exists
-		var mediaIdsPagesToProcess = new ConcurrentDictionary<int, HashSet<int>>
+		var pagesOfMediaIds = new ConcurrentDictionary<int, HashSet<int>>
 		{
 			[1] = media.Select(x => x.Id).ToHashSet(),
 		};
 		var userIds = users.Select(x => x.Id).ToList();
 		var storage = new Dictionary<int, (int ScoredCount, double Sum)>();
 
-		for (var p = 1; mediaIdsPagesToProcess.GetValueOrDefault(p)?.Count > 0; ++p)
+		for (var pageNumber = 1; pagesOfMediaIds.GetValueOrDefault(pageNumber)?.Count > 0; ++pageNumber)
 		{
-			var currentMediaIdsPage = mediaIdsPagesToProcess[p];
+			var mediaIds = pagesOfMediaIds[pageNumber];
 			do
 			{
 				// only do around 150 at a time because the query length has a max
 				// complexity its allowed (500, each media id adds 3)
 				var pages = await http.GetAnilistFriendScoresPageAsync(
-					mediaIds: currentMediaIdsPage.Take(150),
+					mediaIds: mediaIds.Take(150),
 					userIds: userIds,
-					page: p
+					page: pageNumber
 				).ConfigureAwait(false);
 				foreach (var (key, page) in pages)
 				{
@@ -77,7 +77,11 @@ public static class AnilistGraphQLUtils
 						sum += entry.Score;
 					}
 
-					currentMediaIdsPage.Remove(id);
+					// remove no matter what because if we need to go to a later
+					// page the first condition adds the id to the next page's set,
+					// and if we don't need to go to a later page we are done with
+					// processing the id
+					mediaIds.Remove(id);
 					// graphql query only returns the users who have the anime on
 					// their list, e.g.
 					// 1000 followers, 2 people with anime, only 2 in list
@@ -87,21 +91,22 @@ public static class AnilistGraphQLUtils
 					// 50 followers, 50 people with anime, 50 in list, no need to go
 					// to next page since 1 page is all we needed
 					if (page.MediaList.Length == PAGE_SIZE
-						&& (p * PAGE_SIZE) < userIds.Count)
+						&& (pageNumber * PAGE_SIZE) < userIds.Count)
 					{
 						storage[id] = (scoredCount, sum);
-						mediaIdsPagesToProcess.GetOrAdd(p + 1, _ => new()).Add(id);
+						pagesOfMediaIds.GetOrAdd(pageNumber + 1, _ => new()).Add(id);
 					}
 					else
 					{
 						storage.Remove(id);
 
 						var avg = (int?)(sum / Math.Max(1, scoredCount));
+						// avg score of 0 means no score
 						avg = avg == 0 ? null : avg;
 						yield return new(mediaDict[id], avg, scoredCount);
 					}
 				}
-			} while (currentMediaIdsPage.Count > 0);
+			} while (mediaIds.Count > 0);
 		}
 	}
 
