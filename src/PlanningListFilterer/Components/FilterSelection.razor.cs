@@ -48,13 +48,13 @@ public partial class FilterSelection<T>
 		Column.DataGrid.ExternalStateHasChanged();
 	}
 
-	protected override void OnParametersSet()
+	protected override async Task OnParametersSetAsync()
 	{
-		var filterDefinition = Column.DataGrid.FilterDefinitions
-			.SingleOrDefault(x => x.Column == Column);
-		if (filterDefinition is null)
+		if (Column.DataGrid.FilterDefinitions
+			.SingleOrDefault(x => x.Column == Column)
+			is not FilterDefinition<T> filterDefinition)
 		{
-			filterDefinition = new()
+			filterDefinition = new FilterDefinition<T>()
 			{
 				Column = Column,
 				Id = Guid.NewGuid(),
@@ -65,10 +65,10 @@ public partial class FilterSelection<T>
 			// Add it directly to the grid, going through
 			// Column.FilterContext.Actions.ApplyFilter
 			// causes some issue with the first click not opening the filter menu
-			Column.DataGrid.AddFilter(filterDefinition);
+			await Column.DataGrid.AddFilterAsync(filterDefinition).ConfigureAwait(false);
 		}
 
-		SelectedItems = (HashSet<string>)filterDefinition.Value;
+		SelectedItems = (HashSet<string>)filterDefinition.Value!;
 		filterDefinition.FilterFunction = m => SelectedItems.All(i => Selector(m).Contains(i));
 		_FilterDefinition = filterDefinition;
 
