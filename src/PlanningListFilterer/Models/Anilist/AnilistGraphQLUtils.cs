@@ -1,5 +1,6 @@
 ﻿using PlanningListFilterer.Models.Anilist.Json;
 
+using System.Collections.Concurrent;
 using System.Net.Http.Json;
 using System.Text.Json;
 
@@ -40,60 +41,68 @@ public static class AnilistGraphQLUtils
 		IEnumerable<AnilistUser> users)
 	{
 		var mediaDict = media.ToDictionary(x => x.Id, x => x);
-		var mediaIds = media.Select(x => x.Id).ToHashSet();
+		// concurrentdict solely because getoradd exists
+		var mediaIdsPagesToProcess = new ConcurrentDictionary<int, HashSet<int>>
+		{
+			[1] = media.Select(x => x.Id).ToHashSet(),
+		};
 		var userIds = users.Select(x => x.Id).ToList();
 		var storage = new Dictionary<int, (int ScoredCount, double Sum)>();
 
-		var pageNumber = 1;
-		do
+		for (var p = 1; mediaIdsPagesToProcess.GetValueOrDefault(p)?.Count > 0; ++p)
 		{
-			var pages = await http.GetAnilistFriendScoresPageAsync(
-				mediaIds: mediaIds.Take(150),
-				userIds: userIds,
-				page: pageNumber
-			).ConfigureAwait(false);
-			foreach (var (key, page) in pages)
+			var currentMediaIdsPage = mediaIdsPagesToProcess[p];
+			do
 			{
-				// we name the property/key in the graphql query as _{id}
-				var id = int.Parse(key[1..]);
-				var (scoredCount, sum) = storage.GetValueOrDefault(id);
-				foreach (var entry in page.MediaList)
+				// only do around 150 at a time because the query length has a max
+				// complexity its allowed (500, each media id adds 3)
+				var pages = await http.GetAnilistFriendScoresPageAsync(
+					mediaIds: currentMediaIdsPage.Take(150),
+					userIds: userIds,
+					page: p
+				).ConfigureAwait(false);
+				foreach (var (key, page) in pages)
 				{
-					if (entry.Score == 0)
+					// we name the property/key in the graphql query as _{id}
+					var id = int.Parse(key[1..]);
+					var (scoredCount, sum) = storage.GetValueOrDefault(id);
+					foreach (var entry in page.MediaList)
 					{
-						continue;
+						if (entry.Score == 0)
+						{
+							continue;
+						}
+
+						++scoredCount;
+						sum += entry.Score;
 					}
 
-					++scoredCount;
-					sum += entry.Score;
-				}
+					currentMediaIdsPage.Remove(id);
+					// graphql query only returns the users who have the anime on
+					// their list, e.g.
+					// 1000 followers, 2 people with anime, only 2 in list
+					// 51 followers, 51 people with anime, 50 in list, must go to next
+					// page to get the last one
+					// 2nd condition is to deal with something like
+					// 50 followers, 50 people with anime, 50 in list, no need to go
+					// to next page since 1 page is all we needed
+					if (page.MediaList.Length == PAGE_SIZE
+						&& (p * PAGE_SIZE) < userIds.Count)
+					{
+						storage[id] = (scoredCount, sum);
+						mediaIdsPagesToProcess.GetOrAdd(p + 1, _ => new()).Add(id);
+					}
+					else
+					{
+						storage.Remove(id);
 
-				// graphql query only returns the users who have the anime on
-				// their list, e.g.
-				// 1000 followers, 2 people with anime, only 2 in list
-				// 51 followers, 51 people with anime, 50 in list, must go to next
-				// page to get the last one
-				// 2nd condition is to deal with something like
-				// 50 followers, 50 people with anime, 50 in list, no need to go
-				// to next page since 1 page is all we needed
-				if (page.MediaList.Length == PAGE_SIZE
-					&& (pageNumber * PAGE_SIZE) < userIds.Count)
-				{
-					storage[id] = (scoredCount, sum);
+						var avg = (int?)(sum / Math.Max(1, scoredCount));
+						avg = avg == 0 ? null : avg;
+						yield return new(mediaDict[id], avg, scoredCount);
+					}
 				}
-				else
-				{
-					mediaIds.Remove(id);
-					storage.Remove(id);
-
-					var avg = (int?)(sum / Math.Max(1, scoredCount));
-					avg = avg == 0 ? null : avg;
-					yield return new(mediaDict[id], avg, scoredCount);
-				}
-			}
-
-			++pageNumber;
-		} while (mediaIds.Count > 0);
+			} while (currentMediaIdsPage.Count > 0);
+		}
 	}
 
 	public static async IAsyncEnumerable<AnilistPlanningEntry> GetAnilistPlanningListAsync(
