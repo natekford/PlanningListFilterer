@@ -1,24 +1,14 @@
 ﻿using Microsoft.AspNetCore.Components;
 
-using MudBlazor;
-
 using PlanningListFilterer.Settings;
 
 namespace PlanningListFilterer.Components;
 
-public partial class ListSettingsMenu<T>
+public partial class ListSettingsMenu<T> : BaseGridMenu<T>
 {
-	[CascadingParameter]
-	public MudDataGrid<T> Grid { get; set; } = null!;
-	public bool IsMenuOpen { get; set; }
+	public override string ButtonText => "Settings";
 	[Parameter]
 	public ListSettings Settings { get; set; } = null!;
-
-	public void CloseMenu()
-		=> IsMenuOpen = false;
-
-	public void OpenMenu()
-		=> IsMenuOpen = true;
 
 	public async Task Save()
 	{

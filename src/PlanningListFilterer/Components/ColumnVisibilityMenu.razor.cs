@@ -1,20 +1,13 @@
-using Microsoft.AspNetCore.Components;
-
 using MudBlazor;
 
 using PlanningListFilterer.Settings;
 
 namespace PlanningListFilterer.Components;
 
-public partial class ColumnVisibilityMenu<T>
+public partial class ColumnVisibilityMenu<T> : BaseGridMenu<T>
 {
+	public override string ButtonText => "Columns";
 	public List<Column<T>> Columns => Grid.RenderedColumns;
-	[CascadingParameter]
-	public MudDataGrid<T> Grid { get; set; } = null!;
-	public bool IsMenuOpen { get; set; }
-
-	public void CloseMenu()
-		=> IsMenuOpen = false;
 
 	public async Task DisableAll()
 	{
@@ -22,7 +15,7 @@ public partial class ColumnVisibilityMenu<T>
 		{
 			await column.HideAsync().ConfigureAwait(false);
 		}
-		await SaveAndUpdate().ConfigureAwait(false);
+		await Save().ConfigureAwait(false);
 	}
 
 	public async Task EnableAll()
@@ -31,17 +24,14 @@ public partial class ColumnVisibilityMenu<T>
 		{
 			await column.ShowAsync().ConfigureAwait(false);
 		}
-		await SaveAndUpdate().ConfigureAwait(false);
+		await Save().ConfigureAwait(false);
 	}
 
 	public async Task OnCheckedChanged(Column<T> column, bool visible)
 	{
 		await (visible ? column.ShowAsync() : column.HideAsync()).ConfigureAwait(false);
-		await SaveAndUpdate().ConfigureAwait(false);
+		await Save().ConfigureAwait(false);
 	}
-
-	public void OpenMenu()
-		=> IsMenuOpen = true;
 
 	public async Task RestoreDefault()
 	{
@@ -56,10 +46,10 @@ public partial class ColumnVisibilityMenu<T>
 			var visible = !@default.HiddenColumns.Contains(column.PropertyName);
 			await (visible ? column.ShowAsync() : column.HideAsync()).ConfigureAwait(false);
 		}
-		await SaveAndUpdate().ConfigureAwait(false);
+		await Save().ConfigureAwait(false);
 	}
 
-	public async Task SaveAndUpdate()
+	public async Task Save()
 	{
 		var hiddenColumns = Grid.RenderedColumns
 			.Where(x => x.Hidden)

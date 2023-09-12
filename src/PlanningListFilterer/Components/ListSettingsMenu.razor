@@ -1,18 +1,19 @@
 ﻿@typeparam T
+@inherits BaseGridMenu<T>
 
 @inject ListSettingsService ListSettingsService
 
-<MudButton Color="Color.Primary" OnClick="@OpenMenu">
-	Settings
-</MudButton>
-<MudOverlay Visible="@IsMenuOpen" OnClick="@CloseMenu" />
-<MudPopover Class="pa-4" AnchorOrigin="Origin.BottomRight" TransformOrigin="Origin.TopRight"
-			Open="@IsMenuOpen">
-	<MudItem xs="12">
+@{
+	ChildContent =
+	@<MudItem xs="12">
 		<MudStack Spacing="0">
 			<MudCheckBox T="bool" Label="Friend Scores" Size="@Size.Small"
-						 @bind-Checked="@Settings.EnableFriendScores"
-						 @bind-Checked:after="@Save" />
+					 	 @bind-Checked="@Settings.EnableFriendScores"
+					 	 @bind-Checked:after="@Save" />
 		</MudStack>
-	</MudItem>
-</MudPopover>
+	</MudItem>;
+}
+
+@{
+	base.BuildRenderTree(__builder);
+}
