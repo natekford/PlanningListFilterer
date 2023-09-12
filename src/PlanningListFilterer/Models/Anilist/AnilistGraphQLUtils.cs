@@ -47,7 +47,7 @@ public static class AnilistGraphQLUtils
 			[1] = media.Select(x => x.Id).ToHashSet(),
 		};
 		var userIds = users.Select(x => x.Id).ToList();
-		var storage = new Dictionary<int, (int ScoredCount, double Sum)>();
+		var storage = new Dictionary<int, FriendScoreTally>();
 
 		for (var pageNumber = 1; pagesOfMediaIds.GetValueOrDefault(pageNumber)?.Count > 0; ++pageNumber)
 		{
@@ -65,16 +65,18 @@ public static class AnilistGraphQLUtils
 				{
 					// we name the property/key in the graphql query as _{id}
 					var id = int.Parse(key[1..]);
-					var (scoredCount, sum) = storage.GetValueOrDefault(id);
+					var tally = storage.GetValueOrDefault(id);
 					foreach (var entry in page.MediaList)
 					{
 						if (entry.Score == 0)
 						{
-							continue;
+							++tally.UnscoredCount;
 						}
-
-						++scoredCount;
-						sum += entry.Score;
+						else
+						{
+							++tally.ScoredCount;
+							tally.ScoreSum += entry.Score;
+						}
 					}
 
 					// remove no matter what because if we need to go to a later
@@ -93,17 +95,13 @@ public static class AnilistGraphQLUtils
 					if (page.MediaList.Length == PAGE_SIZE
 						&& (pageNumber * PAGE_SIZE) < userIds.Count)
 					{
-						storage[id] = (scoredCount, sum);
+						storage[id] = tally;
 						pagesOfMediaIds.GetOrAdd(pageNumber + 1, _ => new()).Add(id);
 					}
 					else
 					{
 						storage.Remove(id);
-
-						var avg = (int?)(sum / Math.Max(1, scoredCount));
-						// avg score of 0 means no score
-						avg = avg == 0 ? null : avg;
-						yield return new(mediaDict[id], avg, scoredCount);
+						yield return new(mediaDict[id], tally.AverageScore, tally.TotalCount);
 					}
 				}
 			} while (mediaIds.Count > 0);
@@ -288,5 +286,23 @@ public static class AnilistGraphQLUtils
 		return (await JsonSerializer.DeserializeAsync<AnilistResponse<T>>(
 			utf8Json: stream
 		).ConfigureAwait(false))!.Data;
+	}
+
+	private record struct FriendScoreTally(
+		int ScoredCount,
+		int UnscoredCount,
+		double ScoreSum
+	)
+	{
+		public readonly int TotalCount => ScoredCount + UnscoredCount;
+		public readonly int? AverageScore
+		{
+			get
+			{
+				var avg = (int)(ScoreSum / Math.Max(1, ScoredCount));
+				// avg score of 0 means no score
+				return avg == 0 ? null : avg;
+			}
+		}
 	}
 }
