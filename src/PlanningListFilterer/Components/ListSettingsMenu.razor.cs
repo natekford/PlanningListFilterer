@@ -8,7 +8,7 @@ namespace PlanningListFilterer.Components;
 
 public partial class ListSettingsMenu<T>
 {
-	[Parameter]
+	[CascadingParameter]
 	public MudDataGrid<T> Grid { get; set; } = null!;
 	public bool IsMenuOpen { get; set; }
 	[Parameter]

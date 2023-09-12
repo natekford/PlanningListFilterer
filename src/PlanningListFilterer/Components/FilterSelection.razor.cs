@@ -12,16 +12,18 @@ public partial class FilterSelection<T>
 
 	[Parameter]
 	public Column<T> Column { get; set; } = null!;
-	public ImmutableArray<string> Options { get; private set; } = ImmutableArray<string>.Empty;
-	public HashSet<string> SelectedItems { get; private set; } = null!;
+	public MudDataGrid<T> Grid => Column.DataGrid;
+	public ImmutableArray<string> Options { get; set; } = ImmutableArray<string>.Empty;
+	public HashSet<string> SelectedItems { get; set; } = new();
 	[Parameter]
 	public Func<T, IEnumerable<string>> Selector { get; set; } = null!;
 
 	public void Clear()
 	{
 		SelectedItems.Clear();
-		MarkFilterAsDisabled();
-		Column.DataGrid.ExternalStateHasChanged();
+
+		UpdateOptions();
+		Grid.ExternalStateHasChanged();
 	}
 
 	public void OnCheckedChanged(string item, bool add)
@@ -35,23 +37,13 @@ public partial class FilterSelection<T>
 			SelectedItems.Remove(item);
 		}
 
-		if (SelectedItems.Count == 0)
-		{
-			MarkFilterAsDisabled();
-		}
-		else if (!IsFilterEnabled())
-		{
-			MarkFilterAsEnabled();
-		}
-
 		UpdateOptions();
-		Column.DataGrid.ExternalStateHasChanged();
+		Grid.ExternalStateHasChanged();
 	}
 
 	protected override async Task OnParametersSetAsync()
 	{
-		if (Column.DataGrid.FilterDefinitions
-			.SingleOrDefault(x => x.Column == Column)
+		if (Grid.FilterDefinitions.SingleOrDefault(x => x.Column == Column)
 			is not FilterDefinition<T> filterDefinition)
 		{
 			filterDefinition = new FilterDefinition<T>()
@@ -59,17 +51,15 @@ public partial class FilterSelection<T>
 				Column = Column,
 				Id = Guid.NewGuid(),
 				Title = Column.Title,
-				Value = new HashSet<string>(),
+				Value = SelectedItems,
+				FilterFunction = m => SelectedItems.All(i => Selector(m).Contains(i)),
 			};
 
 			// Add it directly to the grid, going through
 			// Column.FilterContext.Actions.ApplyFilter
 			// causes some issue with the first click not opening the filter menu
-			await Column.DataGrid.AddFilterAsync(filterDefinition).ConfigureAwait(false);
+			await Grid.AddFilterAsync(filterDefinition).ConfigureAwait(false);
 		}
-
-		SelectedItems = (HashSet<string>)filterDefinition.Value!;
-		filterDefinition.FilterFunction = m => SelectedItems.All(i => Selector(m).Contains(i));
 		_FilterDefinition = filterDefinition;
 
 		UpdateOptions();
@@ -86,7 +76,16 @@ public partial class FilterSelection<T>
 
 	private void UpdateOptions()
 	{
-		Options = Column.DataGrid.FilteredItems
+		if (SelectedItems.Count == 0)
+		{
+			MarkFilterAsDisabled();
+		}
+		else if (!IsFilterEnabled())
+		{
+			MarkFilterAsEnabled();
+		}
+
+		Options = Grid.FilteredItems
 			.SelectMany(Selector)
 			.Distinct()
 			.OrderByDescending(SelectedItems.Contains)

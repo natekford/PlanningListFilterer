@@ -6,10 +6,10 @@ using PlanningListFilterer.Settings;
 
 namespace PlanningListFilterer.Components;
 
-public partial class ColumnVisibilityCheckBox<T>
+public partial class ColumnVisibilityMenu<T>
 {
 	public List<Column<T>> Columns => Grid.RenderedColumns;
-	[Parameter]
+	[CascadingParameter]
 	public MudDataGrid<T> Grid { get; set; } = null!;
 	public bool IsMenuOpen { get; set; }
 
@@ -22,7 +22,7 @@ public partial class ColumnVisibilityCheckBox<T>
 		{
 			await column.HideAsync().ConfigureAwait(false);
 		}
-		await Save().ConfigureAwait(false);
+		await SaveAndUpdate().ConfigureAwait(false);
 	}
 
 	public async Task EnableAll()
@@ -31,13 +31,13 @@ public partial class ColumnVisibilityCheckBox<T>
 		{
 			await column.ShowAsync().ConfigureAwait(false);
 		}
-		await Save().ConfigureAwait(false);
+		await SaveAndUpdate().ConfigureAwait(false);
 	}
 
 	public async Task OnCheckedChanged(Column<T> column, bool visible)
 	{
 		await (visible ? column.ShowAsync() : column.HideAsync()).ConfigureAwait(false);
-		await Save().ConfigureAwait(false);
+		await SaveAndUpdate().ConfigureAwait(false);
 	}
 
 	public void OpenMenu()
@@ -56,10 +56,10 @@ public partial class ColumnVisibilityCheckBox<T>
 			var visible = !@default.HiddenColumns.Contains(column.PropertyName);
 			await (visible ? column.ShowAsync() : column.HideAsync()).ConfigureAwait(false);
 		}
-		await Save().ConfigureAwait(false);
+		await SaveAndUpdate().ConfigureAwait(false);
 	}
 
-	public async Task Save()
+	public async Task SaveAndUpdate()
 	{
 		var hiddenColumns = Grid.RenderedColumns
 			.Where(x => x.Hidden)

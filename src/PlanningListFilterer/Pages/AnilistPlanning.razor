@@ -28,8 +28,10 @@
 				   Disabled="@(Entries.Count == 0)">
 			Random
 		</MudButton>
-		<ColumnVisibilityCheckBox Grid="@Grid" />
-		<ListSettingsMenu Grid="@Grid" Settings="@ListSettings" />
+		<CascadingValue Value="@Grid">
+			<ColumnVisibilityMenu />
+			<ListSettingsMenu Settings="@ListSettings" />
+		</CascadingValue>
 	</ToolBarContent>
 
 	<Columns>
