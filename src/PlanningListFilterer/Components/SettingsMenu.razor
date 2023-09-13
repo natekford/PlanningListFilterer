@@ -1,0 +1,39 @@
+﻿@typeparam T
+
+@inject ColumnSettingsService ColumnSettingsService
+@inject ListSettingsService ListSettingsService
+
+<MudButton Color="Color.Primary" OnClick="@OpenMenu">
+	Settings
+</MudButton>
+<MudOverlay Visible="@IsMenuOpen" OnClick="@CloseMenu" />
+<MudPopover Class="pa-4" AnchorOrigin="Origin.BottomRight" TransformOrigin="Origin.TopRight"
+			Open="@IsMenuOpen">
+	<MudGrid Class="filter-selection-grid">
+		<MudExpansionPanel Text="List Settings" IsExpanded="true">
+			<MudStack Spacing="0">
+				<MudCheckBox T="bool" Size="@Size.Small"
+							 Label="Enable friend scores (requires reloading list)"
+							 Checked="@ListSettings.EnableFriendScores"
+							 CheckedChanged="@OnFriendScoresChanged" />
+			</MudStack>
+		</MudExpansionPanel>
+		<MudExpansionPanel Text="Column Settings">
+			<MudStack Spacing="0">
+				@foreach (var column in Columns)
+				{
+					<MudCheckBox T="bool" Label="@column.Title" Size="@Size.Small"
+								 Disabled="@(column.Hideable == false)"
+								 Checked="@(!column.Hidden)"
+								 CheckedChanged="@(x => OnColumnChanged(column, x))" />
+				}
+			</MudStack>
+			<MudItem xs="12" Class="d-flex justify-end">
+				<MudButton OnClick="@EnableAllColumns">Enable All</MudButton>
+				<MudButton OnClick="@DisableAllColumns">Disable All</MudButton>
+				<MudSpacer />
+				<MudButton OnClick="@RestoreDefaultColumns">Restore Default</MudButton>
+			</MudItem>
+		</MudExpansionPanel>
+	</MudGrid>
+</MudPopover>
