@@ -56,14 +56,15 @@ public partial class SettingsMenu<T>
 	public async Task ListFriendScoresChanged(bool value)
 	{
 		ListSettings.EnableFriendScores = value;
-		foreach (var column in Columns)
+		if (ListSettings.AutomaticallyToggleFriendScoreColumns)
 		{
-			if (!ColumnSettings.FriendScores.Contains(column.PropertyName))
+			foreach (var column in Columns)
 			{
-				continue;
+				if (ColumnSettings.FriendScores.Contains(column.PropertyName))
+				{
+					await column.SetVisibilityAsync(value).ConfigureAwait(false);
+				}
 			}
-
-			await column.SetVisibilityAsync(value).ConfigureAwait(false);
 		}
 
 		await SaveAndUpdateUI().ConfigureAwait(false);
@@ -72,7 +73,7 @@ public partial class SettingsMenu<T>
 	public void OpenMenu()
 		=> IsMenuOpen = true;
 
-	private async Task SaveAndUpdateUI()
+	public async Task SaveAndUpdateUI()
 	{
 		await ListSettingsService.SaveSettingsAsync(
 			settings: ListSettings

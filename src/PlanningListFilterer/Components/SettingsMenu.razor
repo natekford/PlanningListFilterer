@@ -16,13 +16,18 @@
 							 Label="Enable friend scores (requires reloading list)"
 							 Checked="@ListSettings.EnableFriendScores"
 							 CheckedChanged="@ListFriendScoresChanged" />
+				<MudCheckBox T="bool" Size="@Size.Small"
+							 Label="Automatically toggle friend score column visibility"
+							 @bind-Checked="@ListSettings.AutomaticallyToggleFriendScoreColumns"
+							 @bind-Checked:after="@SaveAndUpdateUI" />
 			</MudStack>
 		</MudExpansionPanel>
 		<MudExpansionPanel Text="Column Settings">
 			<MudStack Spacing="0">
 				@foreach (var column in Columns)
 				{
-					<MudCheckBox T="bool" Label="@column.Title" Size="@Size.Small"
+					<MudCheckBox T="bool" Size="@Size.Small"
+								 Label="@column.Title"
 								 Disabled="@(column.Hideable == false)"
 								 Checked="@(!column.Hidden)"
 								 CheckedChanged="@(x => ColumnsChanged(column, x))" />
