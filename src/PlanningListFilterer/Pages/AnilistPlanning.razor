@@ -28,9 +28,7 @@
 				   Disabled="@(Entries.Count == 0)">
 			Random
 		</MudButton>
-		<CascadingValue Value="@Grid">
-			<SettingsMenu ListSettings="@ListSettings" />
-		</CascadingValue>
+		<SettingsMenu Grid="@Grid" ListSettings="@ListSettings" />
 	</ToolBarContent>
 
 	<Columns>

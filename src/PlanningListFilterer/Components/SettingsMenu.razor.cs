@@ -9,7 +9,7 @@ namespace PlanningListFilterer.Components;
 public partial class SettingsMenu<T>
 {
 	public List<Column<T>> Columns => Grid.RenderedColumns;
-	[CascadingParameter]
+	[Parameter]
 	public MudDataGrid<T> Grid { get; set; } = null!;
 	public bool IsMenuOpen { get; set; }
 	[Parameter]
@@ -18,7 +18,13 @@ public partial class SettingsMenu<T>
 	public void CloseMenu()
 		=> IsMenuOpen = false;
 
-	public async Task DisableAllColumns()
+	public async Task ColumnsChanged(Column<T> column, bool visible)
+	{
+		await column.SetVisibilityAsync(visible).ConfigureAwait(false);
+		await SaveAndUpdateUI().ConfigureAwait(false);
+	}
+
+	public async Task ColumnsDisableAll()
 	{
 		foreach (var column in Columns)
 		{
@@ -27,7 +33,7 @@ public partial class SettingsMenu<T>
 		await SaveAndUpdateUI().ConfigureAwait(false);
 	}
 
-	public async Task EnableAllColumns()
+	public async Task ColumnsEnableAll()
 	{
 		foreach (var column in Columns)
 		{
@@ -36,40 +42,37 @@ public partial class SettingsMenu<T>
 		await SaveAndUpdateUI().ConfigureAwait(false);
 	}
 
-	public async Task OnColumnChanged(Column<T> column, bool visible)
-	{
-		await column.SetVisibilityAsync(visible).ConfigureAwait(false);
-		await SaveAndUpdateUI().ConfigureAwait(false);
-	}
-
-	public async Task OnFriendScoresChanged(bool value)
-	{
-		ListSettings.EnableFriendScores = value;
-
-		await UpdateFriendScoreColumnVisibility(value).ConfigureAwait(false);
-		await SaveAndUpdateUI().ConfigureAwait(false);
-	}
-
-	public void OpenMenu()
-		=> IsMenuOpen = true;
-
-	public async Task RestoreDefaultColumns()
+	public async Task ColumnsRestoreDefault()
 	{
 		var @default = new ColumnSettings();
-		foreach (var column in Grid.RenderedColumns)
+		foreach (var column in Columns)
 		{
-			if (column.Hideable == false)
-			{
-				continue;
-			}
-
 			var visible = !@default.HiddenColumns.Contains(column.PropertyName);
 			await column.SetVisibilityAsync(visible).ConfigureAwait(false);
 		}
 		await SaveAndUpdateUI().ConfigureAwait(false);
 	}
 
-	public async Task SaveAndUpdateUI()
+	public async Task ListFriendScoresChanged(bool value)
+	{
+		ListSettings.EnableFriendScores = value;
+		foreach (var column in Columns)
+		{
+			if (!ColumnSettings.FriendScores.Contains(column.PropertyName))
+			{
+				continue;
+			}
+
+			await column.SetVisibilityAsync(value).ConfigureAwait(false);
+		}
+
+		await SaveAndUpdateUI().ConfigureAwait(false);
+	}
+
+	public void OpenMenu()
+		=> IsMenuOpen = true;
+
+	private async Task SaveAndUpdateUI()
 	{
 		await ListSettingsService.SaveSettingsAsync(
 			settings: ListSettings
@@ -78,18 +81,5 @@ public partial class SettingsMenu<T>
 			HiddenColumns: Grid.GetHiddenColumns()
 		)).ConfigureAwait(false);
 		Grid.ExternalStateHasChanged();
-	}
-
-	private async Task UpdateFriendScoreColumnVisibility(bool visible)
-	{
-		foreach (var column in Columns)
-		{
-			if (!ColumnSettings.FriendScores.Contains(column.PropertyName))
-			{
-				continue;
-			}
-
-			await column.SetVisibilityAsync(visible).ConfigureAwait(false);
-		}
 	}
 }

@@ -15,7 +15,7 @@
 				<MudCheckBox T="bool" Size="@Size.Small"
 							 Label="Enable friend scores (requires reloading list)"
 							 Checked="@ListSettings.EnableFriendScores"
-							 CheckedChanged="@OnFriendScoresChanged" />
+							 CheckedChanged="@ListFriendScoresChanged" />
 			</MudStack>
 		</MudExpansionPanel>
 		<MudExpansionPanel Text="Column Settings">
@@ -25,14 +25,14 @@
 					<MudCheckBox T="bool" Label="@column.Title" Size="@Size.Small"
 								 Disabled="@(column.Hideable == false)"
 								 Checked="@(!column.Hidden)"
-								 CheckedChanged="@(x => OnColumnChanged(column, x))" />
+								 CheckedChanged="@(x => ColumnsChanged(column, x))" />
 				}
 			</MudStack>
 			<MudItem xs="12" Class="d-flex justify-end">
-				<MudButton OnClick="@EnableAllColumns">Enable All</MudButton>
-				<MudButton OnClick="@DisableAllColumns">Disable All</MudButton>
+				<MudButton OnClick="@ColumnsEnableAll">Enable All</MudButton>
+				<MudButton OnClick="@ColumnsDisableAll">Disable All</MudButton>
 				<MudSpacer />
-				<MudButton OnClick="@RestoreDefaultColumns">Restore Default</MudButton>
+				<MudButton OnClick="@ColumnsRestoreDefault">Restore Default</MudButton>
 			</MudItem>
 		</MudExpansionPanel>
 	</MudGrid>
