@@ -7,11 +7,8 @@ public sealed class ListSettings
 	public bool EnableFriendScores { get; set; }
 }
 
-public class ListSettingsService : LocalStorageJsonSettingsService<ListSettings>
+public class ListSettingsService(ILocalStorageService localStorage)
+	: LocalStorageJsonSettingsService<ListSettings>(localStorage)
 {
 	protected override string Key => "ListSettings";
-
-	public ListSettingsService(ILocalStorageService localStorage) : base(localStorage)
-	{
-	}
 }

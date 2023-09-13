@@ -1,6 +1,7 @@
 ﻿@typeparam T
 @inherits BaseGridMenu<T>
 
+@inject ColumnSettingsService ColumnSettingsService
 @inject ListSettingsService ListSettingsService
 
 @{
@@ -8,8 +9,8 @@
 	@<MudItem xs="12">
 		<MudStack Spacing="0">
 			<MudCheckBox T="bool" Label="Friend Scores" Size="@Size.Small"
-					 	 @bind-Checked="@Settings.EnableFriendScores"
-					 	 @bind-Checked:after="@Save" />
+						 Checked="@Settings.EnableFriendScores"
+						 CheckedChanged="@OnFriendScoresChanged" />
 		</MudStack>
 	</MudItem>;
 }

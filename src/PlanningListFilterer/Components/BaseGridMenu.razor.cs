@@ -9,6 +9,7 @@ public abstract partial class BaseGridMenu<T>
 	public abstract string ButtonText { get; }
 	[Parameter]
 	public RenderFragment ChildContent { get; set; } = null!;
+	public List<Column<T>> Columns => Grid.RenderedColumns;
 	[CascadingParameter]
 	public MudDataGrid<T> Grid { get; set; } = null!;
 	public bool IsMenuOpen { get; set; }
