@@ -9,14 +9,15 @@
 <MudOverlay Visible="@IsMenuOpen" OnClick="@CloseMenu" />
 <MudPopover Class="pa-4" AnchorOrigin="Origin.BottomRight" TransformOrigin="Origin.TopRight"
 			Open="@IsMenuOpen">
-	<MudGrid Class="filter-selection-grid">
-		<MudExpansionPanel Text="List Settings" IsExpanded="true">
+	<MudExpansionPanels Dense="true" DisableBorders="true" 
+						Class="filter-selection-grid" Elevation="0">
+		<MudExpansionPanel Text="List Settings" IsInitiallyExpanded="true">
 			<MudStack Spacing="0">
-				<MudCheckBox T="bool" Size="@Size.Small"
+				<MudCheckBox T="bool" Dense="true" Size="@Size.Small"
 							 Label="Enable friend scores (requires reloading list)"
 							 Checked="@ListSettings.EnableFriendScores"
 							 CheckedChanged="@ListFriendScoresChanged" />
-				<MudCheckBox T="bool" Size="@Size.Small"
+				<MudCheckBox T="bool" Dense="true" Size="@Size.Small"
 							 Label="Automatically toggle friend score column visibility"
 							 @bind-Checked="@ListSettings.AutomaticallyToggleFriendScoreColumns"
 							 @bind-Checked:after="@SaveAndUpdateUI" />
@@ -26,7 +27,7 @@
 			<MudStack Spacing="0">
 				@foreach (var column in Columns)
 				{
-					<MudCheckBox T="bool" Size="@Size.Small"
+					<MudCheckBox T="bool" Dense="true" Size="@Size.Small"
 								 Label="@column.Title"
 								 Disabled="@(column.Hideable == false)"
 								 Checked="@(!column.Hidden)"
@@ -40,5 +41,5 @@
 				<MudButton OnClick="@ColumnsRestoreDefault">Restore Default</MudButton>
 			</MudItem>
 		</MudExpansionPanel>
-	</MudGrid>
+	</MudExpansionPanels>
 </MudPopover>
