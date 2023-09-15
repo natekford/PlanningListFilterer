@@ -13,11 +13,14 @@ public static class AnilistModelUtils
 	public static string DisplayEpisodeCount(this AnilistModel model)
 		=> model.Episodes is int e ? e.ToString("n0") : NO_VALUE;
 
-	public static string DisplayFriendPopularity(this AnilistModel model)
-		=> model.FriendPopularity.ToString("n0");
+	public static string DisplayFriendPopularityScored(this AnilistModel model)
+		=> model.FriendPopularityScored.ToString("n0");
+
+	public static string DisplayFriendPopularityTotal(this AnilistModel model)
+		=> model.FriendPopularityTotal.ToString("n0");
 
 	public static string DisplayFriendScore(this AnilistModel model)
-			=> model.FriendScore is int s ? $"{s}%" : NO_VALUE;
+		=> model.FriendScore is int s ? $"{s}%" : NO_VALUE;
 
 	public static string DisplayGenres(this AnilistModel model)
 		=> model.Genres.DisplayStrings();

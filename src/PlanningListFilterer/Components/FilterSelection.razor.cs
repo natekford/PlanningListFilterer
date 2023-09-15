@@ -14,7 +14,7 @@ public partial class FilterSelection<T>
 	public Column<T> Column { get; set; } = null!;
 	public MudDataGrid<T> Grid => Column.DataGrid;
 	public ImmutableArray<string> Options { get; set; } = ImmutableArray<string>.Empty;
-	public HashSet<string> SelectedItems { get; set; } = new();
+	public HashSet<string> SelectedItems => (HashSet<string>)_FilterDefinition.Value!;
 	[Parameter]
 	public Func<T, IEnumerable<string>> Selector { get; set; } = null!;
 
@@ -51,7 +51,7 @@ public partial class FilterSelection<T>
 				Column = Column,
 				Id = Guid.NewGuid(),
 				Title = Column.Title,
-				Value = SelectedItems,
+				Value = new HashSet<string>(),
 				FilterFunction = m => SelectedItems.All(i => Selector(m).Contains(i)),
 			};
 

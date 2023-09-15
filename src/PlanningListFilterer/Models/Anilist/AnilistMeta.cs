@@ -9,7 +9,7 @@ public sealed record AnilistMeta(
 	bool SavedWithFriendScores
 )
 {
-	public const int CURRENT_VERSION = 10;
+	public const int CURRENT_VERSION = 11;
 
 	public bool ShouldReacquire(ListSettings settings, TimeSpan limit)
 	{
@@ -18,13 +18,16 @@ public sealed record AnilistMeta(
 			|| (settings.EnableFriendScores && !SavedWithFriendScores);
 	}
 
-	public static AnilistMeta New(int userId, bool savedWithFriendScores)
+	public AnilistMeta() : this(default, default, default, default)
 	{
-		return new(
-			SavedAt: DateTime.UtcNow,
-			Version: CURRENT_VERSION,
-			UserId: userId,
-			SavedWithFriendScores: savedWithFriendScores
-		);
+	}
+
+	public AnilistMeta(int userId, ListSettings settings) : this(
+		SavedAt: DateTime.UtcNow,
+		Version: CURRENT_VERSION,
+		UserId: userId,
+		SavedWithFriendScores: settings.EnableFriendScores
+	)
+	{
 	}
 }

@@ -18,8 +18,12 @@
 							 Checked="@ListSettings.EnableFriendScores"
 							 CheckedChanged="@ListFriendScoresChanged" />
 				<MudCheckBox T="bool" Dense="true" Size="@Size.Small"
-							 Label="Automatically toggle friend score column visibility"
+							 Label="Automatically toggle on friend score columns when friend scores are on"
 							 @bind-Checked="@ListSettings.AutomaticallyToggleFriendScoreColumns"
+							 @bind-Checked:after="@SaveAndUpdateUI" />
+				<MudCheckBox T="bool" Dense="true" Size="@Size.Small"
+							 Label="Automatically toggle off global score columns when friend scores are on"
+							 @bind-Checked="@ListSettings.AutomaticallyToggleGlobalScoreColumns"
 							 @bind-Checked:after="@SaveAndUpdateUI" />
 			</MudStack>
 		</MudExpansionPanel>

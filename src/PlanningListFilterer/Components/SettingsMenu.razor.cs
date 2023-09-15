@@ -58,13 +58,11 @@ public partial class SettingsMenu<T>
 		ListSettings.EnableFriendScores = value;
 		if (ListSettings.AutomaticallyToggleFriendScoreColumns)
 		{
-			foreach (var column in Columns)
-			{
-				if (ColumnSettings.FriendScores.Contains(column.PropertyName))
-				{
-					await column.SetVisibilityAsync(value).ConfigureAwait(false);
-				}
-			}
+			await Columns.SetVisibilityAsync(ColumnSettings.FriendScores, value).ConfigureAwait(false);
+		}
+		if (ListSettings.AutomaticallyToggleGlobalScoreColumns)
+		{
+			await Columns.SetVisibilityAsync(ColumnSettings.GlobalScores, !value).ConfigureAwait(false);
 		}
 
 		await SaveAndUpdateUI().ConfigureAwait(false);

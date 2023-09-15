@@ -101,7 +101,12 @@ public static class AnilistGraphQLUtils
 					else
 					{
 						storage.Remove(id);
-						yield return new(mediaDict[id], tally.AverageScore, tally.TotalCount);
+						yield return new(
+							Media: mediaDict[id],
+							Score: tally.AverageScore,
+							ScoredPopularity: tally.ScoredCount,
+							TotalPopularity: tally.ScoredCount + tally.UnscoredCount
+						);
 					}
 				}
 			} while (mediaIds.Count > 0);
@@ -294,7 +299,6 @@ public static class AnilistGraphQLUtils
 		double ScoreSum
 	)
 	{
-		public readonly int TotalCount => ScoredCount + UnscoredCount;
 		public readonly int? AverageScore
 		{
 			get

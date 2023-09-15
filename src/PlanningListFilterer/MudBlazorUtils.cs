@@ -21,4 +21,18 @@ public static class MudBlazorUtils
 
 	public static Task SetVisibilityAsync<T>(this Column<T> column, bool visible)
 		=> visible ? column.ShowAsync() : column.HideAsync();
+
+	public static async Task SetVisibilityAsync<T>(
+		this IEnumerable<Column<T>> columns,
+		ICollection<string> properties,
+		bool visible)
+	{
+		foreach (var column in columns)
+		{
+			if (properties.Contains(column.PropertyName))
+			{
+				await column.SetVisibilityAsync(visible).ConfigureAwait(false);
+			}
+		}
+	}
 }

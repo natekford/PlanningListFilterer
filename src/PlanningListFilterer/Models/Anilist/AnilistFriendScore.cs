@@ -5,5 +5,6 @@ namespace PlanningListFilterer.Models.Anilist;
 public record struct AnilistFriendScore(
 	AnilistMedia Media,
 	int? Score,
-	int Popularity
+	int ScoredPopularity,
+	int TotalPopularity
 );

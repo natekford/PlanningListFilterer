@@ -61,9 +61,13 @@
 						Title="Friend Score">
 			<CellTemplate>@context.Item.DisplayFriendScore()</CellTemplate>
 		</PropertyColumn>
-		<PropertyColumn Property="@(m => m.FriendPopularity)" SortBy="@(m => m.FriendPopularity)"
-						Title="Friend Popularity">
-			<CellTemplate>@context.Item.DisplayFriendPopularity()</CellTemplate>
+		<PropertyColumn Property="@(m => m.FriendPopularityScored)" SortBy="@(m => m.FriendPopularityScored)"
+						Title="Friend Popularity (Scored)">
+			<CellTemplate>@context.Item.DisplayFriendPopularityScored()</CellTemplate>
+		</PropertyColumn>
+		<PropertyColumn Property="@(m => m.FriendPopularityTotal)" SortBy="@(m => m.FriendPopularityTotal)"
+						Title="Friend Popularity (Total)">
+			<CellTemplate>@context.Item.DisplayFriendPopularityTotal()</CellTemplate>
 		</PropertyColumn>
 		<PropertyColumn Property="@(m => m.Format)" SortBy="@(m => m.Format.ToString())" />
 		<PropertyColumn Property="@(m => m.IsSequel)" SortBy="@(m => !m.IsSequel)"

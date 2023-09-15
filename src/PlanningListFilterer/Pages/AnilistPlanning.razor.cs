@@ -79,7 +79,8 @@ public partial class AnilistPlanning
 				return AnilistModel.Create(x.Media) with
 				{
 					FriendScore = x.Score,
-					FriendPopularity = x.Popularity,
+					FriendPopularityScored = x.ScoredPopularity,
+					FriendPopularityTotal = x.TotalPopularity
 				};
 			});
 		}
@@ -90,9 +91,9 @@ public partial class AnilistPlanning
 
 		entries.Sort((x, y) => x.Id.CompareTo(y.Id));
 		await LocalStorage.SetItemCompressedAsync(username.Name, entries).ConfigureAwait(false);
-		await LocalStorage.SetItemAsync(username.Meta, AnilistMeta.New(
+		await LocalStorage.SetItemAsync(username.Meta, new AnilistMeta(
 			userId: user!.Id,
-			savedWithFriendScores: ListSettings.EnableFriendScores
+			settings: ListSettings
 		)).ConfigureAwait(false);
 
 		return entries;
