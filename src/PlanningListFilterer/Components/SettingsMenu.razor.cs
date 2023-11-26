@@ -44,10 +44,9 @@ public partial class SettingsMenu<T>
 
 	public async Task ColumnsRestoreDefault()
 	{
-		var @default = new ColumnSettings();
 		foreach (var column in Columns)
 		{
-			var visible = !@default.HiddenColumns.Contains(column.PropertyName);
+			var visible = !ColumnSettings.DefaultHidden.Contains(column.PropertyName);
 			await column.SetVisibilityAsync(visible).ConfigureAwait(false);
 		}
 		await SaveAndUpdateUI().ConfigureAwait(false);

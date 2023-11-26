@@ -8,8 +8,8 @@ namespace PlanningListFilterer.Pages;
 
 public partial class AnilistPlanning
 {
-	private static readonly Random Random = new();
-	private int _RandomId;
+	private static readonly Random _Random = new();
+	private readonly HashSet<int> _RandomIds = new();
 
 	public ColumnSettings ColumnSettings { get; set; } = new();
 	public List<AnilistModel> Entries { get; set; } = new();
@@ -121,18 +121,23 @@ public partial class AnilistPlanning
 	public async Task RandomizeTable()
 	{
 		var visibleEntries = Grid.FilteredItems.ToList();
-		// Don't show the same
+		// Prevent showing duplicate random entries
 		int randomId;
 		do
 		{
-			randomId = visibleEntries[Random.Next(0, visibleEntries.Count)].Id;
-		} while (randomId == _RandomId);
+			if (_RandomIds.Count >= visibleEntries.Count)
+			{
+				_RandomIds.Clear();
+			}
 
-		_RandomId = randomId;
+			randomId = visibleEntries[_Random.Next(0, visibleEntries.Count)].Id;
+		} while (_RandomIds.Contains(randomId));
+
+		_RandomIds.Add(randomId);
 		await Grid.SetSortAsync(
 			field: "Random",
 			direction: SortDirection.Ascending,
-			sortFunc: x => x.Id <= _RandomId
+			sortFunc: x => x.Id <= randomId
 		).ConfigureAwait(false);
 	}
 
