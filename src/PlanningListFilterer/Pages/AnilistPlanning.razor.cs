@@ -9,14 +9,14 @@ namespace PlanningListFilterer.Pages;
 public partial class AnilistPlanning
 {
 	private static readonly Random _Random = new();
-	private readonly HashSet<int> _RandomIds = new();
+	private readonly HashSet<int> _RandomIds = [];
 
 	public ColumnSettings ColumnSettings { get; set; } = new();
-	public List<AnilistModel> Entries { get; set; } = new();
+	public List<AnilistModel> Entries { get; set; } = [];
 	public IEnumerable<AnilistModel> FilteredEntries => Grid.FilteredItems;
 	public bool IsLoading { get; set; }
 	public ListSettings ListSettings { get; set; } = new();
-	public string? Username { get; set; } = "advorange";
+	public string? Username { get; set; }
 
 	public async Task<AnilistMeta?> GetMeta(Username username)
 	{
@@ -108,13 +108,14 @@ public partial class AnilistPlanning
 
 		IsLoading = true;
 		// Stop showing old entries
-		Entries = new List<AnilistModel>();
+		Entries = [];
 
 		var username = new Username(Username);
 		var meta = await GetMeta(username).ConfigureAwait(false);
 		var useCached = meta?.ShouldReacquire(ListSettings, TimeSpan.FromHours(1)) == false;
 
 		Entries = await GetPlanningList(username, useCached).ConfigureAwait(false);
+		await LocalStorage.SetItemAsync(nameof(Username), Username).ConfigureAwait(false);
 		IsLoading = false;
 	}
 
@@ -148,22 +149,19 @@ public partial class AnilistPlanning
 			return;
 		}
 
+		Username = await LocalStorage.GetItemAsync<string>(nameof(Username)).ConfigureAwait(false);
 		ListSettings = await ListSettingsService.GetSettingsAsync().ConfigureAwait(false);
 		ColumnSettings = await ColumnSettingsService.GetSettingsAsync().ConfigureAwait(false);
 
-		var columnHidden = false;
 		foreach (var column in Grid.RenderedColumns)
 		{
 			if (column.Hideable != false && ColumnSettings.HiddenColumns.Contains(column.PropertyName))
 			{
 				await column.HideAsync().ConfigureAwait(false);
-				columnHidden = true;
 			}
 		}
-		if (columnHidden)
-		{
-			StateHasChanged();
-		}
+
+		StateHasChanged();
 	}
 }
 
