@@ -49,7 +49,7 @@ public sealed record AnilistModel(
 			Year: year,
 			Month: month,
 			CoverImageUrl: media.CoverImage?.Medium,
-			Genres: media.Genres.ToImmutableHashSet(),
+			Genres: [.. media.Genres],
 			Tags: media.Tags.ToImmutableDictionary(
 				keySelector: x => x.Name,
 				elementSelector: x => x.Rank

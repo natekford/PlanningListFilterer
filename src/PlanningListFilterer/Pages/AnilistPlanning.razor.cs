@@ -4,18 +4,17 @@ using PlanningListFilterer.Models.Anilist;
 using PlanningListFilterer.Models.Anilist.Json;
 using PlanningListFilterer.Settings;
 
-using System;
-
 namespace PlanningListFilterer.Pages;
 
 public partial class AnilistPlanning
 {
+	private const string LAST_USERNAME = "_LastSearchedUsername";
+
 	private static readonly Random _Random = new();
 	private readonly HashSet<int> _ShownRandomIds = [];
 
 	public ColumnSettings ColumnSettings { get; set; } = new();
 	public List<AnilistModel> Entries { get; set; } = [];
-	public IEnumerable<AnilistModel> FilteredEntries => Grid.FilteredItems;
 	public bool IsLoading { get; set; }
 	public ListSettings ListSettings { get; set; } = new();
 	public string? Username { get; set; }
@@ -116,9 +115,20 @@ public partial class AnilistPlanning
 		var meta = await GetMeta(username).ConfigureAwait(false);
 		var useCached = meta?.ShouldReacquire(ListSettings, TimeSpan.FromHours(1)) == false;
 
-		Entries = await GetPlanningList(username, useCached).ConfigureAwait(false);
-		await LocalStorage.SetItemAsync(nameof(Username), Username).ConfigureAwait(false);
-		IsLoading = false;
+		try
+		{
+			Entries = await GetPlanningList(username, useCached).ConfigureAwait(false);
+			await LocalStorage.SetItemAsync(LAST_USERNAME, Username).ConfigureAwait(false);
+		}
+		catch
+		{
+			// idk, some http error, probably a 404 happened, maybe a 429
+			// should probably display this to the user
+		}
+		finally
+		{
+			IsLoading = false;
+		}
 	}
 
 	public async Task RandomizeTable()
@@ -135,16 +145,17 @@ public partial class AnilistPlanning
 		{
 			// Only remove visible ids, otherwise if a user randomizes
 			// 100+ entries in their 1000+ entry list, then filters down to
-			// 2 entries, once those 2 entries have been shuffled to, the 100+
-			// previously shuffled to entries would be thrown in the pool of
-			// available entries to show again
+			// 2 entries, once those 2 entries have been shuffled through, the 100+
+			// previously shown entries would be thrown in the pool of
+			// valid entries, and people hate when randomize functions
+			// show something repeatedly too soon
 			_ShownRandomIds.ExceptWith(visibleIds);
 			validIds = visibleIds.ToList();
 		}
 
 		var randomId = validIds[_Random.Next(0, validIds.Count)];
-
 		_ShownRandomIds.Add(randomId);
+
 		await Grid.SetSortAsync(
 			field: "Random",
 			direction: SortDirection.Ascending,
@@ -159,7 +170,7 @@ public partial class AnilistPlanning
 			return;
 		}
 
-		Username = await LocalStorage.GetItemAsync<string>(nameof(Username)).ConfigureAwait(false);
+		Username = await LocalStorage.GetItemAsync<string>(LAST_USERNAME).ConfigureAwait(false);
 		ListSettings = await ListSettingsService.GetSettingsAsync().ConfigureAwait(false);
 		ColumnSettings = await ColumnSettingsService.GetSettingsAsync().ConfigureAwait(false);
 

@@ -13,7 +13,7 @@ public partial class FilterSelection<T>
 	[Parameter]
 	public Column<T> Column { get; set; } = null!;
 	public MudDataGrid<T> Grid => Column.DataGrid;
-	public ImmutableArray<string> Options { get; set; } = ImmutableArray<string>.Empty;
+	public ImmutableArray<string> Options { get; set; } = [];
 	public HashSet<string> SelectedItems => (HashSet<string>)_FilterDefinition.Value!;
 	[Parameter]
 	public Func<T, IEnumerable<string>> Selector { get; set; } = null!;
@@ -85,11 +85,13 @@ public partial class FilterSelection<T>
 			MarkFilterAsEnabled();
 		}
 
-		Options = Grid.FilteredItems
-			.SelectMany(Selector)
-			.Distinct()
-			.OrderByDescending(SelectedItems.Contains)
-			.ThenBy(x => x)
-			.ToImmutableArray();
+		Options =
+		[
+			.. Grid.FilteredItems
+				.SelectMany(Selector)
+				.Distinct()
+				.OrderByDescending(SelectedItems.Contains)
+				.ThenBy(x => x)
+		];
 	}
 }

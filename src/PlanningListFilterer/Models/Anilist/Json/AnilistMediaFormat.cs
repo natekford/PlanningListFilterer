@@ -9,4 +9,5 @@ public enum AnilistMediaFormat
 	ONA = 4,
 	OVA = 5,
 	SPECIAL = 6,
+	MUSIC = 7,
 }

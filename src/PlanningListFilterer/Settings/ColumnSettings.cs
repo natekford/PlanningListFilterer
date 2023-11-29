@@ -10,26 +10,26 @@ public sealed record ColumnSettings(
 	ImmutableHashSet<string> HiddenColumns
 )
 {
-	public static ImmutableHashSet<string> DefaultHidden { get; } = new[]
-	{
+	public static ImmutableHashSet<string> DefaultHidden { get; } =
+	[
 		nameof(AnilistModel.Episodes),
 		nameof(AnilistModel.FriendScore),
 		nameof(AnilistModel.FriendPopularityScored),
 		nameof(AnilistModel.FriendPopularityTotal),
 		nameof(AnilistModel.Format),
 		nameof(AnilistModel.IsSequel),
-	}.ToImmutableHashSet();
-	public static ImmutableHashSet<string> FriendScores { get; } = new[]
-	{
+	];
+	public static ImmutableHashSet<string> FriendScores { get; } =
+	[
 		nameof(AnilistModel.FriendScore),
 		nameof(AnilistModel.FriendPopularityScored),
 		nameof(AnilistModel.FriendPopularityTotal),
-	}.ToImmutableHashSet();
-	public static ImmutableHashSet<string> GlobalScores { get; } = new[]
-	{
+	];
+	public static ImmutableHashSet<string> GlobalScores { get; } =
+	[
 		nameof(AnilistModel.Popularity),
 		nameof(AnilistModel.Score),
-	}.ToImmutableHashSet();
+	];
 
 	public ColumnSettings() : this(HiddenColumns: DefaultHidden)
 	{
@@ -39,5 +39,5 @@ public sealed record ColumnSettings(
 public class ColumnSettingsService(ILocalStorageService localStorage)
 	: LocalStorageJsonSettingsService<ColumnSettings>(localStorage)
 {
-	protected override string Key => "ColumnSettings";
+	protected override string Key => "_ColumnSettings";
 }

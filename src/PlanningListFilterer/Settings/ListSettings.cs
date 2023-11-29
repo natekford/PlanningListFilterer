@@ -12,5 +12,5 @@ public sealed class ListSettings
 public class ListSettingsService(ILocalStorageService localStorage)
 	: LocalStorageJsonSettingsService<ListSettings>(localStorage)
 {
-	protected override string Key => "ListSettings";
+	protected override string Key => "_ListSettings";
 }

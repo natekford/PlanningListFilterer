@@ -14,11 +14,11 @@ public static class AnilistGraphQLUtils
 
 	public static async IAsyncEnumerable<AnilistUser> GetAnilistFollowingAsync(
 		this HttpClient http,
-		AnilistUser user)
+		AnilistUser user,
+		int maxPages = 5)
 	{
-		AnilistPage page;
-
 		var pageNumber = 1;
+		AnilistPage page;
 		do
 		{
 			page = await http.GetAnilistFollowersPageAsync(
@@ -32,7 +32,7 @@ public static class AnilistGraphQLUtils
 			}
 
 			++pageNumber;
-		} while (page.PageInfo.HasNextPage);
+		} while (page.PageInfo.HasNextPage && pageNumber <= maxPages);
 	}
 
 	public static async IAsyncEnumerable<AnilistFriendScore> GetAnilistFriendScoresAsync(
@@ -117,9 +117,10 @@ public static class AnilistGraphQLUtils
 		this HttpClient http,
 		string username)
 	{
-		AnilistMediaListCollection collection;
+		var alreadyReturned = new HashSet<int>();
 
 		var chunk = 1;
+		AnilistMediaListCollection collection;
 		do
 		{
 			collection = await http.GetAnilistPlanningListChunkAsync(
@@ -131,7 +132,13 @@ public static class AnilistGraphQLUtils
 			{
 				foreach (var entry in list.Entries)
 				{
-					yield return new(collection.User, entry.Media);
+					// I think an entry can be returned multiple times if it's
+					// in multiple custom lists and/or not hidden from the standard
+					// planning list?
+					if (alreadyReturned.Add(entry.Media.Id))
+					{
+						yield return new(collection.User, entry.Media);
+					}
 				}
 			}
 
@@ -153,13 +160,14 @@ public static class AnilistGraphQLUtils
 		int page
 	)
 	{
+		// Sort by Watched Time since I guess that's a better metric than user id?
 		var query = $@"
 		query ($userId: Int!, $page: Int) {{
 			Page(page: $page, perPage: {PAGE_SIZE}) {{
 				pageInfo {{
 					hasNextPage
 				}}
-				following(userId: $userId) {{
+				following(userId: $userId, sort: WATCHED_TIME_DESC) {{
 					id
 				}}
 			}}
@@ -286,7 +294,39 @@ public static class AnilistGraphQLUtils
 		object body)
 	{
 		using var response = await http.PostAsJsonAsync(GRAPHQL_URL, body).ConfigureAwait(false);
+		response.EnsureSuccessStatusCode();
+
 		using var stream = await response.Content.ReadAsStreamAsync().ConfigureAwait(false);
+
+		if (response.Headers.TryGetValues("X-RateLimit-Remaining", out var remaining))
+		{
+			var amount = int.Parse(remaining.Single());
+#if DEBUG
+			Console.WriteLine($"{DateTime.UtcNow:T}: Requests remaining {amount}");
+#endif
+			// not sure if the OPTIONS request due to cors counts as a 2nd request
+			// against cloudflare but not against whatever is counting the ratelimit
+			// header, or if there's some other issue
+			// there's probably some better way to handle ratelimits, but this
+			// isn't a huge issue with the way this app is structured
+			if (amount < 85)
+			{
+				await Task.Delay(TimeSpan.FromSeconds(0.1)).ConfigureAwait(false);
+			}
+			if (amount < 70)
+			{
+				await Task.Delay(TimeSpan.FromSeconds(0.50)).ConfigureAwait(false);
+			}
+			if (amount < 60)
+			{
+				await Task.Delay(TimeSpan.FromSeconds(1)).ConfigureAwait(false);
+			}
+		}
+		if (response.Headers.TryGetValues("Retry-After", out var retry))
+		{
+			var seconds = int.Parse(retry.Single());
+			await Task.Delay(TimeSpan.FromSeconds(seconds)).ConfigureAwait(false);
+		}
 
 		return (await JsonSerializer.DeserializeAsync<AnilistResponse<T>>(
 			utf8Json: stream
