@@ -4,12 +4,14 @@ using PlanningListFilterer.Models.Anilist;
 using PlanningListFilterer.Models.Anilist.Json;
 using PlanningListFilterer.Settings;
 
+using System;
+
 namespace PlanningListFilterer.Pages;
 
 public partial class AnilistPlanning
 {
 	private static readonly Random _Random = new();
-	private readonly HashSet<int> _RandomIds = [];
+	private readonly HashSet<int> _ShownRandomIds = [];
 
 	public ColumnSettings ColumnSettings { get; set; } = new();
 	public List<AnilistModel> Entries { get; set; } = [];
@@ -121,20 +123,28 @@ public partial class AnilistPlanning
 
 	public async Task RandomizeTable()
 	{
-		var visibleEntries = Grid.FilteredItems.ToList();
-		// Prevent showing duplicate random entries
-		int randomId;
-		do
+		var visibleIds = Grid.FilteredItems.Select(x => x.Id);
+		if (!visibleIds.Any())
 		{
-			if (_RandomIds.Count >= visibleEntries.Count)
-			{
-				_RandomIds.Clear();
-			}
+			return;
+		}
 
-			randomId = visibleEntries[_Random.Next(0, visibleEntries.Count)].Id;
-		} while (_RandomIds.Contains(randomId));
+		// Prevent showing duplicate random entries
+		var validIds = visibleIds.Where(x => !_ShownRandomIds.Contains(x)).ToList();
+		if (validIds.Count == 0)
+		{
+			// Only remove visible ids, otherwise if a user randomizes
+			// 100+ entries in their 1000+ entry list, then filters down to
+			// 2 entries, once those 2 entries have been shuffled to, the 100+
+			// previously shuffled to entries would be thrown in the pool of
+			// available entries to show again
+			_ShownRandomIds.ExceptWith(visibleIds);
+			validIds = visibleIds.ToList();
+		}
 
-		_RandomIds.Add(randomId);
+		var randomId = validIds[_Random.Next(0, validIds.Count)];
+
+		_ShownRandomIds.Add(randomId);
 		await Grid.SetSortAsync(
 			field: "Random",
 			direction: SortDirection.Ascending,
