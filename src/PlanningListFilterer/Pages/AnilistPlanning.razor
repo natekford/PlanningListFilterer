@@ -1,10 +1,5 @@
 ﻿@page "/"
 
-@inject HttpClient Http
-@inject ILocalStorageService LocalStorage
-@inject ListSettingsService ListSettingsService
-@inject ColumnSettingsService ColumnSettingsService
-
 <PageTitle>Planning List Filterer</PageTitle>
 
 <MudDataGrid Dense="true" Hover="true" Bordered="true" Striped="true"
@@ -103,9 +98,3 @@
 		<MudDataGridPager T="AnilistModel" />
 	</PagerContent>
 </MudDataGrid>
-
-@code {
-	public MudDataGrid<AnilistModel> Grid { get; set; } = null!;
-	public Column<AnilistModel> GenreColumn { get; set; } = null!;
-	public Column<AnilistModel> TagColumn { get; set; } = null!;
-}

@@ -21,8 +21,7 @@ builder.Services.AddScoped(_ =>
 		BaseAddress = new Uri(builder.HostEnvironment.BaseAddress)
 	};
 });
-builder.Services.AddScoped<ListSettingsService>();
-builder.Services.AddScoped<ColumnSettingsService>();
+builder.Services.AddScoped<SettingsService>();
 
 builder.Services.AddMudServices();
 builder.Services.AddBlazoredLocalStorage(config =>

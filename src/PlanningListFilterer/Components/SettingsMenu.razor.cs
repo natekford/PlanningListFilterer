@@ -14,6 +14,8 @@ public partial class SettingsMenu<T>
 	public bool IsMenuOpen { get; set; }
 	[Parameter]
 	public ListSettings ListSettings { get; set; } = null!;
+	[Inject]
+	public SettingsService Settings { get; set; } = null!;
 
 	public void CloseMenu()
 		=> IsMenuOpen = false;
@@ -72,10 +74,10 @@ public partial class SettingsMenu<T>
 
 	public async Task SaveAndUpdateUI()
 	{
-		await ListSettingsService.SaveSettingsAsync(
+		await Settings.SaveAsync(
 			settings: ListSettings
 		).ConfigureAwait(false);
-		await ColumnSettingsService.SaveSettingsAsync(new(
+		await Settings.SaveAsync(new ColumnSettings(
 			HiddenColumns: Grid.GetHiddenColumns()
 		)).ConfigureAwait(false);
 		Grid.ExternalStateHasChanged();

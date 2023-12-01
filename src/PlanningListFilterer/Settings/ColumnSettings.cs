@@ -35,9 +35,3 @@ public sealed record ColumnSettings(
 	{
 	}
 }
-
-public class ColumnSettingsService(ILocalStorageService localStorage)
-	: LocalStorageJsonSettingsService<ColumnSettings>(localStorage)
-{
-	protected override string Key => "_ColumnSettings";
-}

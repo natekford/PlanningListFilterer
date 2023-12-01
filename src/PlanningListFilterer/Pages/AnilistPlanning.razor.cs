@@ -1,4 +1,9 @@
-﻿using MudBlazor;
+﻿using Blazored.LocalStorage;
+
+using Microsoft.AspNetCore.Components;
+using Microsoft.Extensions.Logging;
+
+using MudBlazor;
 
 using PlanningListFilterer.Models.Anilist;
 using PlanningListFilterer.Models.Anilist.Json;
@@ -15,8 +20,19 @@ public partial class AnilistPlanning
 
 	public ColumnSettings ColumnSettings { get; set; } = new();
 	public List<AnilistModel> Entries { get; set; } = [];
+	public Column<AnilistModel> GenreColumn { get; set; } = null!;
+	public MudDataGrid<AnilistModel> Grid { get; set; } = null!;
+	[Inject]
+	public HttpClient Http { get; set; } = null!;
 	public bool IsLoading { get; set; }
 	public ListSettings ListSettings { get; set; } = new();
+	[Inject]
+	public ILocalStorageService LocalStorage { get; set; } = null!;
+	[Inject]
+	public ILogger<AnilistPlanning> Logger { get; set; } = null!;
+	[Inject]
+	public SettingsService Settings { get; set; } = null!;
+	public Column<AnilistModel> TagColumn { get; set; } = null!;
 	public string? Username { get; set; }
 
 	public async Task<AnilistMeta?> GetMeta(Username username)
@@ -38,7 +54,7 @@ public partial class AnilistPlanning
 		{
 			try
 			{
-				entries = await LocalStorage.GetItemCompressedAsync<List<AnilistModel>>(username.Name);
+				entries = await LocalStorage.GetItemCompressedAsync<List<AnilistModel>>(username.Key);
 			}
 			catch
 			{
@@ -91,7 +107,7 @@ public partial class AnilistPlanning
 		}
 
 		entries.Sort((x, y) => x.Id.CompareTo(y.Id));
-		await LocalStorage.SetItemCompressedAsync(username.Name, entries).ConfigureAwait(false);
+		await LocalStorage.SetItemCompressedAsync(username.Key, entries).ConfigureAwait(false);
 		await LocalStorage.SetItemAsync(username.Meta, new AnilistMeta(
 			userId: user!.Id,
 			settings: ListSettings
@@ -106,7 +122,6 @@ public partial class AnilistPlanning
 		{
 			return;
 		}
-		// test
 
 		IsLoading = true;
 		// Stop showing old entries
@@ -121,10 +136,13 @@ public partial class AnilistPlanning
 			Entries = await GetPlanningList(username, useCached).ConfigureAwait(false);
 			await LocalStorage.SetItemAsync(LAST_USERNAME, Username).ConfigureAwait(false);
 		}
-		catch
+		catch (HttpRequestException e)
 		{
-			// idk, some http error, probably a 404 happened, maybe a 429
-			// should probably display this to the user
+			Logger.LogError(e, "HTTP error");
+		}
+		catch (Exception e)
+		{
+			Logger.LogError(e, "Other error");
 		}
 		finally
 		{
@@ -172,8 +190,8 @@ public partial class AnilistPlanning
 		}
 
 		Username = await LocalStorage.GetItemAsync<string>(LAST_USERNAME).ConfigureAwait(false);
-		ListSettings = await ListSettingsService.GetSettingsAsync().ConfigureAwait(false);
-		ColumnSettings = await ColumnSettingsService.GetSettingsAsync().ConfigureAwait(false);
+		ListSettings = await Settings.GetAsync<ListSettings>().ConfigureAwait(false);
+		ColumnSettings = await Settings.GetAsync<ColumnSettings>().ConfigureAwait(false);
 
 		foreach (var column in Grid.RenderedColumns)
 		{
@@ -187,14 +205,16 @@ public partial class AnilistPlanning
 	}
 }
 
-public sealed class Username
+public readonly struct Username
 {
+	public string Key { get; }
 	public string Meta { get; }
 	public string Name { get; }
 
 	public Username(string username)
 	{
 		Name = username.ToLower();
-		Meta = $"{Name}-META";
+		Key = $"LIST_{Name}";
+		Meta = $"META_{Name}";
 	}
 }

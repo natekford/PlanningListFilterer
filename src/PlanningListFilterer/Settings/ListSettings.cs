@@ -8,9 +8,3 @@ public sealed class ListSettings
 	public bool AutomaticallyToggleGlobalScoreColumns { get; set; } = true;
 	public bool EnableFriendScores { get; set; }
 }
-
-public class ListSettingsService(ILocalStorageService localStorage)
-	: LocalStorageJsonSettingsService<ListSettings>(localStorage)
-{
-	protected override string Key => "_ListSettings";
-}
