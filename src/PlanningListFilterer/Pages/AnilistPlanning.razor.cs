@@ -43,6 +43,7 @@ public partial class AnilistPlanning
 		}
 		catch
 		{
+			Logger.LogWarning("Unable to load meta for {user}.", username.Name);
 			return null;
 		}
 	}
@@ -58,8 +59,7 @@ public partial class AnilistPlanning
 			}
 			catch
 			{
-				// json error or something, nothing we can do to save this
-				// retrieve new list from anilist
+				Logger.LogWarning("Unable to load saved list for {user}.", username.Name);
 			}
 		}
 		if (entries is not null)
@@ -112,6 +112,7 @@ public partial class AnilistPlanning
 			userId: user!.Id,
 			settings: ListSettings
 		)).ConfigureAwait(false);
+		await LocalStorage.SetItemAsync(LAST_USERNAME, username.Name).ConfigureAwait(false);
 
 		return entries;
 	}
@@ -134,7 +135,6 @@ public partial class AnilistPlanning
 		try
 		{
 			Entries = await GetPlanningList(username, useCached).ConfigureAwait(false);
-			await LocalStorage.SetItemAsync(LAST_USERNAME, Username).ConfigureAwait(false);
 		}
 		catch (HttpRequestException e)
 		{

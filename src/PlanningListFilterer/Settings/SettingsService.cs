@@ -9,10 +9,14 @@ public class SettingsService
 	protected ConcurrentDictionary<Type, object> Cache { get; } = [];
 	protected ConcurrentDictionary<Type, string> Keys { get; } = [];
 	protected ILocalStorageService LocalStorage { get; }
+	protected ILogger<SettingsService> Logger { get; }
 
-	public SettingsService(ILocalStorageService localStorage)
+	public SettingsService(
+		ILocalStorageService localStorage,
+		ILogger<SettingsService> logger)
 	{
 		LocalStorage = localStorage;
+		Logger = logger;
 
 		RegisterKey<ColumnSettings>("_ColumnSettings");
 		RegisterKey<ListSettings>("_ListSettings");
@@ -37,6 +41,7 @@ public class SettingsService
 		}
 		catch
 		{
+			Logger.LogWarning("Unable to load settings with key {key}.", Keys[typeof(T)]);
 		}
 
 		settings ??= new();
