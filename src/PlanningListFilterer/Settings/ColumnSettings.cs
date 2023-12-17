@@ -1,6 +1,4 @@
-﻿using Blazored.LocalStorage;
-
-using PlanningListFilterer.Models.Anilist;
+﻿using PlanningListFilterer.Models.Anilist;
 
 using System.Collections.Immutable;
 

@@ -10,12 +10,12 @@ public partial class SettingsMenu<T>
 {
 	public List<Column<T>> Columns => Grid.RenderedColumns;
 	[Parameter]
-	public MudDataGrid<T> Grid { get; set; } = null!;
+	public required MudDataGrid<T> Grid { get; set; } = null!;
 	public bool IsMenuOpen { get; set; }
 	[Parameter]
-	public ListSettings ListSettings { get; set; } = null!;
+	public required ListSettings ListSettings { get; set; } = null!;
 	[Inject]
-	public SettingsService Settings { get; set; } = null!;
+	public required SettingsService Settings { get; set; } = null!;
 
 	public void CloseMenu()
 		=> IsMenuOpen = false;

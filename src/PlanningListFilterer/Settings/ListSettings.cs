@@ -1,6 +1,4 @@
-﻿using Blazored.LocalStorage;
-
-namespace PlanningListFilterer.Settings;
+﻿namespace PlanningListFilterer.Settings;
 
 public sealed class ListSettings
 {

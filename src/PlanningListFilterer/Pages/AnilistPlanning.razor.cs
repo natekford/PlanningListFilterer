@@ -1,7 +1,6 @@
 ﻿using Blazored.LocalStorage;
 
 using Microsoft.AspNetCore.Components;
-using Microsoft.Extensions.Logging;
 
 using MudBlazor;
 
@@ -20,19 +19,19 @@ public partial class AnilistPlanning
 
 	public ColumnSettings ColumnSettings { get; set; } = new();
 	public List<AnilistModel> Entries { get; set; } = [];
-	public Column<AnilistModel> GenreColumn { get; set; } = null!;
-	public MudDataGrid<AnilistModel> Grid { get; set; } = null!;
+	public required Column<AnilistModel> GenreColumn { get; set; } = null!;
+	public required MudDataGrid<AnilistModel> Grid { get; set; } = null!;
 	[Inject]
-	public HttpClient Http { get; set; } = null!;
+	public required HttpClient Http { get; set; } = null!;
 	public bool IsLoading { get; set; }
 	public ListSettings ListSettings { get; set; } = new();
 	[Inject]
-	public ILocalStorageService LocalStorage { get; set; } = null!;
+	public required ILocalStorageService LocalStorage { get; set; } = null!;
 	[Inject]
-	public ILogger<AnilistPlanning> Logger { get; set; } = null!;
+	public required ILogger<AnilistPlanning> Logger { get; set; } = null!;
 	[Inject]
-	public SettingsService Settings { get; set; } = null!;
-	public Column<AnilistModel> TagColumn { get; set; } = null!;
+	public required SettingsService Settings { get; set; } = null!;
+	public required Column<AnilistModel> TagColumn { get; set; } = null!;
 	public string? Username { get; set; }
 
 	public async Task<AnilistMeta?> GetMeta(Username username)

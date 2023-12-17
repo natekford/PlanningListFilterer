@@ -11,12 +11,12 @@ public partial class FilterSelection<T>
 	private FilterDefinition<T> _FilterDefinition = null!;
 
 	[Parameter]
-	public Column<T> Column { get; set; } = null!;
+	public required Column<T> Column { get; set; } = null!;
 	public MudDataGrid<T> Grid => Column.DataGrid;
 	public ImmutableArray<string> Options { get; set; } = [];
 	public HashSet<string> SelectedItems => (HashSet<string>)_FilterDefinition.Value!;
 	[Parameter]
-	public Func<T, IEnumerable<string>> Selector { get; set; } = null!;
+	public required Func<T, IEnumerable<string>> Selector { get; set; } = null!;
 
 	public void Clear()
 	{
