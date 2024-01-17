@@ -12,16 +12,16 @@
 			<MudStack Spacing="0">
 				<MudCheckBox T="bool" Dense="true" Size="@Size.Small"
 							 Label="Enable friend scores (requires reloading list)"
-							 Checked="@ListSettings.EnableFriendScores"
-							 CheckedChanged="@ListFriendScoresChanged" />
+							 Value="@ListSettings.EnableFriendScores"
+							 ValueChanged="@ListFriendScoresChanged" />
 				<MudCheckBox T="bool" Dense="true" Size="@Size.Small"
 							 Label="Automatically toggle on friend score columns when friend scores are on"
-							 @bind-Checked="@ListSettings.AutomaticallyToggleFriendScoreColumns"
-							 @bind-Checked:after="@SaveAndUpdateUI" />
+							 @bind-Value="@ListSettings.AutomaticallyToggleFriendScoreColumns"
+							 @bind-Value:after="@SaveAndUpdateUI" />
 				<MudCheckBox T="bool" Dense="true" Size="@Size.Small"
 							 Label="Automatically toggle off global score columns when friend scores are on"
-							 @bind-Checked="@ListSettings.AutomaticallyToggleGlobalScoreColumns"
-							 @bind-Checked:after="@SaveAndUpdateUI" />
+							 @bind-Value="@ListSettings.AutomaticallyToggleGlobalScoreColumns"
+							 @bind-Value:after="@SaveAndUpdateUI" />
 			</MudStack>
 		</MudExpansionPanel>
 		<MudExpansionPanel Text="Column Settings">
@@ -31,8 +31,8 @@
 					<MudCheckBox T="bool" Dense="true" Size="@Size.Small"
 								 Label="@column.Title"
 								 Disabled="@(column.Hideable == false)"
-								 Checked="@(!column.Hidden)"
-								 CheckedChanged="@(x => ColumnsChanged(column, x))" />
+								 Value="@(!column.Hidden)"
+								 ValueChanged="@(x => ColumnsChanged(column, x))" />
 				}
 			</MudStack>
 			<MudItem xs="12" Class="d-flex justify-end">

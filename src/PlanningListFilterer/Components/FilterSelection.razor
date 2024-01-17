@@ -5,8 +5,8 @@
 		<MudStack Class="filter-selection-stack" Spacing="0">
 			<Virtualize Items="@Options">
 				<MudCheckBox T="bool" Label="@context" Size="@Size.Small"
-							 Checked="@(SelectedItems.Contains(context))"
-							 CheckedChanged="@(x => OnCheckedChanged(context, x))" />
+							 Value="@(SelectedItems.Contains(context))"
+							 ValueChanged="@(x => OnCheckedChanged(context, x))" />
 			</Virtualize>
 		</MudStack>
 	</MudItem>
