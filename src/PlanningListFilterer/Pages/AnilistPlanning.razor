@@ -17,13 +17,21 @@
 		<MudTextField Class="mb-5" DebounceInterval="100"
 					  Placeholder="Enter a username to get entries from..."
 					  Value="@Username.Name" OnDebounceIntervalElapsed="@UpdateUsername" />
-		<MudIconButton Color="Color.Primary" Icon="@Icons.Material.Filled.Search"
-					   OnClick="@LoadEntries" Disabled="@(!Username.IsValid)" />
-		<MudIconButton Color="Color.Primary" Icon="@Icons.Material.Filled.Shuffle"
-					   OnClick="@RandomizeTable" Disabled="@(Entries.Count == 0)" />
-		<MudIconButton Color="Color.Primary" Icon="@Icons.Material.Filled.Download"
-					   OnClick="@DownloadAsCsv" Disabled="@(Entries.Count == 0)" />
-		<SettingsMenu Grid="@Grid" ListSettings="@ListSettings" />
+		<MudTooltip Text="Load">
+			<MudIconButton Color="Color.Primary" Icon="@Icons.Material.Filled.Search"
+						   OnClick="@LoadEntries" Disabled="@(!Username.IsValid)" />
+		</MudTooltip>
+		<MudTooltip Text="Randomize">
+			<MudIconButton Color="Color.Primary" Icon="@Icons.Material.Filled.Shuffle"
+						   OnClick="@RandomizeTable" Disabled="@(Entries.Count == 0)" />
+		</MudTooltip>
+		<MudTooltip Text="Save">
+			<MudIconButton Color="Color.Primary" Icon="@Icons.Material.Filled.Download"
+						   OnClick="@DownloadAsCsv" Disabled="@(Entries.Count == 0)" />
+		</MudTooltip>
+		<MudTooltip Text="Settings">
+			<SettingsMenu Grid="@Grid" ListSettings="@ListSettings" />
+		</MudTooltip>
 	</ToolBarContent>
 
 	<Columns>
