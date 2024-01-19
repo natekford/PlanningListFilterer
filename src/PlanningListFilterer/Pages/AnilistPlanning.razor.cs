@@ -62,6 +62,7 @@ public partial class AnilistPlanning
 		await using (var sw = new StreamWriter(ms, leaveOpen: true))
 		await using (var csv = new CsvWriter(sw, _CsvConfig))
 		{
+			csv.Context.RegisterClassMap<AnilistModelMap>();
 			csv.WriteRecords(Entries);
 		}
 
