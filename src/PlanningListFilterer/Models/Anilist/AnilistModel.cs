@@ -1,7 +1,12 @@
-﻿using PlanningListFilterer.Models.Anilist.Json;
+﻿using CsvHelper.Configuration;
+using CsvHelper;
+using CsvHelper.Configuration.Attributes;
+
+using PlanningListFilterer.Models.Anilist.Json;
 
 using System.Collections.Immutable;
 using System.Text.Json.Serialization;
+using CsvHelper.TypeConversion;
 
 namespace PlanningListFilterer.Models.Anilist;
 
@@ -26,7 +31,8 @@ public sealed record AnilistModel(
 ) : IFuzzyDate
 {
 	[JsonIgnore]
-	public DateOnly Start => this.GetDate();
+	[TypeConverter(typeof(StartConverter))]
+	public DateTime Start => this.GetDate();
 
 	public static AnilistModel Create(AnilistMedia media)
 	{
@@ -62,5 +68,19 @@ public sealed record AnilistModel(
 					&& (x.Node.StartDate?.GetDate() < start);
 			})
 		);
+	}
+
+	private sealed class StartConverter : DateOnlyConverter
+	{
+		public static StartConverter Instance { get; } = new();
+
+		public override string? ConvertToString(object? value, IWriterRow row, MemberMapData memberMapData)
+		{
+			if (value is DateTime dt)
+			{
+				value = DateOnly.FromDateTime(dt);
+			}
+			return base.ConvertToString(value, row, memberMapData);
+		}
 	}
 }

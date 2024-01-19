@@ -2,6 +2,7 @@
 
 using CsvHelper;
 using CsvHelper.Configuration;
+using CsvHelper.TypeConversion;
 
 using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
@@ -44,9 +45,9 @@ public partial class AnilistPlanning
 	[Inject]
 	public required SettingsService Settings { get; set; } = null!;
 	public required Column<AnilistModel> TagColumn { get; set; } = null!;
-	public Username Username { get; set; } = new("");
+	public AnilistUsername Username { get; set; } = new("");
 
-	public async Task DownloadAsCSV()
+	public async Task DownloadAsCsv()
 	{
 		if (Entries.Count == 0)
 		{
@@ -69,7 +70,7 @@ public partial class AnilistPlanning
 		await Js.InvokeVoidAsync("downloadFileFromStream", fileName, sRef);
 	}
 
-	public async Task<AnilistMeta?> GetMeta(Username username)
+	public async Task<AnilistMeta?> GetMeta(AnilistUsername username)
 	{
 		try
 		{
@@ -82,7 +83,7 @@ public partial class AnilistPlanning
 		}
 	}
 
-	public async Task<List<AnilistModel>> GetPlanningList(Username username, bool useCached)
+	public async Task<List<AnilistModel>> GetPlanningList(AnilistUsername username, bool useCached)
 	{
 		var entries = default(List<AnilistModel>);
 		if (useCached)
@@ -238,22 +239,5 @@ public partial class AnilistPlanning
 		}
 
 		StateHasChanged();
-	}
-}
-
-public readonly struct Username
-{
-	public bool IsValid { get; }
-	public string ListKey { get; }
-	public string MetaKey { get; }
-	public string Name { get; }
-
-	public Username(string username)
-	{
-		Name = username?.ToLower() ?? "";
-		ListKey = $"LIST_{Name}";
-		MetaKey = $"META_{Name}";
-		// TODO: implement whatever regex anilist uses
-		IsValid = !string.IsNullOrWhiteSpace(username);
 	}
 }

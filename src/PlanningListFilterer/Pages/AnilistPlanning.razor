@@ -22,7 +22,7 @@
 		<MudIconButton Color="Color.Primary" Icon="@Icons.Material.Filled.Shuffle"
 					   OnClick="@RandomizeTable" Disabled="@(Entries.Count == 0)" />
 		<MudIconButton Color="Color.Primary" Icon="@Icons.Material.Filled.Download"
-					   OnClick="@DownloadAsCSV" Disabled="@(Entries.Count == 0)" />
+					   OnClick="@DownloadAsCsv" Disabled="@(Entries.Count == 0)" />
 		<SettingsMenu Grid="@Grid" ListSettings="@ListSettings" />
 	</ToolBarContent>
 
@@ -37,7 +37,7 @@
 		</PropertyColumn>
 		<PropertyColumn Property="@(m => m.Title)" SortBy="@(m => m.Title)"
 						CellClass="text-wrap" />
-		<PropertyColumn Property="@(m => m.Start)" SortBy="@(m => m.Start.ToDateTime(TimeOnly.MinValue))">
+		<PropertyColumn Property="@(m => m.Start)" SortBy="@(m => m.Start)">
 			<CellTemplate>@context.Item.DisplayStart()</CellTemplate>
 		</PropertyColumn>
 		<PropertyColumn Property="@(m => m.Episodes)" SortBy="@(m => m.Episodes)">
