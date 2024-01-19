@@ -1,12 +1,12 @@
-﻿using PlanningListFilterer.Models.Anilist;
+﻿using MudBlazor;
+
+using PlanningListFilterer.Models.Anilist;
 
 using System.Collections.Immutable;
 
 namespace PlanningListFilterer.Settings;
 
-public sealed record ColumnSettings(
-	ImmutableHashSet<string> HiddenColumns
-)
+public sealed class ColumnSettings
 {
 	public static ImmutableHashSet<string> DefaultHidden { get; } =
 	[
@@ -29,7 +29,33 @@ public sealed record ColumnSettings(
 		nameof(AnilistModel.Score),
 	];
 
-	public ColumnSettings() : this(HiddenColumns: DefaultHidden)
+	public HashSet<string> HiddenColumns { get; set; } = new(DefaultHidden);
+
+	public Task SetVisibilityAsync<T>(Column<T> column, bool visible)
 	{
+		if (visible)
+		{
+			HiddenColumns.Remove(column.PropertyName);
+			return column.ShowAsync();
+		}
+		else
+		{
+			HiddenColumns.Add(column.PropertyName);
+			return column.HideAsync();
+		}
+	}
+
+	public async Task SetVisibilityAsync<T>(
+		IEnumerable<Column<T>> columns,
+		ICollection<string> properties,
+		bool visible)
+	{
+		foreach (var column in columns)
+		{
+			if (column.Hideable != false && properties.Contains(column.PropertyName))
+			{
+				await SetVisibilityAsync(column, visible).ConfigureAwait(false);
+			}
+		}
 	}
 }

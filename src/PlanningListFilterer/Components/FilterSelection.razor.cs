@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components;
 
 using MudBlazor;
+using MudBlazor.Interfaces;
 
 using System.Collections.Immutable;
 
@@ -23,7 +24,7 @@ public partial class FilterSelection<T>
 		SelectedItems.Clear();
 
 		UpdateOptions();
-		Grid.ExternalStateHasChanged();
+		((IMudStateHasChanged)Grid).StateHasChanged();
 	}
 
 	public void OnCheckedChanged(string item, bool add)
@@ -38,7 +39,7 @@ public partial class FilterSelection<T>
 		}
 
 		UpdateOptions();
-		Grid.ExternalStateHasChanged();
+		((IMudStateHasChanged)Grid).StateHasChanged();
 	}
 
 	protected override async Task OnParametersSetAsync()

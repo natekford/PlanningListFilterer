@@ -30,7 +30,7 @@
 					<MudCheckBox T="bool" Dense="true" Size="@Size.Small" Color="Color.Primary"
 								 Label="@column.Title"
 								 Disabled="@(column.Hideable == false)"
-								 Value="@(!column.Hidden)"
+								 Value="@(!ColumnSettings.HiddenColumns.Contains(column.PropertyName))"
 								 ValueChanged="@(x => ColumnsChanged(column, x))" />
 				}
 			</MudStack>

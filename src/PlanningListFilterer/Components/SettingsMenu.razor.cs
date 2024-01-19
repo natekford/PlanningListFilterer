@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components;
 
 using MudBlazor;
+using MudBlazor.Interfaces;
 
 using PlanningListFilterer.Settings;
 
@@ -9,6 +10,8 @@ namespace PlanningListFilterer.Components;
 public partial class SettingsMenu<T>
 {
 	public List<Column<T>> Columns => Grid.RenderedColumns;
+	[Parameter]
+	public required ColumnSettings ColumnSettings { get; set; } = null!;
 	[Parameter]
 	public required MudDataGrid<T> Grid { get; set; } = null!;
 	public bool IsMenuOpen { get; set; }
@@ -22,7 +25,10 @@ public partial class SettingsMenu<T>
 
 	public async Task ColumnsChanged(Column<T> column, bool visible)
 	{
-		await column.SetVisibilityAsync(visible).ConfigureAwait(false);
+		await ColumnSettings.SetVisibilityAsync(
+			column: column,
+			visible: visible
+		).ConfigureAwait(false);
 		await SaveAndUpdateUI().ConfigureAwait(false);
 	}
 
@@ -48,8 +54,10 @@ public partial class SettingsMenu<T>
 	{
 		foreach (var column in Columns)
 		{
-			var visible = !ColumnSettings.DefaultHidden.Contains(column.PropertyName);
-			await column.SetVisibilityAsync(visible).ConfigureAwait(false);
+			await ColumnSettings.SetVisibilityAsync(
+				column: column,
+				visible: !ColumnSettings.DefaultHidden.Contains(column.PropertyName)
+			).ConfigureAwait(false);
 		}
 		await SaveAndUpdateUI().ConfigureAwait(false);
 	}
@@ -59,11 +67,19 @@ public partial class SettingsMenu<T>
 		ListSettings.EnableFriendScores = value;
 		if (ListSettings.AutomaticallyToggleFriendScoreColumns)
 		{
-			await Columns.SetVisibilityAsync(ColumnSettings.FriendScores, value).ConfigureAwait(false);
+			await ColumnSettings.SetVisibilityAsync(
+				columns: Columns,
+				properties: ColumnSettings.FriendScores,
+				visible: value
+			).ConfigureAwait(false);
 		}
 		if (ListSettings.AutomaticallyToggleGlobalScoreColumns)
 		{
-			await Columns.SetVisibilityAsync(ColumnSettings.GlobalScores, !value).ConfigureAwait(false);
+			await ColumnSettings.SetVisibilityAsync(
+				columns: Columns,
+				properties: ColumnSettings.GlobalScores,
+				visible: !value
+			).ConfigureAwait(false);
 		}
 
 		await SaveAndUpdateUI().ConfigureAwait(false);
@@ -74,12 +90,8 @@ public partial class SettingsMenu<T>
 
 	public async Task SaveAndUpdateUI()
 	{
-		await Settings.SaveAsync(
-			settings: ListSettings
-		).ConfigureAwait(false);
-		await Settings.SaveAsync(new ColumnSettings(
-			HiddenColumns: Grid.GetHiddenColumns()
-		)).ConfigureAwait(false);
-		Grid.ExternalStateHasChanged();
+		await Settings.SaveAsync(settings: ListSettings).ConfigureAwait(false);
+		await Settings.SaveAsync(settings: ColumnSettings).ConfigureAwait(false);
+		((IMudStateHasChanged)Grid).StateHasChanged();
 	}
 }

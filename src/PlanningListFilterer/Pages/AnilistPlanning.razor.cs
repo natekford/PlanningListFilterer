@@ -231,13 +231,11 @@ public partial class AnilistPlanning
 		ListSettings = await Settings.GetAsync<ListSettings>().ConfigureAwait(false);
 		ColumnSettings = await Settings.GetAsync<ColumnSettings>().ConfigureAwait(false);
 
-		foreach (var column in Grid.RenderedColumns)
-		{
-			if (column.Hideable != false && ColumnSettings.HiddenColumns.Contains(column.PropertyName))
-			{
-				await column.HideAsync().ConfigureAwait(false);
-			}
-		}
+		await ColumnSettings.SetVisibilityAsync(
+			columns: Grid.RenderedColumns,
+			properties: ColumnSettings.HiddenColumns,
+			visible: false
+		).ConfigureAwait(false);
 
 		StateHasChanged();
 	}

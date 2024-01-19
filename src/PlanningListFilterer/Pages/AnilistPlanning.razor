@@ -29,9 +29,7 @@
 			<MudIconButton Color="Color.Primary" Icon="@Icons.Material.Filled.Download"
 						   OnClick="@DownloadAsCsv" Disabled="@(Entries.Count == 0)" />
 		</MudTooltip>
-		<MudTooltip Text="Settings">
-			<SettingsMenu Grid="@Grid" ListSettings="@ListSettings" />
-		</MudTooltip>
+		<SettingsMenu Grid="@Grid" ListSettings="@ListSettings" ColumnSettings="@ColumnSettings" />
 	</ToolBarContent>
 
 	<Columns>
