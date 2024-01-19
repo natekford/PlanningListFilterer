@@ -45,6 +45,7 @@ public partial class AnilistPlanning
 	[Inject]
 	public required SettingsService Settings { get; set; } = null!;
 	public required Column<AnilistModel> TagColumn { get; set; } = null!;
+	public int TagPercent { get; set; }
 	public AnilistUsername Username { get; set; } = new("");
 
 	public async Task DownloadAsCsv()
@@ -216,9 +217,6 @@ public partial class AnilistPlanning
 			sortFunc: x => x.Id <= randomId
 		).ConfigureAwait(false);
 	}
-
-	public void UpdateUsername(string username)
-		=> Username = new(username);
 
 	protected override async Task OnAfterRenderAsync(bool firstRender)
 	{

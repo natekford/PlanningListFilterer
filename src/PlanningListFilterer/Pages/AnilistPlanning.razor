@@ -16,7 +16,8 @@
 		<MudSpacer />
 		<MudTextField Class="mb-5" DebounceInterval="100"
 					  Placeholder="Enter a username to get entries from..."
-					  Value="@Username.Name" OnDebounceIntervalElapsed="@UpdateUsername" />
+					  Value="@Username.Name"
+					  OnDebounceIntervalElapsed="@(x => Username = new(x))" />
 		<MudTooltip Text="Load">
 			<MudIconButton Color="Color.Primary" Icon="@Icons.Material.Filled.Search"
 						   OnClick="@LoadEntries" Disabled="@(!Username.IsValid)" />
@@ -86,7 +87,11 @@
 		<PropertyColumn Property="@(m => m.Tags)" Sortable="false"
 						@ref="@TagColumn">
 			<FilterTemplate>
-				<FilterSelection Selector="@(m => m.Tags.Keys)" Column="@TagColumn" />
+				<FilterSelection Column="@TagColumn"
+								 Selector="@(m => m.Tags.Where(x => x.Value >= TagPercent).Select(x => x.Key))" />
+				<MudNumericField Min="0" Max="100" DebounceInterval="100"
+							     HelperText="Required Tag Percentage"
+								 @bind-Value="@TagPercent" />
 			</FilterTemplate>
 
 			<CellTemplate>
