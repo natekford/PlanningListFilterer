@@ -26,7 +26,7 @@ public sealed record AnilistModel(
 ) : IFuzzyDate
 {
 	[JsonIgnore]
-	public DateTime Start => this.GetDate();
+	public DateOnly Start => this.GetDate();
 
 	public static AnilistModel Create(AnilistMedia media)
 	{

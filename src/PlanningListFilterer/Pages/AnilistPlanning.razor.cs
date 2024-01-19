@@ -1,6 +1,10 @@
 ﻿using Blazored.LocalStorage;
 
+using CsvHelper;
+using CsvHelper.Configuration;
+
 using Microsoft.AspNetCore.Components;
+using Microsoft.JSInterop;
 
 using MudBlazor;
 
@@ -8,12 +12,18 @@ using PlanningListFilterer.Models.Anilist;
 using PlanningListFilterer.Models.Anilist.Json;
 using PlanningListFilterer.Settings;
 
+using System.Globalization;
+
 namespace PlanningListFilterer.Pages;
 
 public partial class AnilistPlanning
 {
 	private const string LAST_USERNAME = "_LastSearchedUsername";
 
+	private static readonly CsvConfiguration _CsvConfig = new(CultureInfo.InvariantCulture)
+	{
+		InjectionOptions = InjectionOptions.Escape,
+	};
 	private static readonly Random _Random = new();
 	private readonly HashSet<int> _ShownRandomIds = [];
 
@@ -24,6 +34,8 @@ public partial class AnilistPlanning
 	[Inject]
 	public required HttpClient Http { get; set; } = null!;
 	public bool IsLoading { get; set; }
+	[Inject]
+	public required IJSRuntime Js { get; set; } = null!;
 	public ListSettings ListSettings { get; set; } = new();
 	[Inject]
 	public required ILocalStorageService LocalStorage { get; set; } = null!;
@@ -32,13 +44,36 @@ public partial class AnilistPlanning
 	[Inject]
 	public required SettingsService Settings { get; set; } = null!;
 	public required Column<AnilistModel> TagColumn { get; set; } = null!;
-	public string? Username { get; set; }
+	public Username Username { get; set; } = new("");
+
+	public async Task DownloadAsCSV()
+	{
+		if (Entries.Count == 0)
+		{
+			return;
+		}
+
+		var time = DateTime.UtcNow.ToString("s").Replace(":", ".");
+		var fileName = $"Planning_{time}.csv";
+
+		await using var ms = new MemoryStream();
+
+		await using (var sw = new StreamWriter(ms, leaveOpen: true))
+		await using (var csv = new CsvWriter(sw, _CsvConfig))
+		{
+			csv.WriteRecords(Entries);
+		}
+
+		ms.Seek(0, SeekOrigin.Begin);
+		using var sRef = new DotNetStreamReference(ms);
+		await Js.InvokeVoidAsync("downloadFileFromStream", fileName, sRef);
+	}
 
 	public async Task<AnilistMeta?> GetMeta(Username username)
 	{
 		try
 		{
-			return await LocalStorage.GetItemAsync<AnilistMeta>(username.Meta).ConfigureAwait(false);
+			return await LocalStorage.GetItemAsync<AnilistMeta>(username.MetaKey).ConfigureAwait(false);
 		}
 		catch
 		{
@@ -54,7 +89,7 @@ public partial class AnilistPlanning
 		{
 			try
 			{
-				entries = await LocalStorage.GetItemCompressedAsync<List<AnilistModel>>(username.Key);
+				entries = await LocalStorage.GetItemCompressedAsync<List<AnilistModel>>(username.ListKey);
 			}
 			catch
 			{
@@ -106,8 +141,8 @@ public partial class AnilistPlanning
 		}
 
 		entries.Sort((x, y) => x.Id.CompareTo(y.Id));
-		await LocalStorage.SetItemCompressedAsync(username.Key, entries).ConfigureAwait(false);
-		await LocalStorage.SetItemAsync(username.Meta, new AnilistMeta(
+		await LocalStorage.SetItemCompressedAsync(username.ListKey, entries).ConfigureAwait(false);
+		await LocalStorage.SetItemAsync(username.MetaKey, new AnilistMeta(
 			userId: user!.Id,
 			settings: ListSettings
 		)).ConfigureAwait(false);
@@ -118,7 +153,7 @@ public partial class AnilistPlanning
 
 	public async Task LoadEntries()
 	{
-		if (Username is null)
+		if (!Username.IsValid)
 		{
 			return;
 		}
@@ -127,13 +162,12 @@ public partial class AnilistPlanning
 		// Stop showing old entries
 		Entries = [];
 
-		var username = new Username(Username);
-		var meta = await GetMeta(username).ConfigureAwait(false);
+		var meta = await GetMeta(Username).ConfigureAwait(false);
 		var useCached = meta?.ShouldReacquire(ListSettings, TimeSpan.FromHours(1)) == false;
 
 		try
 		{
-			Entries = await GetPlanningList(username, useCached).ConfigureAwait(false);
+			Entries = await GetPlanningList(Username, useCached).ConfigureAwait(false);
 		}
 		catch (HttpRequestException e)
 		{
@@ -181,6 +215,9 @@ public partial class AnilistPlanning
 		).ConfigureAwait(false);
 	}
 
+	public void UpdateUsername(string username)
+		=> Username = new(username);
+
 	protected override async Task OnAfterRenderAsync(bool firstRender)
 	{
 		if (!firstRender)
@@ -188,7 +225,7 @@ public partial class AnilistPlanning
 			return;
 		}
 
-		Username = await LocalStorage.GetItemAsync<string>(LAST_USERNAME).ConfigureAwait(false);
+		Username = new(await LocalStorage.GetItemAsync<string>(LAST_USERNAME).ConfigureAwait(false));
 		ListSettings = await Settings.GetAsync<ListSettings>().ConfigureAwait(false);
 		ColumnSettings = await Settings.GetAsync<ColumnSettings>().ConfigureAwait(false);
 
@@ -206,14 +243,17 @@ public partial class AnilistPlanning
 
 public readonly struct Username
 {
-	public string Key { get; }
-	public string Meta { get; }
+	public bool IsValid { get; }
+	public string ListKey { get; }
+	public string MetaKey { get; }
 	public string Name { get; }
 
 	public Username(string username)
 	{
-		Name = username.ToLower();
-		Key = $"LIST_{Name}";
-		Meta = $"META_{Name}";
+		Name = username?.ToLower() ?? "";
+		ListKey = $"LIST_{Name}";
+		MetaKey = $"META_{Name}";
+		// TODO: implement whatever regex anilist uses
+		IsValid = !string.IsNullOrWhiteSpace(username);
 	}
 }

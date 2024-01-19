@@ -14,15 +14,15 @@
 		<MudSpacer />
 		<MudSpacer />
 		<MudSpacer />
-		<MudTextField Class="mb-5" Placeholder="Enter a username to get entries from..."
-					  @bind-Value="@Username" />
-		<MudButton Color="Color.Primary" OnClick="@LoadEntries">
-			Load Entries
-		</MudButton>
-		<MudButton Color="Color.Primary" OnClick="@RandomizeTable"
-				   Disabled="@(Entries.Count == 0)">
-			Random
-		</MudButton>
+		<MudTextField Class="mb-5" DebounceInterval="100"
+					  Placeholder="Enter a username to get entries from..."
+					  Value="@Username.Name" OnDebounceIntervalElapsed="@UpdateUsername" />
+		<MudIconButton Color="Color.Primary" Icon="@Icons.Material.Filled.Search"
+					   OnClick="@LoadEntries" Disabled="@(!Username.IsValid)" />
+		<MudIconButton Color="Color.Primary" Icon="@Icons.Material.Filled.Shuffle"
+					   OnClick="@RandomizeTable" Disabled="@(Entries.Count == 0)" />
+		<MudIconButton Color="Color.Primary" Icon="@Icons.Material.Filled.Download"
+					   OnClick="@DownloadAsCSV" Disabled="@(Entries.Count == 0)" />
 		<SettingsMenu Grid="@Grid" ListSettings="@ListSettings" />
 	</ToolBarContent>
 
@@ -37,7 +37,7 @@
 		</PropertyColumn>
 		<PropertyColumn Property="@(m => m.Title)" SortBy="@(m => m.Title)"
 						CellClass="text-wrap" />
-		<PropertyColumn Property="@(m => m.Start)" SortBy="@(m => m.Start)">
+		<PropertyColumn Property="@(m => m.Start)" SortBy="@(m => m.Start.ToDateTime(TimeOnly.MinValue))">
 			<CellTemplate>@context.Item.DisplayStart()</CellTemplate>
 		</PropertyColumn>
 		<PropertyColumn Property="@(m => m.Episodes)" SortBy="@(m => m.Episodes)">
@@ -98,3 +98,17 @@
 		<MudDataGridPager T="AnilistModel" />
 	</PagerContent>
 </MudDataGrid>
+
+<script>
+	window.downloadFileFromStream = async (fileName, contentStreamReference) => {
+		const arrayBuffer = await contentStreamReference.arrayBuffer();
+		const blob = new Blob([arrayBuffer]);
+		const url = URL.createObjectURL(blob);
+		const anchorElement = document.createElement('a');
+		anchorElement.href = url;
+		anchorElement.download = fileName ?? '';
+		anchorElement.click();
+		anchorElement.remove();
+		URL.revokeObjectURL(url);
+	}
+</script>
