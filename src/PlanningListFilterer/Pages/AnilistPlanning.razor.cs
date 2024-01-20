@@ -155,7 +155,6 @@ public partial class AnilistPlanning
 
 	public async Task LoadEntries()
 	{
-		//a
 		if (!Username.IsValid)
 		{
 			return;
