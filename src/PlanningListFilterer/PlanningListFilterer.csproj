@@ -8,6 +8,7 @@
 
 	<PropertyGroup>
 		<GHPages>true</GHPages>
+		<GHPagesBase>PlanningListFilterer</GHPagesBase>
 	</PropertyGroup>
 	
 	<ItemGroup>
