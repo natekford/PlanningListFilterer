@@ -84,7 +84,7 @@ a, .btn-link {
 }
 
 .filter-selection-grid {
-	min-width: 20vw;
+	max-width: 15vw;
 }
 
 .filter-selection-stack {

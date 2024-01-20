@@ -13,7 +13,7 @@
 	<MudItem xs="12" Class="d-flex justify-end">
 		<MudTextField DebounceInterval="100" Placeholder="Search..."
 					  @bind-Value="@Search"
-					  @bind-Value:after="@UpdateOptions" />
+					  @bind-Value:after="@(() => UpdateOptions(redraw: false))" />
 		<MudSpacer />
 		<MudButton OnClick="@Clear">Clear</MudButton>
 	</MudItem>

@@ -5,8 +5,7 @@
 <MudOverlay Visible="@IsMenuOpen" OnClick="@CloseMenu" />
 <MudPopover Class="pa-4" AnchorOrigin="Origin.BottomRight" TransformOrigin="Origin.TopRight"
 			Open="@IsMenuOpen">
-	<MudExpansionPanels Dense="true" DisableBorders="true"
-						Class="filter-selection-grid" Elevation="0">
+	<MudExpansionPanels Dense="true" DisableBorders="true" Elevation="0">
 		<MudExpansionPanel Text="List Settings">
 			<MudStack Spacing="0">
 				<MudCheckBox T="bool" Dense="true" Size="@Size.Small" Color="Color.Primary"

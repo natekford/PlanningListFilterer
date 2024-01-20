@@ -2,7 +2,6 @@
 
 using CsvHelper;
 using CsvHelper.Configuration;
-using CsvHelper.TypeConversion;
 
 using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
@@ -59,6 +58,7 @@ public partial class AnilistPlanning
 		var fileName = $"Planning_{time}.csv";
 
 		await using var ms = new MemoryStream();
+		using var sRef = new DotNetStreamReference(ms);
 
 		await using (var sw = new StreamWriter(ms, leaveOpen: true))
 		await using (var csv = new CsvWriter(sw, _CsvConfig))
@@ -68,7 +68,6 @@ public partial class AnilistPlanning
 		}
 
 		ms.Seek(0, SeekOrigin.Begin);
-		using var sRef = new DotNetStreamReference(ms);
 		await Js.InvokeVoidAsync("downloadFileFromStream", fileName, sRef);
 	}
 

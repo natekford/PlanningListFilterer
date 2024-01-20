@@ -4,7 +4,6 @@ using MudBlazor;
 using MudBlazor.Interfaces;
 
 using System.Collections.Immutable;
-using System.Diagnostics;
 
 namespace PlanningListFilterer.Components;
 
@@ -25,8 +24,7 @@ public partial class FilterSelection<T>
 	{
 		SelectedItems.Clear();
 
-		UpdateOptions();
-		((IMudStateHasChanged)Grid).StateHasChanged();
+		UpdateOptions(redraw: true);
 	}
 
 	public bool IsFilterEnabled()
@@ -49,11 +47,10 @@ public partial class FilterSelection<T>
 			SelectedItems.Remove(item);
 		}
 
-		UpdateOptions();
-		((IMudStateHasChanged)Grid).StateHasChanged();
+		UpdateOptions(redraw: true);
 	}
 
-	public void UpdateOptions()
+	public void UpdateOptions(bool redraw)
 	{
 		if (SelectedItems.Count == 0)
 		{
@@ -64,12 +61,6 @@ public partial class FilterSelection<T>
 			MarkFilterAsEnabled();
 		}
 
-		// This takes a fairly long time to happen using my list (~80ms)
-		// I'm not sure if it's an inefficient query or some other reason,
-		// I tried to rewrite it without using LINQ but somehow managed to make
-		// it 3x worse (~250ms)
-		// I think I just need to make this only happen periodically to prevent
-		// UI from feeling laggy
 		Options =
 		[
 			.. Grid.FilteredItems
@@ -83,6 +74,11 @@ public partial class FilterSelection<T>
 				.OrderByDescending(SelectedItems.Contains)
 				.ThenBy(x => x)
 		];
+
+		if (redraw)
+		{
+			((IMudStateHasChanged)Grid).StateHasChanged();
+		}
 	}
 
 	protected override async Task OnParametersSetAsync()
@@ -106,6 +102,6 @@ public partial class FilterSelection<T>
 		}
 		_FilterDefinition = filterDefinition;
 
-		UpdateOptions();
+		UpdateOptions(redraw: false);
 	}
 }

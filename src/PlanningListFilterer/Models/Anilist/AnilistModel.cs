@@ -1,11 +1,6 @@
-﻿using CsvHelper;
-using CsvHelper.Configuration.Attributes;
+﻿using PlanningListFilterer.Models.Anilist.Json;
 
-using PlanningListFilterer.Models.Anilist.Json;
-
-using System.Collections.Immutable;
 using System.Text.Json.Serialization;
-using CsvHelper.TypeConversion;
 
 namespace PlanningListFilterer.Models.Anilist;
 
@@ -24,8 +19,12 @@ public sealed record AnilistModel(
 	int? Year,
 	int? Month,
 	string? CoverImageUrl,
-	ImmutableHashSet<string> Genres,
-	ImmutableDictionary<string, int> Tags,
+	// Immutable* is slow. I would use Frozen*, but
+	// * System.Text.Json doesn't deserialize them
+	// * I don't want to write a converter for them
+	// * The speed is similar to regular collections
+	HashSet<string> Genres,
+	Dictionary<string, int> Tags,
 	bool IsSequel
 ) : IFuzzyDate
 {
@@ -54,7 +53,7 @@ public sealed record AnilistModel(
 			Month: month,
 			CoverImageUrl: media.CoverImage?.Medium,
 			Genres: [.. media.Genres],
-			Tags: media.Tags.ToImmutableDictionary(
+			Tags: media.Tags.ToDictionary(
 				keySelector: x => x.Name,
 				elementSelector: x => x.Rank
 			),
