@@ -8,7 +8,6 @@
 
 	<PropertyGroup>
 		<GHPages>true</GHPages>
-		<GHPagesBase>PlanningListFilterer</GHPagesBase>
 	</PropertyGroup>
 	
 	<ItemGroup>
@@ -25,6 +24,7 @@
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
 		<PackageReference Include="MudBlazor" Version="6.12.0" />
+		<PackageReference Include="PublishSPAforGitHubPages.Build" Version="2.1.1" />
 	</ItemGroup>
 	
 	<ProjectExtensions>
