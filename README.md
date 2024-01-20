@@ -3,7 +3,7 @@
 Retrieves a planning list from AniList's GraphQL API and allows more sorting and filtering options, such as:
 
 * Total Duration
-* Tags
+* Tags (able to specify a minimum percentage)
 * More than 1 genre at a time
 * Whether the entry is a sequel
 * Followed users average score
