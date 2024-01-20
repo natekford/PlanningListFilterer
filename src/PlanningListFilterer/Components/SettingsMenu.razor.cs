@@ -29,6 +29,7 @@ public partial class SettingsMenu<T>
 			column: column,
 			visible: visible
 		).ConfigureAwait(false);
+
 		await SaveAndUpdateUI().ConfigureAwait(false);
 	}
 
@@ -62,15 +63,14 @@ public partial class SettingsMenu<T>
 		await SaveAndUpdateUI().ConfigureAwait(false);
 	}
 
-	public async Task ListFriendScoresChanged(bool value)
+	public async Task ListFriendScoresChanged()
 	{
-		ListSettings.EnableFriendScores = value;
 		if (ListSettings.AutomaticallyToggleFriendScoreColumns)
 		{
 			await ColumnSettings.SetVisibilityAsync(
 				columns: Columns,
 				properties: ColumnSettings.FriendScores,
-				visible: value
+				visible: ListSettings.EnableFriendScores
 			).ConfigureAwait(false);
 		}
 		if (ListSettings.AutomaticallyToggleGlobalScoreColumns)
@@ -78,7 +78,7 @@ public partial class SettingsMenu<T>
 			await ColumnSettings.SetVisibilityAsync(
 				columns: Columns,
 				properties: ColumnSettings.GlobalScores,
-				visible: !value
+				visible: !ListSettings.EnableFriendScores
 			).ConfigureAwait(false);
 		}
 

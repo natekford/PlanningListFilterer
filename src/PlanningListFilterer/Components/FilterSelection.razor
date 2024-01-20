@@ -1,10 +1,11 @@
 ﻿@typeparam T
 
-<MudGrid Class="filter-selection-grid">
+<MudGrid Class="filter-selection-grid" Spacing="0">
 	<MudItem xs="12">
 		<MudStack Class="filter-selection-stack" Spacing="0">
 			<Virtualize Items="@Options">
 				<MudCheckBox T="bool" Label="@context" Size="@Size.Small"
+							 Color="Color.Primary" UnCheckedColor="Color.Default"
 							 Value="@(SelectedItems.Contains(context))"
 							 ValueChanged="@(x => OnCheckedChanged(context, x))" />
 			</Virtualize>
@@ -15,6 +16,7 @@
 					  @bind-Value="@Search"
 					  @bind-Value:after="@(() => UpdateOptions(redraw: false))" />
 		<MudSpacer />
-		<MudButton OnClick="@Clear">Clear</MudButton>
+		<MudIconButton Icon="@Icons.Material.Filled.Clear" Color="Color.Secondary"
+					   OnClick="@Clear" />
 	</MudItem>
 </MudGrid>
