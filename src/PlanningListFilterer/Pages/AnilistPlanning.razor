@@ -89,10 +89,10 @@
 			<FilterTemplate>
 				<FilterSelection Column="@TagColumn"
 								 Selector="@(m => m.Tags.Where(x => x.Value >= TagPercent).Select(x => x.Key))" />
-				<MudSlider TickMarks="true" ValueLabel="true"
+				<MudSlider TickMarks="true" Immediate="false"
 						   Min="0" Max="100" Step="5"
 						   @bind-Value="@TagPercent">
-					Required Tag Percentage
+					Required Tag Percentage: @TagPercent
 				</MudSlider>
 			</FilterTemplate>
 
