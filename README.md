@@ -1,4 +1,4 @@
-# PlanningListFilterer
+# [PlanningListFilterer](https://natekford.github.io/PlanningListFilterer/)
 
 Retrieves a planning list from AniList's GraphQL API and allows more sorting and filtering options, such as:
 
