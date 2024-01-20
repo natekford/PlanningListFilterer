@@ -5,6 +5,10 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<LangVersion>preview</LangVersion>
 	</PropertyGroup>
+
+	<PropertyGroup>
+		<GHPages>true</GHPages>
+	</PropertyGroup>
 	
 	<ItemGroup>
 		<None Include="..\..\.editorconfig" Link=".editorconfig" />
