@@ -173,11 +173,11 @@ public partial class AnilistPlanning
 		}
 		catch (HttpRequestException e)
 		{
-			Logger.LogError(e, "HTTP error");
+			Logger.LogError(e, "HTTP exception");
 		}
 		catch (Exception e)
 		{
-			Logger.LogError(e, "Other error");
+			Logger.LogError(e, "Other exception");
 		}
 		finally
 		{
