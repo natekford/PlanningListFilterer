@@ -67,13 +67,24 @@ a, .btn-link {
 	white-space: pre;
 }
 
-.transparent-hover-bg .mud-nav-link:hover:not(.mud-nav-link-disabled) {
-	background-color: transparent;
+.image-nav-link .mud-nav-link {
+	padding: 0px;
 }
 
-.transparent-hover-bg .mud-nav-link:focus:not(.mud-nav-link-disabled) {
-	background-color: transparent;
-}
+	.image-nav-link .mud-nav-link:hover:not(.mud-nav-link-disabled) {
+		background-color: transparent;
+	}
+
+	.image-nav-link .mud-nav-link:focus:not(.mud-nav-link-disabled) {
+		background-color: transparent;
+	}
+
+	.image-nav-link .mud-nav-link .mud-nav-link-text {
+		display: flex;
+		justify-content: center;
+		margin-left: 0px;
+		margin-inline-start: 0px;
+	}
 
 .no-disabled-text .mud-expand-panel-text {
 	color: var(--mud-palette-text-primary);
@@ -82,6 +93,17 @@ a, .btn-link {
 .planning-table {
 	max-width: 85vw;
 }
+
+	.planning-table.planning-table.planning-table .mud-table-cell {
+		padding: 3px 6px 3px 6px;
+		padding-inline-start: 6px;
+		padding-inline-end: 6px;
+	}
+
+		.planning-table.planning-table.planning-table .mud-table-cell:last-child {
+			padding-right: 6px;
+			padding-inline-end: 6px;
+		}
 
 .filter-selection-grid {
 	max-width: 15vw;

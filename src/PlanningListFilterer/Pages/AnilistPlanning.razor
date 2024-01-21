@@ -36,7 +36,7 @@
 	<Columns>
 		<PropertyColumn Property="@(m => m.Id)" SortBy="@(m => m.Id)">
 			<CellTemplate>
-				<MudNavLink Class="transparent-hover-bg" Target="_blank"
+				<MudNavLink Class="image-nav-link" Target="_blank"
 							Href="@context.Item.GetUrl()">
 					<MudImage Src="@context.Item.CoverImageUrl" />
 				</MudNavLink>
