@@ -86,13 +86,21 @@ a, .btn-link {
 		margin-inline-start: 0px;
 	}
 
-.no-disabled-text .mud-expand-panel-text {
-	color: var(--mud-palette-text-primary);
-}
-
 .planning-table {
 	max-width: 85vw;
 }
+
+	.planning-table .tag-column-content .mud-expand-panel-text {
+		color: var(--mud-palette-text-primary);
+	}
+
+	.planning-table .tag-column-content .mud-expand-panel-content {
+		white-space: pre;
+	}
+
+	.planning-table .tag-column-content.mud-panel-expanded .mud-expand-panel-header {
+		padding-bottom: 0px;
+	}
 
 	.planning-table.planning-table.planning-table .mud-table-cell {
 		padding: 3px 6px 3px 6px;

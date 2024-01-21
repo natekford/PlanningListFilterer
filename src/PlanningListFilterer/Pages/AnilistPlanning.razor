@@ -75,13 +75,13 @@
 		<PropertyColumn Property="@(m => m.IsSequel)" SortBy="@(m => !m.IsSequel)"
 						Title="Sequel" />
 		<PropertyColumn Property="@(m => m.Genres)" Sortable="false"
-						@ref="@GenreColumn">
+						CellClass="text-pre" @ref="@GenreColumn">
 			<FilterTemplate>
 				<FilterSelection Selector="@(m => m.Genres)" Column="@GenreColumn" />
 			</FilterTemplate>
 
 			<CellTemplate>
-				<MudText Class="text-pre">@context.Item.DisplayGenres()</MudText>
+				@context.Item.DisplayGenres()
 			</CellTemplate>
 		</PropertyColumn>
 		<PropertyColumn Property="@(m => m.Tags)" Sortable="false"
@@ -97,11 +97,11 @@
 			</FilterTemplate>
 
 			<CellTemplate>
-				<MudExpansionPanel Class="bg-transparent no-disabled-text"
+				<MudExpansionPanel Class="bg-transparent tag-column-content"
 								   Text="@context.Item.DisplayTags(0, 1)"
 								   Disabled="@(context.Item.Tags.Count <= 1)"
 								   HideIcon="@(context.Item.Tags.Count <= 1)">
-					<MudText Class="text-pre">@context.Item.DisplayTags(1, int.MaxValue)</MudText>
+					@context.Item.DisplayTags(1, int.MaxValue)
 				</MudExpansionPanel>
 			</CellTemplate>
 		</PropertyColumn>
