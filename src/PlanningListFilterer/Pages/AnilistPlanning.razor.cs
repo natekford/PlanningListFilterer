@@ -54,9 +54,6 @@ public partial class AnilistPlanning
 			return;
 		}
 
-		var time = DateTime.UtcNow.ToString("s").Replace(":", ".");
-		var fileName = $"Planning_{time}.csv";
-
 		await using var ms = new MemoryStream();
 		using var sRef = new DotNetStreamReference(ms);
 
@@ -66,8 +63,11 @@ public partial class AnilistPlanning
 			csv.Context.RegisterClassMap<AnilistModelMap>();
 			csv.WriteRecords(Entries);
 		}
+		ms.Position = 0;
 
-		ms.Seek(0, SeekOrigin.Begin);
+		var time = DateTime.UtcNow.ToString("s").Replace(":", ".");
+		var fileName = $"Planning_{time}.csv";
+
 		await Js.InvokeVoidAsync("downloadFileFromStream", fileName, sRef);
 	}
 

@@ -45,11 +45,12 @@ public static class AnilistModelUtils
 
 	public static string DisplayTag(this KeyValuePair<string, int> tag)
 	{
-		var name = tag.Key;
-		if (name is "Cute Girls Doing Cute Things")
+		var name = tag.Key switch
 		{
-			name = "CGDCT";
-		}
+			"Cute Girls Doing Cute Things" => "CGDCT",
+			"Cute Boys Doing Cute Things" => "CBDCT",
+			_ => tag.Key,
+		};
 		return $"{name} ({tag.Value}%)";
 	}
 
@@ -69,23 +70,11 @@ public static class AnilistModelUtils
 		=> GetDate(date.Year, date.Month);
 
 	public static DateTime GetDate(int? year, int? month)
-	{
-		if (year is not int y)
-		{
-			return NoReleaseDate;
-		}
-		return new(year: y, month: month ?? 12, day: 1);
-	}
+		=> year is int y ? new(year: y, month: month ?? 12, day: 1) : NoReleaseDate;
 
 	public static string GetUrl(this AnilistModel model)
 		=> $"https://anilist.co/anime/{model.Id}/";
 
 	private static string DisplayStrings(this IEnumerable<string> items)
-	{
-		if (!items.Any())
-		{
-			return NO_VALUE;
-		}
-		return string.Join(Environment.NewLine, items);
-	}
+		=> items.Any() ? string.Join(Environment.NewLine, items) : NO_VALUE;
 }

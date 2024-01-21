@@ -14,10 +14,10 @@ public static class LocalStorageUtils
 	{
 		var bytes = Convert.FromBase64String(base64GZipJson);
 
-		using var msi = new MemoryStream(bytes);
-		using var mso = new MemoryStream();
+		await using var msi = new MemoryStream(bytes);
+		await using var mso = new MemoryStream();
 
-		using (var gs = new GZipStream(msi, CompressionMode.Decompress))
+		await using (var gs = new GZipStream(msi, CompressionMode.Decompress))
 		{
 			await gs.CopyToAsync(mso, cancellationToken).ConfigureAwait(false);
 		}
@@ -35,8 +35,8 @@ public static class LocalStorageUtils
 		JsonSerializerOptions? options = null,
 		CancellationToken cancellationToken = default)
 	{
-		using var msi = new MemoryStream();
-		using var mso = new MemoryStream();
+		await using var msi = new MemoryStream();
+		await using var mso = new MemoryStream();
 
 		await JsonSerializer.SerializeAsync(
 			utf8Json: msi,
@@ -46,7 +46,7 @@ public static class LocalStorageUtils
 		).ConfigureAwait(false);
 		msi.Position = 0;
 
-		using (var gs = new GZipStream(mso, CompressionMode.Compress))
+		await using (var gs = new GZipStream(mso, CompressionMode.Compress))
 		{
 			await msi.CopyToAsync(gs, cancellationToken).ConfigureAwait(false);
 		}

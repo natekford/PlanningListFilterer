@@ -146,14 +146,6 @@ public static class AnilistGraphQLUtils
 		} while (collection.HasNextChunk);
 	}
 
-	internal static async Task<AnilistMediaListCollection> GetAnilistSampleAsync(
-		this HttpClient http)
-	{
-		return (await http.GetFromJsonAsync<AnilistResponse<QueryPlanningList>>(
-			requestUri: $"sample-data/anilistresponse.json?a={Guid.NewGuid()}"
-		).ConfigureAwait(false))!.Data.MediaListCollection;
-	}
-
 	private static async Task<AnilistPage> GetAnilistFollowersPageAsync(
 		this HttpClient http,
 		int userId,
@@ -296,7 +288,7 @@ public static class AnilistGraphQLUtils
 		using var response = await http.PostAsJsonAsync(GRAPHQL_URL, body).ConfigureAwait(false);
 		response.EnsureSuccessStatusCode();
 
-		using var stream = await response.Content.ReadAsStreamAsync().ConfigureAwait(false);
+		await using var stream = await response.Content.ReadAsStreamAsync().ConfigureAwait(false);
 
 		if (response.Headers.TryGetValues("X-RateLimit-Remaining", out var remaining))
 		{
