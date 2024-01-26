@@ -11,21 +11,15 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    
     steps:
-      # Checkout the code
       - uses: actions/checkout@v4
-
-      # Install .NET Core SDK
       - name: Setup .NET Core
-        uses: actions/setup-dotnet@v2
+        uses: actions/setup-dotnet@v4
         with:
           dotnet-version: 8.0.x
-
-      # Publish the site
       - name: Publish
         run: dotnet publish PlanningListFilterer.sln -c:Release -o:publish -p:GHPages=true
-
-      # Deploy the site
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
