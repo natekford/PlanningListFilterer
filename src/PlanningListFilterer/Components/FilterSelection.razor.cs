@@ -23,6 +23,7 @@ public partial class FilterSelection<T>
 	public void Clear()
 	{
 		SelectedItems.Clear();
+		Search = "";
 
 		UpdateOptions(redraw: true);
 	}
@@ -68,7 +69,8 @@ public partial class FilterSelection<T>
 				.Where(x =>
 				{
 					return string.IsNullOrWhiteSpace(Search)
-						|| x.Contains(Search, StringComparison.OrdinalIgnoreCase);
+						|| x.Contains(Search, StringComparison.OrdinalIgnoreCase)
+						|| SelectedItems.Contains(x);
 				})
 				.Distinct()
 				.OrderByDescending(SelectedItems.Contains)
