@@ -11,12 +11,13 @@
 			</Virtualize>
 		</MudStack>
 	</MudItem>
-	<MudItem xs="12" Class="d-flex justify-end">
+	<MudItem xs="12" Class="d-flex align-center justify-end">
 		<MudTextField DebounceInterval="100" Placeholder="Search..."
+					  Adornment="Adornment.End" AdornmentColor="Color.Secondary"
+					  AdornmentIcon="@Icons.Material.Filled.Clear"
+					  OnAdornmentClick="@Clear"
 					  @bind-Value="@Search"
-					  @bind-Value:after="@(() => UpdateOptions(redraw: false))" />
-		<MudSpacer />
-		<MudIconButton Icon="@Icons.Material.Filled.Clear" Color="Color.Secondary"
-					   OnClick="@Clear" />
+					  @bind-Value:after="@(() => UpdateOptions(redraw: false))">
+		</MudTextField>
 	</MudItem>
 </MudGrid>

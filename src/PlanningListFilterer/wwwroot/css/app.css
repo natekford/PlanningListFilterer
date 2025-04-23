@@ -86,37 +86,34 @@ a, .btn-link {
 		margin-inline-start: 0px;
 	}
 
-.planning-table {
+#planning-table {
 	max-width: 85vw;
 }
 
-	.planning-table .text-wrap {
+	#planning-table .text-wrap {
 		max-width: 10vw;
 	}
 
-	.planning-table .tag-column-content .mud-expand-panel-text {
+	#planning-table .mud-expand-panel-text {
 		color: var(--mud-palette-text-primary);
 	}
 
-	.planning-table .tag-column-content .mud-expand-panel-content {
+	#planning-table .mud-expand-panel-content {
 		white-space: pre;
 	}
 
-	.planning-table .tag-column-content.mud-panel-expanded .mud-expand-panel-header {
+	#planning-table .mud-expand-panel-header {
+		padding-top: 0px;
 		padding-bottom: 0px;
 	}
 
-	.planning-table .mud-table-row .mud-table-cell {
+	#planning-table .mud-table-cell {
 		padding-top: 2px;
 		padding-bottom: 2px;
 		padding-right: 0px;
 	}
 
-		.planning-table .mud-table-row .mud-table-cell:last-child {
-			padding-right: 0px;
-		}
-
-		.planning-table .mud-table-row .mud-table-cell:has(.image-nav-link,.tag-column-content) {
+		#planning-table .mud-table-cell:has(.image-nav-link,.tag-column-content) {
 			padding-left: 0px;
 		}
 
@@ -128,6 +125,10 @@ a, .btn-link {
 	overflow-y: auto;
 	max-height: 50vh;
 }
+
+	.filter-selection-stack .mud-ripple-checkbox {
+		padding: 3px;
+	}
 
 /* Popover provider would extend past sidebar/page bottom without this */
 /* Doesn't work when applied to #id */

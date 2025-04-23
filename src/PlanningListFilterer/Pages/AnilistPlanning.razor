@@ -7,7 +7,7 @@
 			 FixedHeader="true" FixedFooter="true"
 			 ColumnResizeMode="ResizeMode.None"
 			 FilterMode="DataGridFilterMode.ColumnFilterMenu"
-			 Class="planning-table" Height="83vh" RowsPerPage="50"
+			 id="planning-table" Height="83vh" RowsPerPage="50"
 			 @ref="Grid" Items="@Entries" Loading="@IsLoading">
 	<ToolBarContent>
 		<MudText Typo="Typo.h6">Planning List Filterer</MudText>
@@ -97,7 +97,7 @@
 			</FilterTemplate>
 
 			<CellTemplate>
-				<MudExpansionPanel Class="bg-transparent tag-column-content"
+				<MudExpansionPanel Class="bg-transparent"
 								   Text="@context.Item.DisplayTags(0, 1)"
 								   Disabled="@(context.Item.Tags.Count <= 1)"
 								   HideIcon="@(context.Item.Tags.Count <= 1)">
