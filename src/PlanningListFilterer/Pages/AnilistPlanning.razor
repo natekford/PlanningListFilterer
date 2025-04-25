@@ -12,10 +12,8 @@
 	<ToolBarContent>
 		<MudText Typo="Typo.h6">Planning List Filterer</MudText>
 		<MudSpacer />
-		<MudSpacer />
-		<MudSpacer />
-		<MudTextField Class="mb-5" DebounceInterval="100"
-					  Placeholder="Enter a username to get entries from..."
+		<MudTextField Class="mb-5 username-box" DebounceInterval="100" MaxLength="20"
+					  Placeholder="Enter a username..."
 					  Value="@Username.Name"
 					  OnDebounceIntervalElapsed="@(x => Username = new(x))" />
 		<MudTooltip Text="Load">

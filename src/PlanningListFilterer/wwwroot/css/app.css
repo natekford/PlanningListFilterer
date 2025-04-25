@@ -151,6 +151,11 @@ a, .btn-link {
 	margin-top: 0px;
 }
 
+.username-box {
+	width: 25ch;
+	max-width: 25ch;
+}
+
 /* Popover provider would extend past sidebar/page bottom without this */
 /* Doesn't work when applied to #id */
 body {
