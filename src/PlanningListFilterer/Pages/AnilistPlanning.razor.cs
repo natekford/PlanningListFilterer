@@ -19,6 +19,7 @@ namespace PlanningListFilterer.Pages;
 public partial class AnilistPlanning
 {
 	private const string LAST_USERNAME = "_LastSearchedUsername";
+	private const string ROWS_PER_PAGE = "_RowsPerPage";
 
 	private static readonly CsvConfiguration _CsvConfig = new(CultureInfo.InvariantCulture)
 	{
@@ -217,6 +218,21 @@ public partial class AnilistPlanning
 		).ConfigureAwait(false);
 	}
 
+	public void SaveRowsPerPage()
+	{
+		InvokeAsync(async () =>
+		{
+			try
+			{
+				await LocalStorage.SetItemAsync(ROWS_PER_PAGE, Grid.RowsPerPage).ConfigureAwait(false);
+			}
+			catch
+			{
+				Logger.LogWarning("Unable to save rows per page for table.");
+			}
+		});
+	}
+
 	protected override async Task OnAfterRenderAsync(bool firstRender)
 	{
 		if (!firstRender)
@@ -233,6 +249,10 @@ public partial class AnilistPlanning
 			properties: ColumnSettings.HiddenColumns,
 			visible: false
 		).ConfigureAwait(false);
+
+		var rowsPerPage = await LocalStorage.GetItemAsync<int?>(ROWS_PER_PAGE).ConfigureAwait(false) ?? 100;
+		await Grid.SetRowsPerPageAsync(rowsPerPage).ConfigureAwait(false);
+		Grid.PagerStateHasChangedEvent += SaveRowsPerPage;
 
 		StateHasChanged();
 	}
