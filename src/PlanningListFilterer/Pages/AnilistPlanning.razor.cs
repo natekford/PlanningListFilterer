@@ -28,6 +28,7 @@ public partial class AnilistPlanning
 	private static readonly Random _Random = new();
 	private readonly HashSet<int> _ShownRandomIds = [];
 
+	public AnilistMetaCollection AnilistMeta { get; set; } = [];
 	public ColumnSettings ColumnSettings { get; set; } = new();
 	public List<AnilistModel> Entries { get; set; } = [];
 	public required Column<AnilistModel> GenreColumn { get; set; } = null!;
@@ -72,30 +73,16 @@ public partial class AnilistPlanning
 		await Js.InvokeVoidAsync("downloadFileFromStream", fileName, sRef);
 	}
 
-	public async Task<AnilistMeta?> GetMeta(AnilistUsername username)
-	{
-		try
-		{
-			return await LocalStorage.GetItemAsync<AnilistMeta>(
-				key: username.GetMetaKey(ListSettings.ListStatus)
-			).ConfigureAwait(false);
-		}
-		catch
-		{
-			Logger.LogWarning("Unable to load meta for {user}.", username.Name);
-			return null;
-		}
-	}
-
 	public async Task<List<AnilistModel>> GetPlanningList(AnilistUsername username, bool useCached)
 	{
+		var listKey = username.GetListKey(ListSettings.ListStatus);
 		var entries = default(List<AnilistModel>);
 		if (useCached)
 		{
 			try
 			{
 				entries = await LocalStorage.GetItemCompressedAsync<List<AnilistModel>>(
-					key: username.GetListKey(ListSettings.ListStatus)
+					key: listKey
 				).ConfigureAwait(false);
 			}
 			catch
@@ -148,15 +135,31 @@ public partial class AnilistPlanning
 		}
 
 		entries.Sort((x, y) => x.Id.CompareTo(y.Id));
-		await LocalStorage.SetItemCompressedAsync(
-			key: username.GetListKey(ListSettings.ListStatus),
+		var length = await LocalStorage.SetItemCompressedAsync(
+			key: listKey,
 			data: entries
 		).ConfigureAwait(false);
-		await LocalStorage.SetItemAsync(
-			key: username.GetMetaKey(ListSettings.ListStatus),
-			data: new AnilistMeta(userId: user!.Id, settings: ListSettings)
-		).ConfigureAwait(false);
 		await LocalStorage.SetItemAsync(LAST_USERNAME, username.Name).ConfigureAwait(false);
+
+		AnilistMeta[listKey] = new AnilistMeta(
+			userId: user!.Id,
+			length: length,
+			settings: ListSettings
+		);
+		if (AnilistMeta.Count > 25)
+		{
+			var keys = AnilistMeta
+				.OrderBy(x => x.Value.SavedAt)
+				.Take(5)
+				.Select(x => x.Key)
+				.ToList();
+			foreach (var key in keys)
+			{
+				await LocalStorage.RemoveItemAsync(key).ConfigureAwait(false);
+				AnilistMeta.Remove(key);
+			}
+		}
+		await Settings.SaveAsync(AnilistMeta).ConfigureAwait(false);
 
 		return entries;
 	}
@@ -172,8 +175,11 @@ public partial class AnilistPlanning
 		// Stop showing old entries
 		Entries = [];
 
-		var meta = await GetMeta(Username).ConfigureAwait(false);
-		var useCached = meta?.ShouldReacquire(ListSettings, TimeSpan.FromHours(1)) == false;
+		var useCached = false;
+		if (AnilistMeta.TryGetValue(Username.GetListKey(ListSettings.ListStatus), out var meta))
+		{
+			useCached = !meta.ShouldReacquire(ListSettings, TimeSpan.FromHours(1));
+		}
 
 		try
 		{
@@ -248,6 +254,7 @@ public partial class AnilistPlanning
 		}
 
 		Username = new(await LocalStorage.GetItemAsync<string>(LAST_USERNAME).ConfigureAwait(false));
+		AnilistMeta = await Settings.GetAsync<AnilistMetaCollection>().ConfigureAwait(false) ?? [];
 		ListSettings = await Settings.GetAsync<ListSettings>().ConfigureAwait(false);
 		ColumnSettings = await Settings.GetAsync<ColumnSettings>().ConfigureAwait(false);
 

@@ -16,9 +16,6 @@ public readonly partial struct AnilistUsername
 	public string GetListKey(AnilistMediaListStatus status)
 		=> $"LIST_{status}_{Name}";
 
-	public string GetMetaKey(AnilistMediaListStatus status)
-		=> $"META_{status}_{Name}";
-
 	// Length has to be at least 2 characters but not more than 20
 	// Letters/numbers allowed, no underscore or other symbols
 	[GeneratedRegex("^[a-zA-Z0-9]{2,20}$")]

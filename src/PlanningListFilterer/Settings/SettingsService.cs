@@ -1,5 +1,7 @@
 ﻿using Blazored.LocalStorage;
 
+using PlanningListFilterer.Models.Anilist;
+
 using System.Collections.Concurrent;
 
 namespace PlanningListFilterer.Settings;
@@ -20,6 +22,7 @@ public class SettingsService
 
 		RegisterKey<ColumnSettings>("_ColumnSettings");
 		RegisterKey<ListSettings>("_ListSettings");
+		RegisterKey<AnilistMetaCollection>("_AnilistMetaCollection");
 	}
 
 	public async ValueTask<T> GetAsync<T>(
