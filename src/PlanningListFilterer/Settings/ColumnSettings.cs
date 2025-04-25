@@ -14,6 +14,7 @@ public sealed class ColumnSettings
 		nameof(AnilistModel.FriendScore),
 		nameof(AnilistModel.FriendPopularityScored),
 		nameof(AnilistModel.FriendPopularityTotal),
+		nameof(AnilistModel.PersonalScore),
 		nameof(AnilistModel.Format),
 		nameof(AnilistModel.IsSequel),
 	];
@@ -26,7 +27,7 @@ public sealed class ColumnSettings
 	public static ImmutableHashSet<string> GlobalScores { get; } =
 	[
 		nameof(AnilistModel.Popularity),
-		nameof(AnilistModel.Score),
+		nameof(AnilistModel.AverageScore),
 	];
 
 	public HashSet<string> HiddenColumns { get; set; } = new(DefaultHidden);

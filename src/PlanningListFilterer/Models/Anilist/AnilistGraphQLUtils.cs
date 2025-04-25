@@ -96,7 +96,7 @@ public static class AnilistGraphQLUtils
 						&& (pageNumber * PAGE_SIZE) < userIds.Count)
 					{
 						storage[id] = tally;
-						pagesOfMediaIds.GetOrAdd(pageNumber + 1, _ => new()).Add(id);
+						pagesOfMediaIds.GetOrAdd(pageNumber + 1, _ => []).Add(id);
 					}
 					else
 					{
@@ -113,9 +113,10 @@ public static class AnilistGraphQLUtils
 		}
 	}
 
-	public static async IAsyncEnumerable<AnilistPlanningEntry> GetAnilistPlanningListAsync(
+	public static async IAsyncEnumerable<AnilistEntry> GetAnilistListAsync(
 		this HttpClient http,
-		string username)
+		string username,
+		AnilistMediaListStatus status)
 	{
 		var alreadyReturned = new HashSet<int>();
 
@@ -125,6 +126,7 @@ public static class AnilistGraphQLUtils
 		{
 			collection = await http.GetAnilistPlanningListChunkAsync(
 				username: username,
+				status: status,
 				chunk: chunk
 			).ConfigureAwait(false);
 
@@ -137,7 +139,11 @@ public static class AnilistGraphQLUtils
 					// planning list?
 					if (alreadyReturned.Add(entry.Media.Id))
 					{
-						yield return new(collection.User, entry.Media);
+						var personalScore = (int?)entry.Score is int i && i > 0 ? (int?)i : null;
+						yield return new(collection.User, entry.Media with
+						{
+							PersonalScore = personalScore,
+						});
 					}
 				}
 			}
@@ -216,17 +222,19 @@ public static class AnilistGraphQLUtils
 	private static async Task<AnilistMediaListCollection> GetAnilistPlanningListChunkAsync(
 		this HttpClient http,
 		string username,
+		AnilistMediaListStatus status,
 		int chunk)
 	{
 		var query = $@"
 		query ($username: String, $chunk: Int) {{
-			MediaListCollection(userName: $username, type: ANIME, status: PLANNING, perChunk: {CHUNK_SIZE}, chunk: $chunk) {{
+			MediaListCollection(userName: $username, type: ANIME, status: {status}, perChunk: {CHUNK_SIZE}, chunk: $chunk) {{
 				hasNextChunk
 				user {{
 					id
 				}}
 				lists {{
 					entries {{
+						score(format: POINT_100)
 						media {{
 							id
 							title {{

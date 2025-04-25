@@ -5,7 +5,15 @@
 <MudOverlay Visible="@IsMenuOpen" OnClick="@CloseMenu" />
 <MudPopover Class="pa-4" AnchorOrigin="Origin.BottomRight" TransformOrigin="Origin.TopRight"
 			Open="@IsMenuOpen">
-	<MudExpansionPanels Dense="true" DisableBorders="true" Elevation="0">
+	<MudSelect Label="List Status"
+			   @bind-Value="@ListSettings.ListStatus"
+			   @bind-Value:after="@SaveAndUpdateUI">
+		@foreach (var status in Enum.GetValues<AnilistMediaListStatus>())
+		{
+			<MudSelectItem Value="@status">@status</MudSelectItem>
+		}
+	</MudSelect>
+	<MudExpansionPanels Dense="true" DisableBorders="true" Elevation="0" id="settings-menu">
 		<MudExpansionPanel Text="List Settings">
 			<MudStack Spacing="0">
 				<MudCheckBox T="bool" Dense="true" Size="@Size.Small"

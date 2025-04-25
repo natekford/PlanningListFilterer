@@ -17,7 +17,7 @@ public class AnilistModelMap : ClassMap<AnilistModel>
 		Map(x => x.Episodes);
 		Map(x => x.Duration);
 		Map(x => x.IsSequel);
-		Map(x => x.Score);
+		Map(x => x.AverageScore);
 		Map(x => x.Popularity);
 		Map(x => x.FriendScore);
 		Map(x => x.FriendPopularityTotal);

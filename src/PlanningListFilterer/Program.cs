@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using MudBlazor.Services;
 
 using PlanningListFilterer;
+using PlanningListFilterer.Models.Anilist;
 using PlanningListFilterer.Settings;
 
 using System.Text.Json.Serialization;
@@ -26,7 +27,8 @@ builder.Services.AddScoped<SettingsService>();
 builder.Services.AddMudServices();
 builder.Services.AddBlazoredLocalStorage(config =>
 {
-	config.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingDefault;
+	config.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;
+	config.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter<AnilistMediaListStatus>());
 });
 
 await builder.Build().RunAsync().ConfigureAwait(false);

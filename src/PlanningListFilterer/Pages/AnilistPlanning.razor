@@ -53,8 +53,9 @@
 		<PropertyColumn Property="@(m => m.Duration)" SortBy="@(m => m.Duration)">
 			<CellTemplate>@context.Item.DisplayDuration()</CellTemplate>
 		</PropertyColumn>
-		<PropertyColumn Property="@(m => m.Score)" SortBy="@(m => m.Score)">
-			<CellTemplate>@context.Item.DisplayScore()</CellTemplate>
+		<PropertyColumn Property="@(m => m.AverageScore)" SortBy="@(m => m.AverageScore)"
+						Title="Average Score">
+			<CellTemplate>@context.Item.DisplayAverageScore()</CellTemplate>
 		</PropertyColumn>
 		<PropertyColumn Property="@(m => m.Popularity)" SortBy="@(m => m.Popularity)">
 			<CellTemplate>@context.Item.DisplayPopularity()</CellTemplate>
@@ -70,6 +71,10 @@
 		<PropertyColumn Property="@(m => m.FriendPopularityTotal)" SortBy="@(m => m.FriendPopularityTotal)"
 						Title="Friend Popularity (Total)">
 			<CellTemplate>@context.Item.DisplayFriendPopularityTotal()</CellTemplate>
+		</PropertyColumn>
+		<PropertyColumn Property="@(m => m.PersonalScore)" SortBy="@(m => m.PersonalScore)"
+						Title="Personal Score">
+			<CellTemplate>@context.Item.DisplayPersonalScore()</CellTemplate>
 		</PropertyColumn>
 		<PropertyColumn Property="@(m => m.Format)" SortBy="@(m => m.Format.ToString())" />
 		<PropertyColumn Property="@(m => m.IsSequel)" SortBy="@(m => !m.IsSequel)"

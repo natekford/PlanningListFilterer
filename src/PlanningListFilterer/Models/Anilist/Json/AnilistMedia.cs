@@ -35,5 +35,6 @@ public sealed record AnilistMedia(
 	[property: JsonPropertyName("tags")]
 	IReadOnlyList<AnilistMediaTag> Tags,
 	[property: JsonPropertyName("relations")]
-	AnilistMediaConnection Relations
+	AnilistMediaConnection Relations,
+	int? PersonalScore
 );

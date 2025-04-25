@@ -7,6 +7,9 @@ public static class AnilistModelUtils
 	public const string NO_VALUE = "N/A";
 	public static DateTime NoReleaseDate { get; } = new(year: 2100, month: 1, day: 1);
 
+	public static string DisplayAverageScore(this AnilistModel model)
+		=> model.AverageScore is int s ? $"{s}%" : NO_VALUE;
+
 	public static string DisplayDuration(this AnilistModel model)
 		=> model.Duration is int d ? d.ToString("n0") : NO_VALUE;
 
@@ -25,11 +28,11 @@ public static class AnilistModelUtils
 	public static string DisplayGenres(this AnilistModel model)
 		=> model.Genres.DisplayStrings();
 
+	public static string DisplayPersonalScore(this AnilistModel model)
+		=> model.PersonalScore is int s ? $"{s}%" : NO_VALUE;
+
 	public static string DisplayPopularity(this AnilistModel model)
 		=> model.Popularity.ToString("n0");
-
-	public static string DisplayScore(this AnilistModel model)
-		=> model.Score is int s ? $"{s}%" : NO_VALUE;
 
 	public static string DisplayStart(this AnilistModel model)
 	{

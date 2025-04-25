@@ -29,7 +29,6 @@ public partial class SettingsMenu<T>
 			column: column,
 			visible: visible
 		).ConfigureAwait(false);
-
 		await SaveAndUpdateUI().ConfigureAwait(false);
 	}
 

@@ -2,7 +2,7 @@
 
 namespace PlanningListFilterer.Models.Anilist;
 
-public record struct AnilistPlanningEntry(
+public record struct AnilistEntry(
 	AnilistUser User,
 	AnilistMedia Media
 );

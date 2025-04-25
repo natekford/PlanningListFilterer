@@ -76,7 +76,9 @@ public partial class AnilistPlanning
 	{
 		try
 		{
-			return await LocalStorage.GetItemAsync<AnilistMeta>(username.MetaKey).ConfigureAwait(false);
+			return await LocalStorage.GetItemAsync<AnilistMeta>(
+				key: username.GetMetaKey(ListSettings.ListStatus)
+			).ConfigureAwait(false);
 		}
 		catch
 		{
@@ -92,7 +94,9 @@ public partial class AnilistPlanning
 		{
 			try
 			{
-				entries = await LocalStorage.GetItemCompressedAsync<List<AnilistModel>>(username.ListKey);
+				entries = await LocalStorage.GetItemCompressedAsync<List<AnilistModel>>(
+					key: username.GetListKey(ListSettings.ListStatus)
+				).ConfigureAwait(false);
 			}
 			catch
 			{
@@ -106,7 +110,7 @@ public partial class AnilistPlanning
 
 		var medias = new List<AnilistMedia>();
 		var user = default(AnilistUser);
-		await foreach (var entry in Http.GetAnilistPlanningListAsync(username.Name).ConfigureAwait(false))
+		await foreach (var entry in Http.GetAnilistListAsync(username.Name, ListSettings.ListStatus).ConfigureAwait(false))
 		{
 			user ??= entry.User;
 			if (entry.Media.Status == AnilistMediaStatus.FINISHED)
@@ -144,11 +148,14 @@ public partial class AnilistPlanning
 		}
 
 		entries.Sort((x, y) => x.Id.CompareTo(y.Id));
-		await LocalStorage.SetItemCompressedAsync(username.ListKey, entries).ConfigureAwait(false);
-		await LocalStorage.SetItemAsync(username.MetaKey, new AnilistMeta(
-			userId: user!.Id,
-			settings: ListSettings
-		)).ConfigureAwait(false);
+		await LocalStorage.SetItemCompressedAsync(
+			key: username.GetListKey(ListSettings.ListStatus),
+			data: entries
+		).ConfigureAwait(false);
+		await LocalStorage.SetItemAsync(
+			key: username.GetMetaKey(ListSettings.ListStatus),
+			data: new AnilistMeta(userId: user!.Id, settings: ListSettings)
+		).ConfigureAwait(false);
 		await LocalStorage.SetItemAsync(LAST_USERNAME, username.Name).ConfigureAwait(false);
 
 		return entries;

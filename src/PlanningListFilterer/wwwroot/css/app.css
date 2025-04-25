@@ -139,6 +139,18 @@ a, .btn-link {
 		padding: 3px;
 	}
 
+#settings-menu .mud-expand-panel .mud-expand-panel-header {
+	padding: 0px;
+}
+
+#settings-menu .mud-expand-panel .mud-expand-panel-content {
+	padding: 0px;
+}
+
+#settings-menu .mud-expand-panel.mud-panel-expanded {
+	margin-top: 0px;
+}
+
 /* Popover provider would extend past sidebar/page bottom without this */
 /* Doesn't work when applied to #id */
 body {

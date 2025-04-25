@@ -2,6 +2,7 @@
 
 public enum AnilistMediaStatus
 {
+	// These have to be capitalized
 	UNKNOWN = 0,
 	FINISHED = 1,
 	RELEASING = 2,

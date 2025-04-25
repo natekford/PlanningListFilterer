@@ -31,7 +31,7 @@ public static class LocalStorageUtils
 	}
 
 	public static async Task<string> EncodeBase64GZipJsonAsync<T>(
-		T value,
+		T data,
 		JsonSerializerOptions? options = null,
 		CancellationToken cancellationToken = default)
 	{
@@ -40,7 +40,7 @@ public static class LocalStorageUtils
 
 		await JsonSerializer.SerializeAsync(
 			utf8Json: msi,
-			value: value,
+			value: data,
 			options: options,
 			cancellationToken: cancellationToken
 		).ConfigureAwait(false);
@@ -61,6 +61,7 @@ public static class LocalStorageUtils
 		CancellationToken cancellationToken = default)
 	{
 		var encoded = await localStorage.GetItemAsStringAsync(key, cancellationToken).ConfigureAwait(false);
+		Console.WriteLine($"{key}: {encoded.Length} characters long");
 		return await DecodeBase64GZipJsonAsync<T>(
 			base64GZipJson: encoded,
 			options: options,
@@ -71,12 +72,12 @@ public static class LocalStorageUtils
 	public static async ValueTask SetItemCompressedAsync<T>(
 		this ILocalStorageService localStorage,
 		string key,
-		T value,
+		T data,
 		JsonSerializerOptions? options = null,
 		CancellationToken cancellationToken = default)
 	{
 		var encoded = await EncodeBase64GZipJsonAsync(
-			value: value,
+			data: data,
 			options: options,
 			cancellationToken: cancellationToken
 		).ConfigureAwait(false);
