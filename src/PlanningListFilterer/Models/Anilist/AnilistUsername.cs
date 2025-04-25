@@ -1,6 +1,8 @@
-﻿namespace PlanningListFilterer.Models.Anilist;
+﻿using System.Text.RegularExpressions;
 
-public readonly struct AnilistUsername
+namespace PlanningListFilterer.Models.Anilist;
+
+public readonly partial struct AnilistUsername
 {
 	public bool IsValid { get; }
 	public string ListKey { get; }
@@ -12,7 +14,11 @@ public readonly struct AnilistUsername
 		Name = username?.ToLower() ?? "";
 		ListKey = $"LIST_{Name}";
 		MetaKey = $"META_{Name}";
-		// TODO: implement whatever regex anilist uses
-		IsValid = !string.IsNullOrWhiteSpace(username);
+		IsValid = AnilistUsernameRegex().IsMatch(Name);
 	}
+
+	// Length has to be at least 2 characters but not more than 20
+	// Letters/numbers allowed, no underscore or other symbols
+	[GeneratedRegex("^[a-zA-Z0-9]{2,20}$")]
+	private static partial Regex AnilistUsernameRegex();
 }
