@@ -2,7 +2,7 @@
 
 namespace PlanningListFilterer.Models.Anilist.Json;
 
-public sealed record QueryPlanningList(
+public sealed record AnilistListQuery(
 	[property: JsonPropertyName("MediaListCollection")]
 	AnilistMediaListCollection MediaListCollection
 );

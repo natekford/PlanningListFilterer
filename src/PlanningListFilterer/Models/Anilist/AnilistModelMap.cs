@@ -11,7 +11,7 @@ public class AnilistModelMap : ClassMap<AnilistModel>
 		Map(x => x.Start).Convert(args =>
 		{
 			var value = args.Value.Start;
-			return DateOnly.FromDateTime(value).ToString();
+			return $"{value.Month}/{value.Year}";
 		});
 		Map(x => x.Format);
 		Map(x => x.Episodes);
@@ -20,11 +20,14 @@ public class AnilistModelMap : ClassMap<AnilistModel>
 		Map(x => x.AverageScore);
 		Map(x => x.Popularity);
 		Map(x => x.FriendScore);
-		Map(x => x.FriendPopularityTotal);
 		Map(x => x.FriendPopularityScored);
+		Map(x => x.FriendPopularityTotal);
+		Map(x => x.PersonalScore);
+		Map(x => x.ScoreDiffAverage);
+		Map(x => x.ScoreDiffFriends);
 		Map(x => x.Genres).Convert(args =>
 		{
-			var value = args.Value.Genres.OrderBy(x => x);
+			var value = args.Value.Genres.Order();
 			return string.Join("\r\n", value);
 		});
 		Map(x => x.Tags).Convert(args =>

@@ -278,7 +278,7 @@ public static class AnilistGraphQLUtils
 		}}
 		";
 
-		return (await http.GetResponseAsync<QueryPlanningList>(new
+		return (await http.GetResponseAsync<AnilistListQuery>(new
 		{
 			query = query,
 			variables = new
