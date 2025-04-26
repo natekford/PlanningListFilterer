@@ -68,25 +68,6 @@ a, .btn-link {
 	white-space: pre;
 }
 
-.image-nav-link .mud-nav-link {
-	padding: 0px;
-}
-
-	.image-nav-link .mud-nav-link:hover:not(.mud-nav-link-disabled) {
-		background-color: transparent;
-	}
-
-	.image-nav-link .mud-nav-link:focus:not(.mud-nav-link-disabled) {
-		background-color: transparent;
-	}
-
-	.image-nav-link .mud-nav-link .mud-nav-link-text {
-		display: flex;
-		justify-content: center;
-		margin-left: 0px;
-		margin-inline-start: 0px;
-	}
-
 #planning-table .mud-table-toolbar {
 	height: 7vh;
 }
@@ -99,7 +80,24 @@ a, .btn-link {
 	height: 5vh;
 }
 
-#planning-table .text-wrap {
+#planning-table .username-box {
+	width: 25ch;
+	max-width: 25ch;
+}
+
+#planning-table .image-nav-link .mud-nav-link {
+	padding: 0px;
+	background-color: transparent;
+}
+
+#planning-table .image-nav-link .mud-nav-link-text {
+	display: flex;
+	justify-content: center;
+	margin-left: 0px;
+	margin-inline-start: 0px;
+}
+
+#planning-table .anime-title {
 	max-width: 10vw;
 }
 
@@ -147,13 +145,8 @@ a, .btn-link {
 	padding: 0px;
 }
 
-#settings-menu .mud-expand-panel.mud-panel-expanded {
+#settings-menu .mud-panel-expanded {
 	margin-top: 0px;
-}
-
-.username-box {
-	width: 25ch;
-	max-width: 25ch;
 }
 
 /* Popover provider would extend past sidebar/page bottom without this */

@@ -11,12 +11,14 @@ public sealed class ColumnSettings
 	public static ImmutableHashSet<string> DefaultHidden { get; } =
 	[
 		nameof(AnilistModel.Episodes),
+		nameof(AnilistModel.Format),
 		nameof(AnilistModel.FriendScore),
 		nameof(AnilistModel.FriendPopularityScored),
 		nameof(AnilistModel.FriendPopularityTotal),
-		nameof(AnilistModel.PersonalScore),
-		nameof(AnilistModel.Format),
 		nameof(AnilistModel.IsSequel),
+		nameof(AnilistModel.PersonalScore),
+		nameof(AnilistModel.ScoreDiffAverage),
+		nameof(AnilistModel.ScoreDiffFriends),
 	];
 	public static ImmutableHashSet<string> FriendScores { get; } =
 	[

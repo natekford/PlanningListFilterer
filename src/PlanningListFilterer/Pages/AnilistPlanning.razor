@@ -41,7 +41,7 @@
 			</CellTemplate>
 		</PropertyColumn>
 		<PropertyColumn Property="@(m => m.Title)" SortBy="@(m => m.Title)"
-						CellClass="text-wrap" />
+						CellClass="text-wrap anime-title" />
 		<PropertyColumn Property="@(m => m.Start)" SortBy="@(m => m.Start)">
 			<CellTemplate>@context.Item.DisplayStart()</CellTemplate>
 		</PropertyColumn>
@@ -63,16 +63,24 @@
 			<CellTemplate>@context.Item.DisplayFriendScore()</CellTemplate>
 		</PropertyColumn>
 		<PropertyColumn Property="@(m => m.FriendPopularityScored)" SortBy="@(m => m.FriendPopularityScored)"
-						Title="Friend Popularity (Scored)">
+						Title="Friends (Scored)">
 			<CellTemplate>@context.Item.DisplayFriendPopularityScored()</CellTemplate>
 		</PropertyColumn>
 		<PropertyColumn Property="@(m => m.FriendPopularityTotal)" SortBy="@(m => m.FriendPopularityTotal)"
-						Title="Friend Popularity (Total)">
+						Title="Friends (Total)">
 			<CellTemplate>@context.Item.DisplayFriendPopularityTotal()</CellTemplate>
 		</PropertyColumn>
 		<PropertyColumn Property="@(m => m.PersonalScore)" SortBy="@(m => m.PersonalScore)"
 						Title="Personal Score">
 			<CellTemplate>@context.Item.DisplayPersonalScore()</CellTemplate>
+		</PropertyColumn>
+		<PropertyColumn Property="@(m => m.ScoreDiffAverage)" SortBy="@(m => m.ScoreDiffAverage)"
+						Title="Score Δ (Average)">
+			<CellTemplate>@context.Item.DisplayAverageScoreDiff()</CellTemplate>
+		</PropertyColumn>
+		<PropertyColumn Property="@(m => m.ScoreDiffFriends)" SortBy="@(m => m.ScoreDiffFriends)"
+						Title="Score Δ (Friend)">
+			<CellTemplate>@context.Item.DisplayFriendScoreDiff()</CellTemplate>
 		</PropertyColumn>
 		<PropertyColumn Property="@(m => m.Format)" SortBy="@(m => m.Format.ToString())" />
 		<PropertyColumn Property="@(m => m.IsSequel)" SortBy="@(m => !m.IsSequel)"

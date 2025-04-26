@@ -3,8 +3,8 @@
 public enum AnilistMediaListStatus
 {
 	// These have to be capitalized
-	CURRENT = 0,
-	COMPLETED = 1,
+	COMPLETED = 0,
+	CURRENT = 1,
 	DROPPED = 2,
 	PAUSED = 3,
 	PLANNING = 4,

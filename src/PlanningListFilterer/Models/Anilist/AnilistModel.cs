@@ -21,9 +21,9 @@ public sealed record AnilistModel(
 	int? Month,
 	string? CoverImageUrl,
 	// Immutable* is slow. I would use Frozen*, but
-	// * System.Text.Json doesn't deserialize them
-	// * I don't want to write a converter for them
-	// * The speed is similar to regular collections
+	// - System.Text.Json doesn't deserialize them
+	// - I don't want to write a converter for them
+	// - The speed is similar to regular collections
 	HashSet<string> Genres,
 	Dictionary<string, int> Tags,
 	bool IsSequel
@@ -31,6 +31,10 @@ public sealed record AnilistModel(
 {
 	[JsonIgnore]
 	public DateTime Start => this.GetDate();
+	[JsonIgnore]
+	public int? ScoreDiffAverage => GetScoreDiff(AverageScore);
+	[JsonIgnore]
+	public int? ScoreDiffFriends => GetScoreDiff(FriendScore);
 
 	public static AnilistModel Create(AnilistMedia media)
 	{
@@ -68,4 +72,7 @@ public sealed record AnilistModel(
 			})
 		);
 	}
+
+	private int? GetScoreDiff(int? other)
+		=> PersonalScore is int a && other is int b ? a - b : null;
 }

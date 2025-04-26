@@ -8,31 +8,37 @@ public static class AnilistModelUtils
 	public static DateTime NoReleaseDate { get; } = new(year: 2100, month: 1, day: 1);
 
 	public static string DisplayAverageScore(this AnilistModel model)
-		=> model.AverageScore is int s ? $"{s}%" : NO_VALUE;
+		=> DisplayPercentage(model.AverageScore);
+
+	public static string DisplayAverageScoreDiff(this AnilistModel model)
+		=> DisplayPercentage(model.ScoreDiffAverage);
 
 	public static string DisplayDuration(this AnilistModel model)
-		=> model.Duration is int d ? d.ToString("n0") : NO_VALUE;
+		=> DisplayNumber(model.Duration);
 
 	public static string DisplayEpisodeCount(this AnilistModel model)
-		=> model.Episodes is int e ? e.ToString("n0") : NO_VALUE;
+		=> DisplayNumber(model.Episodes);
 
 	public static string DisplayFriendPopularityScored(this AnilistModel model)
-		=> model.FriendPopularityScored.ToString("n0");
+		=> DisplayNumber(model.FriendPopularityScored);
 
 	public static string DisplayFriendPopularityTotal(this AnilistModel model)
-		=> model.FriendPopularityTotal.ToString("n0");
+		=> DisplayNumber(model.FriendPopularityTotal);
 
 	public static string DisplayFriendScore(this AnilistModel model)
-		=> model.FriendScore is int s ? $"{s}%" : NO_VALUE;
+		=> DisplayPercentage(model.FriendScore);
+
+	public static string DisplayFriendScoreDiff(this AnilistModel model)
+		=> DisplayPercentage(model.ScoreDiffFriends);
 
 	public static string DisplayGenres(this AnilistModel model)
-		=> model.Genres.DisplayStrings();
+		=> DisplayStrings(model.Genres);
 
 	public static string DisplayPersonalScore(this AnilistModel model)
-		=> model.PersonalScore is int s ? $"{s}%" : NO_VALUE;
+		=> DisplayPercentage(model.PersonalScore);
 
 	public static string DisplayPopularity(this AnilistModel model)
-		=> model.Popularity.ToString("n0");
+		=> DisplayNumber(model.Popularity);
 
 	public static string DisplayStart(this AnilistModel model)
 	{
@@ -58,7 +64,7 @@ public static class AnilistModelUtils
 	}
 
 	public static string DisplayTags(this IEnumerable<KeyValuePair<string, int>> tags)
-		=> tags.Select(x => x.DisplayTag()).DisplayStrings();
+		=> DisplayStrings(tags.Select(x => x.DisplayTag()));
 
 	public static string DisplayTags(this AnilistModel model, int skip, int count)
 	{
@@ -78,6 +84,12 @@ public static class AnilistModelUtils
 	public static string GetUrl(this AnilistModel model)
 		=> $"https://anilist.co/anime/{model.Id}/";
 
-	private static string DisplayStrings(this IEnumerable<string> items)
+	private static string DisplayNumber(int? value)
+		=> value is int i ? i.ToString("n0") : NO_VALUE;
+
+	private static string DisplayPercentage(int? value)
+			=> value is int i ? $"{i}%" : NO_VALUE;
+
+	private static string DisplayStrings(IEnumerable<string> items)
 		=> items.Any() ? string.Join(Environment.NewLine, items) : NO_VALUE;
 }
