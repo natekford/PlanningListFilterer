@@ -1,4 +1,4 @@
-﻿namespace PlanningListFilterer.Models.Anilist;
+﻿namespace PlanningListFilterer.Models.Anilist.Json;
 
 public enum AnilistMediaListStatus
 {

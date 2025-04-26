@@ -1,4 +1,6 @@
-﻿using System.Text.RegularExpressions;
+﻿using PlanningListFilterer.Models.Anilist.Json;
+
+using System.Text.RegularExpressions;
 
 namespace PlanningListFilterer.Models.Anilist;
 

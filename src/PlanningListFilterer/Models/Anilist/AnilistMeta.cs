@@ -34,4 +34,4 @@ public sealed record AnilistMeta(
 	}
 }
 
-public sealed class AnilistMetaCollection : SortedDictionary<string, AnilistMeta>;
+public sealed class AnilistMetaCollection : Dictionary<string, AnilistMeta>;

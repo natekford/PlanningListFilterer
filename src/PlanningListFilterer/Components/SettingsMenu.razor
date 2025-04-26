@@ -16,17 +16,17 @@
 	<MudExpansionPanels Dense="true" DisableBorders="true" Elevation="0" id="settings-menu">
 		<MudExpansionPanel Text="List Settings">
 			<MudStack Spacing="0">
-				<MudCheckBox T="bool" Dense="true" Size="@Size.Small"
+				<MudCheckBox T="bool" Dense="true" Size="Size.Small"
 							 Color="Color.Primary" UnCheckedColor="Color.Default"
 							 Label="Enable friend scores (requires reloading list)"
 							 @bind-Value="@ListSettings.EnableFriendScores"
-							 @bind-Value:after="@ListFriendScoresChanged" />
-				<MudCheckBox T="bool" Dense="true" Size="@Size.Small"
+							 @bind-Value:after="@EnableFriendScoresChanged" />
+				<MudCheckBox T="bool" Dense="true" Size="Size.Small"
 							 Color="Color.Primary" UnCheckedColor="Color.Default"
 							 Label="Automatically toggle on friend score columns when friend scores are on"
 							 @bind-Value="@ListSettings.AutomaticallyToggleFriendScoreColumns"
 							 @bind-Value:after="@SaveAndUpdateUI" />
-				<MudCheckBox T="bool" Dense="true" Size="@Size.Small"
+				<MudCheckBox T="bool" Dense="true" Size="Size.Small"
 							 Color="Color.Primary" UnCheckedColor="Color.Default"
 							 Label="Automatically toggle off global score columns when friend scores are on"
 							 @bind-Value="@ListSettings.AutomaticallyToggleGlobalScoreColumns"
@@ -37,7 +37,7 @@
 			<MudStack Spacing="0">
 				@foreach (var column in Columns.OrderBy(x => x.Title))
 				{
-					<MudCheckBox T="bool" Dense="true" Size="@Size.Small"
+					<MudCheckBox T="bool" Dense="true" Size="Size.Small"
 								 Color="Color.Primary" UnCheckedColor="Color.Default"
 								 Label="@column.Title" Disabled="@(column.Hideable == false)"
 								 Value="@(!ColumnSettings.HiddenColumns.Contains(column.PropertyName))"

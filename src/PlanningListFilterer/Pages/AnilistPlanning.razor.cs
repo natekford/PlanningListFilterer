@@ -100,9 +100,11 @@ public partial class AnilistPlanning
 		await foreach (var entry in Http.GetAnilistListAsync(username.Name, ListSettings.ListStatus).ConfigureAwait(false))
 		{
 			user ??= entry.User;
-			if (entry.Media.Status == AnilistMediaStatus.FINISHED)
+			if (entry.Status is AnilistMediaStatus.FINISHED
+				or AnilistMediaStatus.RELEASING
+				or AnilistMediaStatus.CANCELLED)
 			{
-				medias.Add(entry.Media);
+				medias.Add(entry);
 			}
 		}
 

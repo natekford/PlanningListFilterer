@@ -1,4 +1,4 @@
-﻿using PlanningListFilterer.Models.Anilist;
+﻿using PlanningListFilterer.Models.Anilist.Json;
 
 namespace PlanningListFilterer.Settings;
 

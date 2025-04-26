@@ -62,7 +62,7 @@ public partial class SettingsMenu<T>
 		await SaveAndUpdateUI().ConfigureAwait(false);
 	}
 
-	public async Task ListFriendScoresChanged()
+	public async Task EnableFriendScoresChanged()
 	{
 		if (ListSettings.AutomaticallyToggleFriendScoreColumns)
 		{

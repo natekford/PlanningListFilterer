@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using MudBlazor.Services;
 
 using PlanningListFilterer;
-using PlanningListFilterer.Models.Anilist;
+using PlanningListFilterer.Models.Anilist.Json;
 using PlanningListFilterer.Settings;
 
 using System.Text.Json.Serialization;

@@ -113,7 +113,7 @@ public static class AnilistGraphQLUtils
 		}
 	}
 
-	public static async IAsyncEnumerable<AnilistEntry> GetAnilistListAsync(
+	public static async IAsyncEnumerable<AnilistMedia> GetAnilistListAsync(
 		this HttpClient http,
 		string username,
 		AnilistMediaListStatus status)
@@ -140,10 +140,11 @@ public static class AnilistGraphQLUtils
 					if (alreadyReturned.Add(entry.Media.Id))
 					{
 						var personalScore = (int?)entry.Score is int i && i > 0 ? (int?)i : null;
-						yield return new(collection.User, entry.Media with
+						yield return entry.Media with
 						{
 							PersonalScore = personalScore,
-						});
+							User = collection.User,
+						};
 					}
 				}
 			}
@@ -350,3 +351,10 @@ public static class AnilistGraphQLUtils
 		}
 	}
 }
+
+public record struct AnilistFriendScore(
+	AnilistMedia Media,
+	int? Score,
+	int ScoredPopularity,
+	int TotalPopularity
+);
