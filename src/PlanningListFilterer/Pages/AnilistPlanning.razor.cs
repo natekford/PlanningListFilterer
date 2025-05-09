@@ -21,10 +21,6 @@ public partial class AnilistPlanning
 	private const string LAST_USERNAME = "_LastSearchedUsername";
 	private const string ROWS_PER_PAGE = "_RowsPerPage";
 
-	private static readonly CsvConfiguration _CsvConfig = new(CultureInfo.InvariantCulture)
-	{
-		InjectionOptions = InjectionOptions.Escape,
-	};
 	private static readonly Random _Random = new();
 	private readonly HashSet<int> _ShownRandomIds = [];
 
@@ -60,7 +56,10 @@ public partial class AnilistPlanning
 		using var sRef = new DotNetStreamReference(ms);
 
 		await using (var sw = new StreamWriter(ms, leaveOpen: true))
-		await using (var csv = new CsvWriter(sw, _CsvConfig))
+		await using (var csv = new CsvWriter(sw, new CsvConfiguration(CultureInfo.InvariantCulture)
+		{
+			InjectionOptions = InjectionOptions.Escape,
+		}))
 		{
 			csv.Context.RegisterClassMap<AnilistModelMap>();
 			csv.WriteRecords(Entries);

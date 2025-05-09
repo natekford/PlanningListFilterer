@@ -9,7 +9,7 @@ public readonly partial struct AnilistUsername
 	public bool IsValid { get; }
 	public string Name { get; }
 
-	public AnilistUsername(string username)
+	public AnilistUsername(string? username)
 	{
 		Name = username?.ToLower() ?? "";
 		IsValid = AnilistUsernameRegex().IsMatch(Name);

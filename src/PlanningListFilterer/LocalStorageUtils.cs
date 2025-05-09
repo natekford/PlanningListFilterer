@@ -7,11 +7,16 @@ namespace PlanningListFilterer;
 
 public static class LocalStorageUtils
 {
-	public static async Task<T> DecodeBase64GZipJsonAsync<T>(
-		string base64GZipJson,
+	public static async Task<T?> DecodeBase64GZipJsonAsync<T>(
+		string? base64GZipJson,
 		JsonSerializerOptions? options = null,
 		CancellationToken cancellationToken = default)
 	{
+		if (string.IsNullOrEmpty(base64GZipJson))
+		{
+			return default;
+		}
+
 		var bytes = Convert.FromBase64String(base64GZipJson);
 
 		await using var msi = new MemoryStream(bytes);
@@ -54,7 +59,7 @@ public static class LocalStorageUtils
 		return Convert.ToBase64String(mso.ToArray());
 	}
 
-	public static async ValueTask<T> GetItemCompressedAsync<T>(
+	public static async ValueTask<T?> GetItemCompressedAsync<T>(
 		this ILocalStorageService localStorage,
 		string key,
 		JsonSerializerOptions? options = null,

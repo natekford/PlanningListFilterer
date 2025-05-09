@@ -183,7 +183,7 @@ a, .btn-link {
 
 	#settings-menu .column-settings-stack {
 		overflow-y: scroll;
-		max-height: 60vh;
+		max-height: 40vh;
 	}
 
 /* Popover provider would extend past sidebar/page bottom without this */

@@ -13,7 +13,7 @@
 			<MudSelectItem Value="@status">@status</MudSelectItem>
 		}
 	</MudSelect>
-	<MudExpansionPanels Dense="true" DisableBorders="true" Elevation="0" id="settings-menu">
+	<MudExpansionPanels Dense="true" Outlined="false" Elevation="0" id="settings-menu">
 		<MudExpansionPanel Text="List Settings">
 			<MudStack Spacing="0">
 				<MudCheckBox T="bool" Dense="true" Size="Size.Small"
@@ -34,7 +34,7 @@
 			</MudStack>
 		</MudExpansionPanel>
 		<MudExpansionPanel Text="Column Settings">
-			<MudStack Class="column-settings-stack" Spacing="0">
+			<MudStack Class="column-settings-stack" Wrap="Wrap.Wrap" Spacing="0">
 				@foreach (var column in Columns.OrderBy(x => x.Title))
 				{
 					<MudCheckBox T="bool" Dense="true" Size="Size.Small"
