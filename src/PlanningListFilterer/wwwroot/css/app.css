@@ -20,7 +20,7 @@ a, .btn-link {
 
 .content {
 	padding-top: 2vh;
-	padding-bottom: 3vh;
+	padding-bottom: 2vh;
 }
 
 .valid.modified:not([type=checkbox]) {
@@ -68,68 +68,96 @@ a, .btn-link {
 	white-space: pre;
 }
 
-#planning-table .mud-table-toolbar {
-	height: 7vh;
+#planning-table {
+	height: 96vh;
 }
 
-#planning-table .mud-table-container {
-	height: 83vh;
-}
+	#planning-table .mud-table-container {
+		height: 82vh;
+	}
 
-#planning-table .mud-pagination {
-	height: 5vh;
-}
+	#planning-table .username-box {
+		width: 25ch;
+		max-width: 25ch;
+	}
 
-#planning-table .username-box {
-	width: 25ch;
-	max-width: 25ch;
-}
+	#planning-table .image-nav-link .mud-nav-link {
+		padding: 0px;
+		background-color: transparent;
+	}
 
-#planning-table .image-nav-link .mud-nav-link {
-	padding: 0px;
-	background-color: transparent;
-}
+	#planning-table .image-nav-link .mud-nav-link-text {
+		display: flex;
+		justify-content: center;
+		margin-left: 0px;
+		margin-inline-start: 0px;
+	}
 
-#planning-table .image-nav-link .mud-nav-link-text {
-	display: flex;
-	justify-content: center;
-	margin-left: 0px;
-	margin-inline-start: 0px;
-}
+	#planning-table .anime-id {
+		width: 100px;
+	}
 
-#planning-table .anime-title {
-	max-width: 10vw;
-}
+	#planning-table .anime-title {
+		max-width: 10ch;
+	}
 
-#planning-table .mud-expand-panel-text {
-	color: var(--mud-palette-text-primary);
-}
+	#planning-table .anime-tags {
+		max-width: 15ch;
+	}
 
-#planning-table .mud-expand-panel-content {
-	white-space: pre;
-}
+	#planning-table .mud-expand-panel-text {
+		color: var(--mud-palette-text-primary);
+		white-space: pre;
+	}
 
-#planning-table .mud-expand-panel-header {
-	padding-top: 0px;
-	padding-bottom: 0px;
-}
+	#planning-table .mud-expand-panel-header {
+		padding: 0px;
+	}
 
-#planning-table .mud-table-cell {
-	padding-top: 2px;
-	padding-bottom: 2px;
-	padding-right: 0px;
-}
+	#planning-table .mud-expand-panel-content {
+		white-space: pre;
+		padding: 0px;
+	}
+
+	#planning-table .mud-panel-expanded {
+		margin-top: 0px;
+	}
+
+	#planning-table .mud-table-cell {
+		padding-top: 2px;
+		padding-bottom: 2px;
+		padding-right: 0px;
+	}
+
+	#planning-table .mud-table-row .mud-table-cell:not(:first-child) {
+		padding-left: 8px;
+	}
 
 	#planning-table .mud-table-cell:has(.image-nav-link,.tag-column-content) {
 		padding-left: 0px;
 	}
 
+	#planning-table .mud-table-head .mud-table-cell {
+		padding-top: 0px;
+		padding-bottom: 0px;
+	}
+
+	#planning-table .mud-table-head .column-header {
+		align-items: start;
+		flex-direction: column;
+	}
+
+		#planning-table .mud-table-head .column-header .column-options {
+			flex-direction: row-reverse;
+			margin-left: -6px;
+		}
+
 .filter-selection-grid {
-	max-width: 15vw;
+	width: 30ch;
 }
 
 .filter-selection-stack {
-	overflow-y: auto;
+	overflow-y: scroll;
 	max-height: 50vh;
 }
 
@@ -137,17 +165,26 @@ a, .btn-link {
 		padding: 3px;
 	}
 
-#settings-menu .mud-expand-panel .mud-expand-panel-header {
-	padding: 0px;
+#settings-menu {
+	max-width: 50ch;
 }
 
-#settings-menu .mud-expand-panel .mud-expand-panel-content {
-	padding: 0px;
-}
+	#settings-menu .mud-expand-panel-header {
+		padding: 0px;
+	}
 
-#settings-menu .mud-panel-expanded {
-	margin-top: 0px;
-}
+	#settings-menu .mud-expand-panel-content {
+		padding: 0px;
+	}
+
+	#settings-menu .mud-panel-expanded {
+		margin-top: 0px;
+	}
+
+	#settings-menu .column-settings-stack {
+		overflow-y: scroll;
+		max-height: 60vh;
+	}
 
 /* Popover provider would extend past sidebar/page bottom without this */
 /* Doesn't work when applied to #id */

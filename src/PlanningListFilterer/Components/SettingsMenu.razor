@@ -34,7 +34,7 @@
 			</MudStack>
 		</MudExpansionPanel>
 		<MudExpansionPanel Text="Column Settings">
-			<MudStack Spacing="0">
+			<MudStack Class="column-settings-stack" Spacing="0">
 				@foreach (var column in Columns.OrderBy(x => x.Title))
 				{
 					<MudCheckBox T="bool" Dense="true" Size="Size.Small"

@@ -1,10 +1,9 @@
 ﻿@page "/"
 
 <PageTitle>Planning List Filterer</PageTitle>
-
 <MudDataGrid Dense="true" Hover="true" Bordered="true" Striped="true"
 			 Filterable="true" Hideable="true" ShowColumnOptions="false"
-			 FixedHeader="true" FixedFooter="true"
+			 FixedHeader="true" FixedFooter="true" HorizontalScrollbar="false"
 			 ColumnResizeMode="ResizeMode.None"
 			 FilterMode="DataGridFilterMode.ColumnFilterMenu"
 			 Items="@Entries" Loading="@IsLoading"
@@ -32,7 +31,8 @@
 	</ToolBarContent>
 
 	<Columns>
-		<PropertyColumn Property="@(m => m.Id)" SortBy="@(m => m.Id)">
+		<PropertyColumn Property="@(m => m.Id)" SortBy="@(m => m.Id)"
+						CellClass="anime-id">
 			<CellTemplate>
 				<MudNavLink Class="image-nav-link" Target="_blank"
 							Href="@context.Item.GetUrl()">
@@ -52,34 +52,34 @@
 			<CellTemplate>@context.Item.DisplayDuration()</CellTemplate>
 		</PropertyColumn>
 		<PropertyColumn Property="@(m => m.AverageScore)" SortBy="@(m => m.AverageScore)"
-						Title="Average Score">
+						Title="Average %">
 			<CellTemplate>@context.Item.DisplayAverageScore()</CellTemplate>
 		</PropertyColumn>
 		<PropertyColumn Property="@(m => m.Popularity)" SortBy="@(m => m.Popularity)">
 			<CellTemplate>@context.Item.DisplayPopularity()</CellTemplate>
 		</PropertyColumn>
 		<PropertyColumn Property="@(m => m.FriendScore)" SortBy="@(m => m.FriendScore)"
-						Title="Friend Score">
+						Title="Friend %">
 			<CellTemplate>@context.Item.DisplayFriendScore()</CellTemplate>
 		</PropertyColumn>
 		<PropertyColumn Property="@(m => m.FriendPopularityScored)" SortBy="@(m => m.FriendPopularityScored)"
-						Title="Friends (Scored)">
+						Title="Friends (%)">
 			<CellTemplate>@context.Item.DisplayFriendPopularityScored()</CellTemplate>
 		</PropertyColumn>
 		<PropertyColumn Property="@(m => m.FriendPopularityTotal)" SortBy="@(m => m.FriendPopularityTotal)"
-						Title="Friends (Total)">
+						Title="Friends (All)">
 			<CellTemplate>@context.Item.DisplayFriendPopularityTotal()</CellTemplate>
 		</PropertyColumn>
 		<PropertyColumn Property="@(m => m.PersonalScore)" SortBy="@(m => m.PersonalScore)"
-						Title="Personal Score">
+						Title="Personal %">
 			<CellTemplate>@context.Item.DisplayPersonalScore()</CellTemplate>
 		</PropertyColumn>
 		<PropertyColumn Property="@(m => m.ScoreDiffAverage)" SortBy="@(m => m.ScoreDiffAverage)"
-						Title="Score Δ (Average)">
+						Title="Δ% (Average)">
 			<CellTemplate>@context.Item.DisplayAverageScoreDiff()</CellTemplate>
 		</PropertyColumn>
 		<PropertyColumn Property="@(m => m.ScoreDiffFriends)" SortBy="@(m => m.ScoreDiffFriends)"
-						Title="Score Δ (Friend)">
+						Title="Δ% (Friend)">
 			<CellTemplate>@context.Item.DisplayFriendScoreDiff()</CellTemplate>
 		</PropertyColumn>
 		<PropertyColumn Property="@(m => m.Format)" SortBy="@(m => m.Format.ToString())" />
@@ -96,7 +96,7 @@
 			</CellTemplate>
 		</PropertyColumn>
 		<PropertyColumn Property="@(m => m.Tags)" Sortable="false"
-						@ref="@TagColumn">
+						CellClass="anime-tags" @ref="@TagColumn">
 			<FilterTemplate>
 				<FilterSelection Column="@TagColumn"
 								 Selector="@(m => m.Tags.Where(x => x.Value >= TagPercent).Select(x => x.Key))" />
