@@ -33,34 +33,13 @@ public partial class SettingsMenu<T>
 	}
 
 	public async Task ColumnsDisableAll()
-	{
-		foreach (var column in Columns)
-		{
-			await column.HideAsync().ConfigureAwait(false);
-		}
-		await SaveAndUpdateUI().ConfigureAwait(false);
-	}
+		=> await ToggleColumns(_ => false).ConfigureAwait(false);
 
 	public async Task ColumnsEnableAll()
-	{
-		foreach (var column in Columns)
-		{
-			await column.ShowAsync().ConfigureAwait(false);
-		}
-		await SaveAndUpdateUI().ConfigureAwait(false);
-	}
+		=> await ToggleColumns(_ => true).ConfigureAwait(false);
 
 	public async Task ColumnsRestoreDefault()
-	{
-		foreach (var column in Columns)
-		{
-			await ColumnSettings.SetVisibilityAsync(
-				column: column,
-				visible: !ColumnSettings.DefaultHidden.Contains(column.PropertyName)
-			).ConfigureAwait(false);
-		}
-		await SaveAndUpdateUI().ConfigureAwait(false);
-	}
+		=> await ToggleColumns(x => !ColumnSettings.DefaultHidden.Contains(x)).ConfigureAwait(false);
 
 	public async Task EnableFriendScoresChanged()
 	{
@@ -92,5 +71,17 @@ public partial class SettingsMenu<T>
 		await Settings.SaveAsync(settings: ListSettings).ConfigureAwait(false);
 		await Settings.SaveAsync(settings: ColumnSettings).ConfigureAwait(false);
 		((IMudStateHasChanged)Grid).StateHasChanged();
+	}
+
+	private async Task ToggleColumns(Func<string, bool> getVisibility)
+	{
+		foreach (var column in Columns)
+		{
+			await ColumnSettings.SetVisibilityAsync(
+				column: column,
+				visible: getVisibility.Invoke(column.PropertyName)
+			).ConfigureAwait(false);
+		}
+		await SaveAndUpdateUI().ConfigureAwait(false);
 	}
 }
