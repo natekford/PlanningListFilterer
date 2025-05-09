@@ -72,8 +72,23 @@ a, .btn-link {
 	height: 96vh;
 }
 
+	#planning-table .mud-table-head .mud-table-cell:first-child {
+		border-radius: 0px 0px 0px 0px;
+	}
+
+	#planning-table .mud-toolbar {
+		height: 6vh;
+		min-height: 50px;
+		/* border|padding|remaining space */
+		max-width: calc(100vw - min(250px, 13vw) - 16px);
+	}
+
 	#planning-table .mud-table-container {
-		height: 82vh;
+		height: 84vh;
+	}
+
+	#planning-table .mud-table-pagination {
+		display: block;
 	}
 
 	#planning-table .username-box {
@@ -117,10 +132,6 @@ a, .btn-link {
 	#planning-table .mud-expand-panel-content {
 		white-space: pre;
 		padding: 0px;
-	}
-
-	#planning-table .mud-panel-expanded {
-		margin-top: 0px;
 	}
 
 	#planning-table .mud-table-cell {
@@ -189,6 +200,6 @@ a, .btn-link {
 /* Popover provider would extend past sidebar/page bottom without this */
 /* Doesn't work when applied to #id */
 body {
-	overflow-x: hidden;
+	overflow-x: auto;
 	overflow-y: clip;
 }
