@@ -28,11 +28,11 @@ public static class LocalStorageUtils
 		}
 		mso.Position = 0;
 
-		return (await JsonSerializer.DeserializeAsync<T>(
+		return await JsonSerializer.DeserializeAsync<T>(
 			utf8Json: mso,
 			options: options,
 			cancellationToken: cancellationToken
-		))!;
+		);
 	}
 
 	public static async Task<string> EncodeBase64GZipJsonAsync<T>(

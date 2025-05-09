@@ -11,14 +11,14 @@ public partial class SettingsMenu<T>
 {
 	public List<Column<T>> Columns => Grid.RenderedColumns;
 	[Parameter]
-	public required ColumnSettings ColumnSettings { get; set; } = null!;
+	public required ColumnSettings ColumnSettings { get; set; }
 	[Parameter]
-	public required MudDataGrid<T> Grid { get; set; } = null!;
+	public required MudDataGrid<T> Grid { get; set; }
 	public bool IsMenuOpen { get; set; }
 	[Parameter]
-	public required ListSettings ListSettings { get; set; } = null!;
+	public required ListSettings ListSettings { get; set; }
 	[Inject]
-	public required SettingsService Settings { get; set; } = null!;
+	public required SettingsService Settings { get; set; }
 
 	public void CloseMenu()
 		=> IsMenuOpen = false;

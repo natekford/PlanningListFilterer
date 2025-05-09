@@ -2,6 +2,7 @@
 
 using System.Collections.Concurrent;
 using System.Net.Http.Json;
+using System.Runtime.CompilerServices;
 using System.Text.Json;
 
 namespace PlanningListFilterer.Models.Anilist;
@@ -292,7 +293,8 @@ public static class AnilistGraphQLUtils
 
 	private static async Task<T> GetResponseAsync<T>(
 		this HttpClient http,
-		object body)
+		object body,
+		[CallerMemberName] string caller = "")
 	{
 		using var response = await http.PostAsJsonAsync(GRAPHQL_URL, body).ConfigureAwait(false);
 		response.EnsureSuccessStatusCode();
@@ -329,9 +331,13 @@ public static class AnilistGraphQLUtils
 			await Task.Delay(TimeSpan.FromSeconds(seconds)).ConfigureAwait(false);
 		}
 
-		return (await JsonSerializer.DeserializeAsync<AnilistResponse<T>>(
+		var deserialized = await JsonSerializer.DeserializeAsync<AnilistResponse<T>>(
 			utf8Json: stream
-		).ConfigureAwait(false))!.Data;
+		).ConfigureAwait(false);
+
+		return deserialized is null
+			? throw new JsonException($"{caller} received empty or null JSON.")
+			: deserialized.Data;
 	}
 
 	private record struct FriendScoreTally(

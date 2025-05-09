@@ -12,10 +12,10 @@ public sealed record AnilistMeta(
 {
 	public const int CURRENT_VERSION = 12;
 
-	public bool ShouldReacquire(ListSettings settings, TimeSpan limit)
+	public bool ShouldReacquire(ListSettings settings, TimeSpan timeout)
 	{
 		return Version < CURRENT_VERSION
-			|| (DateTime.UtcNow - SavedAt) > limit
+			|| (DateTime.UtcNow - SavedAt) > timeout
 			|| (settings.EnableFriendScores && !SavedWithFriendScores);
 	}
 

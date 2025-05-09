@@ -27,21 +27,23 @@ public partial class AnilistPlanning
 	public AnilistMetaCollection AnilistMeta { get; set; } = [];
 	public ColumnSettings ColumnSettings { get; set; } = new();
 	public List<AnilistModel> Entries { get; set; } = [];
-	public required Column<AnilistModel> GenreColumn { get; set; } = null!;
-	public required MudDataGrid<AnilistModel> Grid { get; set; } = null!;
+	public required Column<AnilistModel> GenreColumn { get; set; }
+	public required MudDataGrid<AnilistModel> Grid { get; set; }
 	[Inject]
-	public required HttpClient Http { get; set; } = null!;
+	public required HttpClient Http { get; set; }
 	public bool IsLoading { get; set; }
 	[Inject]
-	public required IJSRuntime Js { get; set; } = null!;
+	public required IJSRuntime Js { get; set; }
 	public ListSettings ListSettings { get; set; } = new();
 	[Inject]
-	public required ILocalStorageService LocalStorage { get; set; } = null!;
+	public required ILocalStorageService LocalStorage { get; set; }
 	[Inject]
-	public required ILogger<AnilistPlanning> Logger { get; set; } = null!;
+	public required ILogger<AnilistPlanning> Logger { get; set; }
 	[Inject]
-	public required SettingsService Settings { get; set; } = null!;
-	public required Column<AnilistModel> TagColumn { get; set; } = null!;
+	public required IPopoverService Popover { get; set; }
+	[Inject]
+	public required SettingsService Settings { get; set; }
+	public required Column<AnilistModel> TagColumn { get; set; }
 	public int TagPercent { get; set; }
 	public AnilistUsername Username { get; set; } = new("");
 
@@ -106,11 +108,17 @@ public partial class AnilistPlanning
 				medias.Add(entry);
 			}
 		}
+		if (user is null)
+		{
+			throw new InvalidOperationException(
+				$"User ({username.Name}) was null when it should not be possible.");
+		}
 
-		if (ListSettings.EnableFriendScores)
+		// Don't bother getting friends if there is no media to get scores of
+		if (medias.Count > 0 && ListSettings.EnableFriendScores)
 		{
 			var friends = new List<AnilistUser>();
-			await foreach (var friend in Http.GetAnilistFollowingAsync(user!).ConfigureAwait(false))
+			await foreach (var friend in Http.GetAnilistFollowingAsync(user).ConfigureAwait(false))
 			{
 				friends.Add(friend);
 			}
@@ -143,7 +151,7 @@ public partial class AnilistPlanning
 		await LocalStorage.SetItemAsync(LAST_USERNAME, username.Name).ConfigureAwait(false);
 
 		AnilistMeta[listKey] = new AnilistMeta(
-			userId: user!.Id,
+			userId: user.Id,
 			length: length,
 			settings: ListSettings
 		);

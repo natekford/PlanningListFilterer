@@ -9,16 +9,16 @@ namespace PlanningListFilterer.Components;
 
 public partial class FilterSelection<T>
 {
-	private FilterDefinition<T> _FilterDefinition = null!;
+	private FilterDefinition<T>? _FilterDefinition;
 
 	[Parameter]
-	public required Column<T> Column { get; set; } = null!;
+	public required Column<T> Column { get; set; }
 	public MudDataGrid<T> Grid => Column.DataGrid;
 	public ImmutableArray<string> Options { get; set; } = [];
 	public string Search { get; set; } = "";
-	public HashSet<string> SelectedItems => (HashSet<string>)_FilterDefinition.Value!;
+	public HashSet<string> SelectedItems => (HashSet<string>?)_FilterDefinition?.Value ?? [];
 	[Parameter]
-	public required Func<T, IEnumerable<string>> Selector { get; set; } = null!;
+	public required Func<T, IEnumerable<string>> Selector { get; set; }
 
 	public void Clear()
 	{
@@ -29,13 +29,13 @@ public partial class FilterSelection<T>
 	}
 
 	public bool IsFilterEnabled()
-		=> _FilterDefinition.Operator != null;
+		=> _FilterDefinition?.Operator != null;
 
 	public void MarkFilterAsDisabled()
-		=> _FilterDefinition.Operator = null;
+		=> MarkFilter(null);
 
 	public void MarkFilterAsEnabled()
-		=> _FilterDefinition.Operator = "ignored";
+		=> MarkFilter("filter_enabled");
 
 	public void OnCheckedChanged(string item, bool add)
 	{
@@ -105,5 +105,13 @@ public partial class FilterSelection<T>
 		_FilterDefinition = filterDefinition;
 
 		UpdateOptions(redraw: false);
+	}
+
+	private void MarkFilter(string? value)
+	{
+		if (_FilterDefinition is FilterDefinition<T> filterDefinition)
+		{
+			filterDefinition.Operator = value;
+		}
 	}
 }
