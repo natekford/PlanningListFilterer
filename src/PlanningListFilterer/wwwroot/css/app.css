@@ -70,6 +70,8 @@ a, .btn-link {
 
 #planning-table {
 	height: 96vh;
+	/* sidebar|padding|remaining space */
+	max-width: calc(100vw - min(250px, 13vw) - 16px - 16px);
 }
 
 	#planning-table .mud-table-head .mud-table-cell:first-child {
@@ -79,8 +81,6 @@ a, .btn-link {
 	#planning-table .mud-toolbar {
 		height: 6vh;
 		min-height: 50px;
-		/* sidebar|padding|remaining space */
-		max-width: calc(100vw - min(250px, 13vw) - 16px);
 	}
 
 	#planning-table .mud-table-container {
@@ -113,23 +113,24 @@ a, .btn-link {
 	}
 
 	#planning-table .anime-title {
-		max-width: 10ch;
+		max-width: 20ch;
 	}
 
-	#planning-table .anime-tags {
-		max-width: 15ch;
+	#planning-table .anime-tags .mud-expand-panel-header {
+		min-height: 0px;
+		line-height: 1.43;
 	}
 
-	#planning-table .mud-expand-panel-text {
+	#planning-table .anime-tags .mud-expand-panel-text {
 		color: var(--mud-palette-text-primary);
 		white-space: pre;
 	}
 
-	#planning-table .mud-expand-panel-header {
+	#planning-table .anime-tags .mud-expand-panel-header {
 		padding: 0px;
 	}
 
-	#planning-table .mud-expand-panel-content {
+	#planning-table .anime-tags .mud-expand-panel-content {
 		white-space: pre;
 		padding: 0px;
 	}

@@ -40,8 +40,6 @@ public partial class AnilistPlanning
 	[Inject]
 	public required ILogger<AnilistPlanning> Logger { get; set; }
 	[Inject]
-	public required IPopoverService Popover { get; set; }
-	[Inject]
 	public required SettingsService Settings { get; set; }
 	public required Column<AnilistModel> TagColumn { get; set; }
 	public int TagPercent { get; set; }

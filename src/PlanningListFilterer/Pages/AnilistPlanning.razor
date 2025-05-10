@@ -109,10 +109,10 @@
 
 			<CellTemplate>
 				<MudExpansionPanel Class="bg-transparent"
-								   Text="@context.Item.DisplayTags(0, 1)"
+								   Text="@context.Item.DisplayTags(0, 3)"
 								   Disabled="@(context.Item.Tags.Count <= 1)"
 								   HideIcon="@(context.Item.Tags.Count <= 1)">
-					@context.Item.DisplayTags(1, int.MaxValue)
+					@context.Item.DisplayTags(3, int.MaxValue)
 				</MudExpansionPanel>
 			</CellTemplate>
 		</PropertyColumn>
