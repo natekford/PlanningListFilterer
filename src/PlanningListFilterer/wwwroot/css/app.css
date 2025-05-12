@@ -96,6 +96,10 @@ a, .btn-link {
 		max-width: 25ch;
 	}
 
+	#planning-table .sortable-column-header {
+		white-space: pre;
+	}
+
 	#planning-table .image-nav-link .mud-nav-link {
 		padding: 0px;
 		background-color: transparent;
